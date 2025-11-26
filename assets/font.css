@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "TheYearOfHandicrafts";
+    src: url(./fonts/alfont_com_TheYearofHandicrafts-Bold.otf);
+}
+@font-face {
+    font-family: "din-next-regular";
+    src: url(./fonts/DIN\ NEXT™\ ARABIC\ REGULAR.otf);
+}
+@font-face {
+    font-family: "didot-medium";
+    src: url(./fonts/Didot\ Medium.ttf);
+}
+@font-face {
+    font-family: "didot";
+    src: url(./fonts/GFSDidot-Regular.ttf);
+}
+@font-face {
+    font-family: "didot-bold";
+    src: url(./fonts/Didot\ LT\ Std\ Bold.otf);
+}
+
+:root{
+    --secondary-golden-color: #eccf9c;
+    --primary-black-color: #100f0f; 
+    --green-color: #3a4b43;
+}
