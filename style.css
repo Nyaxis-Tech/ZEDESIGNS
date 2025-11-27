@@ -4,7 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "didot", sans-serif;
+    font-family: "TheYearOfHandicrafts", sans-serif;
     transition: all 0.3s ease;
 }
 
@@ -12,6 +12,7 @@
     background-color: var(--secondary-golden-color);
     color: black;
 }
+
 body,
 html {
     width: 100%;
@@ -66,6 +67,7 @@ html {
     font-size: 1rem;
     font-weight: 400;
 }
+
 #main #nav ul a:hover {
     color: var(--secondary-golden-color);
 }
@@ -134,7 +136,7 @@ html {
 
 #hero #heromain #herotext h1 {
     font-size: 4rem;
-    font-family: "TheYearOfHandicrafts", sans-serif;
+    font-family: "didot-bold", sans-serif;
     /* width: 60%; */
     font-weight: 600;
     letter-spacing: 0.1rem;
@@ -205,7 +207,7 @@ html {
 
 #main #about #ableft > h1 {
     font-size: 3rem;
-    font-family: "TheYearOfHandicrafts", sans-serif;
+    font-family: "didot-bold", sans-serif;
     line-height: 1;
     font-weight: 500;
 }
@@ -280,7 +282,7 @@ html {
     margin-top:3rem;
     padding: 0 5vw;
     font-size: 3rem;
-    font-family: "TheYearOfHandicrafts", sans-serif;
+    font-family: "didot-bold", sans-serif;
     line-height: 1;
     font-weight: 500;
     width: 40%;
@@ -395,7 +397,7 @@ html {
 }
 .servcard h1 {
     font-size: 1.5rem;
-    font-family: "TheYearOfHandicrafts", sans-serif;
+    font-family: "didot-bold", sans-serif;
     line-height: 1;
     font-weight: 500;
 }
@@ -441,7 +443,7 @@ html {
 
 #main #featured >h1{
     font-size: 3rem;
-    font-family: "TheYearOfHandicrafts", sans-serif;
+    font-family: "didot-bold", sans-serif;
     line-height: 1;
     font-weight: 500;
     width: 40%;
@@ -480,7 +482,7 @@ html {
 
 #main #featured #projects .projectcard h1{
     font-size: 3rem;
-    font-family: "TheYearOfHandicrafts", sans-serif;
+    font-family: "didot-bold", sans-serif;
     text-transform: uppercase;
     line-height: 1;
     font-weight: 500;
@@ -541,7 +543,7 @@ html {
 
 #main #testimonials #testtop > h1 {
     font-size: 3rem;
-    font-family: "TheYearOfHandicrafts", sans-serif;
+    font-family: "didot-bold", sans-serif;
     line-height: 1.2;
     font-weight: 500;
     width: 40%;
