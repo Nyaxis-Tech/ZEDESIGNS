@@ -168,7 +168,7 @@ function heroSectionAnimation() {
             // delay: 4
         }
     );
-    
+
     // Animate hero tag reveal
     herotl.fromTo(
         "#herotext .tag",
@@ -182,43 +182,57 @@ function heroSectionAnimation() {
             duration: 0.6,
             ease: "power2.out",
             onComplete: () => {
-                document.querySelector("#herotext .tag").classList.add("revealed");
-            }
+                document
+                    .querySelector("#herotext .tag")
+                    .classList.add("revealed");
+            },
         },
         "-=0.3"
     );
-    
-    herotl.fromTo("#herotext h1",{
-        y: 30,
-        opacity: 0,
-    },{
-        y: 0,
-        opacity: 1,
-        duration: 0.5,
-        ease: "power1.out",
-        stagger: 0.2,
-    },"-=0.5");
-    herotl.fromTo("#herotext > p",{
-        y: 15,
-        opacity: 0,
-    },{
-        y: 0,
-        opacity: 1,
-        duration: 0.5,
-        ease: "power1.out",
-    },"-=0.5");
-    herotl.fromTo("#herotext .btnelem",
-    {
-        y: 15,
-        opacity: 0,
-    },
-    {
-        y: 0,
-        opacity: 1,
-        duration: 0.5,
-        ease: "power1.out",
-    },"-=0.3");
 
+    herotl.fromTo(
+        "#herotext h1",
+        {
+            y: 30,
+            opacity: 0,
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            ease: "power1.out",
+            stagger: 0.2,
+        },
+        "-=0.5"
+    );
+    herotl.fromTo(
+        "#herotext > p",
+        {
+            y: 15,
+            opacity: 0,
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            ease: "power1.out",
+        },
+        "-=0.5"
+    );
+    herotl.fromTo(
+        "#herotext .btnelem",
+        {
+            y: 15,
+            opacity: 0,
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            ease: "power1.out",
+        },
+        "-=0.3"
+    );
 }
 
 heroSectionAnimation();
@@ -267,24 +281,25 @@ tl.to(
     "<"
 );
 
-function serviceHorizontalScroll() {
-    let serviceStrip = document.querySelector("#servcardstrip");
+if (window.innerWidth > 768) {
+    function serviceHorizontalScroll() {
+        let serviceStrip = document.querySelector("#servcardstrip");
 
-    gsap.to("#servcardstrip",{
-        x: () => -(serviceStrip.scrollWidth - window.innerWidth),
-        scrollTrigger: {
-            trigger: "#servcardstrip",
-            start: "center center",
-            end: () => `+=#${serviceStrip.scrollWidth}`,
-            pin: "#services",
-            // markers: true,
-            scrub: 1,
-            invalidateOnRefresh: true,
-
-        }
-    })
+        gsap.to("#servcardstrip", {
+            x: () => -(serviceStrip.scrollWidth - window.innerWidth),
+            scrollTrigger: {
+                trigger: "#servcardstrip",
+                start: "center center",
+                end: () => `+=#${serviceStrip.scrollWidth}`,
+                pin: "#services",
+                // markers: true,
+                scrub: 1,
+                invalidateOnRefresh: true,
+            },
+        });
+    }
+    serviceHorizontalScroll();
 }
-serviceHorizontalScroll();
 
 // About-section counters: animate numbers when #about enters view
 (() => {
@@ -323,32 +338,38 @@ serviceHorizontalScroll();
     });
 })();
 
-
 // About heading word-by-word animation
 (() => {
-    const aboutHeading = document.querySelector('#about #ableft h1');
-    if (!aboutHeading || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    const aboutHeading = document.querySelector("#about #ableft h1");
+    if (
+        !aboutHeading ||
+        typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined"
+    )
+        return;
 
     // Split text into words
     const words = aboutHeading.textContent.trim().split(/\s+/);
-    aboutHeading.innerHTML = words.map(w => `<span class="word">${w}&nbsp;</span>`).join('');
+    aboutHeading.innerHTML = words
+        .map((w) => `<span class="word">${w}&nbsp;</span>`)
+        .join("");
 
     // Set initial state
-    gsap.set('#about #ableft h1 .word', { 
-        opacity: 0, 
-        y: 20
+    gsap.set("#about #ableft h1 .word", {
+        opacity: 0,
+        y: 20,
     });
 
     // Animate on scroll
     ScrollTrigger.create({
-        trigger: '#about',
-        start: 'top 75%',
+        trigger: "#about",
+        start: "top 75%",
         onEnter: () => {
-            gsap.to('#about #ableft h1 .word', {
+            gsap.to("#about #ableft h1 .word", {
                 opacity: 1,
                 y: 0,
                 duration: 0.5,
-                ease: 'power2.out',
+                ease: "power2.out",
                 stagger: 0.05,
             });
         },

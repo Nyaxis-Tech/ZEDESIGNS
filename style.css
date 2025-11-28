@@ -1012,7 +1012,7 @@ html {
         display: none;
     }
 
-    #main #services .servcardslist {
+    #main #services .servcardslist #servcardstrip {
         flex-direction: column;
         width: 100%;
         gap: 2rem;
