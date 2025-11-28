@@ -1,26 +1,16 @@
-const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    infinite: false,
-});
+// const lenis = new Lenis({
+//     duration: 1.2,
+//     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+//     infinite: false,
+// });
 
-function raf(time) {
-    lenis.raf(time);
-    ScrollTrigger.update();
-    requestAnimationFrame(raf);
-}
+// function raf(time) {
+//     lenis.raf(time);
+//     ScrollTrigger.update();
+//     requestAnimationFrame(raf);
+// }
 
-requestAnimationFrame(raf);
-
-// Navbar scroll effect
-const nav = document.getElementById("nav");
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        nav.classList.add("scrolled");
-    } else {
-        nav.classList.remove("scrolled");
-    }
-});
+// requestAnimationFrame(raf);
 
 // Loading Animation
 (() => {
@@ -351,48 +341,6 @@ tl.to(
     });
 })();
 
-// Reveal animation for sections with .reveal class
-(() => {
-    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
-
-    gsap.utils.toArray(".reveal").forEach((el) => {
-        ScrollTrigger.create({
-            trigger: el,
-            start: "top 90%",
-            onEnter: () => {
-                gsap.to(el, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: "power2.out",
-                });
-                
-                // Animate tag reveal in testimonials section
-                const tag = el.querySelector('.tag');
-                if (tag) {
-                    gsap.fromTo(
-                        tag,
-                        {
-                            paddingLeft: "0.9rem",
-                            paddingRight: "0.9rem",
-                        },
-                        {
-                            paddingLeft: "2rem",
-                            paddingRight: "2rem",
-                            duration: 0.6,
-                            ease: "power2.out",
-                            delay: 0.3,
-                            onComplete: () => {
-                                tag.classList.add("revealed");
-                            }
-                        }
-                    );
-                }
-            },
-            once: true,
-        });
-    });
-})();
 
 // About heading word-by-word animation
 (() => {
@@ -421,36 +369,6 @@ tl.to(
                 ease: 'power2.out',
                 stagger: 0.05,
             });
-        },
-        once: true,
-    });
-})();
-
-// Footer tag reveal animation
-(() => {
-    const footerTag = document.querySelector('#footer .tag');
-    if (!footerTag || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-
-    ScrollTrigger.create({
-        trigger: '#footer',
-        start: 'top 85%',
-        onEnter: () => {
-            gsap.fromTo(
-                footerTag,
-                {
-                    paddingLeft: "0.9rem",
-                    paddingRight: "0.9rem",
-                },
-                {
-                    paddingLeft: "2rem",
-                    paddingRight: "2rem",
-                    duration: 0.6,
-                    ease: "power2.out",
-                    onComplete: () => {
-                        footerTag.classList.add("revealed");
-                    }
-                }
-            );
         },
         once: true,
     });

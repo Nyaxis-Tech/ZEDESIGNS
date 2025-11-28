@@ -4,8 +4,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "TheYearOfHandicrafts", sans-serif;
-    transition: all 0.3s ease;
+    /* font-family: "TheYearOfHandicrafts", sans-serif; */
+    /* transition: all 0.3s ease; */
 }
 
 *::selection {
@@ -646,14 +646,14 @@ html {
     position: absolute;
     clip-path: circle(10% at 100% 0%);
     transition: all 1s ease;
-    mask-image: url('./assets/images/logo.svg');
-    -webkit-mask-image: url('./assets/images/logo.svg');
-    mask-size: 80%;
+    /* mask-image: url('./assets/images/logo.svg'); */
+    /* -webkit-mask-image: url('./assets/images/logo.svg'); */
+    /* mask-size: 80%;
     -webkit-mask-size: 80%;
     mask-position: center;
     -webkit-mask-position: center;
     mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat; */
 }
 
 #main #testimonials #testcardstrip .testcard:hover::after {
