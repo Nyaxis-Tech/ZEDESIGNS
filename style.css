@@ -41,29 +41,34 @@ html {
 
 .loader-svg {
     position: absolute;
-    /* top: 50%; */
     /* left: 50%; */
+    /* top: 50%; */
     /* transform: translate(-50%, -50%); */
 }
 
 .loader-svg path {
-    stroke: #ECCF9C;
+    stroke: #eccf9c;
     stroke-width: 3;
     fill: transparent;
     filter: drop-shadow(0 0 8px rgba(236, 207, 156, 0.4));
 }
 
+/* Loader SVG layering */
+.loader-svg-1 { z-index: 3; }
+.loader-svg-2 { z-index: 2; }
+.loader-svg-3 { z-index: 3; }
+
 /* Hero Decorative SVGs */
 .hero-deco-svg {
     position: absolute;
-    opacity: 0.1;
+    opacity: 0.2;
     display: none;
     pointer-events: none;
     z-index: 1;
 }
 
 .hero-deco-svg path {
-    fill: #ECCF9C;
+    fill: #eccf9c;
 }
 
 .hero-deco-svg-1 {
@@ -78,6 +83,18 @@ html {
     right: 5%;
     width: 500px;
     /* height: auto; */
+}
+
+/* Reveal animation helper */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* About heading word animation */
+#about #ableft h1 .word {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 #main {
@@ -154,11 +171,11 @@ html {
 
 #hero #herovid {
     width: 65%;
-    height: 70vh;
+    height: 85vh;
     /* background-color: red; */
     margin: 0 auto;
     position: relative;
-    z-index: 5
+    z-index: 5;
 }
 
 #hero #herovid video {
@@ -203,6 +220,12 @@ html {
     justify-content: center;
     align-items: center;
     /* background-color: blue; */
+}
+
+/* About heading split-word styling */
+#about #ableft h1 .word {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 #main #about #ableft > h1 {
@@ -279,7 +302,7 @@ html {
 }
 
 #main #services > h1 {
-    margin-top:3rem;
+    margin-top: 3rem;
     padding: 0 5vw;
     font-size: 3rem;
     font-family: "didot-bold", sans-serif;
@@ -436,27 +459,34 @@ html {
     background-color: var(--primary-black-color);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    /* align-items: center; */
+    gap: 1.5rem;
     padding: 5vw 0vw 0 0;
 }
 
-#main #featured >h1{
+#main #featured > h1 {
     font-size: 3rem;
     font-family: "didot-bold", sans-serif;
     line-height: 1;
     font-weight: 500;
     width: 40%;
-    text-align: center;
+    padding: 0 5vw;
 }
-#main #featured #projects{
+#main #featured > p {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    width: 60%;
+    line-height: 1.5;
+    padding: 0 5vw;
+}
+#main #featured #projects {
     width: 100%;
     display: flex;
     flex-direction: column;
     /* gap: 2rem; */
 }
 
-#main #featured #projects .projectcard{
+#main #featured #projects .projectcard {
     position: sticky;
     top: 0;
     width: 100%;
@@ -466,7 +496,7 @@ html {
     justify-content: flex-end;
     gap: 0.5rem;
 }
-#main #featured #projects .projectcard img{
+#main #featured #projects .projectcard img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -475,21 +505,21 @@ html {
     z-index: 1;
 }
 
-#main #featured #projects .projectcard *:not(img){
+#main #featured #projects .projectcard *:not(img) {
     position: relative;
     z-index: 2;
 }
 
-#main #featured #projects .projectcard h1{
+#main #featured #projects .projectcard h1 {
     font-size: 3rem;
     font-family: "didot-bold", sans-serif;
     text-transform: uppercase;
     line-height: 1;
     font-weight: 500;
-    margin-left: 4rem;    
+    margin-left: 4rem;
 }
 
-#main #featured #projects .projectcard .prtags{
+#main #featured #projects .projectcard .prtags {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
@@ -498,7 +528,7 @@ html {
     margin-left: 4rem;
 }
 
-#main #featured #projects .projectcard .prtags .prtag{
+#main #featured #projects .projectcard .prtags .prtag {
     padding: 0.5rem 2rem;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -550,7 +580,7 @@ html {
     text-align: center;
 }
 
-#main #testimonials #testtop> p {
+#main #testimonials #testtop > p {
     font-size: 1.1rem;
     opacity: 0.7;
     width: 40%;
@@ -624,8 +654,7 @@ html {
     line-height: 1.5;
 }
 
-
-#main #clients{
+#main #clients {
     width: 100%;
     height: 30vh;
     display: flex;
@@ -635,33 +664,32 @@ html {
     gap: 1.5rem;
     overflow-x: hidden;
 }
-#main #clients #clientstop{
+#main #clients #clientstop {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#main #clients p{
+#main #clients p {
     font-size: 1.1rem;
     opacity: 0.7;
     width: 40%;
     text-align: center;
-    line-height: 1.5;   
+    line-height: 1.5;
 }
-#main #clients #clientsbtm{
+#main #clients #clientsbtm {
     max-width: 70vw;
     overflow: hidden;
     display: flex;
     /* gap: 2rem; */
 }
 
-#main #clients #clientwrapper{
+#main #clients #clientwrapper {
     width: max-content;
     display: flex;
     gap: 2rem;
     animation: ClientsMoveToRight 30s linear infinite;
 }
-
 
 @keyframes ClientsMoveToRight {
     from {
@@ -707,6 +735,79 @@ html {
         width: 300px !important;
         bottom: 3% !important;
         right: 3% !important;
+    }
+
+    /* About Section */
+    #main #about {
+        padding: 5vw 3vw;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    #main #about #ableft > h1 {
+        font-size: 2.5rem;
+    }
+
+    #main #about #ableft p {
+        font-size: 1rem;
+    }
+
+    #main #about #ableft #abstat .abstatelem > h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Services Section */
+    #main #services > h1 {
+        font-size: 2.5rem;
+        width: 50%;
+    }
+
+    #main #services .servpara > p {
+        font-size: 1rem;
+        width: 50%;
+    }
+
+    #main #services .servcardslist .servcard {
+        width: 400px;
+        height: 450px;
+    }
+
+    /* Featured Projects */
+    #main #featured > h1 {
+        font-size: 2.5rem;
+        width: 50%;
+    }
+    #main #featured > p {
+        font-size: 1rem;
+        width: 50%;
+    }
+
+    #main #featured #projects .projectcard h1 {
+        font-size: 2.5rem;
+        margin-left: 3rem;
+    }
+
+    #main #featured #projects .projectcard .prtags {
+        width: 40%;
+        margin-left: 3rem;
+        margin-bottom: 4rem;
+    }
+
+    /* Testimonials */
+    #main #testimonials #testtop > h1 {
+        font-size: 2.5rem;
+        width: 50%;
+    }
+
+    #main #testimonials #testtop > p {
+        font-size: 1rem;
+        width: 50%;
+    }
+
+    /* Clients */
+    #main #clients p {
+        font-size: 1rem;
+        width: 50%;
     }
 }
 
@@ -761,11 +862,203 @@ html {
         margin: 1rem 0;
     }
 
-
     #hero #herovid {
         width: 90%;
         height: 50vh;
+        margin-bottom: 3rem;
+    }
+
+    /* About Section */
+    #main #about {
+        flex-direction: column-reverse;
+        height: auto;
+        min-height: 100vh;
+        padding: 5vw 5vw;
+        gap: 3rem;
+    }
+
+    #main #about #ableft {
+        width: 100%;
+        order: 2;
+    }
+
+    #main #about #abright {
+        width: 100%;
+        height: auto;
+        order: 1;
+    }
+
+    #main #about #abright img {
+        width: 100%;
+    }
+
+    #main #about #ableft > h1 {
+        font-size: 2rem;
+    }
+
+    #main #about #ableft p {
+        font-size: 0.95rem;
+    }
+
+    #main #about #ableft #abstat {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
         margin-top: 2rem;
+    }
+
+    #main #about #ableft #abstat .abstatelem > h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Services Section */
+    #main #services {
+        min-height: auto;
+        padding: 5vw 0vw;
+    }
+
+    #main #services > h1 {
+        font-size: 2rem;
+        width: 90%;
+        padding: 0 5vw;
+    }
+
+    #main #services .servpara {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    #main #services .servpara > p {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    #main #services .servpara .servbtn {
+        display: none;
+    }
+
+    #main #services .servcardslist {
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+        padding: 0 5vw;
+    }
+
+    #main #services .servcardslist .servcard {
+        width: 100%;
+        height: 400px;
+    }
+
+    /* Featured Projects */
+    #main #featured {
+        padding: 10vw 0vw 0 0;
+    }
+
+    #main #featured > h1 {
+        font-size: 2rem;
+        width: 90%;
+    }
+
+    #main #featured > p {
+        font-size: 0.95rem;
+        width: 90%;
+    }
+    #main #featured #projects .projectcard {
+        height: 70vh;
+    }
+
+    #main #featured #projects .projectcard h1 {
+        font-size: 2rem;
+        margin-left: 2rem;
+    }
+
+    #main #featured #projects .projectcard .prtags {
+        width: 80%;
+        margin-left: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    #main #featured #projects .projectcard .prtags .prtag {
+        padding: 0.4rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    /* Testimonials */
+    #main #testimonials {
+        height: auto;
+        min-height: 80vh;
+        /* padding: 5vw 0vw; */
+    }
+
+    #main #testimonials #testtop > h1 {
+        font-size: 2rem;
+        width: 90%;
+    }
+
+    #main #testimonials #testtop > p {
+        font-size: 0.95rem;
+        width: 90%;
+    }
+
+    #main #testimonials #testcardstrip .testcard {
+        width: 20rem;
+    }
+
+    /* Clients */
+    #main #clients {
+        height: auto;
+        min-height: 25vh;
+        /* padding: 3rem 0; */
+    }
+
+    #main #clients p {
+        font-size: 0.95rem;
+        width: 90%;
+    }
+
+    #main #clients #clientsbtm {
+        max-width: 90vw;
+    }
+
+    #main #clients #clientwrapper .logo {
+        width: 150px;
+        height: 60px;
+    }
+}
+
+/* Loader responsive */
+/* @media screen and (min-width: 1025px) {
+    .loader-svg {
+        width: 380px;
+        height: auto;
+    }
+} */
+
+@media screen and (max-width: 1024px) {
+    .loader-svg {
+        width: 320px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .loader-svg {
+        width: 280px;
+        height: auto;
+    }
+    .loader-svg path {
+        stroke-width: 2.5;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .loader-svg {
+        width: 240px;
+        height: auto;
+    }
+    .loader-svg path {
+        stroke-width: 2;
     }
 }
 
@@ -782,5 +1075,66 @@ html {
     #hero #herovid {
         width: 95%;
         height: 40vh;
+    }
+
+    /* About Section */
+    #main #about #ableft > h1 {
+        font-size: 1.8rem;
+    }
+
+    #main #about #ableft p {
+        font-size: 0.9rem;
+    }
+
+    #main #about #ableft #abstat .abstatelem > h1 {
+        font-size: 2rem;
+    }
+
+    /* Services Section */
+    #main #services > h1 {
+        font-size: 1.8rem;
+    }
+
+    #main #services .servcardslist .servcard {
+        height: 350px;
+    }
+
+    /* Featured Projects */
+    #main #featured > h1 {
+        font-size: 1.8rem;
+    }
+    #main #featured > p {
+        font-size: 0.9rem;
+    }
+
+    #main #featured #projects .projectcard h1 {
+        font-size: 1.5rem;
+        margin-left: 1.5rem;
+    }
+
+    #main #featured #projects .projectcard .prtags {
+        margin-left: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    #main #featured #projects .projectcard .prtags .prtag {
+        padding: 0.3rem 1.2rem;
+        font-size: 0.7rem;
+    }
+
+    /* Testimonials */
+    #main #testimonials #testtop > h1 {
+        font-size: 1.8rem;
+    }
+
+    #main #testimonials #testcardstrip .testcard {
+        width: 18rem;
+        padding: 1.5rem 1.2rem;
+    }
+
+    /* Clients */
+    #main #clients #clientwrapper .logo {
+        width: 130px;
+        height: 55px;
     }
 }

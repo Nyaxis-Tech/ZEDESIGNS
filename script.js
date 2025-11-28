@@ -1,6 +1,7 @@
 const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    infinite: false,
 });
 
 function raf(time) {
@@ -20,7 +21,6 @@ window.addEventListener("scroll", () => {
         nav.classList.remove("scrolled");
     }
 });
-
 
 // Loading Animation
 (() => {
@@ -66,10 +66,10 @@ window.addEventListener("scroll", () => {
         onComplete: () => {
             // Fade out loader
             gsap.to([heroDecoSvg1, heroDecoSvg3], {
-                opacity: 0.1,
+                opacity: 0.2,
                 display: "block",
                 duration: 0.8,
-                ease: "power2.easeInOut",
+                ease: Power2.easeInOut,
                 delay: 0.3,
             });
 
@@ -131,17 +131,17 @@ window.addEventListener("scroll", () => {
                 left: "5%",
                 top: "5%",
                 duration: 0.8,
-                ease: "power2.easeInOut",
-                opacity: 0.3,
+                ease: Power1.easeOut,
+                opacity: 0.2,
             },
-            "+=0.3"
+            "<"
         )
         .to(
             svg2,
             {
                 opacity: 0,
                 duration: 0.8,
-                ease: "power1.easeInOut",
+                ease: Power1.easeOut,
             },
             "<"
         )
@@ -151,8 +151,8 @@ window.addEventListener("scroll", () => {
                 right: "5%",
                 bottom: "5%",
                 duration: 0.8,
-                ease: "power2.easeInOut",
-                opacity: 0.3,
+                ease: Power1.easeOut,
+                opacity: 0.2,
             },
             "<"
         );
@@ -161,20 +161,54 @@ window.addEventListener("scroll", () => {
 // Hero section initial animation
 function heroSectionAnimation() {
     let herotl = gsap.timeline({
-        delay: 2.5,
+        delay: 1.5,
     });
-    
-    herotl.fromTo("#nav", {
-        y: "-100",
+
+    herotl.fromTo(
+        "#nav",
+        {
+            y: "-100",
+            opacity: 0,
+        },
+        {
+            y: "0",
+            opacity: 1,
+            duration: 1,
+            ease: "power1.out",
+            // delay: 4
+        }
+    );
+    herotl.fromTo("#herotext h1",{
+        y: 30,
         opacity: 0,
     },{
-        y: "0",
+        y: 0,
         opacity: 1,
-        duration: 1,
-        ease: "Power1.easeInOut",
-        // delay: 4
-    });
-    
+        duration: 0.5,
+        ease: "power1.out",
+        stagger: 0.2,
+    },"-=0.5");
+    herotl.fromTo("#herotext > p",{
+        y: 15,
+        opacity: 0,
+    },{
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "power1.out",
+    },"-=0.5");
+    herotl.fromTo("#herotext .btnelem",
+    {
+        y: 15,
+        opacity: 0,
+    },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "power1.out",
+    },"-=0.3");
+
 }
 
 heroSectionAnimation();
@@ -194,51 +228,71 @@ let tl = gsap.timeline({
     },
 });
 
-tl.to(
-    ".h1one",
-    {
-        x: -50,
-        // duration: 1,
-        ease: Power1.easeInOut,
-    },
-    "<"
-);
-tl.to(
-    ".h1two",
-    {
-        x: 50,
-        // duration: 1,
-        ease: Power1.easeInOut,
-    },
-    "<"
-);
+// Only apply horizontal text movement on desktop
+if (window.innerWidth > 768) {
+    tl.to(
+        ".h1one",
+        {
+            x: -50,
+            ease: Power1.easeInOut,
+        },
+        "<"
+    );
+    tl.to(
+        ".h1two",
+        {
+            x: 50,
+            ease: Power1.easeInOut,
+        },
+        "<"
+    );
+}
+
 tl.to(
     "#herovid",
     {
-        width: "90%",
+        width: window.innerWidth > 768 ? "90%" : "95%",
         ease: Power1.easeInOut,
     },
     "<"
 );
 
 // Services horizontal scroll animation
-let tl2 = gsap.timeline({
-    scrollTrigger: {
-        trigger: "#services",
-        start: "50 top",
-        end: "+=0%",
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-        // markers: true
-    },
-});
+(() => {
+    // Only enable horizontal scroll on desktop (>768px)
+    if (window.innerWidth > 768) {
+        let tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#services",
+                start: "50 top",
+                end: "+=70%",
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1,
+                // markers: true,
+            },
+            onComplete: () => {
+                gsap.set("#main", { backgroundColor: "var(--green-color)" });
+            },
+        });
 
-tl2.to(".servcardslist", {
-    x: -650,
-    ease: "none",
-});
-
+        tl2.to(
+            "#main",
+            {
+                backgroundColor: "black",
+            },
+            "<"
+        ),
+            tl2.to(
+                ".servcardslist",
+                {
+                    x: -650,
+                    ease: "Power1.easeInOut",
+                },
+                "<"
+            );
+    }
+})();
 
 // About-section counters: animate numbers when #about enters view
 (() => {
@@ -274,5 +328,58 @@ tl2.to(".servcardslist", {
                 });
             });
         },
+    });
+})();
+
+// Reveal animation for sections with .reveal class
+(() => {
+    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+
+    gsap.utils.toArray(".reveal").forEach((el) => {
+        ScrollTrigger.create({
+            trigger: el,
+            start: "top 90%",
+            onEnter: () => {
+                gsap.to(el, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                });
+            },
+            once: true,
+        });
+    });
+})();
+
+// About heading word-by-word animation
+(() => {
+    const aboutHeading = document.querySelector('#about #ableft h1');
+    if (!aboutHeading || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    // Split text into words
+    const words = aboutHeading.textContent.trim().split(/\s+/);
+    aboutHeading.innerHTML = words.map(w => `<span class="word">${w}&nbsp;</span>`).join('');
+
+    // Set initial state
+    gsap.set('#about #ableft h1 .word', { 
+        opacity: 0, 
+        y: 20
+    });
+
+    // Animate on scroll
+    ScrollTrigger.create({
+        trigger: '#about',
+        start: 'top 75%',
+        onEnter: () => {
+            gsap.to('#about #ableft h1 .word', {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: 'power2.out',
+                stagger: 0.05,
+            });
+        },
+        once: true,
     });
 })();
