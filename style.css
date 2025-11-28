@@ -41,6 +41,9 @@ html {
 
 .loader-svg {
     position: absolute;
+    width: 512px;
+    max-width: 100%;
+    height: auto;
     /* left: 50%; */
     /* top: 50%; */
     /* transform: translate(-50%, -50%); */
@@ -72,15 +75,15 @@ html {
 }
 
 .hero-deco-svg-1 {
-    top: 5%;
-    left: 5%;
+    top: 10%;
+    left: 10%;
     width: 500px;
     /* height: auto; */
 }
 
 .hero-deco-svg-3 {
-    bottom: 5%;
-    right: 5%;
+    bottom: 17%;
+    right: 10%;
     width: 500px;
     /* height: auto; */
 }
@@ -91,11 +94,6 @@ html {
     transform: translateY(30px);
 }
 
-/* About heading word animation */
-#about #ableft h1 .word {
-    display: inline-block;
-    white-space: nowrap;
-}
 
 #main {
     width: 100%;
@@ -197,13 +195,20 @@ html {
 #main #about #ableft {
     width: 55%;
 }
+
+/* About heading word animation */
+#about #ableft h1 .word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 #main #about #abright {
     width: 45%;
     height: 80%;
 }
 
 #main #about #abright img {
-    width: 90%;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -266,7 +271,7 @@ html {
 
 #main #about #ableft #abstat .abstatelem > h1 {
     font-size: 3rem;
-    /* font-family: "didot-bold", sans-serif; */
+    font-family: "didot-bold", sans-serif;
     font-weight: 400;
     line-height: 1;
     color: var(--secondary-golden-color);
@@ -616,13 +621,50 @@ html {
     width: 25rem;
     /* height: 15rem; */
     padding: 2rem 1.5rem;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(16, 15, 16, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s ease;
 }
+
+#main #testimonials #testcardstrip .testcard::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(16, 15, 16, 0.6);
+    /* background-color: var(--primary-black-color); */
+    position: absolute;
+    clip-path: circle(10% at 100% 0%);
+    transition: all 1s ease;
+    mask-image: url('./assets/images/logo.svg');
+    -webkit-mask-image: url('./assets/images/logo.svg');
+    mask-size: 80%;
+    -webkit-mask-size: 80%;
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+}
+
+#main #testimonials #testcardstrip .testcard:hover::after {
+    clip-path: circle(100% at 50% 50%);
+}
+
+#main #testimonials #testcardstrip:hover{
+    animation-play-state: paused;
+}
+
+
 
 #main #testimonials #testcardstrip .testcard .stars {
     display: flex;
@@ -703,13 +745,39 @@ html {
 #main #clients #clientwrapper .logo {
     width: 180px;
     height: 70px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(16, 15, 16, 0.3);
     padding: 0.5rem 1rem;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
+
+
+#main #clients #clientwrapper .logo::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(16, 15, 16, 0.6);
+    /* background-color: var(--primary-black-color); */
+    position: absolute;
+    clip-path: circle(10% at 100% 0%);
+    transition: all 0.5s ease;    
+}
+
+#main #clients #clientwrapper .logo:hover::after {
+    clip-path: circle(100% at 50% 50%);
+}
+
+#main #clients #clientwrapper:hover{
+    animation-play-state: paused;
+}
+
 
 #main #clients #clientwrapper .logo img {
     width: 75%;
@@ -1036,15 +1104,23 @@ html {
 } */
 
 @media screen and (max-width: 1024px) {
+    #loader {
+        padding: 2rem;
+    }
+    
     .loader-svg {
-        width: 320px;
+        max-width: 280px;
         height: auto;
     }
 }
 
 @media screen and (max-width: 768px) {
+    #loader {
+        padding: 1.5rem;
+    }
+    
     .loader-svg {
-        width: 280px;
+        max-width: 200px;
         height: auto;
     }
     .loader-svg path {
@@ -1053,8 +1129,12 @@ html {
 }
 
 @media screen and (max-width: 480px) {
+    #loader {
+        padding: 1rem;
+    }
+    
     .loader-svg {
-        width: 240px;
+        max-width: 150px;
         height: auto;
     }
     .loader-svg path {

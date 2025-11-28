@@ -76,7 +76,7 @@ window.addEventListener("scroll", () => {
             loader.classList.add("fade-out");
             setTimeout(() => {
                 loader.style.display = "none";
-            }, 2000);
+            }, 1000);
         },
     });
 
@@ -128,10 +128,10 @@ window.addEventListener("scroll", () => {
         .to(
             svg1,
             {
-                left: "5%",
-                top: "5%",
+                left: "10%",
+                top: "10%",
                 duration: 0.8,
-                ease: Power1.easeOut,
+                ease: "Power1.easeOut",
                 opacity: 0.2,
             },
             "<"
@@ -141,17 +141,17 @@ window.addEventListener("scroll", () => {
             {
                 opacity: 0,
                 duration: 0.8,
-                ease: Power1.easeOut,
+                ease: "Power1.easeOut",
             },
             "<"
         )
         .to(
             svg3,
             {
-                right: "5%",
-                bottom: "5%",
+                right: "10%",
+                bottom: "17%",
                 duration: 0.8,
-                ease: Power1.easeOut,
+                ease: "Power1.easeOut",
                 opacity: 0.2,
             },
             "<"
@@ -178,6 +178,26 @@ function heroSectionAnimation() {
             // delay: 4
         }
     );
+    
+    // Animate hero tag reveal
+    herotl.fromTo(
+        "#herotext .tag",
+        {
+            paddingLeft: "0.9rem",
+            paddingRight: "0.9rem",
+        },
+        {
+            paddingLeft: "2rem",
+            paddingRight: "2rem",
+            duration: 0.6,
+            ease: "power2.out",
+            onComplete: () => {
+                document.querySelector("#herotext .tag").classList.add("revealed");
+            }
+        },
+        "-=0.3"
+    );
+    
     herotl.fromTo("#herotext h1",{
         y: 30,
         opacity: 0,
@@ -222,7 +242,7 @@ let tl = gsap.timeline({
     scrollTrigger: {
         trigger: "#hero",
         start: "top top",
-        end: "30% top",
+        end: "20% top",
         scrub: true,
         // markers: true,
     },
@@ -265,11 +285,11 @@ tl.to(
             scrollTrigger: {
                 trigger: "#services",
                 start: "50 top",
-                end: "+=70%",
+                // end: "+=70%",
                 scrub: 1,
                 pin: true,
                 anticipatePin: 1,
-                // markers: true,
+                markers: true,
             },
             onComplete: () => {
                 gsap.set("#main", { backgroundColor: "var(--green-color)" });
@@ -346,6 +366,28 @@ tl.to(
                     duration: 1,
                     ease: "power2.out",
                 });
+                
+                // Animate tag reveal in testimonials section
+                const tag = el.querySelector('.tag');
+                if (tag) {
+                    gsap.fromTo(
+                        tag,
+                        {
+                            paddingLeft: "0.9rem",
+                            paddingRight: "0.9rem",
+                        },
+                        {
+                            paddingLeft: "2rem",
+                            paddingRight: "2rem",
+                            duration: 0.6,
+                            ease: "power2.out",
+                            delay: 0.3,
+                            onComplete: () => {
+                                tag.classList.add("revealed");
+                            }
+                        }
+                    );
+                }
             },
             once: true,
         });
@@ -379,6 +421,36 @@ tl.to(
                 ease: 'power2.out',
                 stagger: 0.05,
             });
+        },
+        once: true,
+    });
+})();
+
+// Footer tag reveal animation
+(() => {
+    const footerTag = document.querySelector('#footer .tag');
+    if (!footerTag || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    ScrollTrigger.create({
+        trigger: '#footer',
+        start: 'top 85%',
+        onEnter: () => {
+            gsap.fromTo(
+                footerTag,
+                {
+                    paddingLeft: "0.9rem",
+                    paddingRight: "0.9rem",
+                },
+                {
+                    paddingLeft: "2rem",
+                    paddingRight: "2rem",
+                    duration: 0.6,
+                    ease: "power2.out",
+                    onComplete: () => {
+                        footerTag.classList.add("revealed");
+                    }
+                }
+            );
         },
         once: true,
     });
