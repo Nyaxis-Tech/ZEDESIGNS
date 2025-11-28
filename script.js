@@ -1,16 +1,16 @@
-// const lenis = new Lenis({
-//     duration: 1.2,
-//     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-//     infinite: false,
-// });
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    infinite: false,
+});
 
-// function raf(time) {
-//     lenis.raf(time);
-//     ScrollTrigger.update();
-//     requestAnimationFrame(raf);
-// }
+function raf(time) {
+    lenis.raf(time);
+    ScrollTrigger.update();
+    requestAnimationFrame(raf);
+}
 
-// requestAnimationFrame(raf);
+requestAnimationFrame(raf);
 
 // Loading Animation
 (() => {
@@ -267,42 +267,24 @@ tl.to(
     "<"
 );
 
-// Services horizontal scroll animation
-(() => {
-    // Only enable horizontal scroll on desktop (>768px)
-    if (window.innerWidth > 768) {
-        let tl2 = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#services",
-                start: "50 top",
-                // end: "+=70%",
-                scrub: 1,
-                pin: true,
-                anticipatePin: 1,
-                // markers: true,
-            },
-            onComplete: () => {
-                gsap.set("#main", { backgroundColor: "var(--green-color)" });
-            },
-        });
+function serviceHorizontalScroll() {
+    let serviceStrip = document.querySelector("#servcardstrip");
 
-        tl2.to(
-            "#main",
-            {
-                backgroundColor: "black",
-            },
-            "<"
-        ),
-            tl2.to(
-                ".servcardslist",
-                {
-                    x: -650,
-                    ease: "Power1.easeInOut",
-                },
-                "<"
-            );
-    }
-})();
+    gsap.to("#servcardstrip",{
+        x: () => -(serviceStrip.scrollWidth - window.innerWidth),
+        scrollTrigger: {
+            trigger: "#servcardstrip",
+            start: "center center",
+            end: () => `+=#${serviceStrip.scrollWidth}`,
+            pin: "#services",
+            // markers: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+
+        }
+    })
+}
+serviceHorizontalScroll();
 
 // About-section counters: animate numbers when #about enters view
 (() => {

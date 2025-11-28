@@ -371,13 +371,19 @@ html {
     transform: rotate(45deg);
 }
 
-#main #services .servcardslist {
+#main #services .servcardslist{
     display: flex;
-    width: fit-content;
-    margin-top: 2rem;
+    /* padding-left: 40vw; */
+    /* padding-right: 5vw; */
+}
+
+#main #services .servcardslist #servcardstrip {
+    margin: 1rem 0;
+    display: flex;
     gap: 3rem;
-    padding: 0vw 5vw;
-    /* transform: translateX(-550px); */
+    /* background-color: red; */
+    padding-left: 40vw;
+    padding-right: 5vw;
 }
 
 #main #services .servcardslist .servcard {
