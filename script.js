@@ -289,7 +289,7 @@ tl.to(
                 scrub: 1,
                 pin: true,
                 anticipatePin: 1,
-                markers: true,
+                // markers: true,
             },
             onComplete: () => {
                 gsap.set("#main", { backgroundColor: "var(--green-color)" });
