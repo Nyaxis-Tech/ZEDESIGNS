@@ -158,7 +158,7 @@ html {
     font-family: "didot-bold", sans-serif;
     /* width: 60%; */
     font-weight: 600;
-    letter-spacing: 0.1rem;
+    /* letter-spacing: 0.1rem; */
     line-height: 1.2;
     /* gap:0; */
 }
@@ -207,6 +207,7 @@ html {
 #about #ableft h1 .word {
     display: inline-block;
     white-space: nowrap;
+    font-family: 'didot-medium';
 }
 
 #main #about #abright {
@@ -436,19 +437,18 @@ html {
 }
 
 #main #services .servcardslist .servcard:hover button {
-    background-color: var(--secondary-golden-color);
+    background-color: var(--green-color);
     transition: all 0.3s ease;
 }
 #main #services .servcardslist .servcard:hover button img {
     transform: rotate(45deg);
-    filter: invert(0);
 }
 .servcard h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    color: var(--secondary-golden-color);
     font-family: "didot-bold", sans-serif;
     line-height: 1;
     font-weight: 500;
-    color: var(--secondary-golden-color);
 }
 
 .servcard p {
@@ -721,14 +721,16 @@ html {
 
 #main #clients {
     width: 100%;
-    height: 30vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     gap: 1.5rem;
     overflow-x: hidden;
+    padding: 3.5rem 0;
 }
+
 #main #clients #clientstop {
     width: 100%;
     display: flex;
@@ -766,16 +768,17 @@ html {
 }
 
 #main #clients #clientwrapper .logo {
-    width: 180px;
-    height: 70px;
-    background-color: rgba(16, 15, 16, 0.3);
-    padding: 0.5rem 1rem;
+    width: 230px;
+    height: 110px;
+    background-color: rgba(239, 239, 239, 0.9);
+    padding: 1.5rem;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+
 }
 
 
@@ -786,7 +789,7 @@ html {
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: rgba(16, 15, 16, 0.6);
+    background-color: rgba(239, 239, 239, 0.6);
     /* background-color: var(--primary-black-color); */
     position: absolute;
     clip-path: circle(10% at 100% 0%);
@@ -803,7 +806,7 @@ html {
 
 
 #main #clients #clientwrapper .logo img {
-    width: 75%;
+    width: 95%;
     /* height: 80%; */
     object-fit: cover;
     /* filter: invert(1); */

@@ -194,7 +194,7 @@
     font-weight: 600;
     color: white;
     text-decoration: none;
-    letter-spacing: 0.05rem;
+    /* letter-spacing: 0.05rem; */
     position: relative;
     overflow: hidden;
     transition: color 0.3s ease;
@@ -258,7 +258,7 @@
     background-color: var(--secondary-golden-color);
     color: black;
     font-weight: 500;
-    letter-spacing: 0.01rem;
+    /* letter-spacing: 0.01rem; */
     font-size: 1rem;
     /* border-radius: 15px; */
     border-top-right-radius: 15px;
@@ -326,7 +326,7 @@
     border-radius: 100px;
     gap: 1.5rem;
     font-size: 1rem;
-    letter-spacing: -0.01rem;
+    /* letter-spacing: -0.01rem; */
     font-family: "didot-medium";
     font-weight: 500;
     margin-bottom: 1.5rem;
@@ -433,7 +433,7 @@
     width: 40%;
     text-transform: capitalize;
     font-weight: 600;
-    letter-spacing: 0.1rem;
+    /* letter-spacing: 0.1rem; */
     line-height: 1;
 }
 
@@ -461,10 +461,6 @@
     background-color: var(--primary-black-color) !important;
     color: var(--secondary-golden-color) !important;
     border: 1px solid var(--primary-black-color) !important;
-}
-
-.btnelem.transparentbtn button img {
-    filter: invert(1);
 }
 
 #footer #fbtm {
@@ -561,13 +557,6 @@
     gap: 2rem;
 }
 
-#footer #fbtm #btmright #socials .btnelem button:nth-child(1) {
-    min-width: 150px;  
-}
-
-#footer #fbtm #btmright #socials .btnelem:hover button:nth-child(2) img{
-    transform: rotate(0deg);
-}
 
 #footer #fbtm #btmright #socials a {
     text-decoration: none;

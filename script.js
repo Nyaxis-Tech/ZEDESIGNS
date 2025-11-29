@@ -10,6 +10,10 @@
 //     requestAnimationFrame(raf);
 // }
 // requestAnimationFrame(raf);
+// make sure whenever the page is reloaded, the scroll position is at the top
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
 
 // Loading Animation
 (() => {
