@@ -291,7 +291,7 @@ if (window.innerWidth > 768) {
                 start: "center 60%",
                 end: "center 30%",
                 pin: "#services",
-                markers: true,
+                // markers: true,
                 scrub: 1,
                 invalidateOnRefresh: true,
             },
