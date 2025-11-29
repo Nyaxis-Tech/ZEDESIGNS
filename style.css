@@ -89,7 +89,6 @@ html {
 }
 
 
-
 #main {
     width: 100%;
     background-color: var(--green-color);
@@ -220,10 +219,24 @@ html {
 }
 
 
-#main #about #abright img {
+#main #about #abright video {
     width: 100%;
-    transform: scale(1.3);
+    height: 100%;
     object-fit: cover;
+    mask-image: linear-gradient(to right, transparent 0%, var(--green-color) 60%, var(--green-color) 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, var(--green-color) 60%, var(--green-color) 120%);
+}
+
+@keyframes videoView {
+    from{
+        /* transform: scale(0.7); */
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        /* transform: scale(1); */
+    }
+    
 }
 
 #main #about #ableft {
@@ -1071,7 +1084,7 @@ html {
         width: 90%;
     }
     #main #featured #projects .projectcard {
-        height: 70vh;
+        height: 100vh;
     }
 
     #main #featured #projects .projectcard h1 {
