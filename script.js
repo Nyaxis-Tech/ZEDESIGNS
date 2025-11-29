@@ -292,12 +292,13 @@ if (window.innerWidth > 768) {
             scrollTrigger: {
                 trigger: "#servcardstrip",
                 start: "center 60%",
-                end: "center 30%",
+                end: "center 0%",
                 pin: "#services",
-                // markers: true,
-                scrub: 4,
+                markers: true,
+                scrub: 1,
                 invalidateOnRefresh: true,
-                ease: "Power1.out",
+                // ease: "Power1.out",
+
             },
             onComplete: () => {
                 gsap.set("#main", {
