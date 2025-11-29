@@ -285,18 +285,28 @@ if (window.innerWidth > 768) {
     function serviceHorizontalScroll() {
         let serviceStrip = document.querySelector("#servcardstrip");
 
-        gsap.to("#servcardstrip", {
-            x: () => -(serviceStrip.scrollWidth - window.innerWidth),
+        let hortl = gsap.timeline({
             scrollTrigger: {
                 trigger: "#servcardstrip",
-                start: "center center",
-                end: () => `+=#${serviceStrip.scrollWidth}`,
+                start: "center 60%",
+                end: "center 30%",
                 pin: "#services",
-                // markers: true,
+                markers: true,
                 scrub: 1,
                 invalidateOnRefresh: true,
             },
         });
+        hortl.to("#main",{
+            backgroundColor: "var(--primary-black-color)",
+        },"<");
+        hortl.to("#servcardstrip", {
+            x: () => -(serviceStrip.scrollWidth - window.innerWidth),
+            ease: "none",
+        },"<");
+        hortl.to("#main",{
+            backgroundColor: "var(--green-color)",
+            delay:0.2,
+        })
     }
     serviceHorizontalScroll();
 }

@@ -101,6 +101,17 @@ html {
     color: white;
 }
 
+
+#main #nav img {
+    opacity: 0;
+}
+
+
+#main #nav.scrolled img {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
 #main #hero {
     width: 100%;
     /* height: 100vh; */
@@ -190,10 +201,11 @@ html {
     padding: 0vw 5vw;
     align-items: center;
     justify-content: space-between;
+
 }
 
 #main #about #ableft {
-    width: 55%;
+    width: 53%;
 }
 
 /* About heading word animation */
@@ -205,10 +217,16 @@ html {
 #main #about #abright {
     width: 45%;
     height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
 }
+
 
 #main #about #abright img {
     width: 100%;
+    transform: scale(1.3);
     object-fit: cover;
 }
 
@@ -514,6 +532,8 @@ html {
     object-position: center;
     position: absolute;
     z-index: 1;
+    /* filter: blur(1px); */
+    filter: brightness(0.9);
 }
 
 #main #featured #projects .projectcard *:not(img) {
@@ -944,26 +964,29 @@ html {
 
     /* About Section */
     #main #about {
-        flex-direction: column-reverse;
+        flex-direction: column;
         height: auto;
         min-height: 100vh;
         padding: 5vw 5vw;
-        gap: 3rem;
+        gap: 1.5rem;
     }
 
     #main #about #ableft {
         width: 100%;
+        gap: 1rem;
         order: 2;
     }
 
     #main #about #abright {
         width: 100%;
-        height: auto;
+        height: calc(100vw * 0.6);
+        /* background-color: red; */
         order: 1;
     }
 
     #main #about #abright img {
         width: 100%;
+        /* transform: scale(1); */
     }
 
     #main #about #ableft > h1 {
@@ -977,8 +1000,8 @@ html {
     #main #about #ableft #abstat {
         flex-direction: column;
         align-items: flex-start;
-        gap: 2rem;
-        margin-top: 2rem;
+        gap: 1rem;
+        /* margin-top: 2rem; */
     }
 
     #main #about #ableft #abstat .abstatelem > h1 {

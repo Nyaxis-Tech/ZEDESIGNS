@@ -445,20 +445,20 @@
     gap: 2rem;
 }
 
-#footer #ftop #btndiv .transparentbtn button {
+.btnelem.transparentbtn button {
     background-color: transparent !important;
     color: white !important;
     border: 1px solid white;
     transition: all 0.3s ease;
 }
 
-#footer #ftop #btndiv .transparentbtn:hover button:nth-child(1) {
+.btnelem.transparentbtn:hover button:nth-child(1) {
     background-color: var(--primary-black-color) !important;
     color: var(--secondary-golden-color) !important;
     border: 1px solid var(--primary-black-color) !important;
 }
 
-#footer #ftop #btndiv .transparentbtn button img {
+.btnelem.transparentbtn button img {
     filter: invert(1);
 }
 
@@ -516,7 +516,7 @@
     min-height: 100%;
     padding: 2rem 4rem;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: space-between;
 
 }
@@ -552,7 +552,16 @@
 
 #footer #fbtm #btmright #socials {
     display: flex;
-    gap: 3rem;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#footer #fbtm #btmright #socials .btnelem button:nth-child(1) {
+    min-width: 150px;  
+}
+
+#footer #fbtm #btmright #socials .btnelem:hover button:nth-child(2) img{
+    transform: rotate(0deg);
 }
 
 #footer #fbtm #btmright #socials a {
@@ -562,6 +571,7 @@
     opacity: 0.7;
     margin-top: auto;
 }
+
 #footer #fbtm #btmright #socials a:hover {
     color: var(--secondary-golden-color);
     opacity: 1;
@@ -809,6 +819,9 @@
         font-size: 0.9rem;
     }
 
+    #footer #fbtm #btmright #socials .btnelem button:nth-child(1) {
+        min-width: 110px;  
+    }
     #footer #fbtm #btmright #socials {
         gap: 1.5rem;
     }
