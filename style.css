@@ -415,19 +415,19 @@ html {
 }
 
 #main #services .servcardslist .servcard:nth-of-type(1) {
-    background: url("./assets/images/home/services-branding.png") no-repeat
+    background: url("./assets/images/home/services-branding-1.png") no-repeat
         center center/cover;
 }
 #main #services .servcardslist .servcard:nth-of-type(2) {
-    background: url("./assets/images/home/services-website.png") no-repeat
+    background: url("./assets/images/home/services-website-1.png") no-repeat
         center center/cover;
 }
 #main #services .servcardslist .servcard:nth-of-type(3) {
-    background: url("./assets/images/home/services-design.png") no-repeat center
+    background: url("./assets/images/home/services-design-1.png") no-repeat center
         center/cover;
 }
 #main #services .servcardslist .servcard:nth-of-type(4) {
-    background: url("./assets/images/home/services-social.png") no-repeat center
+    background: url("./assets/images/home/services-social-1.png") no-repeat center
         center/cover;
 }
 
@@ -436,17 +436,19 @@ html {
 }
 
 #main #services .servcardslist .servcard:hover button {
-    background-color: var(--green-color);
+    background-color: var(--secondary-golden-color);
     transition: all 0.3s ease;
 }
 #main #services .servcardslist .servcard:hover button img {
     transform: rotate(45deg);
+    filter: invert(0);
 }
 .servcard h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-family: "didot-bold", sans-serif;
     line-height: 1;
     font-weight: 500;
+    color: var(--secondary-golden-color);
 }
 
 .servcard p {
