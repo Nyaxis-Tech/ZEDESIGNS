@@ -9,7 +9,6 @@ function raf(time) {
     ScrollTrigger.update();
     requestAnimationFrame(raf);
 }
-
 requestAnimationFrame(raf);
 
 // Loading Animation
@@ -291,22 +290,37 @@ if (window.innerWidth > 768) {
                 start: "center 60%",
                 end: "center 30%",
                 pin: "#services",
-                // markers: true,
-                scrub: 1,
+                markers: true,
+                scrub: 4,
                 invalidateOnRefresh: true,
+                ease: "Power1.out",
             },
+            onComplete: () => {
+                gsap.set("#main", {
+                    backgroundColor: "var(--green-color)",
+                    // delay: 0.2,
+                });
+            }
         });
-        hortl.to("#main",{
-            backgroundColor: "var(--primary-black-color)",
-        },"<");
-        hortl.to("#servcardstrip", {
-            x: () => -(serviceStrip.scrollWidth - window.innerWidth),
-            ease: "none",
-        },"<");
-        hortl.to("#main",{
-            backgroundColor: "var(--green-color)",
-            delay:0.2,
-        })
+        hortl.to(
+            "#main",
+            {
+                backgroundColor: "var(--primary-black-color)",
+            },
+            "<"
+        );
+        hortl.to(
+            "#servcardstrip",
+            {
+                x: () => -(serviceStrip.scrollWidth - window.innerWidth),
+                // ease: "none",
+            },
+            "<"
+        );
+        // hortl.to("#main", {
+        //     backgroundColor: "var(--green-color)",
+        //     // delay: 0.2,
+        // });
     }
     serviceHorizontalScroll();
 }
