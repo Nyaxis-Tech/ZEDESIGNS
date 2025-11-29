@@ -292,9 +292,10 @@ if (window.innerWidth > 768) {
             scrollTrigger: {
                 trigger: "#servcardstrip",
                 start: "center 60%",
-                end: "center 0%",
+                end: "+=3000",
                 pin: "#services",
-                markers: true,
+                anticipatePin: 1,
+                // markers: true,
                 scrub: 1,
                 invalidateOnRefresh: true,
                 // ease: "Power1.out",
@@ -303,7 +304,7 @@ if (window.innerWidth > 768) {
             onComplete: () => {
                 gsap.set("#main", {
                     backgroundColor: "var(--green-color)",
-                    // delay: 0.2,
+                    delay: 0.2,
                 });
             }
         });
