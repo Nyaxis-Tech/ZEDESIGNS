@@ -88,11 +88,6 @@ html {
     /* height: auto; */
 }
 
-/* Reveal animation helper */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-}
 
 
 #main {

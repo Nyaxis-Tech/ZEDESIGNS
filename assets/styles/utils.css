@@ -236,6 +236,11 @@
     opacity: 1;
 }
 
+/* Reveal animation helper */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
 /* Nav css end *//* Button CSS */
 
 .btnelem {
