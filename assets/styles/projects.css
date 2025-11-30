@@ -20,14 +20,6 @@ body {
     min-height: 100vh;
     background-color: var(--green-color); /* same background as other pages */
     color: #ffffff;
-    /* font-family: var(
-        --primary-font,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Text",
-        sans-serif
-    ); */
 }
 
 /* shared container for this page */
@@ -81,6 +73,7 @@ body {
     gap: 0.75rem;
 }
 
+/* optional button style if needed */
 .hero-cta {
     border-radius: 999px;
     padding: 0.7rem 1.4rem;
@@ -137,7 +130,8 @@ body {
     position: relative;
     min-height: 220px;
 }
-.projects-hero-right img{
+
+.projects-hero-right img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -231,35 +225,98 @@ body {
     gap: 2.3rem 2rem;
 }
 
-/* Card */
+/* ======================
+   PROJECT CARD – MODERN / BORDERLESS
+   ====================== */
 
 .project-card {
-    background: rgba(12, 20, 17, 0.5);
-    border-radius: 22px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 1.5rem 1.5rem 1.2rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 1rem;
+    padding: 1.4rem 1.7rem 1.5rem;
+    border-radius: 26px;
+    overflow: hidden;
+    /* no visible border */
+    border: none;
+    /* glassy / soft gradient look */
+    background:
+        radial-gradient(circle at 0 0, rgba(246, 217, 167, 0.2), transparent 60%),
+        linear-gradient(145deg, rgba(7, 23, 18, 0.94), rgba(4, 15, 11, 0.98));
+    box-shadow: 0 26px 65px rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease;
 }
 
+.project-card::before {
+    /* soft gradient glow on hover */
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(
+        120deg,
+        rgba(246, 217, 167, 0.6),
+        rgba(134, 232, 199, 0.35),
+        rgba(255, 255, 255, 0)
+    );
+    opacity: 0;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    transition: opacity 0.45s ease;
+    z-index: 0;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.9);
+    background:
+        radial-gradient(circle at 0 0, rgba(246, 217, 167, 0.28), transparent 65%),
+        linear-gradient(150deg, rgba(8, 26, 20, 1), rgba(10, 30, 23, 1));
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* keep inner content above ::before */
+.project-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* top row: dot + text */
+
 .project-card-top {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 0.8rem;
+    display: flex;
+    gap: 0.9rem;
     align-items: flex-start;
 }
 
+/* dot */
+
 .project-dot {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 999px;
-    margin-top: 0.25rem;
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.25);
+    margin-top: 0.1rem;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.55);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-/* different colors like the Figma */
+.project-card:hover .project-dot {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 7px rgba(246, 217, 167, 0.35);
+}
+
+/* dot colors */
+
 .dot-blue {
     background: radial-gradient(circle at 30% 20%, #5bf0ff, #0860ff);
 }
@@ -273,46 +330,96 @@ body {
     background: radial-gradient(circle at 30% 20%, #ffb7ff, #ff4fd6);
 }
 
+/* text */
+
 .project-text h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.4rem;
     font-family: "didot-bold", serif;
     font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 .project-desc {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    opacity: 0.82;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0.92;
+    margin-bottom: 0.65rem;
 }
+
+/* tags – scoped ONLY to project cards */
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
+    gap: 0.45rem;
 }
 
-/* .tag {
-    font-size: 0.85rem;
-    padding: 0.25rem 0.7rem;
+.project-tags .tag {
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    padding: 0.45rem 1rem;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    opacity: 0.9;
-} */
+    background: rgba(9, 25, 20, 0.96);
+    border: 1px solid rgba(245, 233, 219, 0.25);
+    opacity: 0.98;
+    white-space: nowrap;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+}
 
-/* Image */
+/* image block – unified ratio */
 
 .project-image-wrap {
-    border-radius: 18px;
+    margin-top: 0.4rem;
+    border-radius: 20px;
     overflow: hidden;
+    position: relative;
+    background: radial-gradient(circle at 0 0, rgba(246, 217, 167, 0.22), rgba(0, 0, 0, 0.92));
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    transform-origin: center center;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-card:hover .project-image-wrap {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.9);
+}
+
+.project-image-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 26, 19, 0.18),
+        rgba(0, 0, 0, 0.12),
+        rgba(10, 26, 19, 0.55)
+    );
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-image-wrap::after {
+    opacity: 0.45;
 }
 
 .project-image-wrap img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image-wrap img {
+    transform: scale(1.07);
 }
 
 /* ======================
@@ -338,6 +445,15 @@ body {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+    .project-card {
+        padding: 1.2rem 1.2rem 1.35rem;
+        border-radius: 22px;
+    }
+
+    .project-image-wrap {
+        aspect-ratio: 16 / 10;
+    }
 }
 
 @media (max-width: 600px) {
@@ -347,5 +463,17 @@ body {
 
     .projects-hero {
         padding-top: 6rem;
+    }
+
+    .project-image-wrap {
+        aspect-ratio: 4 / 3;
+    }
+
+    .project-text h3 {
+        font-size: 1.15rem;
+    }
+
+    .project-desc {
+        font-size: 0.85rem;
     }
 }
