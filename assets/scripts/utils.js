@@ -112,12 +112,12 @@ document.addEventListener('keydown', (e) => {
                     gsap.fromTo(
                         tag,
                         {
-                            paddingLeft: "0.9rem",
-                            paddingRight: "0.9rem",
+                            // paddingLeft: "0.9rem",
+                            // paddingRight: "0.9rem",
                         },
                         {
-                            paddingLeft: "2rem",
-                            paddingRight: "2rem",
+                            // paddingLeft: "1rem",
+                            // paddingRight: "1rem",
                             duration: 0.6,
                             ease: "power2.out",
                             delay: 0.3,
@@ -146,12 +146,12 @@ document.addEventListener('keydown', (e) => {
             gsap.fromTo(
                 footerTag,
                 {
-                    paddingLeft: "0.9rem",
-                    paddingRight: "0.9rem",
+                    // paddingLeft: "0.9rem",
+                    // paddingRight: "0.9rem",
                 },
                 {
-                    paddingLeft: "2rem",
-                    paddingRight: "2rem",
+                    // paddingLeft: "1rem",
+                    // paddingRight: "1rem",
                     duration: 0.6,
                     ease: "power2.out",
                     onComplete: () => {

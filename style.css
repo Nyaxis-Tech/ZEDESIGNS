@@ -743,7 +743,7 @@ html {
 
 #main #clients {
     width: 100%;
-    height: 35vh;
+    height: 45vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -757,6 +757,18 @@ html {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#main #clients #clientstop > h1 {
+    font-size: 3rem;
+    font-family: "didot-bold", sans-serif;
+    line-height: 1;
+    font-weight: 500;
+    width: 40%;
+    text-align: center;
 }
 
 #main #clients p {
@@ -918,6 +930,11 @@ html {
     #main #testimonials #testtop > p {
         font-size: 1rem;
         width: 50%;
+    }
+    #main #clients #clientstop > h1 {
+        font-size: 2.5rem;
+        width: 50%;
+        text-align: center;
     }
 
     /* Clients */
@@ -1130,6 +1147,11 @@ html {
         min-height: 25vh;
         /* padding: 3rem 0; */
     }
+    #main #clients #clientstop > h1 {
+        font-size: 2rem;
+        width: 90%;
+        text-align: center;
+    }
 
     #main #clients p {
         font-size: 0.95rem;
@@ -1267,5 +1289,11 @@ html {
     #main #clients #clientwrapper .logo {
         width: 130px;
         height: 55px;
+    }
+
+    #main #clients #clientstop > h1 {
+        font-size: 1.8rem;
+        width: 90%;
+        text-align: center;
     }
 }

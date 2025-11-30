@@ -176,12 +176,12 @@ function heroSectionAnimation() {
     herotl.fromTo(
         "#herotext .tag",
         {
-            paddingLeft: "0.9rem",
-            paddingRight: "0.9rem",
+            // paddingLeft: "0.9rem",
+            // paddingRight: "0.9rem",
         },
         {
-            paddingLeft: "2rem",
-            paddingRight: "2rem",
+            // paddingLeft: "1rem",
+            // paddingRight: "1rem",
             duration: 0.6,
             ease: "power2.out",
             onComplete: () => {
