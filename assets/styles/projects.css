@@ -20,14 +20,14 @@ body {
     min-height: 100vh;
     background-color: var(--green-color); /* same background as other pages */
     color: #ffffff;
-    font-family: var(
+    /* font-family: var(
         --primary-font,
         system-ui,
         -apple-system,
         BlinkMacSystemFont,
         "SF Pro Text",
         sans-serif
-    );
+    ); */
 }
 
 /* shared container for this page */
@@ -55,6 +55,8 @@ body {
 .projects-hero-left h1 {
     font-size: clamp(2.4rem, 3.2vw, 3rem);
     margin-bottom: 0.75rem;
+    font-family: "didot-bold", serif;
+    font-weight: 500;
 }
 
 .eyebrow {
@@ -134,6 +136,11 @@ body {
 .projects-hero-right {
     position: relative;
     min-height: 220px;
+}
+.projects-hero-right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .bubble {
@@ -269,6 +276,8 @@ body {
 .project-text h3 {
     font-size: 1.25rem;
     margin-bottom: 0.3rem;
+    font-family: "didot-bold", serif;
+    font-weight: 500;
 }
 
 .project-desc {
