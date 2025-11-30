@@ -194,7 +194,7 @@
     font-weight: 600;
     color: white;
     text-decoration: none;
-    letter-spacing: 0.05rem;
+    /* letter-spacing: 0.05rem; */
     position: relative;
     overflow: hidden;
     transition: color 0.3s ease;
@@ -224,10 +224,16 @@
 }
 
 .mobile-socials a {
-    color: white;
     text-decoration: none;
-    font-size: 0.95rem;
+    background-color: var(--secondary-golden-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 100px;
+    font-size: 1.2rem;
     opacity: 0.7;
+    margin-top: auto;
     transition: all 0.3s ease;
 }
 
@@ -258,7 +264,7 @@
     background-color: var(--secondary-golden-color);
     color: black;
     font-weight: 500;
-    letter-spacing: 0.01rem;
+    /* letter-spacing: 0.01rem; */
     font-size: 1rem;
     /* border-radius: 15px; */
     border-top-right-radius: 15px;
@@ -326,7 +332,7 @@
     border-radius: 100px;
     gap: 1.5rem;
     font-size: 1rem;
-    letter-spacing: -0.01rem;
+    /* letter-spacing: -0.01rem; */
     font-family: "didot-medium";
     font-weight: 500;
     margin-bottom: 1.5rem;
@@ -358,28 +364,41 @@
 #footer {
     width: 100%;
     min-height: 100vh;
-    background-color: var(--green-color);
+    /* background-color: var(--green-color); */
     /* border: 1px solid red;
     background: url("./assets/images/home/herofooter-bg.png");
     background-size: cover;
     background-position: center; */
     /* padding-top: 3rem; */
     /* position: relative; */
+    
 }
+
+/* Background Image → FUfj9nOXd0JBRlC3cRr7ANvhfk.jpg */
 
 #footer #footer-foreground{
     width: 100%;
     height: 100%;
-    background: url("../images/home/herofooter-bg-green.png") no-repeat center center;
-    background-size: cover;
-    background-position: center;
     position: relative;
     z-index: 10;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 0 50px 50px 0 rgba(27, 16, 20, .6);
+    
+    /* box-shadow: 0 50px 50px 0 rgba(27, 16, 20, .6); */
 }
 
+#footer #footer-foreground > img{
+    background: linear-gradient(360deg, rgba(58, 75, 67, 0) 50.02%, #3A4B43 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 0;
+}
+#footer #footer-foreground *:not(img){
+    
+    z-index:1;
+}
 
 #footer #footer-background {
     position: sticky;
@@ -433,7 +452,7 @@
     width: 40%;
     text-transform: capitalize;
     font-weight: 600;
-    letter-spacing: 0.1rem;
+    /* letter-spacing: 0.1rem; */
     line-height: 1;
 }
 
@@ -461,10 +480,6 @@
     background-color: var(--primary-black-color) !important;
     color: var(--secondary-golden-color) !important;
     border: 1px solid var(--primary-black-color) !important;
-}
-
-.btnelem.transparentbtn button img {
-    filter: invert(1);
 }
 
 #footer #fbtm {
@@ -556,29 +571,29 @@
 }
 
 #footer #fbtm #btmright #socials {
+    /* background-color: red/; */
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    /* flex-direction: column; */
+    gap: 1.2rem;
 }
 
-#footer #fbtm #btmright #socials .btnelem button:nth-child(1) {
-    min-width: 150px;  
-}
-
-#footer #fbtm #btmright #socials .btnelem:hover button:nth-child(2) img{
-    transform: rotate(0deg);
-}
 
 #footer #fbtm #btmright #socials a {
     text-decoration: none;
-    color: white;
+    background-color: var(--secondary-golden-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 100px;
     font-size: 1.2rem;
     opacity: 0.7;
     margin-top: auto;
+    transition: all 0.3s ease;
 }
 
 #footer #fbtm #btmright #socials a:hover {
-    color: var(--secondary-golden-color);
+    transform: scale(1.1);
     opacity: 1;
 }
 
@@ -669,7 +684,7 @@
 
     /* Tag */
     .tag {
-        padding: 0.7rem 1.5rem;
+        padding: 0.7rem 1rem;
         gap: 1rem;
         font-size: 0.85rem;
     }
@@ -777,7 +792,7 @@
     }
 
     .tag {
-        padding: 0.3rem 1rem;
+        padding: 0.3rem 0.6rem;
         font-size: 0.7rem;
         gap: 1rem;
     }

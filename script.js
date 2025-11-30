@@ -10,6 +10,10 @@
 //     requestAnimationFrame(raf);
 // }
 // requestAnimationFrame(raf);
+// make sure whenever the page is reloaded, the scroll position is at the top
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
 
 // Loading Animation
 (() => {
@@ -288,17 +292,19 @@ if (window.innerWidth > 768) {
             scrollTrigger: {
                 trigger: "#servcardstrip",
                 start: "center 60%",
-                end: "center 30%",
+                end: "+=3000",
                 pin: "#services",
+                anticipatePin: 1,
                 // markers: true,
-                scrub: 4,
+                scrub: 1,
                 invalidateOnRefresh: true,
-                ease: "Power1.out",
+                // ease: "Power1.out",
+
             },
             onComplete: () => {
                 gsap.set("#main", {
                     backgroundColor: "var(--green-color)",
-                    // delay: 0.2,
+                    delay: 0.2,
                 });
             }
         });
