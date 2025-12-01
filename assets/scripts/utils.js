@@ -97,7 +97,7 @@ document.addEventListener('keydown', (e) => {
     gsap.utils.toArray(".reveal").forEach((el) => {
         ScrollTrigger.create({
             trigger: el,
-            start: "top 90%",
+            start: "top 55%",
             onEnter: () => {
                 gsap.to(el, {
                     opacity: 1,
@@ -106,6 +106,21 @@ document.addEventListener('keydown', (e) => {
                     ease: "power2.out",
                 });
                 
+                let aboutvid = el.querySelector("video");
+                if (aboutvid) {
+                    // console.log("Animating about video");
+                    gsap.fromTo(aboutvid,{
+                        opacity: 0,
+                        scale: 0.6,
+                    },{
+                        opacity: 1,
+                        scale: 1,
+                        duration: 1.5,
+                        ease: "power2.out",
+                        delay: 0.5
+
+                    })
+                }
                 // Animate tag reveal in testimonials section
                 const tag = el.querySelector('.tag');
                 if (tag) {
@@ -129,6 +144,7 @@ document.addEventListener('keydown', (e) => {
                 }
             },
             once: true,
+
         });
     });
 })();

@@ -255,6 +255,10 @@
     align-items: center;
 }
 
+.btnelem button a {
+    text-decoration: none;
+    color: inherit;
+}
 .btnelem button:nth-child(1) {
     width: fit-content;
     height: 3rem;
@@ -503,7 +507,7 @@
 
 #footer #fbtm #btmleft img {
     width: fit-content;
-    height: 40px;
+    min-height: 40px;
     object-fit: cover;
 }
 
@@ -869,7 +873,7 @@
     }
 
     #footer #fbtm #btmleft img {
-        height: 35px;
+        min-height: fit-content;
     }
 
     #footer #fbtm #btmleft .info {
