@@ -10,13 +10,18 @@
 //     requestAnimationFrame(raf);
 // }
 // requestAnimationFrame(raf);
+
 // make sure whenever the page is reloaded, the scroll position is at the top
-window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-};
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        document.documentElement.classList.add('smooth-scroll-enabled');
+    }, 2000); // Wait for loader to finish (adjust timing if needed)
+});
+
 
 // Loading Animation
-(() => {
+(
+    () => {
     const loader = document.getElementById("loader");
     const svg1 = document.querySelector(".loader-svg-1");
     const svg2 = document.querySelector(".loader-svg-2");
