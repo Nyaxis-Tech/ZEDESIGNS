@@ -1,10 +1,19 @@
 // Navbar scroll effect
 const nav = document.getElementById("nav");
+const whatsappFloat = document.getElementById("whatsappFloat");
+
 window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
         nav.classList.add("scrolled");
     } else {
         nav.classList.remove("scrolled");
+    }
+
+    // Show/hide WhatsApp float button
+    if (window.scrollY > 300) {
+        whatsappFloat.classList.add("show");
+    } else {
+        whatsappFloat.classList.remove("show");
     }
 });
 
@@ -95,6 +104,9 @@ document.addEventListener('keydown', (e) => {
     if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
 
     gsap.utils.toArray(".reveal").forEach((el) => {
+        // Skip about section to prevent conflicts with frame animation
+        if (el.id === "about") return;
+        
         ScrollTrigger.create({
             trigger: el,
             start: "top 55%",

@@ -323,6 +323,88 @@
 
 /* Button CSS end */
 
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding:0.5rem 1.5rem;
+    background-color: var(--secondary-golden-color);
+    color: black;
+    text-decoration: none;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.whatsapp-float.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.whatsapp-float:hover {
+    background-color: var(--green-color);
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-float img {
+    width: 24px;
+    height: 24px;
+    filter: invert(0);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover img {
+    filter: invert(1);
+}
+
+.whatsapp-float span {
+    font-family: "TheYearOfHandicrafts", sans-serif;
+    white-space: nowrap;
+    margin-top: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .whatsapp-float img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .whatsapp-float span {
+        display: none;
+    }
+
+    .whatsapp-float {
+        padding: 0.8rem;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+    }
+}
+/* Floating WhatsApp Button End */
+
 
 /* Tag */
 
@@ -710,6 +792,7 @@
     }
 
     #main #nav img {
+        opacity: 1;
         width: 45px;
         height: 45px;
     }
@@ -831,11 +914,12 @@
 @media screen and (max-width: 480px) {
     /* Navbar */
     #main #nav {
-        height: 60px;
+        height: 65px;
         padding: 0.8rem 1rem;
     }
 
     #main #nav img {
+        opacity: 1 !important;
         width: 40px;
         height: 40px;
     }

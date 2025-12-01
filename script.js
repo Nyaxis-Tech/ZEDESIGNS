@@ -12,11 +12,6 @@
 // requestAnimationFrame(raf);
 
 // make sure whenever the page is reloaded, the scroll position is at the top
-window.addEventListener('load', function() {
-    setTimeout(() => {
-        document.documentElement.classList.add('smooth-scroll-enabled');
-    }, 2000); // Wait for loader to finish (adjust timing if needed)
-});
 
 
 // Loading Animation
