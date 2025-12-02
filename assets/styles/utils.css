@@ -5,7 +5,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "TheYearOfHandicrafts", sans-serif;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
 }
 
 /* Nav css */
@@ -25,7 +25,7 @@
 }
 
 #main #nav.scrolled {
-    background-color: rgba(16, 15, 16, 0.8);
+    background-color: rgba(58, 75, 67, 0.8);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -529,6 +529,7 @@
     gap: 1.5rem;
     text-align: center;
     padding: 4rem 0;
+    border-bottom: 1px solid var(--green-color);
 
 }
 
@@ -574,6 +575,7 @@
     /* background-color: red; */
     border-top: 1px solid var(--green-color);
     display: flex;
+
     /* padding: 2rem 3vw;; */
 }
 #footer #fbtm #btmleft {
@@ -622,7 +624,7 @@
     min-height: 100%;
     padding: 2rem 4rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 
 }
@@ -660,11 +662,13 @@
     /* background-color: red/; */
     display: flex;
     justify-content: space-between;
-    /* flex-direction: column; */
+    flex-direction: column;
     /* gap: 1.2rem; */
 }
 #footer #fbtm #btmright #socials #socialone{
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     gap: 1.2rem;;
 }
 
@@ -674,7 +678,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.3rem;
+    padding: 0.6rem;
     border-radius: 100px;
     font-size: 1.2rem;
     opacity: 0.7;
@@ -702,7 +706,7 @@
 
 #footer #fbtm #btmright #socials #socialtwo a {
     text-decoration: none;
-    color: white;
+    color: var(--secondary-golden-color);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -715,7 +719,7 @@
 }
 
 #footer #fbtm #btmright #socials #socialtwo a:hover{
-    color: var(--secondary-golden-color);
+    color: white;
 }
 
 #footer #fbtm #btmright #socials #socialtwo a img{
@@ -916,6 +920,7 @@
     #main #nav {
         height: 65px;
         padding: 0.8rem 1rem;
+        align-items: center;
     }
 
     #main #nav img {

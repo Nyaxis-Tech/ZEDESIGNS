@@ -228,6 +228,12 @@ html {
 #main #about #abright canvas {
     width: 100%;
     height: 100%;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
+                linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
+                        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
 }
 
 /* Show canvas on desktop, hide on mobile */
@@ -448,7 +454,7 @@ html {
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     padding: 2.5rem 1rem;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
