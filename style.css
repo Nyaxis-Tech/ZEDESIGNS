@@ -457,7 +457,7 @@ html {
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     padding: 2.5rem 1rem;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
@@ -483,11 +483,14 @@ html {
 }
 
 #main #services .servcardslist .servcard:hover button {
-    background-color: var(--green-color);
+    background-color: var(--secondary-golden-color);
     transition: all 0.3s ease;
 }
+
 #main #services .servcardslist .servcard:hover button img {
     transform: rotate(45deg);
+    filter: invert(0);
+    transition: all 0.3s ease;
 }
 .servcard h1 {
     font-size: 1.5rem;
@@ -920,7 +923,7 @@ html {
     /* Loader Responsive */
     .hero-deco-svg-1 {
         width: 300px !important;
-        top: 3% !important;
+        top: 15% !important;
         left: 3% !important;
     }
 
@@ -1023,13 +1026,16 @@ html {
 
     .hero-deco-svg-1,
     .hero-deco-svg-3 {
-        display: none !important;
+        /* display: none !important; */
     }
 
     /* Hero Section Responsive */
     #main #hero #heromain {
-        height: auto;
+        height: auto;        
         min-height: 70vh;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding-bottom: 15vh;
     }
 
     #hero #heromain #herotext {

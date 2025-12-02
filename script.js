@@ -354,7 +354,7 @@ if (window.innerWidth > 768) {
                 const obj = { val: 0 };
                 gsap.to(obj, {
                     val: target,
-                    duration: 2,
+                    duration: 3.5,
                     ease: "power1.out",
                     onUpdate() {
                         const v = Math.floor(obj.val).toLocaleString();
