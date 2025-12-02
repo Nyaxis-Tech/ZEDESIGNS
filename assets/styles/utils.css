@@ -487,8 +487,8 @@
     width: 100%;
     height: 50vh;
     background-color: var(--green-color); 
-    position: sticky;
-    bottom: 0;
+    /* position: sticky; */
+    /* bottom: 0; */
     z-index: 1;
     color:white;
     /* height: 100vh; */
@@ -532,8 +532,8 @@
 }
 
 #footer #footer-background {
-    position: sticky;
-    bottom: 0;
+    /* position: sticky; */
+    /* bottom: 0; */
     width: 100%;
     /* height:30vh; */
     padding: 2vw 4vw;
