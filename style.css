@@ -96,6 +96,8 @@ html {
     width: 100%;
     background-color: var(--green-color);
     color: white;
+    position: relative;
+    z-index: 2;
 }
 
 
