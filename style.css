@@ -817,17 +817,24 @@ html {
 }
 
 #main #clients #clientsbtm {
-    max-width: 70vw;
+    max-width: 100vw;
     overflow: hidden;
     display: flex;
-    /* gap: 2rem; */
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scroll-behavior: auto;
+}
+
+#main #clients #clientsbtm::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 #main #clients #clientwrapper {
     width: max-content;
     display: flex;
     gap: 2rem;
-    animation: ClientsMoveToRight 30s linear infinite;
+    /* Animation removed - now controlled by JS */
 }
 
 @keyframes ClientsMoveToRight {
@@ -839,6 +846,27 @@ html {
     }
 }
 
+/* Draggable cursor states */
+#main #clients #clientsbtm {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: grab;
+}
+
+#main #clients #clientsbtm.grabbing {
+    cursor: grabbing !important;
+}
+
+#main #clients #clientsbtm * {
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+}
+#main #clients #clientwrapper .logo:last-child {
+    margin-right: 2rem;
+}
 #main #clients #clientwrapper .logo {
     width: 230px;
     height: 110px;
@@ -873,13 +901,10 @@ html {
     clip-path: circle(100% at 50% 50%);
 }
 
-#main #clients #clientwrapper:hover{
-    animation-play-state: paused;
-}
-
+/* Removed animation-play-state as scroll is now JS controlled */
 
 #main #clients #clientwrapper .logo img {
-    width: 95%;
+    width: 100%;
     /* height: 80%; */
     object-fit: cover;
     /* filter: invert(1); */

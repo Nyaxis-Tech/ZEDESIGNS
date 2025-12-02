@@ -11,8 +11,6 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// make sure whenever the page is reloaded, the scroll position is at the top
-
 
 // Loading Animation
 (
@@ -405,4 +403,209 @@ if (window.innerWidth > 768) {
         },
         once: true,
     });
+})();
+
+// Draggable Clients Section with Auto-scroll
+(() => {
+    const clientsSection = document.querySelector("#clients #clientsbtm");
+    const clientWrapper = document.querySelector("#clients #clientwrapper");
+    
+    if (!clientsSection || !clientWrapper) return;
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let velocity = 0;
+    let animationId;
+    let lastX = 0;
+    let lastTime = Date.now();
+    let hasMoved = false;
+
+    // Clone the wrapper content for seamless infinite scroll
+    const cloneContent = () => {
+        const clone = clientWrapper.cloneNode(true);
+        clientsSection.appendChild(clone);
+    };
+    cloneContent();
+
+    // Auto-scroll function
+    // change the auto scroll right to left
+
+    const autoScroll = () => {
+
+        if (!isDown) {
+            clientsSection.scrollLeft -= 1;
+            
+            // Reset scroll position for infinite loop
+            if (clientsSection.scrollLeft <= 0) {
+                clientsSection.scrollLeft = clientWrapper.scrollWidth;
+            }
+        }
+        animationId = requestAnimationFrame(autoScroll);
+    };
+
+    // Start auto-scroll
+    autoScroll();
+
+    // Mouse events
+    clientsSection.addEventListener('mousedown', (e) => {
+        isDown = true;
+        hasMoved = false;
+        clientsSection.classList.add('grabbing');
+        startX = e.pageX - clientsSection.offsetLeft;
+        scrollLeft = clientsSection.scrollLeft;
+        lastX = e.pageX;
+        lastTime = Date.now();
+        velocity = 0;
+        e.preventDefault();
+    });
+
+    clientsSection.addEventListener('mouseleave', () => {
+        if (isDown) {
+            isDown = false;
+            clientsSection.classList.remove('grabbing');
+        }
+    });
+
+    clientsSection.addEventListener('mouseup', (e) => {
+        if (isDown) {
+            isDown = false;
+            clientsSection.classList.remove('grabbing');
+            
+            // Prevent click event if user was dragging
+            if (hasMoved) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            
+            // Apply momentum/inertia
+            const applyInertia = () => {
+                if (Math.abs(velocity) > 0.5) {
+                    clientsSection.scrollLeft += velocity;
+                    velocity *= 0.95; // Friction
+                    
+                    // Reset scroll for infinite loop
+                    if (clientsSection.scrollLeft >= clientWrapper.scrollWidth) {
+                        clientsSection.scrollLeft = 0;
+                    } else if (clientsSection.scrollLeft <= 0) {
+                        clientsSection.scrollLeft = clientWrapper.scrollWidth;
+                    }
+                    
+                    requestAnimationFrame(applyInertia);
+                }
+            };
+            applyInertia();
+        }
+    });
+
+    clientsSection.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        
+        hasMoved = true;
+        
+        const currentTime = Date.now();
+        const timeElapsed = currentTime - lastTime;
+        
+        const x = e.pageX - clientsSection.offsetLeft;
+        const walk = (x - startX);
+        
+        // Calculate velocity
+        velocity = (lastX - e.pageX) / (timeElapsed || 16);
+        
+        clientsSection.scrollLeft = scrollLeft - walk;
+        
+        // Reset scroll for infinite loop
+        if (clientsSection.scrollLeft >= clientWrapper.scrollWidth) {
+            const overflow = clientsSection.scrollLeft - clientWrapper.scrollWidth;
+            clientsSection.scrollLeft = overflow;
+            scrollLeft = overflow;
+            startX = e.pageX - clientsSection.offsetLeft;
+        } else if (clientsSection.scrollLeft <= 0) {
+            const underflow = Math.abs(clientsSection.scrollLeft);
+            clientsSection.scrollLeft = clientWrapper.scrollWidth - underflow;
+            scrollLeft = clientWrapper.scrollWidth - underflow;
+            startX = e.pageX - clientsSection.offsetLeft;
+        }
+        
+        lastX = e.pageX;
+        lastTime = currentTime;
+    });
+
+    // Prevent clicks on child elements during drag
+    clientsSection.addEventListener('click', (e) => {
+        if (hasMoved) {
+            e.preventDefault();
+            e.stopPropagation();
+            hasMoved = false;
+        }
+    }, true);
+
+    // Touch events for mobile
+    clientsSection.addEventListener('touchstart', (e) => {
+        isDown = true;
+        hasMoved = false;
+        startX = e.touches[0].pageX - clientsSection.offsetLeft;
+        scrollLeft = clientsSection.scrollLeft;
+        lastX = e.touches[0].pageX;
+        lastTime = Date.now();
+        velocity = 0;
+    }, { passive: true });
+
+    clientsSection.addEventListener('touchend', () => {
+        if (isDown) {
+            isDown = false;
+            
+            // Apply momentum for touch
+            const applyInertia = () => {
+                if (Math.abs(velocity) > 0.5) {
+                    clientsSection.scrollLeft += velocity;
+                    velocity *= 0.95;
+                    
+                    if (clientsSection.scrollLeft >= clientWrapper.scrollWidth) {
+                        clientsSection.scrollLeft = 0;
+                    } else if (clientsSection.scrollLeft <= 0) {
+                        clientsSection.scrollLeft = clientWrapper.scrollWidth;
+                    }
+                    
+                    requestAnimationFrame(applyInertia);
+                }
+            };
+            applyInertia();
+        }
+    }, { passive: true });
+
+    clientsSection.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        
+        hasMoved = true;
+        
+        const currentTime = Date.now();
+        const timeElapsed = currentTime - lastTime;
+        
+        const x = e.touches[0].pageX - clientsSection.offsetLeft;
+        const walk = (x - startX);
+        
+        velocity = (lastX - e.touches[0].pageX) / (timeElapsed || 16);
+        
+        clientsSection.scrollLeft = scrollLeft - walk;
+        
+        if (clientsSection.scrollLeft >= clientWrapper.scrollWidth) {
+            const overflow = clientsSection.scrollLeft - clientWrapper.scrollWidth;
+            clientsSection.scrollLeft = overflow;
+            scrollLeft = overflow;
+            startX = e.touches[0].pageX - clientsSection.offsetLeft;
+        } else if (clientsSection.scrollLeft <= 0) {
+            const underflow = Math.abs(clientsSection.scrollLeft);
+            clientsSection.scrollLeft = clientWrapper.scrollWidth - underflow;
+            scrollLeft = clientWrapper.scrollWidth - underflow;
+            startX = e.touches[0].pageX - clientsSection.offsetLeft;
+        }
+        
+        lastX = e.touches[0].pageX;
+        lastTime = currentTime;
+    }, { passive: true });
+
+    // Set initial cursor
+    clientsSection.style.cursor = 'grab';
 })();
