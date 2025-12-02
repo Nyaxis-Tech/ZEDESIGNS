@@ -426,6 +426,42 @@
     background-color: #100f0f11; 
     backdrop-filter: blur(100px);
     /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+.tag::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(236, 207, 156, 0.35) 0%,
+        rgba(236, 207, 156, 0.2) 25%,
+        rgba(58, 75, 67, 0.15) 50%,
+        transparent 70%
+    );
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tag:hover::before {
+    opacity: 1;
+}
+
+.tag * {
+    position: relative;
+    z-index: 1;
 }
 
 .tag img{

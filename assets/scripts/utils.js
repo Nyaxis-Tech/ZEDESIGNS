@@ -191,3 +191,19 @@ document.addEventListener('keydown', (e) => {
         once: true,
     });
 })();
+
+// Tag spotlight effect
+(() => {
+    const tags = document.querySelectorAll('.tag');
+    
+    tags.forEach(tag => {
+        tag.addEventListener('mousemove', (e) => {
+            const rect = tag.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            tag.style.setProperty('--mouse-x', `${x}px`);
+            tag.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+})();
