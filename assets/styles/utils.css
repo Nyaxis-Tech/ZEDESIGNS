@@ -5,7 +5,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "TheYearOfHandicrafts", sans-serif;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
 }
 
 /* Nav css */
@@ -25,7 +25,7 @@
 }
 
 #main #nav.scrolled {
-    background-color: rgba(16, 15, 16, 0.8);
+    background-color: rgba(58, 75, 67,0.4);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
@@ -99,7 +99,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: url("../images/home/hero-bg-green.png") no-repeat center center;
+    background: url("../images/home/hero-bg-green.webp") no-repeat center center;
     background-size: cover;
     z-index: 1000;
     display: flex;
@@ -255,6 +255,10 @@
     align-items: center;
 }
 
+.btnelem button a {
+    text-decoration: none;
+    color: inherit;
+}
 .btnelem button:nth-child(1) {
     width: fit-content;
     height: 3rem;
@@ -319,6 +323,88 @@
 
 /* Button CSS end */
 
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding:0.5rem 1.5rem;
+    background-color: var(--secondary-golden-color);
+    color: black;
+    text-decoration: none;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.whatsapp-float.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.whatsapp-float:hover {
+    background-color: var(--green-color);
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-float img {
+    width: 24px;
+    height: 24px;
+    filter: invert(0);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover img {
+    filter: invert(1);
+}
+
+.whatsapp-float span {
+    font-family: "TheYearOfHandicrafts", sans-serif;
+    white-space: nowrap;
+    margin-top: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .whatsapp-float img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .whatsapp-float span {
+        display: none;
+    }
+
+    .whatsapp-float {
+        padding: 0.8rem;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+    }
+}
+/* Floating WhatsApp Button End */
+
 
 /* Tag */
 
@@ -340,6 +426,42 @@
     background-color: #100f0f11; 
     backdrop-filter: blur(100px);
     /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+.tag::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(236, 207, 156, 0.35) 0%,
+        rgba(236, 207, 156, 0.2) 25%,
+        rgba(58, 75, 67, 0.15) 50%,
+        transparent 70%
+    );
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tag:hover::before {
+    opacity: 1;
+}
+
+.tag * {
+    position: relative;
+    z-index: 1;
 }
 
 .tag img{
@@ -363,8 +485,16 @@
 
 #footer {
     width: 100%;
-    min-height: 100vh;
-    /* background-color: var(--green-color); */
+    height: 50vh;
+    background-color: var(--green-color); 
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    color:white;
+    /* height: 100vh; */
+    /* position: sticky;
+    bottom: 0;
+    z-index: 1; */
     /* border: 1px solid red;
     background: url("./assets/images/home/herofooter-bg.png");
     background-size: cover;
@@ -381,6 +511,7 @@
     height: 100%;
     position: relative;
     z-index: 10;
+    padding-bottom: 2rem;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     
@@ -406,7 +537,7 @@
     width: 100%;
     /* height:30vh; */
     padding: 2vw 4vw;
-    background: url("../images/home/hero-bg-green.png");
+    background: url("../images/home/hero-bg-green.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -417,6 +548,8 @@
     flex-direction: column;
     font-size: 6.5rem;
     z-index:1;
+    display: none;
+
 }
 
 #footer #footer-background h1{
@@ -436,13 +569,14 @@
     /* margin-top:2rem; */
     /* background-color: red; */
     /* border: 1px solid blue; */
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
     text-align: center;
     padding: 4rem 0;
+    border-bottom: 1px solid var(--green-color);
 
 }
 
@@ -484,10 +618,11 @@
 
 #footer #fbtm {
     width: 100%;
-    height: 40%;
+    height: 100%;
     /* background-color: red; */
     border-top: 1px solid var(--green-color);
     display: flex;
+
     /* padding: 2rem 3vw;; */
 }
 #footer #fbtm #btmleft {
@@ -503,7 +638,7 @@
 
 #footer #fbtm #btmleft img {
     width: fit-content;
-    height: 40px;
+    min-height: 40px;
     object-fit: cover;
 }
 
@@ -536,7 +671,7 @@
     min-height: 100%;
     padding: 2rem 4rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 
 }
@@ -574,11 +709,13 @@
     /* background-color: red/; */
     display: flex;
     justify-content: space-between;
-    /* flex-direction: column; */
+    flex-direction: column;
     /* gap: 1.2rem; */
 }
 #footer #fbtm #btmright #socials #socialone{
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     gap: 1.2rem;;
 }
 
@@ -588,7 +725,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.3rem;
+    padding: 0.6rem;
     border-radius: 100px;
     font-size: 1.2rem;
     opacity: 0.7;
@@ -616,7 +753,7 @@
 
 #footer #fbtm #btmright #socials #socialtwo a {
     text-decoration: none;
-    color: white;
+    color: var(--secondary-golden-color);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -629,7 +766,7 @@
 }
 
 #footer #fbtm #btmright #socials #socialtwo a:hover{
-    color: var(--secondary-golden-color);
+    color: white;
 }
 
 #footer #fbtm #btmright #socials #socialtwo a img{
@@ -706,6 +843,7 @@
     }
 
     #main #nav img {
+        opacity: 1;
         width: 45px;
         height: 45px;
     }
@@ -750,7 +888,7 @@
 
     /* Footer */
     #footer {
-        min-height: auto;
+        height: auto;
     }
 
     #footer #ftop {
@@ -798,6 +936,9 @@
         width: 100%;
         padding: 2rem;
         gap: 2rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     #footer #fbtm #btmright ul {
@@ -809,8 +950,14 @@
         flex-direction: column;
         gap: 2rem;
     }
+    #footer #fbtm #btmright #socials #socialone{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center; 
+        /* background-color: red; */
+    }
     #footer #fbtm #btmright #socials #socialtwo{
-        align-items: flex-start;
+        align-items: center;
     }
 
     #footer #footer-background {
@@ -827,11 +974,13 @@
 @media screen and (max-width: 480px) {
     /* Navbar */
     #main #nav {
-        height: 60px;
+        height: 65px;
         padding: 0.8rem 1rem;
+        align-items: center;
     }
 
     #main #nav img {
+        opacity: 1 !important;
         width: 40px;
         height: 40px;
     }
@@ -869,7 +1018,7 @@
     }
 
     #footer #fbtm #btmleft img {
-        height: 35px;
+        min-height: fit-content;
     }
 
     #footer #fbtm #btmleft .info {

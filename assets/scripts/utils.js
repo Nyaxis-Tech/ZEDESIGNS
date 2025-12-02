@@ -1,10 +1,19 @@
 // Navbar scroll effect
 const nav = document.getElementById("nav");
+const whatsappFloat = document.getElementById("whatsappFloat");
+
 window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
         nav.classList.add("scrolled");
     } else {
         nav.classList.remove("scrolled");
+    }
+
+    // Show/hide WhatsApp float button
+    if (window.scrollY > 300) {
+        whatsappFloat.classList.add("show");
+    } else {
+        whatsappFloat.classList.remove("show");
     }
 });
 
@@ -95,9 +104,12 @@ document.addEventListener('keydown', (e) => {
     if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
 
     gsap.utils.toArray(".reveal").forEach((el) => {
+        // Skip about section to prevent conflicts with frame animation
+        if (el.id === "about") return;
+        
         ScrollTrigger.create({
             trigger: el,
-            start: "top 90%",
+            start: "top 55%",
             onEnter: () => {
                 gsap.to(el, {
                     opacity: 1,
@@ -106,6 +118,21 @@ document.addEventListener('keydown', (e) => {
                     ease: "power2.out",
                 });
                 
+                let aboutvid = el.querySelector("video");
+                if (aboutvid) {
+                    // console.log("Animating about video");
+                    gsap.fromTo(aboutvid,{
+                        opacity: 0,
+                        scale: 0.6,
+                    },{
+                        opacity: 1,
+                        scale: 1,
+                        duration: 1.5,
+                        ease: "power2.out",
+                        delay: 0.5
+
+                    })
+                }
                 // Animate tag reveal in testimonials section
                 const tag = el.querySelector('.tag');
                 if (tag) {
@@ -129,6 +156,7 @@ document.addEventListener('keydown', (e) => {
                 }
             },
             once: true,
+
         });
     });
 })();
@@ -161,5 +189,21 @@ document.addEventListener('keydown', (e) => {
             );
         },
         once: true,
+    });
+})();
+
+// Tag spotlight effect
+(() => {
+    const tags = document.querySelectorAll('.tag');
+    
+    tags.forEach(tag => {
+        tag.addEventListener('mousemove', (e) => {
+            const rect = tag.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            tag.style.setProperty('--mouse-x', `${x}px`);
+            tag.style.setProperty('--mouse-y', `${y}px`);
+        });
     });
 })();

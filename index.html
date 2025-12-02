@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ZEDESIGNS</title>
+        <link id="favicon" rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+        
         <link rel="stylesheet" href="./assets/styles/utils.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
@@ -53,9 +55,10 @@
                 <img src="./assets/images/logo.png" alt="ZEDESIGNS Logo" />
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="./pages/projects.html">Work</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <!-- <li><a href="./pages/projects.html">Work</a></li> -->
+                    <li><a href="#featured">Work</a></li>
                 </ul>
                 <div class="menu-toggle" id="menuToggle">
                     <span></span>
@@ -73,12 +76,10 @@
                 <div class="mobile-menu-content">
                     <nav class="mobile-nav">
                         <a href="#" class="mobile-nav-link">Home</a>
-                        <a href="#" class="mobile-nav-link">About</a>
-                        <a href="#" class="mobile-nav-link">Services</a>
-                        <a href="./pages/projects.html" class="mobile-nav-link"
-                            >Work</a
-                        >
-                        <a href="#" class="mobile-nav-link">Contact</a>
+                        <a href="#about" class="mobile-nav-link">About</a>
+                        <a href="#services" class="mobile-nav-link">Services</a>
+                        <a href="#featured" class="mobile-nav-link">Work</a>
+                        <a href="#footer-foreground" class="mobile-nav-link">Contact</a>
                     </nav>
                     <div class="mobile-menu-footer">
                         <p>© 2025 ZEDESIGNS</p>
@@ -97,7 +98,9 @@
                                     src="assets/images/instagram-logo.png"
                                     alt=""
                             /></a>
-                            <a href="#"
+                            <a
+                                href="https://www.linkedin.com/company/zedesignss/"
+                                target="_blank"
                                 ><img
                                     src="assets/images/linkedin-logo.png"
                                     alt=""
@@ -108,35 +111,36 @@
             </div>
 
             <div id="hero">
-                <!-- Decorative SVGs from loader -->
-                <svg
-                    class="hero-deco-svg hero-deco-svg-1"
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                >
-                    <path
-                        d="M0 0 C66.66 0 133.32 0 202 0 C202 0.33 202 0.66 202 1 C200.76507813 1.21914063 199.53015625 1.43828125 198.2578125 1.6640625 C162.98501219 8.15678602 132.71894771 24.52277638 105 47 C104.08154297 47.7427417 104.08154297 47.7427417 103.14453125 48.50048828 C94.69169279 55.41082124 86.87050882 62.93650334 79.125 70.625 C78.25713867 71.48351562 77.38927734 72.34203125 76.49511719 73.2265625 C70.57452574 79.17663219 65.24178206 85.4504012 60 92 C59.12473935 93.03915054 58.24460991 94.07426359 57.35546875 95.1015625 C41.76903139 113.24361391 28.3982472 133.90439248 18.17822266 155.52001953 C16.71307682 158.6039299 15.22154459 161.67463836 13.73046875 164.74609375 C7.09548881 178.24991193 7.09548881 178.24991193 1 192 C0.67 192 0.34 192 0 192 C0 128.64 0 65.28 0 0 Z "
-                        fill="#ECCF9C"
-                        transform="translate(0,0)"
-                    />
-                </svg>
-                <svg
-                    class="hero-deco-svg hero-deco-svg-3"
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
-                >
-                    <path
-                        d="M0 0 C0.33 0 0.66 0 1 0 C1 63.36 1 126.72 1 192 C-65.66 192 -132.32 192 -201 192 C-201 191.67 -201 191.34 -201 191 C-199.14761719 190.67128906 -199.14761719 190.67128906 -197.2578125 190.3359375 C-161.98501219 183.84321398 -131.71894771 167.47722362 -104 145 C-103.38769531 144.50483887 -102.77539062 144.00967773 -102.14453125 143.49951172 C-93.69169279 136.58917876 -85.87050882 129.06349666 -78.125 121.375 C-77.25713867 120.51648438 -76.38927734 119.65796875 -75.49511719 118.7734375 C-69.57452574 112.82336781 -64.24178206 106.5495988 -59 100 C-58.12473935 98.96084946 -57.24460991 97.92573641 -56.35546875 96.8984375 C-40.76903139 78.75638609 -27.3982472 58.09560752 -17.17822266 36.47998047 C-15.71307682 33.3960701 -14.22154459 30.32536164 -12.73046875 27.25390625 C-6.09548881 13.75008807 -6.09548881 13.75008807 0 0 Z "
-                        fill="#ECCF9C"
-                        transform="translate(511,320)"
-                    />
-                </svg>
-
+                
                 <div id="heromain">
+                    <!-- Decorative SVGs from loader -->
+                    <svg
+                        class="hero-deco-svg hero-deco-svg-1"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M0 0 C66.66 0 133.32 0 202 0 C202 0.33 202 0.66 202 1 C200.76507813 1.21914063 199.53015625 1.43828125 198.2578125 1.6640625 C162.98501219 8.15678602 132.71894771 24.52277638 105 47 C104.08154297 47.7427417 104.08154297 47.7427417 103.14453125 48.50048828 C94.69169279 55.41082124 86.87050882 62.93650334 79.125 70.625 C78.25713867 71.48351562 77.38927734 72.34203125 76.49511719 73.2265625 C70.57452574 79.17663219 65.24178206 85.4504012 60 92 C59.12473935 93.03915054 58.24460991 94.07426359 57.35546875 95.1015625 C41.76903139 113.24361391 28.3982472 133.90439248 18.17822266 155.52001953 C16.71307682 158.6039299 15.22154459 161.67463836 13.73046875 164.74609375 C7.09548881 178.24991193 7.09548881 178.24991193 1 192 C0.67 192 0.34 192 0 192 C0 128.64 0 65.28 0 0 Z "
+                            fill="#ECCF9C"
+                            transform="translate(0,0)"
+                        />
+                    </svg>
+                    <svg
+                        class="hero-deco-svg hero-deco-svg-3"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M0 0 C0.33 0 0.66 0 1 0 C1 63.36 1 126.72 1 192 C-65.66 192 -132.32 192 -201 192 C-201 191.67 -201 191.34 -201 191 C-199.14761719 190.67128906 -199.14761719 190.67128906 -197.2578125 190.3359375 C-161.98501219 183.84321398 -131.71894771 167.47722362 -104 145 C-103.38769531 144.50483887 -102.77539062 144.00967773 -102.14453125 143.49951172 C-93.69169279 136.58917876 -85.87050882 129.06349666 -78.125 121.375 C-77.25713867 120.51648438 -76.38927734 119.65796875 -75.49511719 118.7734375 C-69.57452574 112.82336781 -64.24178206 106.5495988 -59 100 C-58.12473935 98.96084946 -57.24460991 97.92573641 -56.35546875 96.8984375 C-40.76903139 78.75638609 -27.3982472 58.09560752 -17.17822266 36.47998047 C-15.71307682 33.3960701 -14.22154459 30.32536164 -12.73046875 27.25390625 C-6.09548881 13.75008807 -6.09548881 13.75008807 0 0 Z "
+                            fill="#ECCF9C"
+                            transform="translate(511,320)"
+                        />
+                    </svg>
+
                     <img
-                        src="./assets/images/home/hero-bg-green.png"
+                        src="./assets/images/home/hero-bg-green.webp"
                         alt=""
                         class="heroimg"
                     />
@@ -151,12 +155,14 @@
                         <h1 class="h1one">Unique Perspectives</h1>
                         <h1 class="h1two">Simple Designs</h1>
                         <p>
-                            We partner with visionary teams to build standout
-                            brands, launch smarter products, and grow with
-                            purpose.
+                            We bring strategy and simplicity together to create
+                            powerful brands and seamless websites. Whether it's
+                            identity design, digital presence, or creative
+                            communication, we deliver work that is clear,
+                            functional, and built to last.
                         </p>
                         <div class="btnelem">
-                            <button>Learn More</button>
+                            <button><a href="#about">Learn More</a></button>
                         </div>
                     </div>
                 </div>
@@ -166,52 +172,53 @@
                         autoplay
                         loop
                         muted
+                        playsinline
                     ></video>
                 </div>
             </div>
 
             <div id="about">
-                <div id="ableft">
-                    <h1>
-                        Innovative Designs, Shaping Brands With Fresh
-                        Perspectives
-                    </h1>
-                    <p>
-                        "Z"stands for ZAWYA, embodying a unique viewpoint. Born
-                        from the idea that in a changing world, what sets the
-                        extraordinary apart is the ability to adapt, innovate,
-                        and approach challenges from fresh angles. We help
-                        brands discover new perspectives, adapt, and stand out
-                        with innovative designs
-                    </p>
-                    <div id="abstat">
-                        <div class="abstatelem">
-                            <hr />
-                            <h1>180+</h1>
-                            <p>Brands transformed</p>
+                <div id="about-content">
+                    <div id="ableft">
+                        <h1>
+                            Innovative Designs, Shaping Brands With Fresh
+                            Perspectives
+                        </h1>
+                        <p>
+                            "Z"stands for ZAWYA, embodying a unique viewpoint. Born
+                            from the idea that in a changing world, what sets the
+                            extraordinary apart is the ability to adapt, innovate,
+                            and approach challenges from fresh angles. We help
+                            brands discover new perspectives, adapt, and stand out
+                            with innovative designs
+                        </p>
+                        <div id="abstat">
+                            <div class="abstatelem">
+                                <hr />
+                                <h1>180+</h1>
+                                <p>Brands transformed</p>
+                            </div>
+                            <div class="abstatelem">
+                                <hr />
+                                <h1>250+</h1>
+                                <p>Design projects completed</p>
+                            </div>
+                            <div class="abstatelem">
+                                <hr />
+                                <h1>100+</h1>
+                                <p>Brands built from the ground up</p>
+                            </div>
                         </div>
-                        <div class="abstatelem">
-                            <hr />
-                            <h1>250+</h1>
-                            <p>Design projects completed</p>
-                        </div>
-                        <div class="abstatelem">
-                            <hr />
-                            <h1>100+</h1>
-                            <p>Brands built from the ground up</p>
+                        <div class="btnelem">
+                            <button><a href="#services">Learn About us</a></button>
                         </div>
                     </div>
-                    <div class="btnelem">
-                        <button>Learn About us</button>
+                    <div id="abright">
+                        <canvas class="desktop-only"></canvas>
+                        <video class="mobile-only" autoplay muted loop playsinline>
+                            <source src="./assets/images/home/about-vid.mp4" type="video/mp4" />
+                        </video>
                     </div>
-                </div>
-                <div id="abright">
-                    <video
-                        src="./assets/images/home/about-vid.mp4"
-                        autoplay
-                        loop
-                        muted
-                    ></video>
                 </div>
             </div>
 
@@ -226,7 +233,7 @@
                         remember.
                     </p>
                     <div class="servbtn">
-                        <button>
+                        <!-- <button>
                             <img
                                 src="./assets/images/home/btnarrow.svg"
                                 alt="arrow"
@@ -237,7 +244,8 @@
                                 src="./assets/images/home/btnarrow.svg"
                                 alt="arrow"
                             />
-                        </button>
+                            
+                        </button> -->
                     </div>
                 </div>
                 <div class="servcardslist">
@@ -312,11 +320,11 @@
                             <source
                                 media="(max-width: 768px)"
                                 srcset="
-                                    ./assets/images/Website%20Client%20Pngs/Sukoon%20Files%20Arb%20&%20Eng/Arabic/pngs-42-mobile.png
+                                    ./assets/images/Website%20Client%20Pngs/Sukoon%20Files%20Arb%20&%20Eng/Arabic/pngs-42-mobile.webp
                                 "
                             />
                             <img
-                                src="./assets/images/Website Client Pngs/Sukoon Files Arb & Eng/Arabic/pngs-42.png"
+                                src="./assets/images/Website Client Pngs/Sukoon Files Arb & Eng/Arabic/pngs-42.webp"
                                 alt=""
                             />
                         </picture>
@@ -332,11 +340,11 @@
                             <source
                                 media="(max-width: 768px)"
                                 srcset="
-                                    ./assets/images/Website%20Client%20Pngs/Khubza%20House/Arabic/khubza%20arabic-47-mobile.png
+                                    ./assets/images/Website%20Client%20Pngs/Khubza%20House/Arabic/khubza%20arabic-47-mobile.webp
                                 "
                             />
                             <img
-                                src="./assets/images/Website Client Pngs/Khubza House/Arabic/khubza arabic-47.png"
+                                src="./assets/images/Website Client Pngs/Khubza House/Arabic/khubza arabic-47.webp"
                                 alt=""
                             />
                         </picture>
@@ -352,11 +360,11 @@
                             <source
                                 media="(max-width: 768px)"
                                 srcset="
-                                    ./assets/images/Website%20Client%20Pngs/Milkor%20FIles/Arabic%20pngs/Untitled-1-49-mobile.png
+                                    ./assets/images/Website%20Client%20Pngs/Milkor%20FIles/Arabic%20pngs/Untitled-1-49-mobile.webp
                                 "
                             />
                             <img
-                                src="./assets/images/Website Client Pngs/Milkor FIles/Arabic pngs/Untitled-1-49.png"
+                                src="./assets/images/Website Client Pngs/Milkor FIles/Arabic pngs/Untitled-1-49.webp"
                                 alt=""
                             />
                         </picture>
@@ -372,11 +380,11 @@
                             <source
                                 media="(max-width: 768px)"
                                 srcset="
-                                    ./assets/images/Website%20Client%20Pngs/Sunbun%20Files/Arabic/Untitled-1-15-mobile.png
+                                    ./assets/images/Website%20Client%20Pngs/Sunbun%20Files/Arabic/Untitled-1-15-mobile.webp
                                 "
                             />
                             <img
-                                src="./assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-15.png"
+                                src="./assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-15.webp"
                                 alt=""
                             />
                         </picture>
@@ -662,179 +670,297 @@
                     <h1>Successful Clients</h1>
                     <p>
                         Partnering with progressive businesses to uncover their
-                        true purpose, helping them drive meaningful change &
+                        true purpose, helping them drive meaningful change and
                         move the world forward.
                     </p>
                 </div>
                 <div id="clientsbtm">
                     <div id="clientwrapper">
                         <div class="logo">
-                            <img
-                                src="./assets/images/home/ZEDESIGNS Client Logos-1.png"
-                                alt="Client Logo"
-                            />
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-01.png" alt="Client Logo" />
                         </div>
                         <div class="logo">
-                            <img
-                                src="./assets/images/home/ZEDESIGNS Client Logos-2.png"
-                                alt="Client Logo"
-                            />
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-02.png" alt="Client Logo" />
                         </div>
                         <div class="logo">
-                            <img
-                                src="./assets/images/home/ZEDESIGNS Client Logos-3.png"
-                                alt="Client Logo"
-                            />
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png" alt="Client Logo" />
                         </div>
                         <div class="logo">
-                            <img
-                                src="./assets/images/home/ZEDESIGNS Client Logos-19.png"
-                                alt="Client Logo"
-                            />
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-04.png" alt="Client Logo" />
                         </div>
                         <div class="logo">
-                            <img
-                                src="./assets/images/home/ZEDESIGNS Client Logos-23.png"
-                                alt="Client Logo"
-                            />
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-05.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-06.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-07.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-08.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-09.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-10.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-11.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-12.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-13.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-14.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-15.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-17.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-18.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-19.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-20.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-22.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-23.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-24.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-25.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-26.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-27.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-28.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-30.png" alt="Client Logo" />
                         </div>
 
+
                         <div class="logo">
-                            <img
-                                src="./assets/images/home/ZEDESIGNS Client Logos-1.png"
-                                alt="Client Logo"
-                            />
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-01.png" alt="Client Logo" />
                         </div>
                         <div class="logo">
-                            <img
-                                src="./assets/images/home/ZEDESIGNS Client Logos-2.png"
-                                alt="Client Logo"
-                            />
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-02.png" alt="Client Logo" />
                         </div>
                         <div class="logo">
-                            <img
-                                src="./assets/images/home/ZEDESIGNS Client Logos-3.png"
-                                alt="Client Logo"
-                            />
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png" alt="Client Logo" />
                         </div>
                         <div class="logo">
-                            <img
-                                src="./assets/images/home/ZEDESIGNS Client Logos-19.png"
-                                alt="Client Logo"
-                            />
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-04.png" alt="Client Logo" />
                         </div>
                         <div class="logo">
-                            <img
-                                src="./assets/images/home/ZEDESIGNS Client Logos-23.png"
-                                alt="Client Logo"
-                            />
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-05.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-06.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-07.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-08.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-09.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-10.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-11.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-12.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-13.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-14.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-15.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-17.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-18.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-19.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-20.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-22.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-23.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-24.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-25.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-26.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-27.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-28.png" alt="Client Logo" />
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-30.png" alt="Client Logo" />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="footer">
-                <div id="footer-foreground">
-                    <img
-                        src="./assets/images/home/herofooter-bg-green-1.png"
-                        alt=""
-                    />
-                    <div id="ftop">
-                        <div class="tag">
-                            <img src="./assets/images/home/tag.svg" alt="tag" />
-                            <p>
-                                Saudi Based Strategic Branding And Web Design
-                                Company
-                            </p>
-                        </div>
-                        <h1>Every success starts with the first step</h1>
-                        <p>
-                            Let's create something exceptional together. Get in
-                            touch to start your branding journey.
-                        </p>
-                        <div id="btndiv">
-                            <div class="btnelem">
-                                <button>Get Started</button>
-                            </div>
-                            <div class="btnelem transparentbtn">
-                                <button>Explore Our Work</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="fbtm">
-                        <div id="btmleft">
-                            <img
-                                src="./assets/images/home/logofooter-01.png"
-                                alt="logo footer"
-                            />
-                            <div class="info">
-                                <p>HQ</p>
-                                <p>Jeddah, Saudi Arabia</p>
-                            </div>
-                            <div class="info">
-                                <p>Contact Us</p>
-                                <p>info@zedesignss.com</p>
-                            </div>
-                            <p id="copyright">
-                                <span>2025 &copy;</span> ZEDESIGNS. All rights
-                                reserved.
-                            </p>
-                        </div>
-                        <div id="btmright">
-                            <ul>
-                                <li class="liheading">Main Pages</li>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li>
-                                    <a href="./pages/projects.html">Work</a>
-                                </li>
-                            </ul>
-                            <div id="socials">
-                                <div id="socialone">
-                                    <a
-                                        href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
-                                        target="_blank"
-                                        ><img
-                                            src="assets/images/tiktok-logo.png"
-                                            alt=""
-                                    /></a>
-                                    <a
-                                        href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
-                                        target="_blank"
-                                        ><img
-                                            src="assets/images/instagram-logo.png"
-                                            alt=""
-                                    /></a>
-                                    <a href="#"
-                                        ><img
-                                            src="assets/images/linkedin-logo.png"
-                                            alt=""
-                                    /></a>
-                                </div>
-                                <div id="socialtwo">
-                                    <a
-                                        href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849" target="_blank"
-                                        ><img
-                                            src="./assets/images/saudi-business-logo.svg"
-                                            alt=""
-                                    /></a>
-                                    <p>
-                                        Verified By
-                                        <a
-                                            href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849" target="_blank"
-                                            >Saudi Business Center</a
-                                        >
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Floating WhatsApp Button -->
+            <a href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services" target="_blank" id="whatsappFloat" class="whatsapp-float">
+                <img src="./assets/images/home/whatsapp-logo.png" alt="WhatsApp" />
+                <span>WhatsApp Us</span>
+            </a>
+        </div>
 
-                <div id="footer-background">
-                    <h1>ZEDESIGNS</h1>
+        <div id="footer">
+            <div id="footer-foreground">
+                <img
+                    src="./assets/images/home/herofooter-bg-green-1.webp"
+                    alt=""
+                />
+                <div id="ftop">
+                    <div class="tag">
+                        <img src="./assets/images/home/tag.svg" alt="tag" />
+                        <p>
+                            Saudi Based Strategic Branding And Web Design
+                            Company
+                        </p>
+                    </div>
+                    <h1>Every success starts with the first step</h1>
+                    <p>
+                        Let's create something exceptional together. Get in
+                        touch to start your branding journey.
+                    </p>
+                    <div id="btndiv">
+                        <div class="btnelem">
+                            <button>
+                                <a
+                                    href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services" target="_blank"
+                                    >Get Started</a
+                                >
+                            </button>
+                        </div>
+                        <!-- <div class="btnelem transparentbtn">
+                            <button>Explore Our Work</button>
+                        </div> -->
+                    </div>
                 </div>
+                <div id="fbtm">
+                    <div id="btmleft">
+                        <img
+                            src="./assets/images/home/logofooter-01.png"
+                            alt="logo footer"
+                        />
+                        <div class="info">
+                            <p>HQ</p>
+                            <p>Jeddah, Saudi Arabia</p>
+                        </div>
+                        <div class="info">
+                            <p>Contact Us</p>
+                            <p>info@zedesignss.com</p>
+                        </div>
+                        <p id="copyright">
+                            <span>2025 &copy;</span> ZEDESIGNS. All rights
+                            reserved.
+                        </p>
+                    </div>
+                    <div id="btmright">
+                        <ul>
+                            <li class="liheading">Main Pages</li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li>
+                                <a href="#featured">Work</a>
+                            </li>
+                        </ul>
+                        <div id="socials">
+                            <div id="socialone">
+                                <a
+                                    href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/images/tiktok-logo.png"
+                                        alt=""
+                                /></a>
+                                <a
+                                    href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/images/instagram-logo.png"
+                                        alt=""
+                                /></a>
+                                <a
+                                    href="https://www.linkedin.com/company/zedesignss/"
+                                    target="_blank"
+                                    ><img
+                                        src="assets/images/linkedin-logo.png"
+                                        alt=""
+                                /></a>
+                            </div>
+                            <div id="socialtwo">
+                                <a
+                                    href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849"
+                                    target="_blank"
+                                    ><img
+                                        src="./assets/images/saudi-business-logo.svg"
+                                        alt=""
+                                /></a>
+                                <p>
+                                    Verified By
+                                    <a
+                                        href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849"
+                                        target="_blank"
+                                        >Saudi Business Center</a
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer-background">
+                <h1>ZEDESIGNS</h1>
             </div>
         </div>
 
@@ -843,5 +969,6 @@
         <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
         <script src="script.js"></script>
         <script src="./assets/scripts/utils.js"></script>
+        <script src="./assets/scripts/about-frames.js"></script>
     </body>
 </html>
