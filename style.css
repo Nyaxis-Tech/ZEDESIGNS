@@ -113,6 +113,7 @@ html {
 
 #main #hero {
     width: 100%;
+    position: relative;
     /* height: 100vh; */
     /* background-color: rgba(255, 0, 0, 0.399); */
     /* border: 2px solid red; */
