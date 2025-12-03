@@ -147,7 +147,7 @@ html[dir="rtl"] #main #nav ul a{
     transition: all 0.3s ease;
     color: white;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .lang-option:hover {
@@ -469,7 +469,7 @@ html[dir="rtl"] .tag.revealed p{
 /* Floating WhatsApp Button */
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
+    bottom: 20px;
     right: 30px;
     z-index: 1000;
     display: flex;
@@ -488,6 +488,12 @@ html[dir="rtl"] .tag.revealed p{
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
+}
+
+html[dir="rtl"] .whatsapp-float {
+    right: unset;
+    flex-direction: row-reverse;
+    left: 30px;
 }
 
 .whatsapp-float.show {
@@ -779,6 +785,11 @@ html[dir="rtl"] .tag.revealed p{
     /* background-color: blue; */
 }
 
+html[dir="rtl"] #footer #fbtm #btmleft {
+    border-right: none;
+    border-left: 1px solid var(--green-color);
+}
+
 #footer #fbtm #btmleft img {
     width: fit-content;
     min-height: 40px;
@@ -790,6 +801,9 @@ html[dir="rtl"] .tag.revealed p{
     flex-direction: column;
     gap: 0.5rem;
     font-size: 0.9rem;
+}
+html[dir="rtl"] #footer #fbtm #btmleft .info{
+    font-size: 1rem;
 }
 
 #footer #fbtm #btmleft .info p:nth-child(1) {
@@ -931,6 +945,10 @@ html[dir="rtl"] .tag.revealed p{
     line-height: 1;
 }
 
+html[dir="rtl"] #footer #fbtm #btmright #socials #socialtwo p,
+html[dir="rtl"] #footer #fbtm #btmright #socials #socialtwo a{
+    font-size: 1rem;
+}
 /* ========================================
    RESPONSIVE STYLES
    ======================================== */

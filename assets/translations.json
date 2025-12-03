@@ -61,6 +61,27 @@
     "clients": {
       "heading": "Successful Clients",
       "description": "Partnering with progressive businesses to uncover their true purpose, helping them drive meaningful change and move the world forward."
+    },
+    "footer": {
+      "tagText": "Saudi Based Strategic Branding And Web Design Company",
+      "heading": "Every success starts with the first step",
+      "description": "Let's create something exceptional together. Get in touch to start your branding journey.",
+      "btnText": "Get Started",
+      "hqLabel": "HQ",
+      "hqLocation": "Jeddah, Saudi Arabia",
+      "contactLabel": "Contact Us",
+      "contactEmail": "info@zedesignss.com",
+      "copyright": "2025 © ZEDESIGNS. All rights reserved.",
+      "mainPagesHeading": "Main Pages",
+      "navHome": "Home",
+      "navAbout": "About",
+      "navServices": "Services",
+      "navWork": "Work",
+      "verifiedText": "Verified By",
+      "verifiedLink": "Saudi Business Center"
+    },
+    "floatingWhatsApp": {
+      "ariaLabel": "WhatsApp us"
     }
   },
   "ar": {
@@ -107,7 +128,7 @@
       "project1Title": "سكون",
       "project2Title": "خبزة هاوس",
       "project3Title": "ميلكور",
-      "project4Title": "Sanbun",
+      "project4Title": "سان بان",
       "tagBrandStrategy": "استراتيجية العلامة التجارية.",
       "tagMarketing": "تسويق",
       "tagLogoDesign": "تصميم الشعار",
@@ -125,6 +146,27 @@
     "clients": {
       "heading": "شركاؤنا الناجحون",
       "description": "نتعاون مع الشركات الطموحة لاكتشاف حقيقتها ورسالتها ، ونساعدها على صناعة تغيير حقيقي ودفع العالم خطوة للأمام."
+    },
+    "footer": {
+      "tagText": "شركة سعودية متخصصة في البراندينق وتصميم المواقع",
+      "heading": "كل نجاح يبدأ بخطوة أولى",
+      "description": "لنصنع معًا شيء استثنائي. تواصل معنا لتبدأ رحلتك في بناء هوية علامتك التجارية.",
+      "btnText": "ابدأ الآن",
+      "hqLabel": "المقر الرئيسي",
+      "hqLocation": "جدة، المملكة العربية السعودية",
+      "contactLabel": "تواصل معنا",
+      "contactEmail": "info@zedesignss.com",
+      "copyright": "2025 © ZEDESIGNS. جميع الحقوق محفوظة.",
+      "mainPagesHeading": "الصفحات الرئيسية",
+      "navHome": "الرئيسية",
+      "navAbout": "من نحن",
+      "navServices": "الخدمات",
+      "navWork": "الأعمال",
+      "verifiedText": "موثّق من",
+      "verifiedLink": "مركز الأعمال السعودي"
+    },
+    "floatingWhatsApp": {
+      "ariaLabel": "واتس اب لنا"
     }
   }
 }
