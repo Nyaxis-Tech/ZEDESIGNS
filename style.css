@@ -21,7 +21,21 @@ body,
 html {
     width: 100%;
     height: 100%;
+    transition: direction 0.3s ease;
 }
+
+/* RTL Typography Adjustments */
+html[dir="rtl"] * {
+    font-family: "din-next-regular", sans-serif;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+    font-family: "TheYearOfHandicrafts", sans-serif !important;
+    /* letter-spacing: 0; */
+}
+
 /* Loading Screen */
 #loader {
     position: fixed;

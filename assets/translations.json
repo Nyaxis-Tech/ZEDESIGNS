@@ -1,0 +1,34 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "work": "Work",
+      "contact": "Contact"
+    },
+    "hero": {
+      "tagText": "Saudi Based Strategic Branding And Web Design Company",
+      "heading1": "Unique Perspectives",
+      "heading2": "Simple Designs",
+      "description": "We craft digital experiences that blend creativity with strategy. From brand identity to web design, we transform ideas into impactful solutions that resonate with your audience.",
+      "btnText": "Get in Touch"
+    }
+  },
+  "ar": {
+    "nav": {
+      "home": "الرئيسية",
+      "about": "من نحن",
+      "services": "الخدمات",
+      "work": "الأعمال",
+      "contact": "تواصل معنا"
+    },
+    "hero": {
+      "tagText": "شركة سعودية متخصصة في بناء العلامات التجارية الاستراتيجية وتصميم المواقع الإلكترونية.",
+      "heading1": "منظور جديد",
+      "heading2": "وتصميم بلا تعقيد",
+      "description": "تواصل أو رقمي، حضور بصرية، هوية كانت سواء سلسة إلكترونية ومواقع قوية براندات لنصنع والبساطة الاستراتيجية بين نمزج ليستمر ومبنيا عمليا، واضحًا، عملاً لك نقدم إبداعي",
+      "btnText": "تواصل معنا الآن"
+    }
+  }
+}

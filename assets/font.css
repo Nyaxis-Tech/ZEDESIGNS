@@ -7,6 +7,10 @@
     src: url(./fonts/DIN\ NEXT™\ ARABIC\ REGULAR.otf);
 }
 @font-face {
+    font-family: "din-next-bold";
+    src: url(./fonts/DIN\ NEXT™\ ARABIC\ BOLD.otf);
+}
+@font-face {
     font-family: "didot-medium";
     src: url(./fonts/Didot\ Medium.ttf);
 }

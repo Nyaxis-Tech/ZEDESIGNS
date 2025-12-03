@@ -255,22 +255,44 @@ let tl = gsap.timeline({
 
 // Only apply horizontal text movement on desktop
 if (window.innerWidth > 768) {
-    tl.to(
-        ".h1one",
-        {
-            x: -50,
-            ease: Power1.easeInOut,
-        },
-        "<"
-    );
-    tl.to(
-        ".h1two",
-        {
-            x: 50,
-            ease: Power1.easeInOut,
-        },
-        "<"
-    );
+    let currentLang = localStorage.getItem("language") || 'en';
+    if (currentLang == 'ar') {
+        // For Arabic, reverse the directions
+        tl.to(
+            ".h1one",
+            {
+                x: 50,
+                ease: Power1.easeInOut,
+            },
+            "<"
+        );
+        tl.to(
+            ".h1two",
+            {
+                x: -50,
+                ease: Power1.easeInOut,
+            },
+            "<"
+        );
+    } else {
+            // For English and other LTR languages
+        tl.to(
+            ".h1one",
+            {
+                x: -50,
+                ease: Power1.easeInOut,
+            },
+            "<"
+        );
+        tl.to(
+            ".h1two",
+            {
+                x: 50,
+                ease: Power1.easeInOut,
+            },
+            "<"
+        );
+    }
 }
 
 tl.to(
