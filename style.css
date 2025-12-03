@@ -597,6 +597,10 @@ html[dir="rtl"] .servcard button img {
     width: 40%;
     padding: 0 5vw;
 }
+
+html[dir="rtl"] #main #featured > h1{
+    line-height: unset;
+}
 #main #featured > p {
     font-size: 1.1rem;
     opacity: 0.7;
