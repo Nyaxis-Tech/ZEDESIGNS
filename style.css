@@ -891,6 +891,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
     scroll-behavior: auto;
+    direction: ltr !important; /* Force LTR for consistent scroll behavior */
 }
 
 #main #clients #clientsbtm::-webkit-scrollbar {
@@ -901,6 +902,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     width: max-content;
     display: flex;
     gap: 2rem;
+
     /* Animation removed - now controlled by JS */
 }
 
@@ -1073,6 +1075,14 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
         font-size: 1rem;
         width: 50%;
     }
+
+    /* Only apply margin for Safari browser */
+    @supports (-webkit-hyphens:none) {
+        #main #clients #clientwrapper {
+            margin-bottom: 2rem;
+        }
+    }
+
 }
 
 /* Mobile and Tablets (up to 768px) */

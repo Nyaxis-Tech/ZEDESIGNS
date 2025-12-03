@@ -57,6 +57,10 @@
       "tagTypefaceAndColorAdaptation": "Typeface & Color Adaptation",
       "tagPackagingDesignAndPrint": "Packaging Design and Print",
       "tagWebsiteDevelopment": "Website Development"
+    },
+    "clients": {
+      "heading": "Successful Clients",
+      "description": "Partnering with progressive businesses to uncover their true purpose, helping them drive meaningful change and move the world forward."
     }
   },
   "ar": {
@@ -117,6 +121,10 @@
       "tagTypefaceAndColorAdaptation": "تصميم الباكجينق",
       "tagPackagingDesignAndPrint": "تصميم وطباعة جميع انواع الباكجينق",
       "tagWebsiteDevelopment": "تطوير المواقع"
+    },
+    "clients": {
+      "heading": "شركاؤنا الناجحون",
+      "description": "نتعاون مع الشركات الطموحة لاكتشاف حقيقتها ورسالتها ، ونساعدها على صناعة تغيير حقيقي ودفع العالم خطوة للأمام."
     }
   }
 }

@@ -857,8 +857,8 @@ html[dir="rtl"] .tag.revealed p{
 }
 #footer #fbtm #btmright #socials #socialone{
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: flex-end;
     gap: 1.2rem;;
 }
 
@@ -868,7 +868,7 @@ html[dir="rtl"] .tag.revealed p{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem;
+    padding: 0.8rem;
     border-radius: 100px;
     font-size: 1.2rem;
     opacity: 0.7;

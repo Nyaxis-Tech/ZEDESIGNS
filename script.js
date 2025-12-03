@@ -474,13 +474,15 @@ if (window.innerWidth > 768) {
     };
     cloneContent();
 
-    // Auto-scroll function
-    // change the auto scroll right to left
-
+    // Auto-scroll function (always LTR due to CSS direction override)
     const autoScroll = () => {
         if (!isDown) {
-            clientsSection.scrollLeft -= 1;
+            if(localStorage.getItem("language") === "ar"){
+                clientsSection.scrollLeft += 1;
 
+            } else {
+                clientsSection.scrollLeft -= 1;
+            }
             // Reset scroll position for infinite loop
             if (clientsSection.scrollLeft <= 0) {
                 clientsSection.scrollLeft = clientWrapper.scrollWidth;
