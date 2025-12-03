@@ -174,9 +174,6 @@ html[dir="rtl"] body {
     text-align: right;
 }
 
-html[dir="rtl"] #main #nav ul {
-    flex-direction: row-reverse;
-}
 
 html[dir="rtl"] .nav-actions {
     margin-left: 0;
@@ -191,6 +188,7 @@ html[dir="rtl"] .lang-dropdown {
 html[dir="rtl"] .btnelem button img {
     transform: rotate(180deg);
 }
+
 
 html[dir="rtl"] .tag img{
     transform: rotate(135deg);

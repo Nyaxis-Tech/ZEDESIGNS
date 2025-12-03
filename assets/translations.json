@@ -13,6 +13,17 @@
       "heading2": "Simple Designs",
       "description": "We craft digital experiences that blend creativity with strategy. From brand identity to web design, we transform ideas into impactful solutions that resonate with your audience.",
       "btnText": "Get in Touch"
+    },
+    "about": {
+      "heading": "Innovative Designs, Shaping Brands With Fresh Perspectives",
+      "description": "\"Z\" stands for ZAWYA, embodying a unique viewpoint. Born from the idea that in a changing world, what sets the extraordinary apart is the ability to adapt, innovate, and approach challenges from fresh angles. We help brands discover new perspectives, adapt, and stand out with innovative designs",
+      "stat1": "180+",
+      "stat1Label": "Brands transformed",
+      "stat2": "250+",
+      "stat2Label": "Design projects completed",
+      "stat3": "100+",
+      "stat3Label": "Brands built from the ground up",
+      "btnText": "Learn About us"
     }
   },
   "ar": {
@@ -29,6 +40,17 @@
       "heading2": "وتصميم بلا تعقيد",
       "description": "تواصل أو رقمي، حضور بصرية، هوية كانت سواء سلسة إلكترونية ومواقع قوية براندات لنصنع والبساطة الاستراتيجية بين نمزج ليستمر ومبنيا عمليا، واضحًا، عملاً لك نقدم إبداعي",
       "btnText": "تواصل معنا الآن"
+    },
+    "about": {
+      "heading": "إبداع بصري يعيد تشكيل العلامات بمنظور مختلف",
+      "description": "حرف “Z” مستوحى من كلمة زاوية، لأنه يمثل نظرة مختلفة للأشياء. انطلقت فكرتنا من إيمان بأن العالم يتغير باستمرار، وما يميّز الاستثنائي هو القدرة على التكيف، الابتكار، والنظر للتحديات من زاوية جديدة. نساعد العلامات التجارية على اكتشاف منظور مختلف التكيف بذكاء، والتميّز من خلال تصميم مبتكر وهوية متجددة.",
+      "stat1": "١٨٠+",
+      "stat1Label": "علامة تجارية تم تحويلها",
+      "stat2": "٢٥٠+",
+      "stat2Label": "مشروع تصميم مكتمل",
+      "stat3": "١٠٠+",
+      "stat3Label": "علامة تجارية تم بناؤها من الصفر",
+      "btnText": "تعرف علينا"
     }
   }
 }

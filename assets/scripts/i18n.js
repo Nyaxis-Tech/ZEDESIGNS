@@ -51,6 +51,12 @@ class I18n {
                 // Special handling for tag elements to preserve animation
                 const isTagElement = element.closest('.tag') && element.tagName === 'P';
                 
+                // Special handling for about heading (word animation)
+                const isAboutHeading = element.matches('#about #ableft h1');
+                
+                // Special handling for counter elements
+                const isCounter = element.hasAttribute('data-count-target');
+                
                 if (animate) {
                     // For tag elements, handle differently
                     if (isTagElement) {
@@ -74,6 +80,36 @@ class I18n {
                             // If not revealed, just update text
                             element.textContent = translation;
                         }
+                    } else if (isAboutHeading) {
+                        // For about heading, fade out, update, re-split words, fade in
+                        element.style.opacity = '0';
+                        
+                        setTimeout(() => {
+                            // Update text
+                            element.textContent = translation;
+                            
+                            // Re-split into words for animation
+                            const words = translation.trim().split(/\s+/);
+                            element.innerHTML = words
+                                .map((w) => `<span class="word">${w}&nbsp;</span>`)
+                                .join("");
+                            
+                            // Set words to visible (already animated in)
+                            const wordSpans = element.querySelectorAll('.word');
+                            wordSpans.forEach(span => {
+                                span.style.opacity = '1';
+                                span.style.transform = 'translateY(0)';
+                            });
+                            
+                            // Fade heading back in
+                            setTimeout(() => {
+                                element.style.opacity = '1';
+                            }, 50);
+                        }, 200);
+                    } else if (isCounter) {
+                        // For counters, just update the text without animation
+                        // The counting animation will handle it
+                        element.textContent = translation;
                     } else {
                         // Normal elements
                         element.style.opacity = '0';
@@ -92,10 +128,18 @@ class I18n {
                 } else {
                     // Initial load - no animation
                     element.textContent = translation;
+                    
+                    // For about heading on initial load, split into words
+                    if (isAboutHeading) {
+                        const words = translation.trim().split(/\s+/);
+                        element.innerHTML = words
+                            .map((w) => `<span class="word">${w}&nbsp;</span>`)
+                            .join("");
+                    }
                 }
                 
                 // Add transition if not already present
-                if (!element.style.transition && !isTagElement) {
+                if (!element.style.transition && !isTagElement && !isAboutHeading) {
                     element.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
                 }
             }

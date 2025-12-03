@@ -233,6 +233,9 @@ html[dir="rtl"] h3 {
     white-space: nowrap;
     font-family: 'didot-medium';
 }
+html[dir="rtl"] #about #ableft h1 .word{
+    font-family: "TheYearOfHandicrafts", sans-serif !important;
+}
 
 #main #about #abright {
     width: 45%;
@@ -251,6 +254,10 @@ html[dir="rtl"] h3 {
                         linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
     mask-composite: intersect;
     -webkit-mask-composite: source-in;
+}
+
+html[dir="rtl"] #main #about #abright canvas{
+    transform: scaleX(-1);
 }
 
 /* Show canvas on desktop, hide on mobile */
@@ -301,11 +308,6 @@ html[dir="rtl"] h3 {
     /* background-color: blue; */
 }
 
-/* About heading split-word styling */
-#about #ableft h1 .word {
-    display: inline-block;
-    white-space: nowrap;
-}
 
 #main #about #ableft > h1 {
     font-size: 3rem;

@@ -366,12 +366,14 @@ if (window.innerWidth > 768) {
             started = true;
 
             counters.forEach((el) => {
+                // Get target from data attribute
+                const target = parseInt(el.getAttribute('data-count-target'), 10) || 0;
+                
+                // Get current translation text to extract suffix
                 const txt = el.textContent.trim();
-                // extract number and suffix (like +)
-                const m = txt.match(/^(\d+[\d,]*)/);
-                if (!m) return;
-                const target = parseInt(m[0].replace(/,/g, ""), 10) || 0;
-                const suffix = txt.slice(m[0].length) || "";
+                // Extract suffix (like + or any other characters after the number)
+                const match = txt.match(/[\d٠-٩]+(.*)$/);
+                const suffix = match ? match[1] : '+';
 
                 const obj = { val: 0 };
                 gsap.to(obj, {
@@ -379,8 +381,17 @@ if (window.innerWidth > 768) {
                     duration: 3.5,
                     ease: "power1.out",
                     onUpdate() {
-                        const v = Math.floor(obj.val).toLocaleString();
-                        el.textContent = v + suffix;
+                        const v = Math.floor(obj.val);
+                        // Convert to Arabic numerals if current language is Arabic
+                        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+                        let displayNum = v.toString();
+                        
+                        if (currentLang === 'ar') {
+                            // Convert Western numerals to Arabic-Indic numerals
+                            displayNum = v.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+                        }
+                        
+                        el.textContent = displayNum + suffix;
                     },
                 });
             });
