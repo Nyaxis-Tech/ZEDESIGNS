@@ -11,10 +11,8 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-
 // Loading Animation
-(
-    () => {
+(() => {
     const loader = document.getElementById("loader");
     const svg1 = document.querySelector(".loader-svg-1");
     const svg2 = document.querySelector(".loader-svg-2");
@@ -255,8 +253,8 @@ let tl = gsap.timeline({
 
 // Only apply horizontal text movement on desktop
 if (window.innerWidth > 768) {
-    let currentLang = localStorage.getItem("language") || 'en';
-    if (currentLang == 'ar') {
+    let currentLang = localStorage.getItem("language") || "en";
+    if (currentLang == "ar") {
         // For Arabic, reverse the directions
         tl.to(
             ".h1one",
@@ -275,7 +273,7 @@ if (window.innerWidth > 768) {
             "<"
         );
     } else {
-            // For English and other LTR languages
+        // For English and other LTR languages
         tl.to(
             ".h1one",
             {
@@ -319,14 +317,13 @@ if (window.innerWidth > 768) {
                 scrub: 1,
                 invalidateOnRefresh: true,
                 // ease: "Power1.out",
-
             },
             onComplete: () => {
                 gsap.set("#main", {
                     backgroundColor: "var(--green-color)",
                     delay: 0.2,
                 });
-            }
+            },
         });
         hortl.to(
             "#main",
@@ -335,14 +332,25 @@ if (window.innerWidth > 768) {
             },
             "<"
         );
-        hortl.to(
-            "#servcardstrip",
-            {
-                x: () => -(serviceStrip.scrollWidth - window.innerWidth),
-                // ease: "none",
-            },
-            "<"
-        );
+        if (localStorage.getItem("language") === "ar") {
+            hortl.to(
+                "#servcardstrip",
+                {
+                    x: () => serviceStrip.scrollWidth - window.innerWidth,
+                    // ease: "none",
+                },
+                "<"
+            );
+        } else {
+            hortl.to(
+                "#servcardstrip",
+                {
+                    x: () => -(serviceStrip.scrollWidth - window.innerWidth),
+                    // ease: "none",
+                },
+                "<"
+            );
+        }
         // hortl.to("#main", {
         //     backgroundColor: "var(--green-color)",
         //     // delay: 0.2,
@@ -367,13 +375,14 @@ if (window.innerWidth > 768) {
 
             counters.forEach((el) => {
                 // Get target from data attribute
-                const target = parseInt(el.getAttribute('data-count-target'), 10) || 0;
-                
+                const target =
+                    parseInt(el.getAttribute("data-count-target"), 10) || 0;
+
                 // Get current translation text to extract suffix
                 const txt = el.textContent.trim();
                 // Extract suffix (like + or any other characters after the number)
                 const match = txt.match(/[\d٠-٩]+(.*)$/);
-                const suffix = match ? match[1] : '+';
+                const suffix = match ? match[1] : "+";
 
                 const obj = { val: 0 };
                 gsap.to(obj, {
@@ -383,14 +392,18 @@ if (window.innerWidth > 768) {
                     onUpdate() {
                         const v = Math.floor(obj.val);
                         // Convert to Arabic numerals if current language is Arabic
-                        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+                        const currentLang =
+                            document.documentElement.getAttribute("lang") ||
+                            "en";
                         let displayNum = v.toString();
-                        
-                        if (currentLang === 'ar') {
+
+                        if (currentLang === "ar") {
                             // Convert Western numerals to Arabic-Indic numerals
-                            displayNum = v.toString().replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+                            displayNum = v
+                                .toString()
+                                .replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
                         }
-                        
+
                         el.textContent = displayNum + suffix;
                     },
                 });
@@ -442,7 +455,7 @@ if (window.innerWidth > 768) {
 (() => {
     const clientsSection = document.querySelector("#clients #clientsbtm");
     const clientWrapper = document.querySelector("#clients #clientwrapper");
-    
+
     if (!clientsSection || !clientWrapper) return;
 
     let isDown = false;
@@ -465,10 +478,9 @@ if (window.innerWidth > 768) {
     // change the auto scroll right to left
 
     const autoScroll = () => {
-
         if (!isDown) {
             clientsSection.scrollLeft -= 1;
-            
+
             // Reset scroll position for infinite loop
             if (clientsSection.scrollLeft <= 0) {
                 clientsSection.scrollLeft = clientWrapper.scrollWidth;
@@ -481,10 +493,10 @@ if (window.innerWidth > 768) {
     autoScroll();
 
     // Mouse events
-    clientsSection.addEventListener('mousedown', (e) => {
+    clientsSection.addEventListener("mousedown", (e) => {
         isDown = true;
         hasMoved = false;
-        clientsSection.classList.add('grabbing');
+        clientsSection.classList.add("grabbing");
         startX = e.pageX - clientsSection.offsetLeft;
         scrollLeft = clientsSection.scrollLeft;
         lastX = e.pageX;
@@ -493,37 +505,39 @@ if (window.innerWidth > 768) {
         e.preventDefault();
     });
 
-    clientsSection.addEventListener('mouseleave', () => {
+    clientsSection.addEventListener("mouseleave", () => {
         if (isDown) {
             isDown = false;
-            clientsSection.classList.remove('grabbing');
+            clientsSection.classList.remove("grabbing");
         }
     });
 
-    clientsSection.addEventListener('mouseup', (e) => {
+    clientsSection.addEventListener("mouseup", (e) => {
         if (isDown) {
             isDown = false;
-            clientsSection.classList.remove('grabbing');
-            
+            clientsSection.classList.remove("grabbing");
+
             // Prevent click event if user was dragging
             if (hasMoved) {
                 e.preventDefault();
                 e.stopPropagation();
             }
-            
+
             // Apply momentum/inertia
             const applyInertia = () => {
                 if (Math.abs(velocity) > 0.5) {
                     clientsSection.scrollLeft += velocity;
                     velocity *= 0.95; // Friction
-                    
+
                     // Reset scroll for infinite loop
-                    if (clientsSection.scrollLeft >= clientWrapper.scrollWidth) {
+                    if (
+                        clientsSection.scrollLeft >= clientWrapper.scrollWidth
+                    ) {
                         clientsSection.scrollLeft = 0;
                     } else if (clientsSection.scrollLeft <= 0) {
                         clientsSection.scrollLeft = clientWrapper.scrollWidth;
                     }
-                    
+
                     requestAnimationFrame(applyInertia);
                 }
             };
@@ -531,26 +545,27 @@ if (window.innerWidth > 768) {
         }
     });
 
-    clientsSection.addEventListener('mousemove', (e) => {
+    clientsSection.addEventListener("mousemove", (e) => {
         if (!isDown) return;
         e.preventDefault();
-        
+
         hasMoved = true;
-        
+
         const currentTime = Date.now();
         const timeElapsed = currentTime - lastTime;
-        
+
         const x = e.pageX - clientsSection.offsetLeft;
-        const walk = (x - startX);
-        
+        const walk = x - startX;
+
         // Calculate velocity
         velocity = (lastX - e.pageX) / (timeElapsed || 16);
-        
+
         clientsSection.scrollLeft = scrollLeft - walk;
-        
+
         // Reset scroll for infinite loop
         if (clientsSection.scrollLeft >= clientWrapper.scrollWidth) {
-            const overflow = clientsSection.scrollLeft - clientWrapper.scrollWidth;
+            const overflow =
+                clientsSection.scrollLeft - clientWrapper.scrollWidth;
             clientsSection.scrollLeft = overflow;
             scrollLeft = overflow;
             startX = e.pageX - clientsSection.offsetLeft;
@@ -560,85 +575,107 @@ if (window.innerWidth > 768) {
             scrollLeft = clientWrapper.scrollWidth - underflow;
             startX = e.pageX - clientsSection.offsetLeft;
         }
-        
+
         lastX = e.pageX;
         lastTime = currentTime;
     });
 
     // Prevent clicks on child elements during drag
-    clientsSection.addEventListener('click', (e) => {
-        if (hasMoved) {
-            e.preventDefault();
-            e.stopPropagation();
-            hasMoved = false;
-        }
-    }, true);
+    clientsSection.addEventListener(
+        "click",
+        (e) => {
+            if (hasMoved) {
+                e.preventDefault();
+                e.stopPropagation();
+                hasMoved = false;
+            }
+        },
+        true
+    );
 
     // Touch events for mobile
-    clientsSection.addEventListener('touchstart', (e) => {
-        isDown = true;
-        hasMoved = false;
-        startX = e.touches[0].pageX - clientsSection.offsetLeft;
-        scrollLeft = clientsSection.scrollLeft;
-        lastX = e.touches[0].pageX;
-        lastTime = Date.now();
-        velocity = 0;
-    }, { passive: true });
+    clientsSection.addEventListener(
+        "touchstart",
+        (e) => {
+            isDown = true;
+            hasMoved = false;
+            startX = e.touches[0].pageX - clientsSection.offsetLeft;
+            scrollLeft = clientsSection.scrollLeft;
+            lastX = e.touches[0].pageX;
+            lastTime = Date.now();
+            velocity = 0;
+        },
+        { passive: true }
+    );
 
-    clientsSection.addEventListener('touchend', () => {
-        if (isDown) {
-            isDown = false;
-            
-            // Apply momentum for touch
-            const applyInertia = () => {
-                if (Math.abs(velocity) > 0.5) {
-                    clientsSection.scrollLeft += velocity;
-                    velocity *= 0.95;
-                    
-                    if (clientsSection.scrollLeft >= clientWrapper.scrollWidth) {
-                        clientsSection.scrollLeft = 0;
-                    } else if (clientsSection.scrollLeft <= 0) {
-                        clientsSection.scrollLeft = clientWrapper.scrollWidth;
+    clientsSection.addEventListener(
+        "touchend",
+        () => {
+            if (isDown) {
+                isDown = false;
+
+                // Apply momentum for touch
+                const applyInertia = () => {
+                    if (Math.abs(velocity) > 0.5) {
+                        clientsSection.scrollLeft += velocity;
+                        velocity *= 0.95;
+
+                        if (
+                            clientsSection.scrollLeft >=
+                            clientWrapper.scrollWidth
+                        ) {
+                            clientsSection.scrollLeft = 0;
+                        } else if (clientsSection.scrollLeft <= 0) {
+                            clientsSection.scrollLeft =
+                                clientWrapper.scrollWidth;
+                        }
+
+                        requestAnimationFrame(applyInertia);
                     }
-                    
-                    requestAnimationFrame(applyInertia);
-                }
-            };
-            applyInertia();
-        }
-    }, { passive: true });
+                };
+                applyInertia();
+            }
+        },
+        { passive: true }
+    );
 
-    clientsSection.addEventListener('touchmove', (e) => {
-        if (!isDown) return;
-        
-        hasMoved = true;
-        
-        const currentTime = Date.now();
-        const timeElapsed = currentTime - lastTime;
-        
-        const x = e.touches[0].pageX - clientsSection.offsetLeft;
-        const walk = (x - startX);
-        
-        velocity = (lastX - e.touches[0].pageX) / (timeElapsed || 16);
-        
-        clientsSection.scrollLeft = scrollLeft - walk;
-        
-        if (clientsSection.scrollLeft >= clientWrapper.scrollWidth) {
-            const overflow = clientsSection.scrollLeft - clientWrapper.scrollWidth;
-            clientsSection.scrollLeft = overflow;
-            scrollLeft = overflow;
-            startX = e.touches[0].pageX - clientsSection.offsetLeft;
-        } else if (clientsSection.scrollLeft <= 0) {
-            const underflow = Math.abs(clientsSection.scrollLeft);
-            clientsSection.scrollLeft = clientWrapper.scrollWidth - underflow;
-            scrollLeft = clientWrapper.scrollWidth - underflow;
-            startX = e.touches[0].pageX - clientsSection.offsetLeft;
-        }
-        
-        lastX = e.touches[0].pageX;
-        lastTime = currentTime;
-    }, { passive: true });
+    clientsSection.addEventListener(
+        "touchmove",
+        (e) => {
+            if (!isDown) return;
+
+            hasMoved = true;
+
+            const currentTime = Date.now();
+            const timeElapsed = currentTime - lastTime;
+
+            const x = e.touches[0].pageX - clientsSection.offsetLeft;
+            const walk = x - startX;
+
+            velocity = (lastX - e.touches[0].pageX) / (timeElapsed || 16);
+
+            clientsSection.scrollLeft = scrollLeft - walk;
+
+            if (clientsSection.scrollLeft >= clientWrapper.scrollWidth) {
+                const overflow =
+                    clientsSection.scrollLeft - clientWrapper.scrollWidth;
+                clientsSection.scrollLeft = overflow;
+                scrollLeft = overflow;
+                startX = e.touches[0].pageX - clientsSection.offsetLeft;
+            } else if (clientsSection.scrollLeft <= 0) {
+                const underflow = Math.abs(clientsSection.scrollLeft);
+                clientsSection.scrollLeft =
+                    clientWrapper.scrollWidth - underflow;
+                scrollLeft = clientWrapper.scrollWidth - underflow;
+                startX = e.touches[0].pageX - clientsSection.offsetLeft;
+            }
+
+            lastX = e.touches[0].pageX;
+            lastTime = currentTime;
+        },
+        { passive: true }
+    );
 
     // Set initial cursor
-    clientsSection.style.cursor = 'grab';
+    clientsSection.style.cursor = "grab";
 })();

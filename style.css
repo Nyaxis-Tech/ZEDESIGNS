@@ -227,16 +227,6 @@ html[dir="rtl"] h3 {
     width: 53%;
 }
 
-/* About heading word animation */
-#about #ableft h1 .word {
-    display: inline-block;
-    white-space: nowrap;
-    font-family: 'didot-medium';
-}
-html[dir="rtl"] #about #ableft h1 .word{
-    font-family: "TheYearOfHandicrafts", sans-serif !important;
-}
-
 #main #about #abright {
     width: 45%;
     height: 80vh;
@@ -357,6 +347,21 @@ html[dir="rtl"] #main #about #abright canvas{
     font-weight: 500;
 }
 
+/* About heading word animation */
+#about #ableft h1 .word {
+    display: inline-block;
+    white-space: nowrap;
+    font-family: 'didot-medium';
+}
+
+html[dir="rtl"] #about #ableft > h1{
+    line-height: unset !important;
+}
+html[dir="rtl"] #about #ableft h1 .word{
+    font-family: "TheYearOfHandicrafts", sans-serif !important;
+}
+
+
 #main #services {
     width: 100%;
     min-height: 120vh;
@@ -462,6 +467,11 @@ html[dir="rtl"] #main #about #abright canvas{
     padding-right: 5vw;
 }
 
+html[dir="rtl"] #main #services .servcardslist #servcardstrip{
+    padding-left: 5vw;
+    padding-right: 40vw;
+}
+
 #main #services .servcardslist .servcard {
     position: relative;
     width: 450px;
@@ -491,6 +501,23 @@ html[dir="rtl"] #main #about #abright canvas{
 }
 #main #services .servcardslist .servcard:nth-of-type(4) {
     background: url("./assets/images/home/services-social-1.png") no-repeat center
+        center/cover;
+}
+
+html[dir="rtl"] #main #services .servcardslist .servcard:nth-of-type(1) {
+    background: url("./assets/images/home/services-branding-1-ar.png") no-repeat
+        center center/cover;
+}
+html[dir="rtl"] #main #services .servcardslist .servcard:nth-of-type(2) {
+    background: url("./assets/images/home/services-website-1-ar.png") no-repeat
+        center center/cover;
+}
+html[dir="rtl"] #main #services .servcardslist .servcard:nth-of-type(3) {
+    background: url("./assets/images/home/services-design-1-ar.png") no-repeat center
+        center/cover;
+}
+html[dir="rtl"] #main #services .servcardslist .servcard:nth-of-type(4) {
+    background: url("./assets/images/home/services-social-1-ar.png") no-repeat center
         center/cover;
 }
 
@@ -542,6 +569,13 @@ html[dir="rtl"] #main #about #abright canvas{
     height: 25px;
     object-fit: cover;
     filter: invert(1);
+}
+html[dir="rtl"] .servcard:hover button img{
+    transform: rotate(-135deg) !important;
+
+}
+html[dir="rtl"] .servcard button img {
+    transform: rotate(-90deg);
 }
 
 #main #featured {
@@ -1185,6 +1219,9 @@ html[dir="rtl"] #main #about #abright canvas{
         flex-direction: column;
         width: 100%;
         gap: 2rem;
+        padding: 0 5vw;
+    }
+    html[dir="rtl"] #main #services .servcardslist #servcardstrip{
         padding: 0 5vw;
     }
 
