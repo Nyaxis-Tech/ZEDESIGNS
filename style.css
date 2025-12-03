@@ -662,9 +662,15 @@ html[dir="rtl"] .servcard button img {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
-    width: 30%;
+    width: 50%;
     margin-bottom: 5rem;
     margin-left: 4rem;
+}
+
+html[dir="rtl"] #main #featured #projects .projectcard h1,
+html[dir="rtl"] #main #featured #projects .projectcard .prtags{
+    margin-left: 0;
+    margin-right: 4rem;
 }
 
 #main #featured #projects .projectcard .prtags .prtag {
@@ -676,6 +682,9 @@ html[dir="rtl"] .servcard button img {
     /* font-weight: 00; */
     text-transform: uppercase;
     /* color: black; */
+}
+html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
+    font-size: 1rem;
 }
 
 #main #testimonials {

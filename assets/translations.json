@@ -33,9 +33,30 @@
       "card2Title": "Websites",
       "card2Desc": "Intelligent, engaging, and seamlessly functional. We build websites that don't just look exceptional but perform effortlessly, shaping digital experiences where design and usability unite.",
       "card3Title": "Design and Print",
-      "card3Desc": "We design and we print, delivering high-quality visuals and materials that ensure your brand stays consistent across every touchpoint. From concept to production, every detail is refined for clarity, crafted for impact, and built to last.",
+      "card3Desc": "We design and print consistent, high-impact branding. From concept to production, every detail is crafted for quality.",
       "card4Title": "Social Media",
       "card4Desc": "Ideas with purpose, campaigns with power. Grounded in strategy and made to perform, we create content that connects deeply, engages meaningfully, and drives measurable results"
+    },
+    "featured": {
+      "heading": "Featured Branding & Website Projects",
+      "description": "Our work ignites transformation, refining your brand, amplifying your voice, and turning strategy into lasting momentum. We help you connect with clarity, build trust with purpose, and grow stronger across every brand touchpoint.",
+      "project1Title": "Sokon",
+      "project2Title": "Khubza House",
+      "project3Title": "Milkor",
+      "project4Title": "Sanbun",
+      "tagBrandStrategy": "Brand Strategy",
+      "tagMarketing": "Marketing",
+      "tagLogoDesign": "Logo Design",
+      "tagWebsiteDev": "Website Development",
+      "tagPackagingAndEnvironmentalBranding": "Packaging & Environmental Branding",
+      "tagVisualIdentitySystem": "Visual Identity System",
+      "tagBrandGuidelines": "Brand Guidelines",
+      "tagBrandGuidelinesandApplications": "Brand Guidelines & Applications",
+      "tagRegionalBrandStrategy": "Regional Brand Strategy",
+      "tagArabicLogoDevelopment": " Arabic Logo Development",
+      "tagTypefaceAndColorAdaptation": "Typeface & Color Adaptation",
+      "tagPackagingDesignAndPrint": "Packaging Design and Print",
+      "tagWebsiteDevelopment": "Website Development"
     }
   },
   "ar": {
@@ -47,7 +68,7 @@
       "contact": "تواصل معنا"
     },
     "hero": {
-      "tagText": "شركة سعودية متخصصة في بناء العلامات التجارية الاستراتيجية وتصميم المواقع الإلكترونية.",
+      "tagText": "شركة سعودية متخصصة في البراندينق وتصميم المواقع",
       "heading1": "منظور جديد",
       "heading2": "وتصميم بلا تعقيد",
       "description": "تواصل أو رقمي، حضور بصرية، هوية كانت سواء سلسة إلكترونية ومواقع قوية براندات لنصنع والبساطة الاستراتيجية بين نمزج ليستمر ومبنيا عمليا، واضحًا، عملاً لك نقدم إبداعي",
@@ -75,6 +96,27 @@
       "card3Desc": "نصمم ونتولى الطباعة علشان يظهر براندك بنفس الجودة في كل مكان يطلع فيه. من أول سكتش لآخر قطعة مطبوعة، نضبط التفاصيل لتكون واضحة، قوية في حضورها، وتدوم مع الزمن.",
       "card4Title": "إدارة السوشال ميديا",
       "card4Desc": "أفكار لها هدف، وحملات لها أثر نشتغل باستراتيجية واضحة ونقدم محتوى يتحرّك بوعي، يلامس الناس، يخلق تفاعل حقيقي، ويحقق نتائج تقاس."
+    },
+    "featured": {
+      "heading": "أبرز مشاريع الهوية التجارية وتصميم المواقع الالكترونية",
+      "description": "عملنا يشعل التحوّل، يعزّز هويتك، يقوي صوتك، ويحوّل الاستراتيجية إلى أثر يدوم. نساعدك على التواصل بوضوح، بناء الثقة بمعنى، والنمو بثبات في كل نقطة يلتقي فيها العميل مع العلامة.",
+      "project1Title": "سكون",
+      "project2Title": "خبزة هاوس",
+      "project3Title": "ميلكور",
+      "project4Title": "Sanbun",
+      "tagBrandStrategy": "استراتيجية العلامة التجارية.",
+      "tagMarketing": "تسويق",
+      "tagLogoDesign": "تصميم الشعار",
+      "tagWebsiteDev": "تطوير المواقع",
+      "tagPackagingAndEnvironmentalBranding": "الباكجينق والتصاميم البيئية",
+      "tagVisualIdentitySystem": "تصميم الهوية البصرية",
+      "tagBrandGuidelines": "إرشادات الهوية",
+      "tagBrandGuidelinesandApplications": "دليل الاستخدامات والتطبيقات",
+      "tagRegionalBrandStrategy": "تطوير الشعار العربية",
+      "tagArabicLogoDevelopment": "تكييف الخطوط والألوان",
+      "tagTypefaceAndColorAdaptation": "تصميم الباكجينق",
+      "tagPackagingDesignAndPrint": "تصميم وطباعة جميع انواع الباكجينق",
+      "tagWebsiteDevelopment": "تطوير المواقع"
     }
   }
 }
