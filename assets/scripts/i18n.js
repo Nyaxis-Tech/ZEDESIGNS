@@ -41,6 +41,7 @@ class I18n {
         
         // Update ScrollTrigger animations for language change
         this.updateScrollAnimations();
+        this.updateCounterAnimations();
     }
     
     updateScrollAnimations() {
@@ -110,10 +111,6 @@ class I18n {
                 }
             });
             
-            hortl.to("#main", {
-                backgroundColor: "var(--primary-black-color)",
-            }, "<");
-            
             if (this.currentLang === "ar") {
                 hortl.to("#servcardstrip", {
                     x: () => serviceStrip.scrollWidth - window.innerWidth,
@@ -124,6 +121,59 @@ class I18n {
                 }, "<");
             }
         }
+    }
+
+    updateCounterAnimations() {
+
+        const counters = document.querySelectorAll("#abstat .abstatelem h1");
+        if (!counters || counters.length === 0) return;
+
+        let started = false;
+
+        ScrollTrigger.create({
+            trigger: "#about",
+            start: "top 80%",
+            onEnter: () => {
+                if (started) return;
+                started = true;
+
+                counters.forEach((el) => {
+                    // Get target from data attribute
+                    const target =
+                        parseInt(el.getAttribute("data-count-target"), 10) || 0;
+
+                    // Get current translation text to extract suffix
+                    const txt = el.textContent.trim();
+                    // Extract suffix (like + or any other characters after the number)
+                    const match = txt.match(/[\d٠-٩]+(.*)$/);
+                    const suffix = match ? match[1] : "+";
+
+                    const obj = { val: 0 };
+                    gsap.to(obj, {
+                        val: target,
+                        duration: 3.5,
+                        ease: "power1.out",
+                        onUpdate() {
+                            const v = Math.floor(obj.val);
+                            // Convert to Arabic numerals if current language is Arabic
+                            const currentLang =
+                                document.documentElement.getAttribute("lang") ||
+                                "en";
+                            let displayNum = v.toString();
+
+                            if (currentLang === "ar") {
+                                // Convert Western numerals to Arabic-Indic numerals
+                                displayNum = v
+                                    .toString()
+                                    .replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
+                            }
+
+                            el.textContent = displayNum + suffix;
+                        },
+                    });
+                });
+            },
+        });
     }
 
     updateContent(animate = true) {

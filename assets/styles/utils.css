@@ -845,7 +845,7 @@ html[dir="rtl"] #footer #fbtm #btmleft .info{
 
 #footer #fbtm #btmright ul li.liheading {
     font-size: 1rem;
-    opacity: 0.7;
+    opacity: 0.7 !important;
 }
 
 #footer #fbtm #btmright ul a {

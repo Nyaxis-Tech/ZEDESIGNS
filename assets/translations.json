@@ -17,12 +17,14 @@
     "about": {
       "heading": "Innovative Designs, Shaping Brands With Fresh Perspectives",
       "description": "\"Z\" stands for ZAWYA, embodying a unique viewpoint. Born from the idea that in a changing world, what sets the extraordinary apart is the ability to adapt, innovate, and approach challenges from fresh angles. We help brands discover new perspectives, adapt, and stand out with innovative designs",
-      "stat1": "180+",
-      "stat1Label": "Brands transformed",
-      "stat2": "250+",
-      "stat2Label": "Design projects completed",
-      "stat3": "100+",
-      "stat3Label": "Brands built from the ground up",
+      "stat1": "200+",
+      "stat1Label": "Brands",
+      "stat2": "10+",
+      "stat2Label": "Countries",
+      "stat3": "65+",
+      "stat3Label": "Strategies",
+      "stat4": "12+",
+      "stat4Label": "Industries",
       "btnText": "Learn About us"
     },
     "services": {
@@ -102,12 +104,14 @@
     "about": {
       "heading": "إبداع بصري يعيد تشكيل العلامات بمنظور مختلف",
       "description": "حرف “Z” مستوحى من كلمة زاوية، لأنه يمثل نظرة مختلفة للأشياء. انطلقت فكرتنا من إيمان بأن العالم يتغير باستمرار، وما يميّز الاستثنائي هو القدرة على التكيف، الابتكار، والنظر للتحديات من زاوية جديدة. نساعد العلامات التجارية على اكتشاف منظور مختلف التكيف بذكاء، والتميّز من خلال تصميم مبتكر وهوية متجددة.",
-      "stat1": "١٨٠+",
-      "stat1Label": "علامة تجارية تم تحويلها",
-      "stat2": "٢٥٠+",
-      "stat2Label": "مشروع تصميم مكتمل",
-      "stat3": "١٠٠+",
-      "stat3Label": "علامة تجارية تم بناؤها من الصفر",
+      "stat1": "٢٠٠+",
+      "stat1Label": "علامات تجارية",
+      "stat2": "١٠+",
+      "stat2Label": "دول",
+      "stat3": "٦٥+",
+      "stat3Label": "استراتيجية",
+      "stat4": "١٢+",
+      "stat4Label": "قطاع/صناعة",
       "btnText": "تعرف علينا"
     },
     "services": {
