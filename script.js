@@ -318,20 +318,8 @@ if (window.innerWidth > 768) {
                 invalidateOnRefresh: true,
                 // ease: "Power1.out",
             },
-            onComplete: () => {
-                gsap.set("#main", {
-                    backgroundColor: "var(--green-color)",
-                    delay: 0.2,
-                });
-            },
         });
-        hortl.to(
-            "#main",
-            {
-                backgroundColor: "var(--primary-black-color)",
-            },
-            "<"
-        );
+        
         if (localStorage.getItem("language") === "ar") {
             hortl.to(
                 "#servcardstrip",

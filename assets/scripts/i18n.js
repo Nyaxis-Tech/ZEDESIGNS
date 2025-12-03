@@ -38,6 +38,92 @@ class I18n {
         // Update body class for font changes if needed
         document.body.classList.toggle('lang-ar', lang === 'ar');
         document.body.classList.toggle('lang-en', lang === 'en');
+        
+        // Update ScrollTrigger animations for language change
+        this.updateScrollAnimations();
+    }
+    
+    updateScrollAnimations() {
+        // Find and update the hero scroll animation
+        const heroScrollTrigger = ScrollTrigger.getAll().find(st => st.trigger === document.querySelector('#hero'));
+        
+        if (heroScrollTrigger && window.innerWidth > 768) {
+            // Kill the old animation
+            heroScrollTrigger.kill();
+            
+            // Recreate with correct direction
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#hero",
+                    start: "top top",
+                    end: "20% top",
+                    scrub: true,
+                }
+            });
+            
+            if (this.currentLang === "ar") {
+                // For Arabic, reverse the directions
+                tl.to(".h1one", {
+                    x: 50,
+                    ease: Power1.easeInOut,
+                }, "<");
+                tl.to(".h1two", {
+                    x: -50,
+                    ease: Power1.easeInOut,
+                }, "<");
+            } else {
+                // For English and other LTR languages
+                tl.to(".h1one", {
+                    x: -50,
+                    ease: Power1.easeInOut,
+                }, "<");
+                tl.to(".h1two", {
+                    x: 50,
+                    ease: Power1.easeInOut,
+                }, "<");
+            }
+            
+            tl.to("#herovid", {
+                width: window.innerWidth > 768 ? "90%" : "95%",
+                ease: Power1.easeInOut,
+            }, "<");
+        }
+        
+        // Find and update the services horizontal scroll animation
+        const servicesScrollTrigger = ScrollTrigger.getAll().find(st => st.trigger === document.querySelector('#servcardstrip'));
+        
+        if (servicesScrollTrigger && window.innerWidth > 768) {
+            // Kill the old animation
+            servicesScrollTrigger.kill();
+            
+            // Recreate with correct direction
+            let serviceStrip = document.querySelector("#servcardstrip");
+            let hortl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#servcardstrip",
+                    start: "center 60%",
+                    end: "+=3000",
+                    pin: "#services",
+                    anticipatePin: 1,
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                }
+            });
+            
+            hortl.to("#main", {
+                backgroundColor: "var(--primary-black-color)",
+            }, "<");
+            
+            if (this.currentLang === "ar") {
+                hortl.to("#servcardstrip", {
+                    x: () => serviceStrip.scrollWidth - window.innerWidth,
+                }, "<");
+            } else {
+                hortl.to("#servcardstrip", {
+                    x: () => -(serviceStrip.scrollWidth - window.innerWidth),
+                }, "<");
+            }
+        }
     }
 
     updateContent(animate = true) {
