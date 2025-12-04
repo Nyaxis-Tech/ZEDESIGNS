@@ -20,6 +20,8 @@ body {
     min-height: 100vh;
     background-color: var(--green-color); /* same background as other pages */
     color: #ffffff;
+    position: relative;
+    z-index: 2;
 }
 
 /* shared container for this page */

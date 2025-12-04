@@ -1,7 +1,20 @@
 // assets/scripts/projects.js
 
 document.addEventListener("DOMContentLoaded", () => {
+
     const root = document.getElementById("main");
+        const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        infinite: false,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        ScrollTrigger.update();
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
     // Only enable on desktop / precise pointer
     if (!root) return;
