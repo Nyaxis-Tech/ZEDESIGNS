@@ -4,8 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ZEDESIGNS</title>
-        <link id="favicon" rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
-        
+        <link
+            id="favicon"
+            rel="shortcut icon"
+            href="./assets/images/favicon.png"
+            type="image/x-icon"
+        />
+
         <link rel="stylesheet" href="./assets/styles/utils.css" />
         <link rel="stylesheet" href="style.css" />
     </head>
@@ -54,16 +59,48 @@
             <div id="nav">
                 <img src="./assets/images/logo.png" alt="ZEDESIGNS Logo" />
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#about" data-i18n="nav.about">About</a></li>
+                    <li>
+                        <a href="#services" data-i18n="nav.services"
+                            >Services</a
+                        >
+                    </li>
                     <!-- <li><a href="./pages/projects.html">Work</a></li> -->
-                    <li><a href="#featured">Work</a></li>
+                    <li><a href="#featured" data-i18n="nav.work">Work</a></li>
                 </ul>
-                <div class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="nav-actions">
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button
+                            class="lang-toggle"
+                            id="langToggle"
+                            aria-label="Change Language"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9.71002 19.6674C8.74743 17.6259 8.15732 15.3742 8.02731 13H4.06189C4.458 16.1765 6.71639 18.7747 9.71002 19.6674ZM10.0307 13C10.1811 15.4388 10.8778 17.7297 12 19.752C13.1222 17.7297 13.8189 15.4388 13.9693 13H10.0307ZM19.9381 13H15.9727C15.8427 15.3742 15.2526 17.6259 14.29 19.6674C17.2836 18.7747 19.542 16.1765 19.9381 13ZM4.06189 11H8.02731C8.15732 8.62577 8.74743 6.37407 9.71002 4.33256C6.71639 5.22533 4.458 7.8235 4.06189 11ZM10.0307 11H13.9693C13.8189 8.56122 13.1222 6.27025 12 4.24799C10.8778 6.27025 10.1811 8.56122 10.0307 11ZM14.29 4.33256C15.2526 6.37407 15.8427 8.62577 15.9727 11H19.9381C19.542 7.8235 17.2836 5.22533 14.29 4.33256Z"
+                                ></path>
+                            </svg>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <button class="lang-option" data-lang="ar">
+                                <span>العربية</span>
+                            </button>
+                            <button class="lang-option" data-lang="en">
+                                <span>English</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
 
@@ -75,11 +112,33 @@
                 </button>
                 <div class="mobile-menu-content">
                     <nav class="mobile-nav">
-                        <a href="#" class="mobile-nav-link">Home</a>
-                        <a href="#about" class="mobile-nav-link">About</a>
-                        <a href="#services" class="mobile-nav-link">Services</a>
-                        <a href="#featured" class="mobile-nav-link">Work</a>
-                        <a href="#footer-foreground" class="mobile-nav-link">Contact</a>
+                        <a href="#" class="mobile-nav-link" data-i18n="nav.home"
+                            >Home</a
+                        >
+                        <a
+                            href="#about"
+                            class="mobile-nav-link"
+                            data-i18n="nav.about"
+                            >About</a
+                        >
+                        <a
+                            href="#services"
+                            class="mobile-nav-link"
+                            data-i18n="nav.services"
+                            >Services</a
+                        >
+                        <a
+                            href="#featured"
+                            class="mobile-nav-link"
+                            data-i18n="nav.work"
+                            >Work</a
+                        >
+                        <a
+                            href="#footer-foreground"
+                            class="mobile-nav-link"
+                            data-i18n="nav.contact"
+                            >Contact</a
+                        >
                     </nav>
                     <div class="mobile-menu-footer">
                         <p>© 2025 ZEDESIGNS</p>
@@ -105,13 +164,17 @@
                                     src="assets/images/linkedin-logo.png"
                                     alt=""
                             /></a>
+                            <a href="https://t.me/zedesigns" target="_blank"
+                                ><img
+                                    src="assets/images/telegram-logo.png"
+                                    alt=""
+                            /></a>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div id="hero">
-                
                 <div id="heromain">
                     <!-- Decorative SVGs from loader -->
                     <svg
@@ -147,14 +210,18 @@
                     <div id="herotext">
                         <div class="tag">
                             <img src="./assets/images/home/tag.svg" alt="tag" />
-                            <p>
+                            <p data-i18n="hero.tagText">
                                 Saudi Based Strategic Branding And Web Design
                                 Company
                             </p>
                         </div>
-                        <h1 class="h1one">Unique Perspectives</h1>
-                        <h1 class="h1two">Simple Designs</h1>
-                        <p>
+                        <h1 class="h1one" data-i18n="hero.heading1">
+                            Unique Perspectives
+                        </h1>
+                        <h1 class="h1two" data-i18n="hero.heading2">
+                            Simple Designs
+                        </h1>
+                        <p data-i18n="hero.description">
                             We bring strategy and simplicity together to create
                             powerful brands and seamless websites. Whether it's
                             identity design, digital presence, or creative
@@ -162,7 +229,14 @@
                             functional, and built to last.
                         </p>
                         <div class="btnelem">
-                            <button><a href="#about">Learn More</a></button>
+                            <button>
+                                <a
+                                    href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
+                                    target="_blank"
+                                    data-i18n="hero.btnText"
+                                    >Learn More</a
+                                >
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -180,43 +254,81 @@
             <div id="about">
                 <div id="about-content">
                     <div id="ableft">
-                        <h1>
+                        <h1 data-i18n="about.heading">
                             Innovative Designs, Shaping Brands With Fresh
                             Perspectives
                         </h1>
-                        <p>
-                            "Z"stands for ZAWYA, embodying a unique viewpoint. Born
-                            from the idea that in a changing world, what sets the
-                            extraordinary apart is the ability to adapt, innovate,
-                            and approach challenges from fresh angles. We help
-                            brands discover new perspectives, adapt, and stand out
-                            with innovative designs
+                        <p data-i18n="about.description">
+                            "Z"stands for ZAWYA, embodying a unique viewpoint.
+                            Born from the idea that in a changing world, what
+                            sets the extraordinary apart is the ability to
+                            adapt, innovate, and approach challenges from fresh
+                            angles. We help brands discover new perspectives,
+                            adapt, and stand out with innovative designs
                         </p>
                         <div id="abstat">
                             <div class="abstatelem">
                                 <hr />
-                                <h1>180+</h1>
-                                <p>Brands transformed</p>
+                                <h1
+                                    data-i18n="about.stat1"
+                                    data-count-target="200"
+                                >
+                                    200+
+                                </h1>
+                                <p data-i18n="about.stat1Label">Brands</p>
                             </div>
                             <div class="abstatelem">
                                 <hr />
-                                <h1>250+</h1>
-                                <p>Design projects completed</p>
+                                <h1
+                                    data-i18n="about.stat2"
+                                    data-count-target="10"
+                                >
+                                    10+
+                                </h1>
+                                <p data-i18n="about.stat2Label">Countries</p>
                             </div>
                             <div class="abstatelem">
                                 <hr />
-                                <h1>100+</h1>
-                                <p>Brands built from the ground up</p>
+                                <h1
+                                    data-i18n="about.stat3"
+                                    data-count-target="65"
+                                >
+                                    65+
+                                </h1>
+                                <p data-i18n="about.stat3Label">Strategies</p>
+                            </div>
+                            <div class="abstatelem">
+                                <hr />
+                                <h1
+                                    data-i18n="about.stat4"
+                                    data-count-target="12"
+                                >
+                                    12+
+                                </h1>
+                                <p data-i18n="about.stat4Label">Industries</p>
                             </div>
                         </div>
                         <div class="btnelem">
-                            <button><a href="#services">Learn About us</a></button>
+                            <button>
+                                <a href="#services" data-i18n="about.btnText"
+                                    >Learn About us</a
+                                >
+                            </button>
                         </div>
                     </div>
                     <div id="abright">
                         <canvas class="desktop-only"></canvas>
-                        <video class="mobile-only" autoplay muted loop playsinline>
-                            <source src="./assets/images/home/about-vid.mp4" type="video/mp4" />
+                        <video
+                            class="mobile-only"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                        >
+                            <source
+                                src="./assets/images/home/about-vid.mp4"
+                                type="video/mp4"
+                            />
                         </video>
                     </div>
                 </div>
@@ -224,9 +336,11 @@
 
             <div id="services" class="reveal">
                 <img src="./assets/images/home/service-bg.png" alt="" />
-                <h1>Services and Solutions we offer.</h1>
+                <h1 data-i18n="services.heading">
+                    Services and Solutions we offer.
+                </h1>
                 <div class="servpara">
-                    <p>
+                    <p data-i18n="services.description">
                         We work with creative teams and ambitious founders to
                         turn vision into product — with intuitive UX, standout
                         visuals, and seamless digital experiences that users
@@ -251,8 +365,8 @@
                 <div class="servcardslist">
                     <div id="servcardstrip">
                         <div class="servcard">
-                            <h1>Branding</h1>
-                            <p>
+                            <h1 data-i18n="services.card1Title">Branding</h1>
+                            <p data-i18n="services.card1Desc">
                                 Building brands with depth and clarity —
                                 identities that connect, resonate.
                             </p>
@@ -264,8 +378,8 @@
                             </button>
                         </div>
                         <div class="servcard">
-                            <h1>Websites</h1>
-                            <p>
+                            <h1 data-i18n="services.card2Title">Websites</h1>
+                            <p data-i18n="services.card2Desc">
                                 Intuitive experiences are what turn functional
                                 products into memorable.
                             </p>
@@ -277,8 +391,10 @@
                             </button>
                         </div>
                         <div class="servcard">
-                            <h1>Design and Print</h1>
-                            <p>
+                            <h1 data-i18n="services.card3Title">
+                                Design and Print
+                            </h1>
+                            <p data-i18n="services.card3Desc">
                                 Your first impression matters — we craft pages
                                 that capture attention.
                             </p>
@@ -290,8 +406,10 @@
                             </button>
                         </div>
                         <div class="servcard">
-                            <h1>Social Media</h1>
-                            <p>
+                            <h1 data-i18n="services.card4Title">
+                                Social Media
+                            </h1>
+                            <p data-i18n="services.card4Desc">
                                 Designing seamless mobile experiences that stay
                                 accessible.
                             </p>
@@ -307,8 +425,8 @@
             </div>
 
             <div id="featured">
-                <h1>Featured Projects</h1>
-                <p>
+                <h1 data-i18n="featured.heading">Featured Projects</h1>
+                <p data-i18n="featured.description">
                     Our work ignites transformation, refining your brand,
                     amplifying your voice, and turning strategy into lasting
                     momentum. We help you connect with clarity, build trust with
@@ -328,11 +446,32 @@
                                 alt=""
                             />
                         </picture>
-                        <h1>Sokon</h1>
+                        <h1 data-i18n="featured.project1Title">Sokon</h1>
                         <div class="prtags">
-                            <div class="prtag">Brand Strategy</div>
-                            <div class="prtag">Marketing</div>
-                            <div class="prtag">Logo Design</div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagBrandGuidelines"
+                            >
+                                Brand Guidelines
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagVisualIdentitySystem"
+                            >
+                                Visual Identity System
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagLogoDesign"
+                            >
+                                Logo Design
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagPackagingDesignAndPrint"
+                            >
+                                Packaging Design and Print
+                            </div>
                         </div>
                     </div>
                     <div class="projectcard">
@@ -348,11 +487,32 @@
                                 alt=""
                             />
                         </picture>
-                        <h1>Khubza House</h1>
+                        <h1 data-i18n="featured.project2Title">Khubza House</h1>
                         <div class="prtags">
-                            <div class="prtag">Brand Strategy</div>
-                            <div class="prtag">Marketing</div>
-                            <div class="prtag">Logo Design</div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagPackagingAndEnvironmentalBranding"
+                            >
+                                Packaging & Environmental Branding
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagVisualIdentitySystem"
+                            >
+                                Visual Identity System
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagLogoDesign"
+                            >
+                                Logo Design
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagBrandGuidelinesandApplications"
+                            >
+                                Brand Guidelines & Applications
+                            </div>
                         </div>
                     </div>
                     <div class="projectcard">
@@ -368,11 +528,32 @@
                                 alt=""
                             />
                         </picture>
-                        <h1>Milkor</h1>
+                        <h1 data-i18n="featured.project3Title">Milkor</h1>
                         <div class="prtags">
-                            <div class="prtag">Brand Strategy</div>
-                            <div class="prtag">Marketing</div>
-                            <div class="prtag">Logo Design</div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagRegionalBrandStrategy"
+                            >
+                                Regional Brand Strategy
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagArabicLogoDevelopment"
+                            >
+                                Arabic Logo Development
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagTypefaceAndColorAdaptation"
+                            >
+                                Typeface & Color Adaptation
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagBrandGuidelinesandApplications"
+                            >
+                                Brand Guidelines & Applications
+                            </div>
                         </div>
                     </div>
                     <div class="projectcard">
@@ -388,11 +569,32 @@
                                 alt=""
                             />
                         </picture>
-                        <h1>Sanbun</h1>
+                        <h1 data-i18n="featured.project4Title">Sanbun</h1>
                         <div class="prtags">
-                            <div class="prtag">Brand Strategy</div>
-                            <div class="prtag">Website Development</div>
-                            <div class="prtag">Logo Design</div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagBrandStrategy"
+                            >
+                                Brand Strategy
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagVisualIdentitySystem"
+                            >
+                                Visual Identity System
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagWebsiteDevelopment"
+                            >
+                                Website Development
+                            </div>
+                            <div
+                                class="prtag"
+                                data-i18n="featured.tagLogoDesign"
+                            >
+                                Logo Design
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -667,8 +869,8 @@
 
             <div id="clients" class="reveal">
                 <div id="clientstop">
-                    <h1>Successful Clients</h1>
-                    <p>
+                    <h1 data-i18n="clients.heading">Successful Clients</h1>
+                    <p data-i18n="clients.description">
                         Partnering with progressive businesses to uncover their
                         true purpose, helping them drive meaningful change and
                         move the world forward.
@@ -677,177 +879,347 @@
                 <div id="clientsbtm">
                     <div id="clientwrapper">
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-01.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-01.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-02.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-02.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-04.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-04.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-05.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-05.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-06.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-06.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-07.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-07.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-08.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-08.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-09.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-09.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-10.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-10.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-11.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-11.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-12.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-12.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-13.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-13.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-14.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-14.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-15.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-15.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-17.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-17.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-18.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-18.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-19.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-19.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-20.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-20.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-22.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-22.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-23.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-23.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-24.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-24.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-25.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-25.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-26.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-26.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-27.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-27.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-28.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-28.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-30.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-30.png"
+                                alt="Client Logo"
+                            />
                         </div>
 
-
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-01.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-01.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-02.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-02.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-04.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-04.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-05.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-05.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-06.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-06.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-07.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-07.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-08.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-08.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-09.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-09.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-10.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-10.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-11.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-11.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-12.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-12.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-13.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-13.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-14.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-14.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-15.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-15.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-17.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-17.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-18.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-18.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-19.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-19.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-20.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-20.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-22.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-22.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-23.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-23.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-24.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-24.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-25.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-25.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-26.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-26.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-27.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-27.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-28.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-28.png"
+                                alt="Client Logo"
+                            />
                         </div>
                         <div class="logo">
-                            <img src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-30.png" alt="Client Logo" />
+                            <img
+                                src="./assets/images/home/PNGS/ZEDESIGNS Client Logos-30.png"
+                                alt="Client Logo"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Floating WhatsApp Button -->
-            <a href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services" target="_blank" id="whatsappFloat" class="whatsapp-float">
-                <img src="./assets/images/home/whatsapp-logo.png" alt="WhatsApp" />
-                <span>WhatsApp Us</span>
+            <a
+                href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
+                target="_blank"
+                id="whatsappFloat"
+                class="whatsapp-float"
+                aria-label="WhatsApp us"
+            >
+                <img
+                    src="./assets/images/home/whatsapp-logo.png"
+                    alt="WhatsApp"
+                />
+                <span data-i18n="floatingWhatsApp.ariaLabel">WhatsApp Us</span>
             </a>
         </div>
 
@@ -860,13 +1232,15 @@
                 <div id="ftop">
                     <div class="tag">
                         <img src="./assets/images/home/tag.svg" alt="tag" />
-                        <p>
+                        <p data-i18n="footer.tagText">
                             Saudi Based Strategic Branding And Web Design
                             Company
                         </p>
                     </div>
-                    <h1>Every success starts with the first step</h1>
-                    <p>
+                    <h1 data-i18n="footer.heading">
+                        Every success starts with the first step
+                    </h1>
+                    <p data-i18n="footer.description">
                         Let's create something exceptional together. Get in
                         touch to start your branding journey.
                     </p>
@@ -874,7 +1248,9 @@
                         <div class="btnelem">
                             <button>
                                 <a
-                                    href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services" target="_blank"
+                                    href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
+                                    target="_blank"
+                                    data-i18n="footer.btnText"
                                     >Get Started</a
                                 >
                             </button>
@@ -887,30 +1263,52 @@
                 <div id="fbtm">
                     <div id="btmleft">
                         <img
-                            src="./assets/images/home/logofooter-01.png"
+                            src="./assets/images/home/logofooter-01-old.png"
                             alt="logo footer"
                         />
                         <div class="info">
-                            <p>HQ</p>
-                            <p>Jeddah, Saudi Arabia</p>
+                            <p data-i18n="footer.hqLabel">HQ</p>
+                            <p data-i18n="footer.hqLocation">
+                                Jeddah, Saudi Arabia
+                            </p>
                         </div>
                         <div class="info">
-                            <p>Contact Us</p>
-                            <p>info@zedesignss.com</p>
+                            <p data-i18n="footer.contactLabel">Contact Us</p>
+                            <p data-i18n="footer.contactEmail">
+                                info@zedesignss.com
+                            </p>
                         </div>
-                        <p id="copyright">
-                            <span>2025 &copy;</span> ZEDESIGNS. All rights
-                            reserved.
+                        <p id="copyright" data-i18n="footer.copyright">
+                            2025 &copy; ZEDESIGNS. All rights reserved.
                         </p>
                     </div>
                     <div id="btmright">
                         <ul>
-                            <li class="liheading">Main Pages</li>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
+                            <li
+                                class="liheading"
+                                data-i18n="footer.mainPagesHeading"
+                            >
+                                Main Pages
+                            </li>
                             <li>
-                                <a href="#featured">Work</a>
+                                <a href="#" data-i18n="footer.navHome">Home</a>
+                            </li>
+                            <li>
+                                <a href="#about" data-i18n="footer.navAbout"
+                                    >About</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#services"
+                                    data-i18n="footer.navServices"
+                                    >Services</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#featured" data-i18n="footer.navWork"
+                                    >Work</a
+                                >
                             </li>
                         </ul>
                         <div id="socials">
@@ -936,6 +1334,11 @@
                                         src="assets/images/linkedin-logo.png"
                                         alt=""
                                 /></a>
+                                <a href="https://t.me/zedesigns" target="_blank"
+                                    ><img
+                                        src="assets/images/telegram-logo.png"
+                                        alt=""
+                                /></a>
                             </div>
                             <div id="socialtwo">
                                 <a
@@ -946,10 +1349,13 @@
                                         alt=""
                                 /></a>
                                 <p>
-                                    Verified By
+                                    <span data-i18n="footer.verifiedText"
+                                        >Verified By</span
+                                    >
                                     <a
                                         href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849"
                                         target="_blank"
+                                        data-i18n="footer.verifiedLink"
                                         >Saudi Business Center</a
                                     >
                                 </p>
@@ -967,6 +1373,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+        <script src="./assets/scripts/i18n.js"></script>
         <script src="script.js"></script>
         <script src="./assets/scripts/utils.js"></script>
         <script src="./assets/scripts/about-frames.js"></script>
