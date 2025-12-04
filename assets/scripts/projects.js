@@ -1,9 +1,10 @@
 // assets/scripts/projects.js
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    const root = document.getElementById("main");
-        const lenis = new Lenis({
+    // ==========================
+    // Smooth scrolling with Lenis
+    // ==========================
+    const lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         infinite: false,
@@ -11,15 +12,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function raf(time) {
         lenis.raf(time);
-        ScrollTrigger.update();
+        if (typeof ScrollTrigger !== "undefined") {
+            ScrollTrigger.update();
+        }
         requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
 
-    // Only enable on desktop / precise pointer
-    if (!root) return;
-    if (!window.matchMedia || !window.matchMedia("(pointer: fine)").matches) {
-        return;
+    // ==========================
+    // Custom cursor – from hero down, except header & footer
+    // ==========================
+    const main = document.getElementById("main");
+    const hero = document.querySelector(".projects-hero");
+    const nav = document.getElementById("nav");
+
+    // Guards
+    if (!main || !hero) return;
+    if (
+        !window.matchMedia ||
+        !window.matchMedia("(pointer: fine)").matches
+    ) {
+        return; // skip on touch / coarse pointer
     }
 
     // Create the custom cursor element
@@ -27,9 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cursor.className = "work-cursor";
     cursor.innerHTML = "<span>Our work</span>";
     document.body.appendChild(cursor);
-
-    // Hide native cursor inside #main
-    root.classList.add("has-custom-cursor");
 
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
@@ -39,27 +49,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const ease = 0.16; // smaller = slower, smoother
 
-    function showCursor() {
+    function activateCursor() {
+        if (active) return;
         active = true;
         cursor.classList.add("is-visible");
+        main.classList.add("custom-cursor-active"); // hide system cursor (CSS)
     }
 
-    function hideCursor() {
+    function deactivateCursor() {
+        if (!active) return;
         active = false;
         cursor.classList.remove("is-visible");
+        main.classList.remove("custom-cursor-active"); // show system cursor again
     }
 
-    root.addEventListener("mousemove", (e) => {
+    function handleMove(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        showCursor();
+
+        // If we're over the header/nav – NO custom cursor
+        if (e.target.closest("#nav")) {
+            deactivateCursor();
+            return;
+        }
+
+        // If we've left #main (into footer / outside page) => handled by mouseleave
+        // Decide if cursor should be active based on hero position
+        const heroRect = hero.getBoundingClientRect();
+        const inHeroOrBelow = e.clientY >= heroRect.top;
+
+        if (inHeroOrBelow) {
+            activateCursor();
+        } else {
+            // Above hero (e.g. top area below nav): no custom cursor
+            deactivateCursor();
+        }
+    }
+
+    main.addEventListener("mousemove", handleMove);
+    main.addEventListener("mouseenter", handleMove);
+    main.addEventListener("mouseleave", () => {
+        // Leaving #main -> hide custom cursor, system cursor comes back
+        deactivateCursor();
     });
 
-    root.addEventListener("mouseenter", showCursor);
-    root.addEventListener("mouseleave", hideCursor);
-
     function render() {
-        // lerp towards mouse
+        // Smoothly lerp towards mouse
         cursorX += (mouseX - cursorX) * ease;
         cursorY += (mouseY - cursorY) * ease;
 

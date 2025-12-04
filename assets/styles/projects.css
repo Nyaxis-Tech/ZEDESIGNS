@@ -102,6 +102,7 @@ body {
     gap: 4rem 3rem;
 }
 
+
 /* ======================
    PROJECT CARD
    ====================== */
@@ -194,12 +195,9 @@ body {
    ================ */
 
 
-#main.has-custom-cursor {
-    cursor: none;
-}
-#main.has-custom-cursor a,
-#main.has-custom-cursor button {
-    cursor: none;
+#main.custom-cursor-active,
+#main.custom-cursor-active * {
+    cursor: none !important;
 }
 
 /* circle cursor */
