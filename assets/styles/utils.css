@@ -194,10 +194,11 @@ html[dir="rtl"] .tag img{
     transform: rotate(135deg);
 }
 
-html[dir="rtl"] .tag.revealed p{
-    line-height: 1.6;
+html[dir="rtl"] .tag.revealed p {
+    line-height: 1.8;
     margin-top: 0px;
     max-width: 610px !important;
+    padding-bottom: 5px;
 }
 
 /* Hamburger Menu Toggle */
@@ -1164,15 +1165,18 @@ html[dir="rtl"] #footer #fbtm #btmright #socials #socialtwo a{
     }
 
     .tag {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.9rem;
-        gap: 1rem;
+        padding: 0.2rem 0.6rem;
+        font-size: 0.8rem;
+        gap: 0.5rem;
     }
 
     html[dir="rtl"] .tag.revealed p {
-        margin-top: 0px;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+        padding-bottom: 5px;;
+        font-size: 0.85rem;
         max-width: 500px !important;
-        text-wrap: wrap;
+        /* text-wrap: wrap; */
 
     }
 

@@ -189,7 +189,7 @@ html[dir="rtl"] h3 {
     /* font-weight: 500; */
     /* font-family: "didot-medium"; */
     /* line-height: 1.5; */
-    opacity: 0.7;
+    opacity: 0.7 !important;
 }
 
 #hero #herovid {
@@ -309,7 +309,7 @@ html[dir="rtl"] #main #about #abright video {
 
 #main #about #ableft p {
     font-size: 1.1rem;
-    opacity: 0.7;
+    opacity: 0.7 !important;
     line-height: 1.5;
 }
 
@@ -399,6 +399,10 @@ html[dir="rtl"] #about #ableft h1 .word{
     width: 40%;
     /* background-color: red; */
 }
+html[dir="rtl"] #main #services > h1{
+    line-height: unset;
+    width: 100%;
+}
 
 #main #services .servpara {
     padding: 0vw 5vw;
@@ -408,7 +412,7 @@ html[dir="rtl"] #about #ableft h1 .word{
 }
 #main #services .servpara > p {
     font-size: 1.1rem;
-    opacity: 0.7;
+    opacity: 0.7 !important;
     width: 45%;
     line-height: 1.5;
 }
@@ -609,7 +613,7 @@ html[dir="rtl"] #main #featured > h1{
 }
 #main #featured > p {
     font-size: 1.1rem;
-    opacity: 0.7;
+    opacity: 0.7 !important;
     width: 60%;
     line-height: 1.5;
     padding: 0 5vw;
@@ -685,7 +689,8 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags{
 
 #main #featured #projects .projectcard .prtags .prtag {
     padding: 0.5rem 2rem;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(16, 15, 15, 0.1);
+    backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 100px;
     font-size: 0.9rem;
@@ -695,6 +700,8 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags{
 }
 html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     font-size: 1rem;
+    line-height: 1.9;
+    
 }
 
 #main #testimonials {
@@ -740,7 +747,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
 
 #main #testimonials #testtop > p {
     font-size: 1.1rem;
-    opacity: 0.7;
+    opacity: 0.7 !important;
     width: 40%;
     text-align: center;
     line-height: 1.5;
@@ -845,7 +852,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
 
 #main #testimonials #testcardstrip .testcard p {
     font-size: 0.9rem;
-    opacity: 0.7;
+    opacity: 0.7 !important;
     line-height: 1.5;
 }
 
@@ -883,7 +890,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
 
 #main #clients p {
     font-size: 1.1rem;
-    opacity: 0.7;
+    opacity: 0.7 !important;
     width: 40%;
     text-align: center;
     line-height: 1.5;
@@ -1103,10 +1110,6 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
         height: auto;
     }
 
-    .hero-deco-svg-1,
-    .hero-deco-svg-3 {
-        /* display: none !important; */
-    }
 
     /* Hero Section Responsive */
     #main #hero #heromain {
@@ -1114,6 +1117,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
         min-height: 70vh;
         align-items: flex-end;
         justify-content: flex-end;
+        padding: 0 5vw;
         padding-bottom: 15vh;
     }
 
@@ -1397,6 +1401,9 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     #hero #heromain #herotext > p {
         font-size: 0.9rem;
     }
+    html[dir="rtl"] #hero #heromain #herotext > p{
+        font-size: 1rem;
+    }
 
     #hero #herovid {
         width: 95%;
@@ -1436,6 +1443,10 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     #main #featured #projects .projectcard h1 {
         font-size: 1.5rem;
         margin-left: 1.5rem;
+    }
+
+    html[dir="rtl"] #main #featured #projects .projectcard h1{
+        font-size: 2rem;
     }
 
     #main #featured #projects .projectcard .prtags {
