@@ -601,7 +601,7 @@ html[dir="rtl"] .whatsapp-float {
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 0;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
 
