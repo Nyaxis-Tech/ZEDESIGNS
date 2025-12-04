@@ -463,9 +463,7 @@ if (window.innerWidth > 768) {
     cloneContent();
 
     // Auto-scroll function (always LTR due to CSS direction override)
-    // how to reduce speed of autoscroll on mobile devices
     const autoScroll = () => {
-        
         if (!isDown) {
             if(localStorage.getItem("language") === "ar"){
                 clientsSection.scrollLeft += 1;
