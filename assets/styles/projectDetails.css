@@ -8,17 +8,281 @@
 
 body,html{
     width:100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 #main{
     width: 100%;
     position: relative;
     z-index: 2;
+    background-color: var(--green-color);
+    color: white;
+    font-family: "TheYearOfHandicrafts", serif;
 }
 
 #main #hero{
     width: 100%;
-    height: 100vh;
-    background-color: red;
+    min-height: 100vh;
+    padding: 0 0 4rem;
+}
+
+#main #hero #herotext{
+    width: 100%;
+    height: 70vh;
+    padding: 0vw 7vw 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: url("../images/home/hero-bg-green.webp") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    mask-image: linear-gradient(to top, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, var(--green-color) 10%, var(--green-color) 90%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
+    
+}
+
+#main #hero #herotext > img{
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+#main #hero #herotext h1{
+    font-size: 3rem;
+    font-family: "didot-bold";
+    font-weight: 500;
+    width: 60%;
+    line-height: 1;
+
+}
+
+#main #hero #herotext p{
+    font-size: 1.1rem;
+    width: 50%;
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+#main #hero #herotext #hrtags{
+    display: flex;
+    gap: 0.5rem;
+}
+
+#main #hero #herotext #hrtags #hrtag{
+    padding: 0.5rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main #hero #herotext #hrtags #hrtag p{
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    opacity: 1;
+    width: 100%;
+}
+
+#hero #heroimg{
+    width: 100%;
+    height: 75vh;
+    padding: 0 7vw;
+    display: flex;
+    justify-content: center;
+}
+
+#hero #heroimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: heroimg ease-in-out;;
+    /* Scroll View for the animation so that it works according to scroll*/
+    animation-timeline: view();
+    animation-duration: 3s;
+    animation-range: entry 0% cover 50%;
+
+}
+
+@keyframes heroimg {
+    0%{
+        transform: scale(0.7)
+    }
+    100%{
+        transform: scale(1);
+        
+    }
+    
+}
+
+
+#main #projectinfo{
+    width: 100%;
+    padding: 4vw 15vw;
+    display: flex;
+    flex-direction: column;;
+    gap: 1rem;
+}
+
+#main #projectinfo img{
+    border-radius: 10px;;
+}
+
+#main #projectinfo #projectinfotop{
+    width: 100%;
+    height: 33vh;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: red; */
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#main #projectinfo #projectinfotop #infoleft{
+    width: 30%;
+    height: fit-content;
+    /* background-color: red; */
+}
+
+#main #projectinfo #projectinfotop #infoleft h2{
+    font-family: "didot";
+    font-size: 1rem;
+    font-weight: 400;
+    width: 50%;
+    text-transform: uppercase;
+}
+
+#main #projectinfo #projectinfotop #inforight{
+    width: 60%;
+    overflow: hidden;
+}
+#main #projectinfo #projectinfotop #inforight #inforightwrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* transform: translateY(-420px); */
+}
+
+#main #projectinfo #projectinfotop #inforight .infodiv{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#main #projectinfo #projectinfotop #inforight .infodiv h1{
+    font-family: "didot-bold";
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+#main #projectinfo #projectinfotop #inforight .infodiv > p{
+    font-size: 1.05rem;
+    width: 80%;
+    opacity: 0.7;
+}
+
+#main #projectinfo #projectinfotop #inforight .infodiv > ul{
+    list-style-type: disc;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    opacity: 0.7;
+    justify-content: center;
+}
+#main #projectinfo #projectinfotop #inforight .infodiv #hrtags{
+    display: flex;
+    gap: 0.5rem;
+}
+
+#main #projectinfo #projectinfotop #inforight .infodiv #hrtags #hrtag{
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+}
+
+#main #projectinfo #projectinfotop #inforight .infodiv #hrtags #hrtag p{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 1;
+    width: 100%;
+}
+
+#main #projectresults{
+    width: 100%;
+    padding: 0vw 15vw 4vw;
+    display: flex;
+    flex-direction: column;;
+}
+
+#main #projectresults #resulttop{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 0;
+
+}
+
+#main #projectresults #resulttop h2{
+    font-family: "didot";
+    font-size: 1rem;
+    font-weight: 400;
+    padding-left: 1rem;
+    width: 50%;
+    text-transform: uppercase;
+}
+#main #projectresults #resulttop img{
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    left: 0;
+    top: 15;
+    transform: translateY(-50%, -50%);
+    object-fit: cover;
+    /* implement inerted border radius using clip path to create space in top left side for the h2  with proper rounded smooth edges*/
+    
+    /* z-index:-1; */
+}
+
+
+#main #projectresults #imagesdiv{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#main #projectresults #imagesdiv .imagesrow{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;   
+}
+
+
+#main #projectresults #imagesdiv .imagesrow img{
+    width: 38%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#main #projectresults #imagesdiv .imagesrow img:nth-of-type(1){
+    width: 60%;
+}
+
+#main #projectresults #imagesdiv .imagesrow:nth-of-type(2) img{
+    width: 100%;
 }
