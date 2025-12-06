@@ -143,5 +143,15 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(render);
 
 
-    
+    // Handle Click on project cards to go to projectDetail.html page with query param
+    const projectCards = document.querySelectorAll(".project-card");
+    projectCards.forEach((card, index) => {
+        card.addEventListener("click", () => {
+            const project = projectsData[index];
+            if (project) {
+                const queryParam = encodeURIComponent(project.name);
+                window.location.href = `projectDetails.html?project=${queryParam}`;
+            }
+        });
+    });
 });

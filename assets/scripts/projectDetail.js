@@ -89,8 +89,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     
-    let project = projectsData.find(p => p.name === "SanBun"); // Change "SanBun" to the desired project name
+    // Get Query Parameter for Project Name
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectName = urlParams.get("project");
+
+    let project = projectsData.find(p => p.name === projectName); // Change "SanBun" to the desired project name
     loadProjectData(project);
+    
     gsap.registerPlugin(ScrollTrigger);
 
     const heroImg = document.querySelector("#heroimg img");
