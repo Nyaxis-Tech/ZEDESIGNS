@@ -1,3 +1,4 @@
+import { projectsData } from "./projectData.js";
 // assets/scripts/projects.js
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,6 +19,39 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    function loadProjects(){
+        // Load project cards dynamically
+        const projectsGrid = document.querySelector(".projects-grid");
+
+        if (projectsGrid) {
+            projectsData.forEach((project) => {
+                projectsGrid.innerHTML += `
+                    <article class="project-card" data-category="branding">
+                        <div class="project-meta">
+                            <h2 class="project-title">
+                                ${project.name} — ${project.tagLine}
+                            </h2>
+                            <p class="project-lead">
+                                ${project.shortDescription}
+                            </p>
+                            <div class="project-tags">
+                                ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                        <a class="project-media" href="javascript:void(0);">
+                            <img
+                                src="${project.bannerImage}"
+                                alt="${project.name} branding"
+                            />
+                        </a>
+                    </article>
+                ` 
+            });
+        }
+    }
+    loadProjects();
+
 
     // ==========================
     // Custom cursor – from hero down, except header & footer
@@ -107,4 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     requestAnimationFrame(render);
+
+
+    
 });

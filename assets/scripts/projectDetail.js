@@ -124,10 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
             ease: "power2.inOut",
             scrollTrigger: {
                 trigger: "#heroimg",
-                start: "top center",
-                end: "+=350",
+                start: "top+=100 center",
+                end: "+=250",
                 scrub: 1,
-                // markers: true
             },
         });
     }
