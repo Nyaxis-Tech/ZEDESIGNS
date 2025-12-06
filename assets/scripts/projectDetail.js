@@ -1,15 +1,15 @@
-// const lenis = new Lenis({
-//     duration: 1.2,
-//     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-//     infinite: false,
-// });
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    infinite: false,
+});
 
-// function raf(time) {
-//     lenis.raf(time);
-//     ScrollTrigger.update();
-//     requestAnimationFrame(raf);
-// }
-// requestAnimationFrame(raf);
+function raf(time) {
+    lenis.raf(time);
+    ScrollTrigger.update();
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,18 +81,19 @@ if (footer && lastCard && pinnedSections.length > 0) {
             scrollTrigger: {
                 trigger: section,
                 start: "top top",
-                end: index === sections.length ? `+=${lastCard.offsetHeight / 2}` : footer.offsetTop - window.innerHeight,
+                end: () => footer.offsetTop - window.innerHeight,
                 scrub: 1,
                 pin: true,
                 pinSpacing: false,
                 anticipatePin: 1,
+                invalidateOnRefresh: true,
             }
         });
 
         if (img) {
             gsap.fromTo(img, { scale: 1 }, {
                 scale: 0.5,
-                ease: "none",
+                ease: Power1.easeInOut,
                 scrollTrigger: {
                     trigger: section,
                     start: "top top",
