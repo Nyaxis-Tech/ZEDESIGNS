@@ -242,5 +242,104 @@ body,html{
     border-radius: 10px;
 }
 
+@media screen and (max-width: 768px) {
+    #main #hero #herotext {
+        padding: 30vw 5vw 0;
+        height: auto;
+        min-height: 50vh;
+    }
+
+    #main #hero #herotext h1 {
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    #main #hero #herotext p {
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    #main #hero #herotext #hrtags {
+        flex-wrap: wrap;
+        margin-bottom: 4rem;;
+    }
+
+    #hero #heroimg {
+        height: 50vh;
+        padding: 0 5vw;
+    }
+
+    #main #projectinfo {
+        padding: 10vw 5vw 10vw 5vw;
+    }
+
+    #main #projectinfo #projectinfotop {
+        flex-direction: column;
+        height: auto;
+        gap: 2rem;
+    }
+
+    #main #projectinfo #projectinfotop #infoleft {
+        width: 100%;
+    }
+
+    #main #projectinfo #projectinfotop #inforight {
+        width: 100%;
+        overflow: visible;
+    }
+    
+    #main #projectinfo #projectinfotop #inforight #inforightwrapper {
+        gap: 2rem;
+    }
+
+    #main #projectinfo #projectinfotop #inforight .infodiv h1 {
+        font-size: 2rem;
+    }
+    
+    #main #projectinfo #projectinfotop #inforight .infodiv > p {
+        width: 100%;
+    }
+    
+    #main #projectinfo #projectinfotop #inforight .infodiv #hrtags {
+        flex-wrap: wrap;
+    }
+
+    #main #hero #herotext #hrtags #hrtag p{
+        font-size: 0.75rem;
+    }
+
+    #main #projectresults {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    #main #projectresults .card {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    #main #projectresults .card .img {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        height: auto;
+        padding: 0 5vw;
+    }
+
+    #main #projectresults .card .img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
 
 

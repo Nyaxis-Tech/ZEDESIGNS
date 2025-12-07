@@ -122,75 +122,133 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Animate the mask
+        // Change mask size on Mobile to 70%
+        let isMobile = window.innerWidth <= 768;
+        let finalMaskSize = isMobile ? "90%, 100% 100%" : "50%, 100% 100%";
+        let startOffset = isMobile ? "top+=50 center" : "top+=100 center";
+        let endOffset = isMobile ? "+=150" : "+=250";
         gsap.to(heroImg, {
             "--mask-bg-alpha": 0, // Fade out the solid background
-            maskSize: "50%, 100% 100%", // Shrink logo to 30%
-            webkitMaskSize: "50%, 100% 100%",
+            maskSize: finalMaskSize, // Shrink logo to 30%
+            webkitMaskSize: finalMaskSize,
             ease: "power2.inOut",
             scrollTrigger: {
                 trigger: "#heroimg",
-                start: "top+=100 center",
-                end: "+=250",
+                start: startOffset,
+                end: endOffset,
                 scrub: 1,
             },
         });
     }
 
     // Pin the right information wrapper while scrolling through project info
-    gsap.to("#inforightwrapper", {
-        scrollTrigger: {
-            trigger: "#projectinfo",
-            start: "top top+=5%",
-            end: "bottom center-+=200",
-            endTrigger: ".lastdiv",
-            pin: true,
-            scrub: true,
-            // markers: true,
-        },
-        y: "-70%",
+    ScrollTrigger.matchMedia({
+        "(min-width: 769px)": function() {
+            gsap.to("#inforightwrapper", {
+                scrollTrigger: {
+                    trigger: "#projectinfo",
+                    start: "top top+=5%",
+                    end: "bottom center-+=200",
+                    endTrigger: ".lastdiv",
+                    pin: true,
+                    scrub: true,
+                    // markers: true,
+                },
+                y: "-70%",
+            });
+        }
     });
 
     const footer = document.querySelector("#footer");
     const lastCard = document.querySelector(".card.scroll");
     const pinnedSections = gsap.utils.toArray(".pinned");
 
-    if (footer && lastCard && pinnedSections.length > 0) {
-        pinnedSections.forEach((section, index, sections) => {
-            let img = section.querySelector(".img");
-            let nextSection = sections[index + 1] || lastCard;
-            let endScalePoint = `top+=${
-                nextSection.offsetTop - section.offsetTop
-            } top`;
+    ScrollTrigger.matchMedia({
+        // Desktop: Pinning animation
+        "(min-width: 769px)": function() {
+            if (footer && lastCard && pinnedSections.length > 0) {
+                pinnedSections.forEach((section, index, sections) => {
+                    let img = section.querySelector(".img");
+                    let nextSection = sections[index + 1] || lastCard;
+                    let endScalePoint = `top+=${
+                        nextSection.offsetTop - section.offsetTop
+                    } top`;
 
-            gsap.to(section, {
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top top",
-                    end: () => footer.offsetTop - window.innerHeight,
-                    scrub: 1,
-                    pin: true,
-                    pinSpacing: false,
-                    anticipatePin: 1,
-                    invalidateOnRefresh: true,
-                },
-            });
-
-            if (img) {
-                gsap.fromTo(
-                    img,
-                    { scale: 1 },
-                    {
-                        scale: 0.5,
-                        ease: Power1.easeInOut,
+                    gsap.to(section, {
                         scrollTrigger: {
                             trigger: section,
                             start: "top top",
-                            end: endScalePoint,
+                            end: () => footer.offsetTop - window.innerHeight,
                             scrub: 1,
+                            pin: true,
+                            pinSpacing: false,
+                            anticipatePin: 1,
+                            invalidateOnRefresh: true,
                         },
+                    });
+
+                    if (img) {
+                        // Ensure GSAP handles the centering transform
+                        gsap.set(img, { xPercent: -50, yPercent: -50 });
+                        
+                        gsap.fromTo(
+                            img,
+                            { scale: 1, xPercent: -50, yPercent: -50 },
+                            {
+                                scale: 0.5,
+                                xPercent: -50, // Maintain centering
+                                yPercent: -50, // Maintain centering
+                                ease: "power1.inOut",
+                                scrollTrigger: {
+                                    trigger: section,
+                                    start: "top top",
+                                    end: endScalePoint,
+                                    scrub: 1,
+                                },
+                            }
+                        );
                     }
-                );
+                });
             }
-        });
-    }
+        },
+
+        // Mobile: Simple fade up
+        "(max-width: 768px)": function() {
+             // Project Info Animation
+             gsap.utils.toArray(".infodiv, #projectInfoLogo").forEach(el => {
+                 gsap.fromTo(el, 
+                    { opacity: 0, y: 30 },
+                    {
+                        opacity: 1, 
+                        y: 0, 
+                        duration: 0.8, 
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 80%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                 )
+             });
+
+             // Results Cards Animation
+             gsap.utils.toArray(".card").forEach(card => {
+                 gsap.fromTo(card, 
+                    { opacity: 0, y: 50 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 80%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                 );
+             });
+        }
+    });
 });
