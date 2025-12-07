@@ -212,9 +212,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         },
 
-        // Mobile: Simple fade up
+        // Mobile: 3D Coverflow Slider
         "(max-width: 768px)": function() {
-             // Project Info Animation
+             // Project Info Animation (Keep this)
              gsap.utils.toArray(".infodiv, #projectInfoLogo").forEach(el => {
                  gsap.fromTo(el, 
                     { opacity: 0, y: 30 },
@@ -232,23 +232,51 @@ document.addEventListener("DOMContentLoaded", function () {
                  )
              });
 
-             // Results Cards Animation
-             gsap.utils.toArray(".card").forEach(card => {
-                 gsap.fromTo(card, 
-                    { opacity: 0, y: 50 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.6,
-                        ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: card,
-                            start: "top 80%",
-                            toggleActions: "play none none reverse"
-                        }
-                    }
-                 );
-             });
+             // 3D Coverflow Logic
+             const resultsContainer = document.querySelector("#projectresults");
+             const cards = gsap.utils.toArray(".card");
+
+             if (resultsContainer && cards.length > 0) {
+                function updateCoverflow() {
+                    const containerCenter = window.innerWidth / 2;
+                    
+                    cards.forEach(card => {
+                        const cardRect = card.getBoundingClientRect();
+                        const cardCenter = cardRect.left + cardRect.width / 2;
+                        const dist = (cardCenter - containerCenter);
+                        // Normalize distance based on viewport width
+                        const normalizedDist = dist / (window.innerWidth * 0.6); 
+                        
+                        // Calculate rotation and scale
+                        const rotation = normalizedDist * -20; // Rotate slightly
+                        const scale = 1 - Math.abs(normalizedDist) * 0.15; // Scale down sides
+                        const alpha = 1 - Math.abs(normalizedDist) * 0.4; // Fade out sides
+                        const zIndex = 100 - Math.round(Math.abs(normalizedDist) * 10);
+
+                        gsap.set(card, {
+                            transformPerspective: 1000,
+                            rotationY: rotation,
+                            scale: gsap.utils.clamp(0.8, 1, scale),
+                            opacity: gsap.utils.clamp(0.3, 1, alpha),
+                            zIndex: zIndex,
+                            // x: -normalizedDist * 20 // Optional: pull them closer
+                        });
+                    });
+                }
+
+                // Add scroll listener
+                resultsContainer.addEventListener("scroll", updateCoverflow);
+                window.addEventListener("resize", updateCoverflow);
+                
+                // Initial call
+                updateCoverflow();
+                
+                // Cleanup function for matchMedia
+                return () => {
+                    resultsContainer.removeEventListener("scroll", updateCoverflow);
+                    window.removeEventListener("resize", updateCoverflow);
+                };
+             }
         }
     });
 });
