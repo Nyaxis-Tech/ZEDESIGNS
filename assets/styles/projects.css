@@ -111,6 +111,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 /* text block above image */
@@ -181,13 +184,15 @@ body {
 
 /* hover motion similar to reference */
 
-.project-card:hover .project-media {
-    transform: translateY(-8px);
-    box-shadow: 0 34px 90px rgba(0, 0, 0, 0.85);
-}
+@media (hover: hover) {
+    .project-card:hover .project-media {
+        transform: translateY(-8px);
+        box-shadow: 0 34px 90px rgba(0, 0, 0, 0.85);
+    }
 
-.project-card:hover .project-media img {
-    transform: scale(1.05);
+    .project-card:hover .project-media img {
+        transform: scale(1.05);
+    }
 }
 
 /* ================

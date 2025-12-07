@@ -25,29 +25,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const projectsGrid = document.querySelector(".projects-grid");
 
         if (projectsGrid) {
-            projectsData.forEach((project) => {
-                projectsGrid.innerHTML += `
-                    <article class="project-card" data-category="branding">
-                        <div class="project-meta">
-                            <h2 class="project-title">
-                                ${project.name} — ${project.tagLine}
-                            </h2>
-                            <p class="project-lead">
-                                ${project.shortDescription}
-                            </p>
-                            <div class="project-tags">
-                                ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-                            </div>
+            projectsGrid.innerHTML = projectsData.map((project, index) => {
+                const queryParam = encodeURIComponent(project.name);
+                return `
+                <a href="projectDetails.html?project=${queryParam}" class="project-card" data-index="${index}" data-category="branding">
+                    <div class="project-meta">
+                        <h2 class="project-title">
+                            ${project.name} — ${project.tagLine}
+                        </h2>
+                        <p class="project-lead">
+                            ${project.shortDescription}
+                        </p>
+                        <div class="project-tags">
+                            ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                         </div>
-                        <a class="project-media" href="javascript:void(0);">
-                            <img
-                                src="${project.bannerImage}"
-                                alt="${project.name} branding"
-                            />
-                        </a>
-                    </article>
-                ` 
-            });
+                    </div>
+                    <div class="project-media">
+                        <img
+                            src="${project.bannerImage}"
+                            alt="${project.name} branding"
+                        />
+                    </div>
+                </a>
+            `}).join('');
         }
     }
     loadProjects();
@@ -143,15 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(render);
 
 
-    // Handle Click on project cards to go to projectDetail.html page with query param
-    const projectCards = document.querySelectorAll(".project-card");
-    projectCards.forEach((card, index) => {
-        card.addEventListener("click", () => {
-            const project = projectsData[index];
-            if (project) {
-                const queryParam = encodeURIComponent(project.name);
-                window.location.href = `projectDetails.html?project=${queryParam}`;
-            }
-        });
-    });
+    // Handle Click/(tap for mobile) on project cards to go to projectDetail.html page with query param
+    // Removed JS event listener as we are now using <a> tags for better accessibility and mobile support
 });
