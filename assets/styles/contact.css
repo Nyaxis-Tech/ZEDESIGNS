@@ -1,4 +1,14 @@
-@import url(../font.css);
+@import url("../font.css");
+
+/* --- Variables --- */
+:root {
+    --bg-color: #100f0f;
+    --text-color: #ffffff;
+    --accent-color: #eccf9c; /* Gold */
+    --secondary-text: #a0a0a0;
+    --input-bg: rgba(255, 255, 255, 0.03);
+    --input-border: rgba(255, 255, 255, 0.1);
+}
 
 *{
     padding: 0;
@@ -9,16 +19,305 @@
 body,html{
     width:100%;
     height: 100%;
+    background-color: var(--green-color);
+    color: var(--text-color);
+    font-family: "din-next-regular", sans-serif;
+    /* overflow-x: hidden; */
 }
 
 #main{
     width: 100%;
     position: relative;
     z-index: 2;
+    background-color: var(--green-color);
 }
 
-#main #hero{
+/* --- Hero Section --- */
+#hero {
+    position: relative;
     width: 100%;
-    height: 100vh;
-    background-color: green;
+    height: 70vh; /* Cinematic but not full screen to show content below */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Darken for text readability */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(16,15,15,0.3) 0%, #100f0f 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+#contact-title {
+    font-family: "TheYearOfHandicrafts", serif;
+    font-size: clamp(3rem, 6vw, 6rem);
+    color: var(--accent-color);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+#contact-tagline {
+    font-family: "din-next-regular", sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* --- Split Layout --- */
+#contact-split {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 8rem 2rem;
+    gap: 4rem;
+    position: relative;
+    z-index: 3;
+}
+
+.contact-col {
+    flex: 1;
+}
+
+/* --- Left: Form --- */
+.left-col {
+    padding-top: 2rem;
+}
+
+.form-header h2 {
+    font-family: "TheYearOfHandicrafts", serif;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: var(--secondary-text);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--input-border);
+    padding: 1rem 0;
+    color: #fff;
+    font-family: "din-next-regular", sans-serif;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-bottom-color: var(--accent-color);
+}
+
+/* Replaced old submit-btn with .btnelem styles from utils.css structure */
+.submit-btn-wrapper {
+    margin-top: 2rem;
+    justify-content: flex-start; /* Align left */
+}
+
+/* --- Right: Priority Line --- */
+.right-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aesthetic-image-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 0;
+    overflow: hidden;
+    opacity: 0.8; /* Subtle background feel */
+}
+
+.aesthetic-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to right, var(--bg-color) 10%, transparent 100%); */
+}
+
+.priority-card {
+    position: relative;
+    z-index: 2;
+    /* background: rgba(26, 26, 26, 0.8); */
+    backdrop-filter: blur(5px);
+    padding: 3rem;
+    border: 1px solid rgba(236, 207, 156, 0.1);
+    max-width: 450px;
+    margin-left: auto; 
+    transform: translateY(20px);
+}
+
+.priority-content h3 {
+    font-family: "TheYearOfHandicrafts", serif;
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.priority-content p {
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* WhatsApp Button Wrapper - Align Left inside card */
+.whatsapp-btn-wrapper {
+    justify-content: flex-start;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    #contact-split {
+        flex-direction: column;
+        gap: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .left-col {
+        padding-top: 0;
+    }
+
+    .right-col {
+        min-height: 400px; /* Let content dictate height */
+        padding: 2rem 0;
+    }
+    
+    .priority-card {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        /* background: rgba(26, 26, 26, 0.6); More opaque on mobile */
+        /* backdrop-filter: blur(15px); */
+    }
+    
+    .overlay-gradient {
+        background: linear-gradient(to bottom, var(--bg-color) 0%, transparent 50%, var(--bg-color) 100%);
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        height: 50vh; /* Compact hero */
+        align-items: flex-end;
+        padding-bottom: 4rem;
+    }
+
+    .hero-content {
+        margin-top: 0;
+        width: 90%;
+    }
+    
+    #contact-title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    #contact-tagline {
+        font-size: 1rem;
+    }
+    
+    #contact-split {
+        padding: 4rem 1.5rem 4rem 1.5rem;
+        gap: 3rem;
+    }
+
+    .form-header h2 {
+        font-size: 2rem;
+    }
+
+    .form-header p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .priority-card {
+        padding: 2rem 1.5rem;
+        transform: none; /* Remove offset */
+    }
+
+    .priority-content h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact-title {
+        font-size: 2.5rem;
+    }
+
+    .submit-btn-wrapper button:nth-child(1),
+    .whatsapp-btn-wrapper button:nth-child(1) {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }

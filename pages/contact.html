@@ -101,7 +101,7 @@
                             href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
                             target="_blank"
                             ><img
-                                src="assets/images/tiktok-logo.png"
+                                src="../assets/images/tiktok-logo.png"
                                 alt=""
                         /></a>
                         <a
@@ -109,19 +109,19 @@
                             target="_blank"
                             ><img
                                 style="transform: scale(1.2);"
-                                src="assets/images/instagram-logo.png"
+                                src="../assets/images/instagram-logo.png"
                                 alt=""
                         /></a>
                         <a
                             href="https://www.linkedin.com/company/zedesignss/"
                             target="_blank"
                             ><img
-                                src="assets/images/linkedin-logo.png"
+                                src="../assets/images/linkedin-logo.png"
                                 alt=""
                         /></a>
                         <a href="https://t.me/zedesigns" target="_blank"
                             ><img
-                                src="assets/images/telegram-logo.png"
+                                src="../assets/images/telegram-logo.png"
                                 alt=""
                         /></a>
                     </div>
@@ -131,8 +131,82 @@
 
         
         <div id="hero">
+            <div class="hero-bg-wrapper">
+                <img id="hero-image" src="../assets/images/contact/hero-bg-contact.png" alt="Contact Banner">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <h1 id="contact-title">Let's Create<br>Something Iconic</h1>
+                <p id="contact-tagline">Start your journey with us today.</p>
+            </div>
+        </div>
+
+        <!-- Split Layout: Form vs WhatsApp -->
+        <div id="contact-split">
+            
+            <!-- Left: The Formal Proposal -->
+            <div class="contact-col left-col">
+                <div class="form-header">
+                    <h2>The Proposal</h2>
+                    <p>Tell us about your vision. We'll craft the strategy.</p>
+                </div>
+                
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company</label>
+                        <input type="text" id="company" name="company" placeholder="Company Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Vision</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+                    </div>
+                    <div class="btnelem submit-btn-wrapper">
+                        <button type="submit">
+                            <span>Send Proposal</span>
+                        </button>
+                        <!-- <button type="button">
+                            <img src="../assets/images/home/arrow-right.svg" alt="arrow">
+                        </button> -->
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right: The Priority Line -->
+            <div class="contact-col right-col">
+                <div class="aesthetic-image-wrapper">
+                    <img src="../assets/images/contact/vertical-img.png" alt="Aesthetic Detail" class="aesthetic-img">
+                    <div class="overlay-gradient"></div>
+                </div>
+
+                <div class="priority-card">
+                    <div class="priority-content">
+                        <h3>Prefer Speed?</h3>
+                        <p>Skip the form. Get a direct line to our team.</p>
+                        
+                        <div class="btnelem whatsapp-btn-wrapper">
+                            <button>
+                                <a href="https://api.whatsapp.com/send?phone=966508748684&text=Hi%20ZEDESIGNS,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">
+                                    WhatsApp Us
+                                </a>
+                            </button>
+                            <!-- <button>
+                                <img src="../assets/images/home/arrow-right.svg" alt="arrow">
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
+        
     </div>
 
     <div id="footer">
@@ -258,7 +332,7 @@
                                 href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849"
                                 target="_blank"
                                 ><img
-                                    src="./../assets/images/saudi-business-logo.svg"
+                                    src="../assets/images/saudi-business-logo.svg"
                                     alt=""
                             /></a>
                             <p>
