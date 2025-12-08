@@ -189,14 +189,14 @@ body {
 
 /* --- Text Blocks & Read More (Redesigned) --- */
 .text-block {
-    background: rgba(255, 255, 255, 0.02); /* Very subtle glass tint */
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* background: rgba(255, 255, 255, 0.02); Very subtle glass tint */
+    /* border: 1px solid rgba(255, 255, 255, 0.05); */
     padding: 30px; /* Slightly reduced padding for packed feel */
     transition: background 0.3s ease, border-color 0.3s ease;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     margin: 2rem 0;
 }
 
@@ -286,15 +286,15 @@ body {
 }
 
 .centered-text-block {
-    align-items: center;
-    text-align: center;
+    /* align-items: center; */
+    /* text-align: center; */
     margin-right: auto;
-    padding: 30px 60px;
+    padding: 30px;
     /* Removed margin and background overrides to match other blocks */
 }
 
 .centered-text-block .read-more-trigger {
-    align-self: center;
+    /* align-self: center; */
 }
 
 .centered-text-block .read-more-wrapper p {
