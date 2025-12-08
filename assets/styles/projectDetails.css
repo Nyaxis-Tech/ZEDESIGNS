@@ -274,7 +274,9 @@ body {
     letter-spacing: 2px;
     padding: 12px 24px;
     transition: all 0.3s ease;
-    border-radius: 0; /* Sharp edges */
+    
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
     align-self: flex-start;
 }
 
@@ -386,6 +388,8 @@ body {
     transition: all 0.3s ease;
     border: 1px solid var(--accent-color);
     padding: 15px 30px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
     background: rgba(236, 207, 156, 0.1); /* Subtle gold tint */
     backdrop-filter: blur(5px);
     text-transform: uppercase;
