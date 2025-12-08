@@ -93,17 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
         return block;
     };
 
-    // Helper: Create a massive image
+    // Helper: Create a massive image with Parallax Wrapper
     const createImage = (src, className = '') => {
         const container = document.createElement('div');
         container.className = `grid-item image-container ${className}`;
         
+        const inner = document.createElement('div');
+        inner.className = 'parallax-inner';
+
         const img = document.createElement('img');
         img.src = src;
         img.alt = project.name + " Visual";
         img.loading = "lazy";
         
-        container.appendChild(img);
+        inner.appendChild(img);
+        container.appendChild(inner);
         return container;
     };
 
@@ -129,13 +133,26 @@ document.addEventListener('DOMContentLoaded', () => {
         gridContainer.appendChild(createImage(project.images[2], 'span-half tall-visual'));
     }
 
-    // 4. "The Execution" - Centered Text Block
-    const executionBlock = createReadMoreBlock('The Execution', project.solution, 'span-full centered-text-block');
+    // 4. "The Anchor" - Full Width Image (New Request)
+    // We use image[3] if available
+    if (project.images[3]) {
+        gridContainer.appendChild(createImage(project.images[3], 'span-full anchor-visual'));
+    }
+
+    // 5. "The Execution" - Left Aligned Text Block (Shifted Down)
+    // User requested "left end", so we use span-two-thirds.
+    const executionBlock = createReadMoreBlock('The Execution', project.solution, 'span-two-thirds');
     gridContainer.appendChild(executionBlock);
 
-    // 5. "Mosaic Gallery" - Complex Grid Pattern
-    // We start from index 3
-    const remainingImages = project.images.slice(3);
+    // Add spacer to prevent dense grid from pulling items up
+    // This ensures the next row starts fresh with the Big/Small pattern
+    const spacer = document.createElement('div');
+    spacer.className = 'grid-item span-one-third spacer-block';
+    gridContainer.appendChild(spacer);
+
+    // 6. "Mosaic Gallery" - Complex Grid Pattern
+    // We start from index 4 (since 0,1,2,3 are used)
+    const remainingImages = project.images.slice(4);
     
     remainingImages.forEach((imgSrc, index) => {
         let spanClass = 'span-one-third'; // Default
@@ -199,18 +216,36 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: "back.out(1.7)" // A slight "pop" for freshness
     });
 
-    // Image Reveal Animation
-    gsap.utils.toArray('.image-container img').forEach(img => {
-        gsap.from(img, {
+    // Image Reveal & Parallax Animation
+    gsap.utils.toArray('.image-container').forEach(container => {
+        // Reveal Container
+        gsap.from(container, {
             scrollTrigger: {
-                trigger: img,
-                start: "top 90%",
+                trigger: container,
+                start: "top 85%",
             },
-            scale: 1.1,
+            y: 50,
             opacity: 0,
-            duration: 1.2,
+            duration: 1,
             ease: "power2.out"
         });
+
+        // Parallax Inner
+        const inner = container.querySelector('.parallax-inner');
+        if (inner) {
+            gsap.set(inner, { scale: 1.05 }); // Zoom in initially
+            
+            gsap.to(inner, {
+                scrollTrigger: {
+                    trigger: container,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                },
+                yPercent: 15, // Move content down relative to container
+                ease: "Power2.easeInOut"
+            });
+        }
     });
 
     // Text Reveal Animation
@@ -218,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.from(text, {
             scrollTrigger: {
                 trigger: text,
-                start: "top 85%",
+                start: "top 80%",
             },
             y: 30,
             opacity: 0,
