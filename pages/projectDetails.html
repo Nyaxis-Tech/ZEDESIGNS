@@ -15,7 +15,7 @@
                 <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
                 <li><a href="./about.html" data-i18n="nav.about">About</a></li>
                 <li>
-                    <a href="#services" data-i18n="nav.services"
+                    <a href="../index.html#services" data-i18n="nav.services"
                         >Services</a
                     >
                 </li>
@@ -128,101 +128,53 @@
             </div>
         </div>
 
-        
-        <div id="hero">
-            <div id="herotext">
-                <img src="../assets/images/home/hero-bg-green.webp" alt="">
-                <!-- <h1>Sanbun - Burger and Sandwich brand</h1>
-                <p>Developed a custom packaging system for SANBUN, from dieline development to print-ready execution, blending visual rhythm, brand consistency, and production precision.</p>
-                <div id="hrtags">
-                    <div id="hrtag">
-                        <p>Brand Strategy</p>
-                    </div>
-                    <div id="hrtag">
-                        <p>Logo Design</p>
-                    </div>
-                    <div id="hrtag">
-                        <p>Visual Identity System</p>
-                    </div>
-                    <div id="hrtag">
-                        <p>Packaging Design</p>
-                    </div>
-                </div> -->
-            </div>
-            <div id="heroimg">
-                <img src="" alt="Project Image">
-            </div>
-        </div>
-
-        <div id="projectinfo">
-            <div id="projectinfotop">
-
-                <div id="infoleft">
-                        <h2>About the Project</h2>
+        <!-- Project Details Container -->
+        <div id="project-container">
+            <!-- Hero Section -->
+            <div id="project-hero">
+                <div class="hero-bg-wrapper">
+                    <img id="hero-image" src="" alt="Project Banner">
+                    <div class="hero-overlay"></div>
                 </div>
-                <div id="inforight">
-                    <div id="inforightwrapper">
-                        <div class="infodiv" id="overview">
-                            <h1>Overview</h1>
-                            <!-- <p>We partnered with Nanobot to create a conversational interface that drives meaningful interactions, improves retention, and reduces churn. From strategy to system design, we built an experience that feels intuitive, responsive, and built for scale.</p>
-                            <div id="hrtags">
-                                <div id="hrtag">
-                                    <p>Brand Strategy</p>
-                                </div>
-                                <div id="hrtag">
-                                    <p>Logo Design</p>
-                                </div>
-                                <div id="hrtag">
-                                    <p>Visual Identity System</p>
-                                </div>
-                                <div id="hrtag">
-                                    <p>Packaging Design</p>
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="infodiv" id="challenge">
-                            <h1>The Challenge</h1>
-                            <!-- <p>Nanobot needed a chat experience that didn't just respond—but adapted. Their product had to feel human, smart, and frictionless— especially for users unfamiliar with AI tools.</p> -->
-                        </div>
-                        <div class="infodiv lastdiv" id="solution">
-                            <h1>The Solution</h1>
-                            <!-- <p>We designed an AI-first interface that:</p>
-                            <ul>
-                                <li>Understands context and adjusts conversation flow accordingly</li>
-                                <li>Understands context and adjusts conversation flow accordingly</li>
-                                <li>Understands context and adjusts conversation flow accordingly</li>
-                                <li>Understands context and adjusts conversation flow accordingly</li>
-                            </ul> -->
-                        </div>
-                    </div>
-
+                <div class="hero-content">
+                    <h1 id="project-title"></h1>
+                    <p id="project-tagline"></p>
                 </div>
             </div>
 
-            <img src="" alt="Project Logo Image" id="projectInfoLogo">
-        </div>
+            <!-- Specs Strip (The Table) -->
+            <div id="specs-strip">
+                <div class="spec-item">
+                    <span class="spec-label">Services</span>
+                    <span class="spec-value" id="spec-services"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Location</span>
+                    <span class="spec-value" id="spec-location"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Industry</span>
+                    <span class="spec-value" id="spec-industry"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Year</span>
+                    <span class="spec-value" id="spec-year"></span>
+                </div>
+            </div>
 
-        <div id="projectresults">
-            <!-- <section class="card pinned">
-                <div class="img">
-                    <img src="../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-16.webp" alt="Image">
-                </div>
-            </section>
-            <section class="card pinned">
-                <div class="img">
-                    <img src="../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/Untitled-2-13.webp" alt="Image">
-                </div>
-            </section>
-            <section class="card pinned">
-                <div class="img">
-                    <img src="../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-14.webp" alt="Image">
-                </div>
-            </section>
-            <section class="card scroll">
-                <div class="img">
-                    <img src="../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/Untitled-2-17.webp" alt="Image">
-                </div>
-            </section> -->
+            <!-- Bento Grid Content -->
+            <div id="bento-grid">
+                <!-- Content will be injected here by JS -->
+            </div>
+            
+            <!-- Next Project Navigation -->
+            <div id="next-project-nav">
+                <p>Next Project</p>
+                <h2 id="next-project-name"></h2>
+                <a href="#" id="next-project-link" class="arrow-link">
+                    View Case Study <span class="arrow">→</span>
+                </a>
+            </div>
         </div>
 
         <!-- Floating WhatsApp Button -->

@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             projectsGrid.innerHTML = projectsData.map((project, index) => {
                 const queryParam = encodeURIComponent(project.name);
                 return `
-                <a href="projectDetails.html?project=${queryParam}" class="project-card" data-index="${index}" data-category="branding">
+                <a href="projectDetails.html?id=${index+1}" class="project-card" data-index="${index}" data-category="branding">
                     <div class="project-meta">
                         <h2 class="project-title">
                             ${project.name} — ${project.tagLine}

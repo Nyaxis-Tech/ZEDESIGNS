@@ -1,369 +1,440 @@
-@import url(../font.css);
+@import url("../font.css");
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+/* --- Variables --- */
+:root {
+    --bg-color: #100f0f;
+    --text-color: #ffffff;
+    --accent-color: #eccf9c; /* Gold */
+    --secondary-text: #a0a0a0;
+    --grid-gap: 20px;
+    --card-bg: #1a1a1a;
 }
 
-body,html{
-    width:100%;
-    min-height: 100%;
+/* --- Base Setup --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "din-next-regular", sans-serif;
     overflow-x: hidden;
 }
 
-#main{
+#main {
     width: 100%;
-    position: relative;
-    z-index: 2;
     background-color: var(--green-color);
     color: white;
-    font-family: "TheYearOfHandicrafts", serif;
+    position: relative;
+    z-index: 2;
+}
+#project-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-bottom: 100px;
 }
 
-#main #hero{
+/* --- Hero Section --- */
+#project-hero {
+    position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding: 0 0 4rem;
-}
-
-#main #hero #herotext{
-    width: 100%;
-    height: 60vh;
-    padding: 10vw 7vw 0;
+    height: 85vh;
     display: flex;
+    align-items: flex-end;
     justify-content: center;
-    flex-direction: column;
-    gap: 1.5rem;
-    background: url("../images/home/hero-bg-green.webp") no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-    mask-image: linear-gradient(to top, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to top, transparent 0%, var(--green-color) 10%, var(--green-color) 90%);
-    mask-composite: intersect;
-    -webkit-mask-composite: source-in;
-    
-}
-
-#main #hero #herotext > img{
-    display: none;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-}
-
-#main #hero #herotext h1{
-    font-size: 3rem;
-    font-family: "didot-bold";
-    font-weight: 500;
-    width: 60%;
-    line-height: 1;
-
-}
-
-#main #hero #herotext p{
-    font-size: 1.1rem;
-    width: 50%;
-    opacity: 0.7;
-    line-height: 1.5;
-}
-
-#main #hero #herotext #hrtags{
-    display: flex;
-    gap: 0.5rem;
-}
-
-#main #hero #herotext #hrtags #hrtag{
-    padding: 0.5rem 1.5rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 100px;
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#main #hero #herotext #hrtags #hrtag p{
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    opacity: 1;
-    width: 100%;
-}
-
-#hero #heroimg{
-    width: 100%;
-    height: 75vh;
-    padding: 0 7vw;
-    display: flex;
-    justify-content: center;
-}
-
-#hero #heroimg img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-@keyframes heroimg {
-    0%{
-        transform: scale(0.7)
-    }
-    100%{
-        transform: scale(1);
-        
-    }
-    
-}
-
-
-#main #projectinfo{
-    width: 100%;
-    padding: 4vw 15vw;
-    display: flex;
-    flex-direction: column;;
-    gap: 1rem;
-}
-
-#main #projectinfo img{
-    border-radius: 10px;;
-}
-
-#main #projectinfo #projectinfotop{
-    width: 100%;
-    height: 35vh;
-    display: flex;
-    justify-content: space-between;
-    /* background-color: red; */
-    padding: 1rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#main #projectinfo #projectinfotop #infoleft{
-    width: 30%;
-    height: fit-content;
-    /* background-color: red; */
-}
-
-#main #projectinfo #projectinfotop #infoleft h2{
-    font-family: "didot";
-    font-size: 1rem;
-    font-weight: 400;
-    width: 50%;
-    text-transform: uppercase;
-}
-
-#main #projectinfo #projectinfotop #inforight{
-    width: 60%;
     overflow: hidden;
 }
-#main #projectinfo #projectinfotop #inforight #inforightwrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    /* transform: translateY(-420px); */
-}
 
-#main #projectinfo #projectinfotop #inforight .infodiv{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#main #projectinfo #projectinfotop #inforight .infodiv h1{
-    font-family: "didot-bold";
-    font-size: 2.5rem;
-    font-weight: 500;
-}
-
-#main #projectinfo #projectinfotop #inforight .infodiv > p{
-    font-size: 1.05rem;
-    width: 80%;
-    opacity: 0.7;
-}
-
-#main #projectinfo #projectinfotop #inforight .infodiv > ul{
-    list-style-type: disc;
-    padding-left: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    opacity: 0.7;
-    justify-content: center;
-}
-#main #projectinfo #projectinfotop #inforight .infodiv #hrtags{
-    display: flex;
-    gap: 0.5rem;
-}
-
-#main #projectinfo #projectinfotop #inforight .infodiv #hrtags #hrtag{
-    padding: 0.5rem 1rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 100px;
-    backdrop-filter: blur(10px);
-}
-
-#main #projectinfo #projectinfotop #inforight .infodiv #hrtags #hrtag p{
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    opacity: 1;
-    width: 100%;
-}
-
-#main #projectresults{
-    width: 100%;
-    padding: 0;
-    display: block;
-}
-
-#main #projectresults .card{
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    display: block;
-    will-change: transform;
-}
-
-#main #projectresults .card .img{
+.hero-bg-wrapper {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70vw;
-    height: 80vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
-#main #projectresults .card .img img{
+#hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
 }
 
-@media screen and (max-width: 768px) {
-    #main #hero #herotext {
-        padding: 30vw 5vw 0;
-        height: auto;
-        min-height: 50vh;
-    }
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(16,15,15,0.2) 0%, rgba(16,15,15,0.8) 90%, #100f0f 100%);
+}
 
-    #main #hero #herotext h1 {
-        width: 100%;
-        font-size: 2rem;
-    }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-bottom: 4rem;
+    width: 90%;
+}
 
-    #main #hero #herotext p {
-        width: 100%;
-        font-size: 1rem;
-    }
-    
-    #main #hero #herotext #hrtags {
-        flex-wrap: wrap;
-        margin-bottom: 4rem;;
-    }
+#project-title {
+    font-family: "TheYearOfHandicrafts", serif;
+    font-size: clamp(3rem, 8vw, 8rem);
+    color: var(--accent-color);
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    /* Optional: Text Stroke Effect */
+    /* -webkit-text-stroke: 1px var(--accent-color);
+    color: transparent; */
+}
 
-    #hero #heroimg {
-        height: 50vh;
-        padding: 0 5vw;
-    }
+#project-tagline {
+    font-family: "didot", serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
 
-    #main #projectinfo {
-        padding: 10vw 5vw 10vw 5vw;
-    }
+/* --- Specs Strip (Table) --- */
+#specs-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 95%; /* Wider to reduce side padding */
+    max-width: 1600px;
+    margin: 40px auto 80px auto; /* More breathing room below */
+    padding: 20px 0;
+    border-top: 1px solid rgba(236, 207, 156, 0.2);
+    border-bottom: 1px solid rgba(236, 207, 156, 0.2);
+}
 
-    #main #projectinfo #projectinfotop {
+.spec-item {
+    flex: 1;
+    padding: 0 10px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.spec-item:last-child {
+    border-right: none;
+}
+
+.spec-label {
+    display: block;
+    font-family: "din-next-regular", sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.spec-value {
+    display: block;
+    font-family: "din-next-bold", sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+/* --- Bento Grid (Visual Centric) --- */
+#bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 Column Grid for flexibility */
+    gap: 20px;
+    width: 95%;
+    margin: 0 auto;
+    grid-auto-flow: dense;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0; /* Sharp edges for modern look */
+}
+
+/* Spans */
+.span-full { grid-column: span 12; }
+.span-half { grid-column: span 6; }
+.span-two-thirds { grid-column: span 8; }
+.span-one-third { grid-column: span 4; }
+
+/* Image Containers */
+.image-container {
+    width: 100%;
+    /* Aspect ratios handled by content, but min-height ensures presence */
+    min-height: 400px; 
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1); /* Smooth cinematic ease */
+}
+
+.image-container:hover img {
+    transform: scale(1.03);
+}
+
+/* --- Intro Spread (Text) --- */
+.intro-spread {
+    display: flex;
+    gap: 80px; /* Wider gap for luxury feel */
+    margin: 60px 0;
+}
+
+.intro-col {
+    flex: 1;
+}
+
+/* --- Text Blocks & Read More (Redesigned) --- */
+.text-block {
+    background: rgba(255, 255, 255, 0.02); /* Very subtle glass tint */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px; /* Slightly reduced padding for packed feel */
+    transition: background 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.text-block:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(236, 207, 156, 0.2); /* Subtle gold hint on hover */
+}
+
+.text-block h3 {
+    font-family: "TheYearOfHandicrafts", serif;
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.read-more-wrapper {
+    position: relative;
+    overflow: hidden;
+    max-height: 140px; /* Initial collapsed height */
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth ease-in-out */
+}
+
+.text-block.is-expanded .read-more-wrapper {
+    max-height: 1200px; /* Large enough to fit content */
+}
+
+.read-more-wrapper p {
+    font-family: "din-next-regular", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+    font-weight: 300;
+    margin: 0;
+}
+
+.fade-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    /* background: linear-gradient(to bottom, transparent, #131313 90%); Match card bg roughly */
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.text-block.is-expanded .fade-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.read-more-trigger {
+    background: none;
+    border: 1px solid rgba(236, 207, 156, 0.3);
+    color: var(--accent-color);
+    font-family: "din-next-regular", sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    border-radius: 0; /* Sharp edges */
+    align-self: flex-start;
+}
+
+.read-more-trigger:hover {
+    background: var(--accent-color);
+    color: #000;
+    border-color: var(--accent-color);
+}
+
+.read-more-trigger .arrow-icon {
+    font-style: normal;
+    transition: transform 0.3s ease;
+}
+
+.text-block.is-expanded .read-more-trigger .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.centered-text-block {
+    align-items: center;
+    text-align: center;
+    margin-right: auto;
+    padding: 30px 60px;
+    /* Removed margin and background overrides to match other blocks */
+}
+
+.centered-text-block .read-more-trigger {
+    align-self: center;
+}
+
+.centered-text-block .read-more-wrapper p {
+    max-width: 65ch;
+    margin: 0 auto;
+}
+
+/* --- Next Project Nav --- */
+#next-project-nav {
+    width: 100%; /* Full width for impact */
+    max-width: 100%;
+    margin: 8rem 0 0 0;
+    text-align: center;
+    padding: 8rem 0;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax feel */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: none;
+}
+
+/* Dark Overlay to ensure text readability */
+#next-project-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    transition: background 0.5s ease;
+    z-index: 1;
+}
+
+#next-project-nav:hover::before {
+    background: rgba(0, 0, 0, 0.5); /* Lighten on hover to reveal image */
+}
+
+#next-project-nav > * {
+    position: relative;
+    z-index: 2; /* Bring text above overlay */
+}
+
+#next-project-nav p {
+    font-family: "din-next-regular", sans-serif;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+#next-project-name {
+    font-family: "TheYearOfHandicrafts", serif;
+    font-size: clamp(4rem, 8vw, 7rem); /* Massive typography */
+    color: #fff;
+    margin-bottom: 3rem;
+    line-height: 1;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.5s ease;
+}
+
+#next-project-nav:hover #next-project-name {
+    transform: scale(1.05); /* Subtle zoom on hover */
+}
+
+.arrow-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-family: "din-next-bold", sans-serif;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-color);
+    padding: 15px 30px;
+    background: rgba(236, 207, 156, 0.1); /* Subtle gold tint */
+    backdrop-filter: blur(5px);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.arrow-link:hover {
+    background: var(--accent-color);
+    color: #000;
+    gap: 20px;
+    border-color: var(--accent-color);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .intro-spread {
         flex-direction: column;
-        height: auto;
-        gap: 2rem;
+        gap: 40px;
+        margin-bottom: 40px;
     }
 
-    #main #projectinfo #projectinfotop #infoleft {
-        width: 100%;
-    }
-
-    #main #projectinfo #projectinfotop #inforight {
-        width: 100%;
-        overflow: visible;
-    }
-    
-    #main #projectinfo #projectinfotop #inforight #inforightwrapper {
-        gap: 2rem;
-    }
-
-    #main #projectinfo #projectinfotop #inforight .infodiv h1 {
-        font-size: 2rem;
-    }
-    
-    #main #projectinfo #projectinfotop #inforight .infodiv > p {
-        width: 100%;
-    }
-    
-    #main #projectinfo #projectinfotop #inforight .infodiv #hrtags {
-        flex-wrap: wrap;
-    }
-
-    #main #hero #herotext #hrtags #hrtag p{
-        font-size: 0.75rem;
-    }
-
-    #main #projectresults {
-        display: flex;
-        flex-direction: row;
-        gap: 0;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding: 0;
-        scroll-snap-type: x mandatory;
-        perspective: 1000px;
-        height: 60vh;
-        align-items: center;
-    }
-
-    #main #projectresults::-webkit-scrollbar {
-        display: none;
-    }
-
-    #main #projectresults .card {
-        flex: 0 0 85vw;
-        width: 85vw;
-        aspect-ratio: 1 / 1;
-        height: auto;
-        margin: 0 0vw;
-        scroll-snap-align: center;
-        transform-style: preserve-3d;
-        position: relative;
-        display: block;
-        opacity: 1; /* Ensure visibility */
-    }
-    #main #projectresults .card:nth-of-type(1){
-        margin-left: 2vw;
-    }
-    #main #projectresults .card:last-of-type{
-        margin-right: 2vw;
-    }
-
-    #main #projectresults .card .img {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        overflow: hidden;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-
-    #main #projectresults .card .img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
+    .span-two-thirds, .span-one-third {
+        grid-column: span 6; /* 2 columns on tablet */
     }
 }
 
+@media (max-width: 768px) {
+    #specs-strip {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .spec-item {
+        flex: 1 1 40%; /* 2 items per row */
+        border-right: none;
+        text-align: center;
+    }
 
+    #bento-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 
+    .span-half, .span-two-thirds, .span-one-third {
+        width: 100%;
+    }
+
+    #project-title {
+        font-size: 3rem;
+    }
+    
+    .text-block h3 {
+        font-size: 2rem;
+    }
+    
+    #next-project-name {
+        font-size: 2.5rem;
+    }
+}
