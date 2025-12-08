@@ -393,48 +393,94 @@ body {
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
-    .intro-spread {
-        flex-direction: column;
-        gap: 40px;
-        margin-bottom: 40px;
+    #bento-grid {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
     }
 
-    .span-two-thirds, .span-one-third {
-        grid-column: span 6; /* 2 columns on tablet */
+    .span-full { grid-column: span 2; }
+    .span-half { grid-column: span 1; }
+    
+    /* On tablet, "Big" images take full width for impact */
+    .span-two-thirds { grid-column: span 2; }
+    
+    /* "Small" images take half width */
+    .span-one-third { grid-column: span 1; }
+
+    #project-title {
+        font-size: 5rem;
     }
 }
 
 @media (max-width: 768px) {
+    #project-hero {
+        height: 70vh; /* Slightly shorter hero on mobile */
+    }
+
+    #project-title {
+        font-size: 3.5rem; /* Readable mobile size */
+    }
+
+    /* Specs Strip: 2x2 Grid with Borders */
     #specs-strip {
-        flex-wrap: wrap;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        width: 90%;
+        padding: 0;
+        border-top: 1px solid rgba(236, 207, 156, 0.2);
+        border-bottom: 1px solid rgba(236, 207, 156, 0.2);
     }
     
     .spec-item {
-        flex: 1 1 40%; /* 2 items per row */
+        padding: 20px 10px;
         border-right: none;
         text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
+    /* Add vertical divider for odd items */
+    .spec-item:nth-child(odd) {
+        border-right: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Remove bottom border for the last two items */
+    .spec-item:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+
+    /* Vertical Stack for Content */
     #bento-grid {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px; /* More breathing room between vertical items */
     }
 
     .span-half, .span-two-thirds, .span-one-third {
         width: 100%;
     }
 
-    #project-title {
-        font-size: 3rem;
+    .image-container {
+        min-height: auto; /* Allow shorter images on mobile */
     }
-    
+
+    .text-block {
+        padding: 25px; /* Save space */
+    }
+
     .text-block h3 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
-    
+
+    /* Next Project: Fix Parallax & Size */
+    #next-project-nav {
+        /* background-attachment: atta; Disable fixed bg on mobile for performance/support */
+        padding: 6rem 0;
+        margin-top: 4rem;
+    }
+
     #next-project-name {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        padding: 0 20px;
+        line-height: 1.1;
     }
 }
