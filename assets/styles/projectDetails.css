@@ -100,9 +100,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 95%; /* Wider to reduce side padding */
+    width: 95%;
     max-width: 1600px;
-    margin: 40px auto 80px auto; /* More breathing room below */
+    margin: 40px auto 80px auto;
     padding: 20px 0;
     border-top: 1px solid rgba(236, 207, 156, 0.2);
     border-bottom: 1px solid rgba(236, 207, 156, 0.2);
@@ -135,23 +135,191 @@ body {
     color: #fff;
 }
 
-/* --- Bento Grid (Visual Centric) --- */
-#bento-grid {
+/* --- Split Section (Bold Layout) --- */
+.split-section {
+    display: flex;
+    width: 90%;
+    max-width: 1400px;
+    margin: 80px auto; /* Reduced margin */
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.split-left {
+    flex: 1;
+    /* Removed sticky positioning */
+}
+
+.split-right {
+    flex: 1;
+}
+
+.split-left h2 {
+    font-family: "TheYearOfHandicrafts", serif;
+    font-size: 2rem;
+    color: var(--accent-color);
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.split-right p {
+    font-family: "din-next-regular", sans-serif;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #d0d0d0;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+/* --- Challenge & Solution Section --- */
+.challenge-solution-section {
+    display: flex;
+    width: 90%;
+    max-width: 1400px;
+    margin: 100px auto;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.cs-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-col h3 {
+    font-family: "TheYearOfHandicrafts", serif;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Read More Styles (Reused/Adapted) */
+.read-more-wrapper {
+    position: relative;
+    overflow: hidden;
+    max-height: 150px; /* Initial height */
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cs-col.is-expanded .read-more-wrapper {
+    max-height: 2000px; /* Expand */
+}
+
+.read-more-wrapper p {
+    font-family: "din-next-regular", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #d0d0d0;
+    margin: 0;
+}
+
+.fade-overlay {
+    display: none; /* Removed as requested */
+}
+
+.read-more-trigger {
+    background: none;
+    border: 1px solid rgba(236, 207, 156, 0.3);
+    color: var(--accent-color);
+    font-family: "din-next-regular", sans-serif;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.read-more-trigger:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+
+/* --- Text Image Section (New) --- */
+.text-image-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+}
+
+.text-image-left {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-image-left p {
+    font-family: "din-next-regular", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #d0d0d0;
+}
+
+.text-image-right {
+    flex: 1;
+    height: 100%;
+    max-height: 400px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.text-image-right img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .text-image-section {
+        flex-direction: column;
+    }
+    .text-image-right {
+        width: 100%;
+        min-height: 300px;
+    }
+}
+
+/* --- Random Grid (Section 2) --- */
+.random-grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* 12 Column Grid for flexibility */
+    grid-template-columns: repeat(12, 1fr);
     gap: 20px;
     width: 95%;
-    margin: 0 auto;
+    margin: 80px auto;
+}
+
+/* --- Bento Grid (Section 4) --- */
+#bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    width: 95%;
+    margin: 120px auto;
     grid-auto-flow: dense;
 }
 
+/* Grid Items & Spans */
 .grid-item {
     position: relative;
     overflow: hidden;
-    border-radius: 0; /* Sharp edges for modern look */
+    border-radius: 0;
 }
 
-/* Spans */
 .span-full { grid-column: span 12; }
 .span-half { grid-column: span 6; }
 .span-two-thirds { grid-column: span 8; }
@@ -160,7 +328,6 @@ body {
 /* Image Containers */
 .image-container {
     width: 100%;
-    /* Aspect ratios handled by content, but min-height ensures presence */
     min-height: 400px;
     overflow: hidden;
     position: relative;
@@ -184,137 +351,9 @@ body {
     transform: scale(1.05);
 }
 
-/* --- Intro Spread (Text) --- */
-.intro-spread {
-    display: flex;
-    gap: 80px; /* Wider gap for luxury feel */
-    margin: 60px 0;
-}
-
-.intro-col {
-    flex: 1;
-}
-
-/* --- Text Blocks & Read More (Redesigned) --- */
-.text-block {
-    /* background: rgba(255, 255, 255, 0.02); Very subtle glass tint */
-    /* border: 1px solid rgba(255, 255, 255, 0.05); */
-    padding: 30px; /* Slightly reduced padding for packed feel */
-    transition: background 0.3s ease, border-color 0.3s ease;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    margin: 2rem 0;
-}
-
-.text-block:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(236, 207, 156, 0.2); /* Subtle gold hint on hover */
-}
-
-.text-block h3 {
-    font-family: "TheYearOfHandicrafts", serif;
-    font-size: 2rem;
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-    letter-spacing: 0.5px;
-}
-
-.read-more-wrapper {
-    position: relative;
-    overflow: hidden;
-    max-height: 140px; /* Initial collapsed height */
-    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth ease-in-out */
-}
-
-.text-block.is-expanded .read-more-wrapper {
-    max-height: 1200px; /* Large enough to fit content */
-}
-
-.read-more-wrapper p {
-    font-family: "din-next-regular", sans-serif;
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #d0d0d0;
-    font-weight: 300;
-    margin: 0;
-}
-
-.fade-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    /* background: linear-gradient(to bottom, transparent, #131313 90%); Match card bg roughly */
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-    opacity: 1;
-}
-
-.text-block.is-expanded .fade-overlay {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.read-more-trigger {
-    background: none;
-    border: 1px solid rgba(236, 207, 156, 0.3);
-    color: var(--accent-color);
-    font-family: "din-next-regular", sans-serif;
-    font-size: 0.8rem;
-    cursor: pointer;
-    margin-top: 2rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 12px 24px;
-    transition: all 0.3s ease;
-    
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    align-self: flex-start;
-}
-
-.read-more-trigger:hover {
-    background: var(--accent-color);
-    color: #000;
-    border-color: var(--accent-color);
-}
-
-.read-more-trigger .arrow-icon {
-    font-style: normal;
-    transition: transform 0.3s ease;
-}
-
-.text-block.is-expanded .read-more-trigger .arrow-icon {
-    transform: rotate(180deg);
-}
-
-.centered-text-block {
-    /* align-items: center; */
-    /* text-align: center; */
-    margin-right: auto;
-    padding: 30px;
-    /* Removed margin and background overrides to match other blocks */
-}
-
-.centered-text-block .read-more-trigger {
-    /* align-self: center; */
-}
-
-.centered-text-block .read-more-wrapper p {
-    max-width: 65ch;
-    margin: 0 auto;
-}
-
 /* --- Next Project Nav --- */
 #next-project-nav {
-    width: 100%; /* Full width for impact */
+    width: 100%;
     max-width: 100%;
     margin: 8rem 0 0 0;
     text-align: center;
@@ -322,7 +361,7 @@ body {
     position: relative;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax feel */
+    background-attachment: fixed;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -331,7 +370,6 @@ body {
     border-top: none;
 }
 
-/* Dark Overlay to ensure text readability */
 #next-project-nav::before {
     content: '';
     position: absolute;
@@ -339,18 +377,18 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.7);
     transition: background 0.5s ease;
     z-index: 1;
 }
 
 #next-project-nav:hover::before {
-    background: rgba(0, 0, 0, 0.5); /* Lighten on hover to reveal image */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 #next-project-nav > * {
     position: relative;
-    z-index: 2; /* Bring text above overlay */
+    z-index: 2;
 }
 
 #next-project-nav p {
@@ -365,7 +403,7 @@ body {
 
 #next-project-name {
     font-family: "TheYearOfHandicrafts", serif;
-    font-size: clamp(4rem, 8vw, 7rem); /* Massive typography */
+    font-size: clamp(4rem, 8vw, 7rem);
     color: #fff;
     margin-bottom: 3rem;
     line-height: 1;
@@ -374,7 +412,7 @@ body {
 }
 
 #next-project-nav:hover #next-project-name {
-    transform: scale(1.05); /* Subtle zoom on hover */
+    transform: scale(1.05);
 }
 
 .arrow-link {
@@ -390,7 +428,7 @@ body {
     padding: 15px 30px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
-    background: rgba(236, 207, 156, 0.1); /* Subtle gold tint */
+    background: rgba(236, 207, 156, 0.1);
     backdrop-filter: blur(5px);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -405,39 +443,38 @@ body {
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
-    #bento-grid {
-        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+    .split-section, .challenge-solution-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .split-left, .cs-col {
+        width: 100%;
+    }
+    
+    .split-left h2 {
+        font-size: 2.5rem;
+    }
+
+    .random-grid, #bento-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .span-full { grid-column: span 2; }
     .span-half { grid-column: span 1; }
-    
-    /* On tablet, "Big" images take full width for impact */
     .span-two-thirds { grid-column: span 2; }
-    
-    /* "Small" images take half width */
     .span-one-third { grid-column: span 1; }
-
-    /* Hide spacer on tablet/mobile as layout changes */
-    .spacer-block {
-        display: none;
-    }
-
-    #project-title {
-        font-size: 5rem;
-    }
 }
 
 @media (max-width: 768px) {
     #project-hero {
-        height: 70vh; /* Slightly shorter hero on mobile */
+        height: 70vh;
     }
 
     #project-title {
-        font-size: 3.5rem; /* Readable mobile size */
+        font-size: 3.5rem;
     }
 
-    /* Specs Strip: 2x2 Grid with Borders */
     #specs-strip {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -455,21 +492,18 @@ body {
         border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* Add vertical divider for odd items */
     .spec-item:nth-child(odd) {
         border-right: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* Remove bottom border for the last two items */
     .spec-item:nth-last-child(-n+2) {
         border-bottom: none;
     }
 
-    /* Vertical Stack for Content */
-    #bento-grid {
+    .random-grid, #bento-grid {
         display: flex;
         flex-direction: column;
-        gap: 10px; /* More breathing room between vertical items */
+        gap: 10px;
     }
 
     .span-half, .span-two-thirds, .span-one-third {
@@ -477,20 +511,10 @@ body {
     }
 
     .image-container {
-        min-height: auto; /* Allow shorter images on mobile */
+        min-height: auto;
     }
 
-    .text-block {
-        padding: 25px; /* Save space */
-    }
-
-    .text-block h3 {
-        font-size: 1.8rem;
-    }
-
-    /* Next Project: Fix Parallax & Size */
     #next-project-nav {
-        /* background-attachment: atta; Disable fixed bg on mobile for performance/support */
         padding: 6rem 0;
         margin-top: 4rem;
     }
@@ -498,6 +522,5 @@ body {
     #next-project-name {
         font-size: 3rem;
         padding: 0 20px;
-        line-height: 1.1;
     }
 }

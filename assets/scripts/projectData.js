@@ -17,6 +17,10 @@ const projectsData = [
             "Created a cohesive visual rhythm across digital and physical touchpoints",
             "Ensured production precision and strong brand consistency"        
         ],
+        "textImage": {
+            "imagesrc" : "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/imagetext.jpg",
+            "text" : "Sanban's logo creatively blends Arabic calligraphy with modern design, showcasing two calligraphed buns cradling the word \"Sanban\" in place of a traditional burger patty. This design symbolizes cultural fusion and innovation, appealing to a diverse audience with its distinctive and memorable style."
+        },
         "bannerImage": "../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-15.webp",
         "logoImage": "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
         "images": [
