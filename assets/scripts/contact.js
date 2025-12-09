@@ -38,40 +38,102 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: "power3.out"
     }, "-=0.8");
 
-    // --- Form Reveal ---
-    gsap.from('.left-col', {
+    // --- Form Section Reveal ---
+    gsap.from('.contact-form-section', {
         scrollTrigger: {
-            trigger: '#contact-split',
-            start: "top 80%",
+            trigger: '#contact-content',
+            start: "top 75%",
         },
-        x: -50,
+        y: 40,
         opacity: 0,
         duration: 1,
         ease: "power2.out"
     });
 
-    // --- Priority Card Reveal (The Focus Shift) ---
-    gsap.from('.priority-card', {
+    // --- Info Section Tag Reveal (matching landing page) ---
+    const infoTag = document.querySelector(' .tag');
+    if (infoTag) {
+        ScrollTrigger.create({
+            trigger: '.contact-info-section',
+            start: 'top 80%',
+            onEnter: () => {
+                gsap.fromTo(
+                    infoTag,
+                    {},
+                    {
+                        duration: 0.6,
+                        ease: "power2.out",
+                        onComplete: () => {
+                            infoTag.classList.add("revealed");
+                        }
+                    }
+                );
+            },
+            once: true,
+        });
+    }
+
+    // --- Video Column Reveal ---
+    gsap.from('.video-wrapper', {
         scrollTrigger: {
-            trigger: '.right-col',
-            start: "top 70%",
+            trigger: '.info-video-col',
+            start: "top 80%",
         },
-        x: 50,
+        y: 40,
         opacity: 0,
         duration: 1,
-        delay: 0.2, // Slight delay to let user see form first
-        ease: "back.out(1.7)" // Pop effect
+        ease: "power2.out"
     });
 
-    // --- Parallax for Aesthetic Image ---
-    gsap.to('.aesthetic-img', {
+    // --- Info Blocks Stagger ---
+    gsap.from('.info-block', {
         scrollTrigger: {
-            trigger: '.right-col',
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
+            trigger: '.info-details-col',
+            start: "top 80%",
         },
-        yPercent: 20,
-        ease: "none"
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power2.out"
     });
+
+    // --- Video Parallax ---
+    if (document.querySelector('.video-wrapper video')) {
+        gsap.to('.video-wrapper video', {
+            scrollTrigger: {
+                trigger: '.video-wrapper',
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            },
+            scale: 1.15,
+            ease: "none"
+        });
+    }
+
+    // --- Form Submit Handler ---
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            console.log('Form Data:', data);
+            
+            // Success animation
+            gsap.to('.contact-form-section', {
+                scale: 0.99,
+                duration: 0.1,
+                yoyo: true,
+                repeat: 1,
+                onComplete: () => {
+                    contactForm.reset();
+                    alert('Thank you! We\'ll be in touch within 24 hours.');
+                }
+            });
+        });
+    }
 });

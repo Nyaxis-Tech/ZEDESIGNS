@@ -4,28 +4,25 @@
 :root {
     --bg-color: #100f0f;
     --text-color: #ffffff;
-    --accent-color: #eccf9c; /* Gold */
+    --accent-color: #eccf9c;
     --secondary-text: #a0a0a0;
-    --input-bg: rgba(255, 255, 255, 0.03);
-    --input-border: rgba(255, 255, 255, 0.1);
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body,html{
-    width:100%;
+body, html {
+    width: 100%;
     height: 100%;
     background-color: var(--green-color);
     color: var(--text-color);
     font-family: "din-next-regular", sans-serif;
-    /* overflow-x: hidden; */
 }
 
-#main{
+#main {
     width: 100%;
     position: relative;
     z-index: 2;
@@ -36,7 +33,7 @@ body,html{
 #hero {
     position: relative;
     width: 100%;
-    height: 70vh; /* Cinematic but not full screen to show content below */
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,7 +53,7 @@ body,html{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.6; /* Darken for text readability */
+    opacity: 0.5;
 }
 
 .hero-overlay {
@@ -65,7 +62,7 @@ body,html{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(16,15,15,0.3) 0%, #100f0f 100%);
+    background: linear-gradient(to bottom, rgba(16,15,15,0.2) 0%, var(--green-color) 100%);
 }
 
 .hero-content {
@@ -77,247 +74,316 @@ body,html{
 
 #contact-title {
     font-family: "TheYearOfHandicrafts", serif;
-    font-size: clamp(3rem, 6vw, 6rem);
+    font-size: clamp(3.5rem, 5vw, 5rem);
     color: var(--accent-color);
-    line-height: 1.1;
-    margin-bottom: 1rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
 }
 
 #contact-tagline {
-    font-family: "din-next-regular", sans-serif;
-    font-size: 1.2rem;
+    font-family: "didot", serif;
+    font-size: 1.3rem;
     color: #fff;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.8;
+    letter-spacing: 1px;
+    opacity: 0.7;
 }
 
-/* --- Split Layout --- */
-#contact-split {
-    display: flex;
+/* --- Contact Content --- */
+#contact-content {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem 8rem 2rem;
-    gap: 4rem;
-    position: relative;
-    z-index: 3;
+    padding: 6rem 2rem 10rem 2rem;
 }
 
-.contact-col {
-    flex: 1;
-}
-
-/* --- Left: Form --- */
-.left-col {
-    padding-top: 2rem;
-}
-
-.form-header h2 {
-    font-family: "TheYearOfHandicrafts", serif;
-    font-size: 2.5rem;
-    color: #fff;
-    margin-bottom: 0.5rem;
-}
-
-.form-header p {
-    color: var(--secondary-text);
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
+/* --- Form Section --- */
+.contact-form-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 8rem auto;
 }
 
 #contact-form {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.form-field {
+    position: relative;
 }
 
-.form-group label {
-    font-size: 0.9rem;
-    color: var(--accent-color);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.form-field.full-width {
+    margin-bottom: 2rem;
 }
 
-.form-group input,
-.form-group textarea {
+.form-field input,
+.form-field textarea,
+.form-field select {
+    width: 100%;
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--input-border);
-    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1.2rem 0;
     color: #fff;
     font-family: "din-next-regular", sans-serif;
     font-size: 1.1rem;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
     outline: none;
     border-bottom-color: var(--accent-color);
 }
 
-/* Replaced old submit-btn with .btnelem styles from utils.css structure */
-.submit-btn-wrapper {
-    margin-top: 2rem;
-    justify-content: flex-start; /* Align left */
+.form-field select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath fill='%23eccf9c' d='M1 1l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    color: rgba(255, 255, 255, 0.4);
 }
 
-/* --- Right: Priority Line --- */
-.right-col {
-    position: relative;
+.form-field select:focus,
+.form-field select:valid {
+    color: #fff;
+}
+
+.form-field select option {
+    background: var(--green-color);
+    color: #fff;
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+#contact-form .btnelem {
+    margin-top: 2rem;
+    justify-content: flex-start;
+}
+
+/* --- Info Section --- */
+.contact-info-section {
+    max-width: 1400px;
+    margin: 0 auto 100px;
+    padding: 0 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-.aesthetic-image-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
+.info-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Left Column - Video */
+.info-video-col {
+    /* position: sticky; */
+    top: 100px;
+}
+
+.info-video-col .tag {
+    margin-bottom: 2rem;
+}
+
+.video-wrapper {
+    position: relative;
     width: 100%;
-    height: 100%;
-    z-index: 1;
-    border-radius: 0;
+    height: 750px;
     overflow: hidden;
-    opacity: 0.8; /* Subtle background feel */
+    border-radius: 10px;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
+                linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
+                        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
+    /* background: rgba(16, 15, 15, 0.5); */
 }
 
-.aesthetic-img {
+.video-wrapper video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-.overlay-gradient {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background: linear-gradient(to right, var(--bg-color) 10%, transparent 100%); */
+/* Right Column - Info Stack */
+.info-details-col {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px 0;
 }
 
-.priority-card {
-    position: relative;
-    z-index: 2;
-    background: rgba(26, 26, 26, 0.3);
-    backdrop-filter: blur(5px);
-    padding: 3rem;
-    border: 1px solid rgba(236, 207, 156, 0.1);
-    max-width: 450px;
-    margin-left: auto; 
-    transform: translateY(20px);
+.info-block {
+    border-bottom: 1px solid rgba(236, 207, 156, 0.15);
+    padding-bottom: 40px;
 }
 
-.priority-content h3 {
-    font-family: "TheYearOfHandicrafts", serif;
-    font-size: 2rem;
+.info-block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.info-block h3 {
+    font-family: 'didot-medium', serif;
+    font-size: 1.8rem;
     color: var(--accent-color);
-    margin-bottom: 1rem;
+    margin-bottom: 30px;
+    letter-spacing: 0.02em;
 }
 
-.priority-content p {
-    color: #ccc;
-    margin-bottom: 2rem;
-    line-height: 1.6;
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 30px;
 }
 
-/* WhatsApp Button Wrapper - Align Left inside card */
-.whatsapp-btn-wrapper {
-    justify-content: flex-start;
+.info-link,
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.info-link:hover .info-value {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.info-label {
+    font-family: 'din-next-regular', sans-serif;
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    font-family: 'din-next-regular', sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.info-block .btnelem {
+    margin-top: 10px;
 }
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
-    #contact-split {
-        flex-direction: column;
-        gap: 4rem;
-        padding-bottom: 4rem;
-    }
-
-    .left-col {
-        padding-top: 0;
-    }
-
-    .right-col {
-        min-height: 400px; /* Let content dictate height */
-        padding: 2rem 0;
+    .info-grid-wrapper {
+        gap: 40px;
     }
     
-    .priority-card {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 100%;
-        /* background: rgba(26, 26, 26, 0.6); More opaque on mobile */
-        /* backdrop-filter: blur(15px); */
+    .info-video-col {
+        position: relative;
+        top: 0;
     }
     
-    .overlay-gradient {
-        background: linear-gradient(to bottom, var(--bg-color) 0%, transparent 50%, var(--bg-color) 100%);
+    .video-wrapper {
+        height: 450px;
+    }
+    
+    .info-block h3 {
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
     #hero {
-        height: 50vh; /* Compact hero */
-        align-items: flex-end;
-        padding-bottom: 4rem;
-    }
-
-    .hero-content {
-        margin-top: 0;
-        width: 90%;
+        height: 55vh;
     }
     
     #contact-title {
         font-size: 3rem;
-        line-height: 1;
     }
-
+    
     #contact-tagline {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
-    #contact-split {
-        padding: 4rem 1.5rem 4rem 1.5rem;
-        gap: 3rem;
-    }
-
-    .form-header h2 {
-        font-size: 2rem;
-    }
-
-    .form-header p {
-        font-size: 1rem;
-        margin-bottom: 2rem;
+    #contact-content {
+        padding: 4rem 1.5rem 6rem 1.5rem;
     }
     
-    .priority-card {
-        padding: 2rem 1.5rem;
-        transform: none; /* Remove offset */
+    .contact-form-section {
+        margin-bottom: 6rem;
     }
-
-    .priority-content h3 {
-        font-size: 1.8rem;
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-info-section {
+        padding: 0 20px;
+        margin-bottom: 60px;
+    }
+    
+    .info-grid-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .video-wrapper {
+        height: 350px;
+    }
+    
+    .info-details-col {
+        gap: 35px;
+    }
+    
+    .info-block {
+        padding-bottom: 30px;
+    }
+    
+    .info-block h3 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
     }
 }
+    
+
 
 @media (max-width: 480px) {
     #contact-title {
         font-size: 2.5rem;
     }
-
-    .submit-btn-wrapper button:nth-child(1),
-    .whatsapp-btn-wrapper button:nth-child(1) {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
+    
+    #contact-content {
+        padding: 3rem 1rem 5rem 1rem;
+    }
+    
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+        font-size: 1rem;
+        padding: 1rem 0;
     }
 }

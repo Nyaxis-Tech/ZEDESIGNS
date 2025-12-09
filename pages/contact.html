@@ -142,72 +142,134 @@
             </div>
         </div>
 
-        <!-- Split Layout: Form vs WhatsApp -->
-        <div id="contact-split">
+        <!-- Contact Content -->
+        <div id="contact-content">
             
-            <!-- Left: The Formal Proposal -->
-            <div class="contact-col left-col">
-                <div class="form-header">
-                    <h2>The Proposal</h2>
-                    <p>Tell us about your vision. We'll craft the strategy.</p>
-                </div>
-                
+            <!-- Form Section -->
+            <div class="contact-form-section">
                 <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <input type="text" id="name" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="company">Company</label>
-                        <input type="text" id="company" name="company" placeholder="Company Name">
+                    
+                    <div class="form-row">
+                        <div class="form-field">
+                            <input type="text" id="company" name="company" placeholder="Company (Optional)">
+                        </div>
+                        <div class="form-field">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Service Interest</option>
+                                <option value="branding">Branding</option>
+                                <option value="websites">Websites</option>
+                                <option value="design-print">Design & Print</option>
+                                <option value="social-media">Social Media</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                    
+                    <div class="form-field full-width">
+                        <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Vision</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
-                    </div>
-                    <div class="btnelem submit-btn-wrapper">
+                    
+                    <div class="btnelem">
                         <button type="submit">
-                            <span>Send Proposal</span>
+                            <span>Send Message</span>
                         </button>
-                        <!-- <button type="button">
-                            <img src="../assets/images/home/arrow-right.svg" alt="arrow">
-                        </button> -->
                     </div>
                 </form>
             </div>
 
-            <!-- Right: The Priority Line -->
-            <div class="contact-col right-col">
-                <div class="aesthetic-image-wrapper">
-                    <img src="../assets/images/contact/vertical-img.png" alt="Aesthetic Detail" class="aesthetic-img">
-                    <div class="overlay-gradient"></div>
+            <!-- Info Section -->
+            <div class="contact-info-section">
+                
+                <div class="tag">
+                    <img src="../assets/images/home/tag.svg" alt="" />
+                    <p>Prefer a Direct Conversation?</p>
                 </div>
-
-                <div class="priority-card">
-                    <div class="priority-content">
-                        <h3>Prefer Speed?</h3>
-                        <p>Skip the form. Get a direct line to our team.</p>
-                        
-                        <div class="btnelem whatsapp-btn-wrapper">
-                            <button>
-                                <a href="https://api.whatsapp.com/send?phone=966508748684&text=Hi%20ZEDESIGNS,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">
-                                    WhatsApp Us
-                                </a>
-                            </button>
-                            <!-- <button>
-                                <img src="../assets/images/home/arrow-right.svg" alt="arrow">
-                            </button> -->
+                <div class="info-grid-wrapper">
+                    
+                    <!-- Left: Video -->
+                    <div class="info-video-col">
+                        <div class="video-wrapper">
+                            <video autoplay loop muted playsinline>
+                                <source src="../assets/images/contact/vid-zawya.mp4" type="video/mp4">
+                            </video>
                         </div>
                     </div>
+                    
+                    <!-- Right: Info Stack -->
+                    <div class="info-details-col">
+                        
+                        <div class="info-block">
+                            <h3>Get in Touch</h3>
+                            <div class="info-items">
+                                <a href="tel:+966508748684" class="info-link">
+                                    <span class="info-label">Phone</span>
+                                    <span class="info-value">+966 50 874 8684</span>
+                                </a>
+                                <a href="mailto:info@zedesignss.com" class="info-link">
+                                    <span class="info-label">Email</span>
+                                    <span class="info-value">info@zedesignss.com</span>
+                                </a>
+                            </div>
+                            <div class="btnelem">
+                                <button>
+                                    <a href="https://api.whatsapp.com/send?phone=966508748684&text=Hi%20ZEDESIGNS,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">
+                                        WhatsApp
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>Location</h3>
+                            <div class="info-items">
+                                <div class="info-item">
+                                    <span class="info-label">Headquarters</span>
+                                    <span class="info-value">Jeddah, Saudi Arabia</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>Business Hours</h3>
+                            <div class="info-items">
+                                <div class="info-item">
+                                    <span class="info-label">Sunday - Thursday</span>
+                                    <span class="info-value">9:00 AM - 6:00 PM AST</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
                 </div>
+                
             </div>
 
         </div>
         
+
+         <!-- Floating WhatsApp Button -->
+            <a
+                href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
+                target="_blank"
+                id="whatsappFloat"
+                class="whatsapp-float"
+                aria-label="WhatsApp us"
+            >
+                <img
+                    src="../assets/images/home/whatsapp-logo.png"
+                    alt="WhatsApp"
+                />
+                <span data-i18n="floatingWhatsApp.ariaLabel">WhatsApp Us</span>
+            </a>
     </div>
 
     <div id="footer">
