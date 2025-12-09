@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.utils.toArray('.image-container').forEach(container => {
         gsap.from(container, {
             scrollTrigger: { trigger: container, start: "top 85%" },
-            y: 50, opacity: 0, duration: 1, ease: "power2.out"
+            y: 0, opacity: 0, duration: 1, ease: "power2.out"
         });
 
         const inner = container.querySelector('.parallax-inner');
