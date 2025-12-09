@@ -304,20 +304,20 @@ document.addEventListener('DOMContentLoaded', () => {
         //     y: 0, opacity: 0, duration: 1, ease: "power2.out"
         // });
 
-        const inner = container.querySelector('.parallax-inner');
-        if (inner) {
-            gsap.set(inner, { scale: 1.1 });
-            gsap.to(inner, {
-                scrollTrigger: {
-                    trigger: container,
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: true
-                },
-                yPercent: 10,
-                ease: "none"
-            });
-        }
+        // const inner = container.querySelector('.parallax-inner img');
+        // if (inner) {
+        //     gsap.set(inner, { scale: 1 });
+        //     gsap.to(inner, {
+        //         scrollTrigger: {
+        //             trigger: container,
+        //             start: "top bottom",
+        //             end: "bottom top",
+        //             scrub: true
+        //         },
+        //         yPercent: 10,
+        //         ease: "none"
+        //     });
+        // }
     });
 
 });
