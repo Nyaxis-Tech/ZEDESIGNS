@@ -14,7 +14,7 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: "din-next-regular", sans-serif;
+    font-family: "TheYearOfHandicrafts", serif;
     overflow-x: hidden;
 }
 
@@ -81,7 +81,7 @@ body {
 }
 
 #project-title {
-    font-family: "TheYearOfHandicrafts", serif;
+    font-family: "didot-bold", serif;
     font-size: clamp(3rem, 8vw, 8rem);
     color: var(--accent-color);
     line-height: 1;
@@ -93,7 +93,7 @@ body {
 }
 
 #project-tagline {
-    font-family: "didot", serif;
+    /* font-family: "didot", serif; */
     font-size: clamp(1rem, 2vw, 1.5rem);
     color: #fff;
     letter-spacing: 1px;
@@ -125,7 +125,6 @@ body {
 
 .spec-label {
     display: block;
-    font-family: "din-next-regular", sans-serif;
     font-size: 0.85rem;
     color: #888;
     text-transform: uppercase;
@@ -135,7 +134,6 @@ body {
 
 .spec-value {
     display: block;
-    font-family: "din-next-bold", sans-serif;
     font-size: 1.1rem;
     color: #fff;
 }
@@ -160,7 +158,7 @@ body {
 }
 
 .split-left h2 {
-    font-family: "TheYearOfHandicrafts", serif;
+    font-family: "didot-bold", serif;
     font-size: 2rem;
     color: var(--accent-color);
     line-height: 1.1;
@@ -169,7 +167,6 @@ body {
 }
 
 .split-right p {
-    font-family: "din-next-regular", sans-serif;
     font-size: 1.1rem;
     line-height: 1.5;
     color: #d0d0d0;
@@ -195,7 +192,7 @@ body {
 }
 
 .cs-col h3 {
-    font-family: "TheYearOfHandicrafts", serif;
+    font-family: "didot-bold", serif;
     font-size: 2.5rem;
     color: var(--accent-color);
     margin-bottom: 1.5rem;
@@ -215,7 +212,6 @@ body {
 }
 
 .read-more-wrapper p {
-    font-family: "din-next-regular", sans-serif;
     font-size: 1.1rem;
     line-height: 1.7;
     color: #d0d0d0;
@@ -230,7 +226,6 @@ body {
     background: none;
     border: 1px solid rgba(236, 207, 156, 0.3);
     color: var(--accent-color);
-    font-family: "din-next-regular", sans-serif;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     font-size: 0.8rem;
@@ -268,7 +263,6 @@ body {
 }
 
 .text-image-left p {
-    font-family: "din-next-regular", sans-serif;
     font-size: 1.25rem;
     line-height: 1.6;
     color: #fff;
@@ -413,7 +407,6 @@ body {
 }
 
 #next-project-nav p {
-    font-family: "din-next-regular", sans-serif;
     color: var(--accent-color);
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -423,7 +416,7 @@ body {
 }
 
 #next-project-name {
-    font-family: "TheYearOfHandicrafts", serif;
+    font-family: "didot-bold", serif;
     font-size: clamp(4rem, 8vw, 7rem);
     color: #fff;
     margin-bottom: 3rem;
@@ -439,7 +432,7 @@ body {
 .arrow-link {
     color: var(--accent-color);
     text-decoration: none;
-    font-family: "din-next-bold", sans-serif;
+    /* font-family: "din-next-bold", sans-serif; */
     font-size: 1.1rem;
     display: inline-flex;
     align-items: center;

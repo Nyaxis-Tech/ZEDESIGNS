@@ -73,7 +73,8 @@ body, html {
 }
 
 #contact-title {
-    font-family: "TheYearOfHandicrafts", serif;
+    font-family: "didot-bold", serif;
+    font-weight: 500;
     font-size: clamp(3.5rem, 5vw, 5rem);
     color: var(--accent-color);
     line-height: 1;
@@ -82,7 +83,7 @@ body, html {
 }
 
 #contact-tagline {
-    font-family: "didot", serif;
+    /* font-family: "didot", serif; */
     font-size: 1.3rem;
     color: #fff;
     letter-spacing: 1px;
