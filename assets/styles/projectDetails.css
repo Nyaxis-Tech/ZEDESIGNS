@@ -170,7 +170,7 @@ body {
 
 .split-right p {
     font-family: "din-next-regular", sans-serif;
-    font-size: 2rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     color: #d0d0d0;
     margin-bottom: 2rem;
@@ -255,6 +255,7 @@ body {
 .text-image-section {
     display: flex;
     align-items: center;
+    flex-direction: row-reverse;
     gap: 40px;
     width: 100%;
     height: 100%;
@@ -270,7 +271,7 @@ body {
     font-family: "din-next-regular", sans-serif;
     font-size: 1.25rem;
     line-height: 1.6;
-    color: #d0d0d0;
+    color: #fff;
 }
 
 .text-image-right {
@@ -280,7 +281,7 @@ body {
     position: relative;
     overflow: hidden;
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
 }
 
 .text-image-right img {
@@ -306,7 +307,7 @@ body {
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
     width: 95%;
-    margin: 80px auto;
+    margin: 60px auto 80px;
 }
 
 /* --- Bento Grid (Section 4) --- */
@@ -351,6 +352,7 @@ body {
     width: 100%;
     height: 100%;
     will-change: transform;
+
 }
 
 .parallax-inner img {
@@ -364,6 +366,11 @@ body {
 .image-container:hover .parallax-inner img {
     transform: scale(1.05);
 }
+
+#project-container > div:nth-child(3) > div:hover > div > img {
+    transform: scale(1.25);
+}
+
 
 /* --- Next Project Nav --- */
 #next-project-nav {

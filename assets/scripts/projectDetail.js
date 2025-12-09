@@ -82,6 +82,29 @@ document.addEventListener('DOMContentLoaded', () => {
         return container;
     };
 
+    // Helper: Create Video
+    const createVideo = (src, className = '') => {
+        const container = document.createElement('div');
+        container.className = `grid-item image-container ${className}`;
+        
+        const inner = document.createElement('div');
+        inner.className = 'parallax-inner';
+
+        const video = document.createElement('video');
+        video.src = src;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.style.width = '100%';
+        video.style.height = '100%';
+        video.style.objectFit = 'cover';
+        
+        inner.appendChild(video);
+        container.appendChild(inner);
+        return container;
+    };
+
     // Helper: Create Challenge/Solution Column
     const createCSColumn = (title, content) => {
         const col = document.createElement('div');
@@ -229,7 +252,12 @@ document.addEventListener('DOMContentLoaded', () => {
             span = 'span-full';
         }
 
-        bentoGrid.appendChild(createImage(src, span));
+        // Check for video replacement on the last item
+        if (index === remainingImages.length - 1 && project.video && project.video.length > 0) {
+             bentoGrid.appendChild(createVideo(project.video[0], span));
+        } else {
+             bentoGrid.appendChild(createImage(src, span));
+        }
     });
 
     // Setup Next Project Link
@@ -271,10 +299,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Images
     gsap.utils.toArray('.image-container').forEach(container => {
-        gsap.from(container, {
-            scrollTrigger: { trigger: container, start: "top 85%" },
-            y: 0, opacity: 0, duration: 1, ease: "power2.out"
-        });
+        // gsap.from(container, {
+        //     scrollTrigger: { trigger: container, start: "top 85%" },
+        //     y: 0, opacity: 0, duration: 1, ease: "power2.out"
+        // });
 
         const inner = container.querySelector('.parallax-inner');
         if (inner) {
