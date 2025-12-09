@@ -179,7 +179,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // 3: Full
         if (index === 1 || index === 2) span = 'span-half';
         
-        randomGrid.appendChild(createImage(src, span));
+        // Check if it's the 4th item (index 3) AND video exists
+        if (index === 3 && project.video && project.video.length > 0) {
+             randomGrid.appendChild(createVideo(project.video[0], span));
+        } else {
+             randomGrid.appendChild(createImage(src, span));
+        }
     });
     projectContainer.insertBefore(randomGrid, bentoGrid);
 
@@ -252,12 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
             span = 'span-full';
         }
 
-        // Check for video replacement on the last item
-        if (index === remainingImages.length - 1 && project.video && project.video.length > 0) {
-             bentoGrid.appendChild(createVideo(project.video[0], span));
-        } else {
-             bentoGrid.appendChild(createImage(src, span));
-        }
+        bentoGrid.appendChild(createImage(src, span));
     });
 
     // Setup Next Project Link
