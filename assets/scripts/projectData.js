@@ -20,18 +20,19 @@ const projectsData = [
         "bannerImage": "../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-15.webp",
         "logoImage": "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
         "images": [
-            "../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-12.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-16.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/Untitled-2-13.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-14.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/Untitled-2-17.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-12.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-16.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/Untitled-2-13.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-14.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/Untitled-2-17.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-12.webp",
-            "../assets/images/Website Client Pngs/Sunbun Files/Arabic/Untitled-1-16.webp"
+            "../assets/images/Website Client Pngs/Sunbun Files/Arabic/logo-image.webp",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-1.jpg",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-2.jpg",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-3.jpg",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-4.jpg",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-5.jpg",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-6.jpg",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-7.jpg",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-8.jpg",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-9.jpg",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-10.jpg",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-11.png",
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-12.webp"
         ]
     },
     {
