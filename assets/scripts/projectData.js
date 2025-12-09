@@ -39,7 +39,7 @@ const projectsData = [
             "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-12.jpg"
         ],
         "video":[
-            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-12-vid.mp4"
+            "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-4-vid.mp4"
         ]
     },
     {
