@@ -38,10 +38,58 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: "power3.out"
     }, "-=0.8");
 
+    // --- Service Dropdown Functionality (matching language selector) ---
+    const serviceToggle = document.getElementById('serviceToggle');
+    const serviceDropdown = document.getElementById('serviceDropdown');
+    const serviceOptions = document.querySelectorAll('.service-option');
+    const serviceInput = document.getElementById('service');
+    const serviceSelected = document.querySelector('.service-selected');
+
+    if (serviceToggle && serviceDropdown) {
+        serviceToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            serviceToggle.classList.toggle('active');
+            serviceDropdown.classList.toggle('active');
+        });
+
+        serviceOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const value = option.getAttribute('data-value');
+                const text = option.textContent;
+                
+                // Update hidden input
+                serviceInput.value = value;
+                
+                // Update button text
+                serviceSelected.textContent = text;
+                serviceToggle.classList.add('selected');
+                
+                // Remove selected class from all options
+                serviceOptions.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                option.classList.add('selected');
+                
+                // Close dropdown
+                serviceToggle.classList.remove('active');
+                serviceDropdown.classList.remove('active');
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!serviceToggle.contains(e.target) && !serviceDropdown.contains(e.target)) {
+                serviceToggle.classList.remove('active');
+                serviceDropdown.classList.remove('active');
+            }
+        });
+    }
+
     // --- Form Section Reveal ---
     gsap.from('.contact-form-section', {
         scrollTrigger: {
-            trigger: '#contact-content',
+            trigger: '.contact-left',
             start: "top 75%",
         },
         y: 40,
@@ -50,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: "power2.out"
     });
 
-    // --- Info Section Tag Reveal (matching landing page) ---
-    const infoTag = document.querySelector(' .tag');
+    // --- Info Section Tag Reveal ---
+    const infoTag = document.querySelector('.contact-info-section .tag');
     if (infoTag) {
         ScrollTrigger.create({
             trigger: '.contact-info-section',
@@ -73,18 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Video Column Reveal ---
-    gsap.from('.video-wrapper', {
-        scrollTrigger: {
-            trigger: '.info-video-col',
-            start: "top 80%",
-        },
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out"
-    });
-
     // --- Info Blocks Stagger ---
     gsap.from('.info-block', {
         scrollTrigger: {
@@ -99,15 +135,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Video Parallax ---
-    if (document.querySelector('.video-wrapper video')) {
-        gsap.to('.video-wrapper video', {
+    if (document.querySelector('.video-fixed-wrapper video')) {
+        gsap.to('.video-fixed-wrapper video', {
             scrollTrigger: {
-                trigger: '.video-wrapper',
-                start: "top bottom",
-                end: "bottom top",
+                trigger: '.contact-left',
+                start: "top top",
+                end: "bottom bottom",
                 scrub: 1
             },
-            scale: 1.15,
+            scale: 1.1,
             ease: "none"
         });
     }
@@ -117,6 +153,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            
+            // Check if service is selected
+            if (!serviceInput.value) {
+                alert('Please select a service interest.');
+                return;
+            }
             
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData);
@@ -131,6 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 repeat: 1,
                 onComplete: () => {
                     contactForm.reset();
+                    serviceSelected.textContent = 'Service Interest';
+                    serviceToggle.classList.remove('selected');
+                    serviceOptions.forEach(opt => opt.classList.remove('selected'));
                     alert('Thank you! We\'ll be in touch within 24 hours.');
                 }
             });

@@ -145,110 +145,122 @@
         <!-- Contact Content -->
         <div id="contact-content">
             
-            <!-- Form Section -->
-            <div class="contact-form-section">
-                <form id="contact-form">
-                    <div class="form-row">
-                        <div class="form-field">
-                            <input type="text" id="name" name="name" placeholder="Name" required>
-                        </div>
-                        <div class="form-field">
-                            <input type="email" id="email" name="email" placeholder="Email" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-field">
-                            <input type="text" id="company" name="company" placeholder="Company (Optional)">
-                        </div>
-                        <div class="form-field">
-                            <select id="service" name="service" required>
-                                <option value="" disabled selected>Service Interest</option>
-                                <option value="branding">Branding</option>
-                                <option value="websites">Websites</option>
-                                <option value="design-print">Design & Print</option>
-                                <option value="social-media">Social Media</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-field full-width">
-                        <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
-                    </div>
-                    
-                    <div class="btnelem">
-                        <button type="submit">
-                            <span>Send Message</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Info Section -->
-            <div class="contact-info-section">
+            <div class="contact-grid">
                 
-                <div class="tag">
-                    <img src="../assets/images/home/tag.svg" alt="" />
-                    <p>Prefer a Direct Conversation?</p>
-                </div>
-                <div class="info-grid-wrapper">
+                <!-- Left Column: Form + Info -->
+                <div class="contact-left">
                     
-                    <!-- Left: Video -->
-                    <div class="info-video-col">
-                        <div class="video-wrapper">
-                            <video autoplay loop muted playsinline>
-                                <source src="../assets/images/contact/vid-zawya.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    
-                    <!-- Right: Info Stack -->
-                    <div class="info-details-col">
-                        
-                        <div class="info-block">
-                            <h3>Get in Touch</h3>
-                            <div class="info-items">
-                                <a href="tel:+966508748684" class="info-link">
-                                    <span class="info-label">Phone</span>
-                                    <span class="info-value">+966 50 874 8684</span>
-                                </a>
-                                <a href="mailto:info@zedesignss.com" class="info-link">
-                                    <span class="info-label">Email</span>
-                                    <span class="info-value">info@zedesignss.com</span>
-                                </a>
+                    <!-- Form Section -->
+                    <div class="contact-form-section">
+                        <form id="contact-form">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <input type="text" id="name" name="name" placeholder="Name" required>
+                                </div>
+                                <div class="form-field">
+                                    <input type="email" id="email" name="email" placeholder="Email" required>
+                                </div>
                             </div>
+                            
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <input type="text" id="company" name="company" placeholder="Company (Optional)">
+                                </div>
+                                <div class="form-field service-dropdown-wrapper">
+                                    <button type="button" class="service-toggle" id="serviceToggle">
+                                        <span class="service-selected">Service Interest</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9">
+                                            <path fill="#eccf9c" d="M1 1l6 6 6-6"/>
+                                        </svg>
+                                    </button>
+                                    <div class="service-dropdown" id="serviceDropdown">
+                                        <button type="button" class="service-option" data-value="branding">Branding</button>
+                                        <button type="button" class="service-option" data-value="websites">Websites</button>
+                                        <button type="button" class="service-option" data-value="design-print">Design & Print</button>
+                                        <button type="button" class="service-option" data-value="social-media">Social Media</button>
+                                        <button type="button" class="service-option" data-value="other">Other</button>
+                                    </div>
+                                    <input type="hidden" id="service" name="service" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-field full-width">
+                                <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+                            </div>
+                            
                             <div class="btnelem">
-                                <button>
-                                    <a href="https://api.whatsapp.com/send?phone=966508748684&text=Hi%20ZEDESIGNS,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">
-                                        WhatsApp
-                                    </a>
+                                <button type="submit">
+                                    <span>Send Message</span>
                                 </button>
                             </div>
-                        </div>
+                        </form>
+                    </div>
 
-                        <div class="info-block">
-                            <h3>Location</h3>
-                            <div class="info-items">
-                                <div class="info-item">
-                                    <span class="info-label">Headquarters</span>
-                                    <span class="info-value">Jeddah, Saudi Arabia</span>
+                    <!-- Info Section -->
+                    <div class="contact-info-section">
+                        
+                        <!-- <div class="tag">
+                            <img src="../assets/images/home/tag.svg" alt="" />
+                            <p>Prefer a Direct Conversation?</p>
+                        </div> -->
+                        
+                        <div class="info-details-col">
+                            
+                            <div class="info-block">
+                                <h3>Get in Touch</h3>
+                                <div class="info-items">
+                                    <a href="tel:+966508748684" class="info-link">
+                                        <span class="info-label">Phone</span>
+                                        <span class="info-value">+966 50 874 8684</span>
+                                    </a>
+                                    <a href="mailto:info@zedesignss.com" class="info-link">
+                                        <span class="info-label">Email</span>
+                                        <span class="info-value">info@zedesignss.com</span>
+                                    </a>
+                                </div>
+                                <div class="btnelem">
+                                    <button>
+                                        <a href="https://api.whatsapp.com/send?phone=966508748684&text=Hi%20ZEDESIGNS,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">
+                                            <img src="../assets/images/home/whatsapp-logo.png" alt="WhatsApp" />
+                                            WhatsApp
+                                        </a>
+                                    </button>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="info-block">
-                            <h3>Business Hours</h3>
-                            <div class="info-items">
-                                <div class="info-item">
-                                    <span class="info-label">Sunday - Thursday</span>
-                                    <span class="info-value">9:00 AM - 6:00 PM AST</span>
+                            <div class="info-block">
+                                <h3>Location</h3>
+                                <div class="info-items">
+                                    <div class="info-item">
+                                        <span class="info-label">Headquarters</span>
+                                        <span class="info-value">Jeddah, Saudi Arabia</span>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="info-block">
+                                <h3>Business Hours</h3>
+                                <div class="info-items">
+                                    <div class="info-item">
+                                        <span class="info-label">Sunday - Thursday</span>
+                                        <span class="info-value">9:00 AM - 6:00 PM AST</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         
                     </div>
                     
+                </div>
+                
+                <!-- Right Column: Fixed Video -->
+                <div class="contact-right">
+                    <div class="video-fixed-wrapper">
+                        <video autoplay loop muted playsinline>
+                            <source src="../assets/images/contact/vid-zawya.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
                 
             </div>
