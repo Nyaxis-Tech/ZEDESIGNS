@@ -264,7 +264,7 @@ body {
 
 .text-image-left p {
     font-size: 1.25rem;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #fff;
 }
 
@@ -288,10 +288,23 @@ body {
 @media (max-width: 768px) {
     .text-image-section {
         flex-direction: column;
+        gap: unset;
+        max-height: fit-content;
     }
     .text-image-right {
         width: 100%;
         min-height: 300px;
+    }
+    .text-image-left p {
+        font-size: 1rem;
+    }
+
+    .text-image-right img{
+        height: 300px;
+    }
+    .cs-col h3,
+    .split-left h2 {
+        font-size: 2rem;
     }
 }
 
@@ -346,7 +359,6 @@ body {
     width: 100%;
     height: 100%;
     will-change: transform;
-
 }
 
 .parallax-inner img {
@@ -364,7 +376,6 @@ body {
 #project-container > div:nth-child(3) > div:hover > div > img {
     transform: scale(1.25);
 }
-
 
 /* --- Next Project Nav --- */
 #next-project-nav {
