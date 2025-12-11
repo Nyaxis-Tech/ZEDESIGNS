@@ -1,24 +1,797 @@
-@import url(../font.css);
+@import url("../font.css");
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body,html{
-    width:100%;
+html,
+body {
+    width: 100%;
     height: 100%;
 }
 
-#main{
+#main {
     width: 100%;
     position: relative;
     z-index: 2;
 }
 
-#main #hero{
+/* MAIN ABOUT WRAPPER */
+#main #hero {
     width: 100%;
-    height: 100vh;
-    background-color: blue;
+    min-height: 100vh;
+    background-color: var(--green-color);
+    color: #ffffff;
+    padding: 7rem 0 5rem;
+}
+
+/* Shared vars */
+:root {
+    --page-max-width: 1200px;
+    --page-padding: 3rem;
+    --soft-border: rgba(255, 255, 255, 0.12);
+    --sand: #f4d6a2;
+}
+
+.about-container {
+    width: min(var(--page-max-width), 100% - var(--page-padding));
+    margin: 0 auto;
+}
+
+/* Eyebrow / kicker */
+.eyebrow {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    opacity: 0.7;
+    margin-bottom: 0.75rem;
+}
+
+/* icon before the text */
+.eyebrow::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    background-image: url("../images/home/tag.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    margin-bottom: 4px;
+}
+
+/* =======================
+   HERO
+   ======================= */
+
+.about-hero {
+    padding-bottom: 4rem;
+}
+
+.about-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.about-hero-left h1,
+.about-hero-title {
+    font-size: clamp(2.4rem, 3vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+
+    /* brand glow inside the letters */
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ffffff,
+        var(--sand) 35%,
+        #ffffff 60%
+    );
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    animation: aboutShine 6s linear infinite;
+}
+
+@keyframes aboutShine {
+    0%,
+    100% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+.about-hero-left .lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 36rem;
+    opacity: 0.9;
+}
+
+/* Pillars (Define / Design / Deploy) */
+.about-hero-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.25rem;
+}
+
+.pillar h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+}
+
+.pillar p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+.about-hero-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-stats {
+    display: grid;
+    gap: 1rem;
+    padding: 1.75rem;
+    border-radius: 2rem;
+    background: radial-gradient(
+            circle at top left,
+            rgba(255, 255, 255, 0.16),
+            transparent 55%
+        ),
+        rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    width: 100%;
+    max-width: 23rem;
+}
+
+.stat-card {
+    padding: 0.75rem 0.9rem;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(4, 18, 14, 0.7);
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 0.15rem;
+}
+
+.stat-tagline {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    margin-left: 10px;
+}
+
+/* =======================
+   STRUCTURE SECTION
+   ======================= */
+
+.about-structure {
+    padding: 4rem 0 3.5rem;
+}
+
+.about-structure-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
+    gap: 3rem;
+    align-items: center;
+}
+
+.structure-copy h2 {
+    font-size: 1.8rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+}
+
+.structure-copy p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.structure-copy .structure-sub {
+    margin-top: 1rem;
+    opacity: 0.85;
+}
+
+/* Diagram wrapper */
+.structure-visual {
+    position: relative;
+}
+
+.structure-wrapper {
+    position: relative;
+    border-radius: 1.75rem;
+    padding: 1.5rem;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.55), #021513);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    overflow: hidden;
+}
+
+/* SVG */
+.structure-diagram {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lines */
+.structure-link-path {
+    fill: none;
+    stroke: var(--sand);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Labels on the lines */
+.structure-label {
+    fill: var(--sand);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    paint-order: stroke;
+    stroke: rgba(0, 0, 0, 0.75);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+    opacity: 0.95;
+}
+
+/* Cards / nodes */
+.structure-card {
+    fill: rgba(4, 24, 20, 0.95);
+    stroke: rgba(244, 214, 162, 0.95);
+    stroke-width: 2.6;
+}
+
+.structure-card-title {
+    fill: var(--sand);
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+}
+
+/* Node base look */
+.structure-node {
+    cursor: default;
+    filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.55));
+    transition: filter 0.25s ease-out;
+}
+
+/* Hover + active highlights */
+.structure-node.is-active .structure-card,
+.structure-node:hover .structure-card {
+    stroke: #ffffff;
+    stroke-width: 3;
+}
+
+.structure-node.is-active .structure-card-title,
+.structure-node:hover .structure-card-title {
+    fill: #ffffff;
+}
+
+/* Info panel under diagram */
+.structure-info {
+    margin-top: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.structure-info-item {
+    border-radius: 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(0, 0, 0, 0.18);
+    padding: 0.85rem 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    cursor: pointer;
+    color: #ffffff;
+    transition: border-color 0.2s ease, background 0.2s ease,
+        transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.structure-info-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    opacity: 1;
+}
+
+.structure-info-item .chip {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 0.18rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(244, 214, 162, 0.7);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.structure-info-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.structure-info-item.is-active,
+.structure-info-item:hover {
+    border-color: rgba(244, 214, 162, 0.95);
+    background: rgba(4, 24, 20, 0.96);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* =======================
+   SECTION HEADER
+   ======================= */
+
+.about-section-header {
+    max-width: 34rem;
+    margin-bottom: 1rem;
+}
+
+.about-section-header h2 {
+    font-size: 1.8rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+}
+
+.about-section-header p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* =======================
+   METHODOLOGY
+   ======================= */
+
+.about-methodology {
+    padding: 4.5rem 0 3.5rem;
+}
+
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+}
+
+.method-card {
+    padding: 1.75rem 1.5rem;
+    border-radius: 1.25rem;
+    border: 1px solid var(--soft-border);
+    background: rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.method-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+}
+
+.method-card .step-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    opacity: 0.7;
+}
+
+.method-card h3 {
+    font-size: 1.05rem;
+}
+
+.method-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.method-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.method-card ul li {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.25rem;
+}
+
+.method-card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.7;
+}
+
+/* hide default cursor only on method cards */
+.method-card,
+.method-card * {
+    cursor: none;
+}
+
+/* custom image cursor */
+.cursor-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 190px;
+    height: 130px;
+    border-radius: 1.2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+    z-index: 9999;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(244, 214, 162, 0.9);
+    overflow: hidden;
+    mix-blend-mode: normal;
+    transition: opacity 0.22s ease-out, transform 0.22s ease-out;
+}
+
+.cursor-preview.is-visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* =======================
+   EXPERTISE
+   ======================= */
+
+.about-expertise {
+    padding: 4rem 0 3.5rem;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.expertise-column h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+}
+
+.expertise-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.expertise-column li {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 0.4rem;
+}
+
+/* =======================
+   SECTORS (Who we work with)
+   ======================= */
+
+.about-sectors {
+    padding: 4rem 0 3.5rem;
+}
+
+.sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+}
+
+/* upgraded sector cards */
+.sector-card {
+    position: relative;
+    padding: 1.85rem 1.6rem;
+    border-radius: 1.4rem;
+    border: 1px solid var(--soft-border);
+    background: radial-gradient(
+            circle at top left,
+            rgba(244, 214, 162, 0.12),
+            rgba(0, 0, 0, 0.18) 55%
+        ),
+        rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    transform: translateY(0) translateZ(0);
+    transition:
+        transform 0.22s ease-out,
+        box-shadow 0.22s ease-out,
+        border-color 0.22s ease-out,
+        background 0.22s ease-out;
+}
+
+/* glowing blob behind content */
+.sector-card::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(
+        circle at 10% 0%,
+        rgba(244, 214, 162, 0.35),
+        transparent 55%
+    );
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) scale(0.9);
+    transition:
+        opacity 0.3s ease-out,
+        transform 0.3s ease-out;
+    pointer-events: none;
+}
+
+/* thin highlight stroke on top edge */
+.sector-card::after {
+    content: "";
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(244, 214, 162, 0.75),
+        transparent
+    );
+    opacity: 0.7;
+}
+
+/* label chip */
+.sector-chip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.12rem 0.7rem;
+    margin-bottom: 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(244, 214, 162, 0.7);
+    background: rgba(4, 24, 20, 0.8);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* tiny dot inside chip */
+.sector-chip::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--sand);
+    box-shadow: 0 0 10px rgba(244, 214, 162, 0.95);
+}
+
+/* tiny svg icon in chip */
+.sector-chip svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    display: block;
+    opacity: 0.95;
+}
+
+.sector-card h3 {
+    position: relative;
+    font-size: 1.05rem;
+    margin-bottom: 0.55rem;
+    letter-spacing: -0.02em;
+}
+
+.sector-card p {
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 30rem;
+}
+
+/* hover state */
+.sector-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(244, 214, 162, 0.9);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+    background: radial-gradient(
+            circle at top left,
+            rgba(244, 214, 162, 0.22),
+            rgba(0, 0, 0, 0.35) 60%
+        ),
+        rgba(0, 0, 0, 0.28);
+}
+
+.sector-card:hover::before {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* =======================
+   CULTURE
+   ======================= */
+
+.about-culture {
+    padding: 4rem 0 1rem;
+}
+
+.about-culture-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+    gap: 2.5rem;
+}
+
+.about-culture-grid h2 {
+    font-size: 1.8rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+}
+
+.about-culture-grid p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* =======================
+   RESPONSIVE
+   ======================= */
+
+@media (max-width: 960px) {
+    .about-hero-grid,
+    .about-structure-grid,
+    .methodology-grid,
+    .expertise-grid,
+    .sectors-grid,
+    .about-culture-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .about-hero-right {
+        justify-content: flex-start;
+    }
+
+    .about-hero-pillars {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .structure-info {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .about-structure {
+        padding-top: 3.5rem;
+    }
+    .expertise-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .expertise-column {
+        padding: 1.25rem 1.3rem;
+        border-radius: 1.1rem;
+        border: 1px solid var(--soft-border);
+        background: rgba(0, 0, 0, 0.18);
+    }
+}
+
+@media (max-width: 640px) {
+    #main #hero {
+        padding-top: 6rem;
+    }
+
+   .about-container {
+        width: 100%;
+        padding: 0 1.25rem;
+    }
+
+
+    .about-hero {
+        padding-bottom: 3rem;
+    }
+
+    .structure-wrapper {
+        padding: 1.1rem;
+    }
+
+    .about-expertise {
+        padding: 3rem 0 2.5rem;
+    }
+
+    .about-expertise .about-section-header {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .expertise-grid {
+        grid-template-columns: 1fr;  
+        gap: 1.5rem;
+    }
+
+    .expertise-column {
+        padding: 0;
+        border: none;
+        background: none;
+        box-shadow: none;
+    }
+
+    .expertise-column h3 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .expertise-column ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        
+    .expertise-column li {
+        position: relative;
+        padding-left: 1rem;
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin-bottom: 0.25rem;
+        opacity: 0.9;
+    }
+
+    .expertise-column li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 4px;
+        height: 4px;
+        border-radius: 999px;
+        background: var(--sand);
+    }
 }
