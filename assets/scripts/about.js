@@ -22,17 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
        HERO STATS COUNTERS
        ========================== */
 
-    const statNumbers = document.querySelectorAll(".stat-number");
-    let heroCountersDone = false;
+    const statNumbers = document.querySelectorAll(".about-stats-strip .stat-value");
+    let statsCountersDone = false;
 
-    function animateHeroCounters() {
-        if (heroCountersDone) return;
-        heroCountersDone = true;
+    function animateStatsCounters() {
+        if (statsCountersDone) return;
+        statsCountersDone = true;
 
         statNumbers.forEach((el) => {
             const raw = el.textContent.trim();
             const end = parseInt(raw.replace(/[^0-9]/g, ""), 10) || 0;
-            const suffix = raw.replace(/[0-9]/g, ""); // keep '+' etc.
+            const suffix = raw.replace(/[0-9]/g, ""); // keeps + etc.
 
             const counter = { value: 0 };
             gsap.to(counter, {
@@ -45,6 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // trigger when stats strip comes into view
+    ScrollTrigger.create({
+        trigger: ".about-stats-strip",
+        start: "top 85%",
+        once: true,
+        onEnter: animateStatsCounters,
+    });
 
     /* ==========================
        HERO SECTION ANIMATIONS
@@ -96,28 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             "-=0.2"
         )
-        .from(
-            ".about-stats .stat-card",
-            {
-                x: 30,
-                opacity: 0,
-                duration: 0.5,
-                ease: "power2.out",
-                stagger: 0.1,
-            },
-            "-=0.3"
-        )
-        .from(
-            ".about-stats .stat-tagline",
-            {
-                x: 20,
-                opacity: 0,
-                duration: 0.45,
-                ease: "power2.out",
-            },
-            "-=0.25"
-        )
-        .add(animateHeroCounters, "-=0.1");
+        
 
     /* ==========================
        STRUCTURE DIAGRAM
@@ -526,5 +513,236 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+    /* ==========================
+   PHILOSOPHY SVG DRAW ANIMATION
+   ========================== */
+
+    const philosophySVG = document.querySelector(".philosophy-wrapper svg");
+
+    if (philosophySVG) {
+        const strokeElements = philosophySVG.querySelectorAll(".st5, .st4"); // lines + boxes
+        const textElements = philosophySVG.querySelectorAll("text");
+
+        // Prep draw
+        strokeElements.forEach((el) => {
+            if (typeof el.getTotalLength !== "function") return;
+            const length = el.getTotalLength();
+            gsap.set(el, { strokeDasharray: length, strokeDashoffset: length });
+        });
+
+        // Prep text
+        gsap.set(textElements, { opacity: 0 });
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".about-culture",
+                start: "top 75%",
+                toggleActions: "play none none none",
+            },
+        });
+
+        // Draw strokes
+        tl.to(strokeElements, {
+            strokeDashoffset: 0,
+            duration: 1.4,
+            ease: "power2.inOut",
+            stagger: 0.12,
+        });
+
+        // Fade text in
+        tl.to(
+            textElements,
+            {
+                opacity: 1,
+                duration: 0.55,
+                ease: "power2.out",
+                stagger: 0.08,
+            },
+            "-=0.5"
+        );
+    }
+    // Draggable Clients Section with Auto-scroll (ABOUT)
+    (() => {
+        const clientsSection = document.querySelector("#clients #clientsbtm");
+        const clientWrapper = document.querySelector("#clients #clientwrapper");
+
+        if (!clientsSection || !clientWrapper) return;
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let velocity = 0;
+        let lastX = 0;
+        let lastTime = Date.now();
+        let hasMoved = false;
+
+        // Auto-scroll function (always LTR due to CSS direction override)
+        const autoScroll = () => {
+            if (!isDown) {
+                if (localStorage.getItem("language") === "ar") {
+                    clientsSection.scrollLeft += 1;
+                } else {
+                    clientsSection.scrollLeft -= 1;
+                }
+
+                // Reset scroll position for infinite loop
+                const half = clientWrapper.scrollWidth / 2; // because you duplicated in HTML
+                if (clientsSection.scrollLeft <= 0) clientsSection.scrollLeft = half;
+                if (clientsSection.scrollLeft >= half * 2) clientsSection.scrollLeft = half;
+            }
+            requestAnimationFrame(autoScroll);
+        };
+
+        autoScroll();
+
+        clientsSection.addEventListener("mousedown", (e) => {
+            isDown = true;
+            hasMoved = false;
+            clientsSection.classList.add("grabbing");
+            startX = e.pageX - clientsSection.offsetLeft;
+            scrollLeft = clientsSection.scrollLeft;
+            lastX = e.pageX;
+            lastTime = Date.now();
+            velocity = 0;
+            e.preventDefault();
+        });
+
+        clientsSection.addEventListener("mouseleave", () => {
+            if (!isDown) return;
+            isDown = false;
+            clientsSection.classList.remove("grabbing");
+        });
+
+        clientsSection.addEventListener("mouseup", (e) => {
+            if (!isDown) return;
+            isDown = false;
+            clientsSection.classList.remove("grabbing");
+
+            if (hasMoved) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            const half = clientWrapper.scrollWidth / 2;
+
+            const applyInertia = () => {
+                if (Math.abs(velocity) > 0.5) {
+                    clientsSection.scrollLeft += velocity;
+                    velocity *= 0.95;
+
+                    if (clientsSection.scrollLeft <= 0) clientsSection.scrollLeft = half;
+                    if (clientsSection.scrollLeft >= half * 2) clientsSection.scrollLeft = half;
+
+                    requestAnimationFrame(applyInertia);
+                }
+            };
+            applyInertia();
+        });
+
+        clientsSection.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+
+            hasMoved = true;
+
+            const currentTime = Date.now();
+            const timeElapsed = currentTime - lastTime;
+
+            const x = e.pageX - clientsSection.offsetLeft;
+            const walk = x - startX;
+
+            velocity = (lastX - e.pageX) / (timeElapsed || 16);
+
+            clientsSection.scrollLeft = scrollLeft - walk;
+
+            const half = clientWrapper.scrollWidth / 2;
+            if (clientsSection.scrollLeft <= 0) clientsSection.scrollLeft = half;
+            if (clientsSection.scrollLeft >= half * 2) clientsSection.scrollLeft = half;
+
+            lastX = e.pageX;
+            lastTime = currentTime;
+        });
+
+        clientsSection.addEventListener(
+            "click",
+            (e) => {
+                if (!hasMoved) return;
+                e.preventDefault();
+                e.stopPropagation();
+                hasMoved = false;
+            },
+            true
+        );
+
+        // Touch
+        clientsSection.addEventListener(
+            "touchstart",
+            (e) => {
+                isDown = true;
+                hasMoved = false;
+                startX = e.touches[0].pageX - clientsSection.offsetLeft;
+                scrollLeft = clientsSection.scrollLeft;
+                lastX = e.touches[0].pageX;
+                lastTime = Date.now();
+                velocity = 0;
+            },
+            { passive: true }
+        );
+
+        clientsSection.addEventListener(
+            "touchend",
+            () => {
+                if (!isDown) return;
+                isDown = false;
+
+                const half = clientWrapper.scrollWidth / 2;
+
+                const applyInertia = () => {
+                    if (Math.abs(velocity) > 0.5) {
+                        clientsSection.scrollLeft += velocity;
+                        velocity *= 0.95;
+
+                        if (clientsSection.scrollLeft <= 0) clientsSection.scrollLeft = half;
+                        if (clientsSection.scrollLeft >= half * 2) clientsSection.scrollLeft = half;
+
+                        requestAnimationFrame(applyInertia);
+                    }
+                };
+                applyInertia();
+            },
+            { passive: true }
+        );
+
+        clientsSection.addEventListener(
+            "touchmove",
+            (e) => {
+                if (!isDown) return;
+
+                hasMoved = true;
+
+                const currentTime = Date.now();
+                const timeElapsed = currentTime - lastTime;
+
+                const x = e.touches[0].pageX - clientsSection.offsetLeft;
+                const walk = x - startX;
+
+                velocity = (lastX - e.touches[0].pageX) / (timeElapsed || 16);
+
+                clientsSection.scrollLeft = scrollLeft - walk;
+
+                const half = clientWrapper.scrollWidth / 2;
+                if (clientsSection.scrollLeft <= 0) clientsSection.scrollLeft = half;
+                if (clientsSection.scrollLeft >= half * 2) clientsSection.scrollLeft = half;
+
+                lastX = e.touches[0].pageX;
+                lastTime = currentTime;
+            },
+            { passive: true }
+        );
+
+        clientsSection.style.cursor = "grab";
+    })();
+
+
 
 });
