@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/styles/utils.css" />
+    <link rel="stylesheet" href="../assets/styles/services.css" />
+    <title>Services</title>
+</head>
+<body>
+    <div id="main">
+        <div id="nav">
+            <img src="../assets/images/logo.png" alt="ZEDESIGNS Logo" />
+            <ul>
+                <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="./about.html" data-i18n="nav.about">About</a></li>
+                <li>
+                    <a href="#" data-i18n="nav.services"
+                        >Services</a
+                    >
+                </li>
+                <!-- <li><a href="./pages/projects.html">Work</a></li> -->
+                <li><a href="./projects.html" data-i18n="nav.work">Work</a></li>
+                <li><a href="./contact.html" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button
+                        class="lang-toggle"
+                        id="langToggle"
+                        aria-label="Change Language"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9.71002 19.6674C8.74743 17.6259 8.15732 15.3742 8.02731 13H4.06189C4.458 16.1765 6.71639 18.7747 9.71002 19.6674ZM10.0307 13C10.1811 15.4388 10.8778 17.7297 12 19.752C13.1222 17.7297 13.8189 15.4388 13.9693 13H10.0307ZM19.9381 13H15.9727C15.8427 15.3742 15.2526 17.6259 14.29 19.6674C17.2836 18.7747 19.542 16.1765 19.9381 13ZM4.06189 11H8.02731C8.15732 8.62577 8.74743 6.37407 9.71002 4.33256C6.71639 5.22533 4.458 7.8235 4.06189 11ZM10.0307 11H13.9693C13.8189 8.56122 13.1222 6.27025 12 4.24799C10.8778 6.27025 10.1811 8.56122 10.0307 11ZM14.29 4.33256C15.2526 6.37407 15.8427 8.62577 15.9727 11H19.9381C19.542 7.8235 17.2836 5.22533 14.29 4.33256Z"
+                            ></path>
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option" data-lang="ar">
+                            <span>العربية</span>
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <span>English</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="mobile-menu">
+                <button class="close-menu" id="closeMenu">
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-menu-content">
+                    <nav class="mobile-nav">
+                        <a href="../index.html" class="mobile-nav-link" data-i18n="nav.home"
+                            >Home</a
+                        >
+                        <a
+                            href="./about.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.about"
+                            >About</a
+                        >
+                        <a
+                            href="#"
+                            class="mobile-nav-link"
+                            data-i18n="nav.services"
+                            >Services</a
+                        >
+                        <a
+                            href="./projects.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.work"
+                            >Work</a
+                        >
+                        <a
+                            href="./contact.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.contact"
+                            >Contact</a
+                        >
+                    </nav>
+                    <div class="mobile-menu-footer">
+                        <p>© 2025 ZEDESIGNS</p>
+                        <div class="mobile-socials">
+                            <a
+                                href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
+                                target="_blank"
+                                ><img
+                                    src="../assets/images/tiktok-logo.png"
+                                    alt=""
+                            /></a>
+                            <a
+                                href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
+                                target="_blank"
+                                ><img
+                                    style="transform: scale(1.2);"
+                                    src="../assets/images/instagram-logo.png"
+                                    alt=""
+                            /></a>
+                            <a
+                                href="https://www.linkedin.com/company/zedesignss/"
+                                target="_blank"
+                                ><img
+                                    src="../assets/images/linkedin-logo.png"
+                                    alt=""
+                            /></a>
+                            <a href="https://t.me/zedesigns" target="_blank"
+                                ><img
+                                    src="../assets/images/telegram-logo.png"
+                                    alt=""
+                            /></a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+        <!-- Floating WhatsApp Button -->
+        <a
+            href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
+            target="_blank"
+            id="whatsappFloat"
+            class="whatsapp-float"
+            aria-label="WhatsApp us"
+        >
+            <img
+                src="../assets/images/home/whatsapp-logo.png"
+                alt="WhatsApp"
+            />
+            <span data-i18n="floatingWhatsApp.ariaLabel">WhatsApp Us</span>
+        </a>
+    </div>
+
+    <div id="footer">
+        <div id="footer-foreground">
+            <img
+                src="../assets/images/home/herofooter-bg-green-1.webp"
+                alt=""
+            />
+            <div id="ftop">
+                <div class="tag">
+                    <img src="../assets/images/home/tag.svg" alt="tag" />
+                    <p data-i18n="footer.tagText">
+                        Saudi Based Strategic Branding And Web Design
+                        Company
+                    </p>
+                </div>
+                <h1 data-i18n="footer.heading">
+                    Every success starts with the first step
+                </h1>
+                <p data-i18n="footer.description">
+                    Let's create something exceptional together. Get in
+                    touch to start your branding journey.
+                </p>
+                <div id="btndiv">
+                    <div class="btnelem">
+                        <button>
+                            <a
+                                href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
+                                target="_blank"
+                                data-i18n="footer.btnText"
+                            >
+                                Get Started
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="fbtm">
+                <div id="btmleft">
+                    <img
+                        src="../assets/images/home/logofooter-01-old.png"
+                        alt="logo footer"
+                    />
+                    <div class="info">
+                        <p data-i18n="footer.hqLabel">HQ</p>
+                        <p data-i18n="footer.hqLocation">
+                            Jeddah, Saudi Arabia
+                        </p>
+                    </div>
+                    <div class="info">
+                        <p data-i18n="footer.contactLabel">Contact Us</p>
+                        <p data-i18n="footer.contactEmail">
+                            info@zedesignss.com
+                        </p>
+                    </div>
+                    <p id="copyright" data-i18n="footer.copyright">
+                        2025 &copy; ZEDESIGNS. All rights reserved.
+                    </p>
+                </div>
+                <div id="btmright">
+                    <ul>
+                        <li
+                            class="liheading"
+                            data-i18n="footer.mainPagesHeading"
+                        >
+                            Main Pages
+                        </li>
+                        <li>
+                            <a href="../index.html" data-i18n="footer.navHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="./about.html" data-i18n="footer.navAbout">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#services"
+                                data-i18n="footer.navServices"
+                            >
+                                Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./projects.html" data-i18n="footer.navWork">
+                                Work
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="socials">
+                        <div id="socialone">
+                            <a
+                                href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
+                                target="_blank"
+                            >
+                                <img
+                                    src="../assets/images/tiktok-logo.png"
+                                    alt=""
+                                />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
+                                target="_blank"
+                            >
+                                <img
+                                    style="transform: scale(1.2);"
+                                    src="../assets/images/instagram-logo.png"
+                                    alt=""
+                                />
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/company/zedesignss/"
+                                target="_blank"
+                            >
+                                <img
+                                    src="../assets/images/linkedin-logo.png"
+                                    alt=""
+                                />
+                            </a>
+                            <a href="https://t.me/zedesigns" target="_blank">
+                                <img
+                                    src="../assets/images/telegram-logo.png"
+                                    alt=""
+                                />
+                            </a>
+                        </div>
+                        <div id="socialtwo">
+                            <a
+                                href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849"
+                                target="_blank"
+                            >
+                                <img
+                                    src="../assets/images/saudi-business-logo.svg"
+                                    alt=""
+                                />
+                            </a>
+                            <p>
+                                <span data-i18n="footer.verifiedText">
+                                    Verified By
+                                </span>
+                                <a
+                                    href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849"
+                                    target="_blank"
+                                    data-i18n="footer.verifiedLink"
+                                >
+                                    Saudi Business Center
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer-background">
+            <h1>ZEDESIGNS</h1>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <!-- APP SCRIPTS -->
+    <script src="../assets/scripts/i18n.js"></script>
+    <script src="../assets/scripts/utils.js"></script>
+    <script src="../assets/scripts/services.js"></script>
+</body>
+</html>
