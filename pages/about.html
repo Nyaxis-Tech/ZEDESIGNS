@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/styles/utils.css">
-    <link rel="stylesheet" href="../assets/styles/about.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>About</title>
+
+    <link
+        id="favicon"
+        rel="shortcut icon"
+        href="../assets/images/favicon.png"
+        type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="../assets/styles/utils.css" />
+    <link rel="stylesheet" href="../assets/styles/about.css" />
 </head>
 <body>
-    
     <div id="main">
         <div id="nav">
             <img src="../assets/images/logo.png" alt="ZEDESIGNS Logo" />
             <ul>
-                <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
-                <li><a href="./about.html" data-i18n="nav.about">About</a></li>
+                <li><a href="#" data-i18n="nav.home">Home</a></li>
+                <li><a href="./pages/about.html" data-i18n="nav.about">About</a></li>
                 <li>
                     <a href="#services" data-i18n="nav.services"
                         >Services</a
                     >
                 </li>
                 <!-- <li><a href="./pages/projects.html">Work</a></li> -->
-                <li><a href="./projects.html" data-i18n="nav.work">Work</a></li>
+                <li><a href="./pages/projects.html" data-i18n="nav.work">Work</a></li>
+                <li><a href="./pages/contact.html" data-i18n="nav.contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <!-- Language Switcher -->
@@ -60,81 +69,507 @@
 
         <!-- Mobile Menu Overlay -->
         <div id="mobileMenu" class="mobile-menu">
-            <button class="close-menu" id="closeMenu">
-                <span></span>
-                <span></span>
-            </button>
-            <div class="mobile-menu-content">
-                <nav class="mobile-nav">
-                    <a href="../index.html" class="mobile-nav-link" data-i18n="nav.home"
-                        >Home</a
-                    >
-                    <a
-                        href="./about.html"
-                        class="mobile-nav-link"
-                        data-i18n="nav.about"
-                        >About</a
-                    >
-                    <a
-                        href="#services"
-                        class="mobile-nav-link"
-                        data-i18n="nav.services"
-                        >Services</a
-                    >
-                    <a
-                        href="./projects.html"
-                        class="mobile-nav-link"
-                        data-i18n="nav.work"
-                        >Work</a
-                    >
-                    <!-- <a
-                        href="#footer"
-                        class="mobile-nav-link"
-                        data-i18n="nav.contact"
-                        >Contact</a
-                    > -->
-                </nav>
-                <div class="mobile-menu-footer">
-                    <p>© 2025 ZEDESIGNS</p>
-                    <div class="mobile-socials">
+                <button class="close-menu" id="closeMenu">
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-menu-content">
+                    <nav class="mobile-nav">
+                        <a href="#" class="mobile-nav-link" data-i18n="nav.home"
+                            >Home</a
+                        >
                         <a
-                            href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
-                            target="_blank"
-                            ><img
-                                src="assets/images/tiktok-logo.png"
-                                alt=""
-                        /></a>
+                            href="./pages/about.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.about"
+                            >About</a
+                        >
                         <a
-                            href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
-                            target="_blank"
-                            ><img
-                                style="transform: scale(1.2);"
-                                src="assets/images/instagram-logo.png"
-                                alt=""
-                        /></a>
+                            href="#services"
+                            class="mobile-nav-link"
+                            data-i18n="nav.services"
+                            >Services</a
+                        >
                         <a
-                            href="https://www.linkedin.com/company/zedesignss/"
-                            target="_blank"
-                            ><img
-                                src="assets/images/linkedin-logo.png"
-                                alt=""
-                        /></a>
-                        <a href="https://t.me/zedesigns" target="_blank"
-                            ><img
-                                src="assets/images/telegram-logo.png"
-                                alt=""
-                        /></a>
+                            href="./pages/projects.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.work"
+                            >Work</a
+                        >
+                        <a
+                            href="./pages/contact.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.contact"
+                            >Contact</a
+                        >
+                    </nav>
+                    <div class="mobile-menu-footer">
+                        <p>© 2025 ZEDESIGNS</p>
+                        <div class="mobile-socials">
+                            <a
+                                href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
+                                target="_blank"
+                                ><img
+                                    src="assets/images/tiktok-logo.png"
+                                    alt=""
+                            /></a>
+                            <a
+                                href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
+                                target="_blank"
+                                ><img
+                                    style="transform: scale(1.2);"
+                                    src="assets/images/instagram-logo.png"
+                                    alt=""
+                            /></a>
+                            <a
+                                href="https://www.linkedin.com/company/zedesignss/"
+                                target="_blank"
+                                ><img
+                                    src="assets/images/linkedin-logo.png"
+                                    alt=""
+                            /></a>
+                            <a href="https://t.me/zedesigns" target="_blank"
+                                ><img
+                                    src="assets/images/telegram-logo.png"
+                                    alt=""
+                            /></a>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
 
-        
+        <!-- ABOUT PAGE CONTENT --> 
         <div id="hero">
+            <!-- ABOUT HERO -->
+            <section class="about-hero">
+                <div class="about-container about-hero-grid">
+                    <div class="about-hero-left">
+                        <p class="eyebrow">About ZEDESIGNS</p>
+                        <h1 class="about-hero-title">
+                            We shape brands, build websites,<br />
+                            and design experiences that feel real.
+                        </h1>
+                        <p class="lead">
+                            ZEDESIGNS is a Saudi-based strategic branding and web design company
+                            helping businesses turn ideas into clear, confident brands. We bridge
+                            strategy, visual identity, and digital experience so every touchpoint
+                            feels intentional—from logo and packaging to website and social.
+                        </p>
+                        <div class="about-hero-pillars">
+                            <div class="pillar">
+                                <h3>Define</h3>
+                                <p>
+                                    Brand strategy, positioning, naming, and messaging that give your
+                                    brand a clear point of view.
+                                </p>
+                            </div>
+                            <div class="pillar">
+                                <h3>Design</h3>
+                                <p>
+                                    Visual identities, packaging, UI/UX, and content systems that look
+                                    sharp and stay consistent everywhere.
+                                </p>
+                            </div>
+                            <div class="pillar">
+                                <h3>Deploy</h3>
+                                <p>
+                                    Websites, e-commerce experiences, and launch assets that are
+                                    ready to perform in the real world.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="about-hero-right">
+                        <div class="about-stats">
+                            <div class="stat-card">
+                                <span class="stat-number">200+</span>
+                                <span class="stat-label">Brands shaped</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Countries reached</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">65+</span>
+                                <span class="stat-label">Brand strategies</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">6+</span>
+                                <span class="stat-label">Industries served</span>
+                            </div>
+                            <div class="stat-tagline">
+                                Saudi based. Globally minded.<br/>
+                                Built for ambitious brands.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- STRUCTURE SECTION WITH DIAGRAM -->
+            <section class="about-structure">
+                <div class="about-container about-structure-grid">
+                    <div class="structure-copy">
+                        <p class="eyebrow">Structure</p>
+                        <h2>Strategy, design, and experience working as one system.</h2>
+                        <p>
+                            At ZEDESIGNS, our structure is built on a clear creative system:
+                            strategy fuels vision, design gives it form, and experience brings
+                            it to life. Together, they create seamless, impactful brand
+                            journeys.
+                        </p>
+                        <p class="structure-sub">
+                            Every project flows through this triangle—from insight to
+                            identity, execution to emotion, and feedback to foresight—so your
+                            brand keeps evolving, not just launching.
+                        </p>
+                    </div>
+
+                    <div class="structure-visual">
+                        <div class="structure-wrapper">
+                            <!-- Animated triangle SVG -->
+                            <svg
+                                class="structure-diagram"
+                                viewBox="0 0 800 480"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                               
+                                <!-- LINKS (LINES) -->
+                                <g class="structure-link">
+                                    <path
+                                        id="link-top"
+                                        class="structure-link-path"
+                                        d="M260 140 L540 140"
+                                    />
+                                    <!-- Centered on top line -->
+                                    <text
+                                        class="structure-label"
+                                        x="400"
+                                        y="118"
+                                        text-anchor="middle"
+                                    >
+                                        Feedback to Foresight
+                                    </text>
+                                </g>
+
+                                <g class="structure-link">
+                                    <path
+                                        id="link-left"
+                                        class="structure-link-path"
+                                        d="M240 170 L390 360"
+                                    />
+                                    <!-- Nicely placed along left diagonal -->
+                                    <text
+                                        class="structure-label"
+                                        x="250"
+                                        y="255"
+                                        text-anchor="middle"
+                                        transform="rotate(-55 250 255)"
+                                    >
+                                        Insight to Identity
+                                    </text>
+                                </g>
+
+                                <g class="structure-link">
+                                    <path
+                                        id="link-right"
+                                        class="structure-link-path"
+                                        d="M560 170 L420 360"
+                                    />
+                                    <!-- Nicely placed along right diagonal -->
+                                    <text
+                                        class="structure-label"
+                                        x="550"
+                                        y="255"
+                                        text-anchor="middle"
+                                        transform="rotate(55 550 255)"
+                                    >
+                                        Execution to Emotion
+                                    </text>
+                                </g>
+
+
+                                <!-- NODES (CARDS) -->
+                                <g
+                                    class="structure-node structure-node--strategy"
+                                    data-node="strategy"
+                                    transform="translate(120,80) rotate(-10 120 60)"
+                                >
+                                    <rect
+                                        x="0"
+                                        y="0"
+                                        rx="30"
+                                        ry="30"
+                                        width="210"
+                                        height="130"
+                                        class="structure-card"
+                                    />
+                                    <text
+                                        x="60"
+                                        y="80"
+                                        class="structure-card-title"
+                                    >
+                                        Strategy
+                                    </text>
+                                </g>
+
+                                <g
+                                    class="structure-node structure-node--experience"
+                                    data-node="experience"
+                                    transform="translate(470,80) rotate(8 120 60)"
+                                >
+                                    <rect
+                                        x="0"
+                                        y="0"
+                                        rx="30"
+                                        ry="30"
+                                        width="210"
+                                        height="130"
+                                        class="structure-card"
+                                    />
+                                    <text
+                                        x="45"
+                                        y="80"
+                                        class="structure-card-title"
+                                    >
+                                        Experience
+                                    </text>
+                                </g>
+
+                                <g
+                                    class="structure-node structure-node--design"
+                                    data-node="design"
+                                    transform="translate(310,300) rotate(10 110 70)"
+                                >
+                                    <rect
+                                        x="0"
+                                        y="0"
+                                        rx="30"
+                                        ry="30"
+                                        width="210"
+                                        height="140"
+                                        class="structure-card"
+                                    />
+                                    <text
+                                        x="70"
+                                        y="87"
+                                        class="structure-card-title"
+                                    >
+                                        Design
+                                    </text>
+                                </g>
+                            </svg>
+
+                            <!-- Interactive info under the diagram -->
+                            <div class="structure-info">
+                                <button
+                                    class="structure-info-item is-active"
+                                    type="button"
+                                    data-node="strategy"
+                                >
+                                    <span class="chip">Strategy</span>
+                                    <p>
+                                        Turns insights into a clear direction for your brand –
+                                        from positioning and audience to messaging and roadmap.
+                                    </p>
+                                </button>
+                                <button
+                                    class="structure-info-item"
+                                    type="button"
+                                    data-node="design"
+                                >
+                                    <span class="chip">Design</span>
+                                    <p>
+                                        Translates strategy into visual identity, packaging and
+                                        interfaces that feel precise, premium, and consistent.
+                                    </p>
+                                </button>
+                                <button
+                                    class="structure-info-item"
+                                    type="button"
+                                    data-node="experience"
+                                >
+                                    <span class="chip">Experience</span>
+                                    <p>
+                                        Connects every touchpoint – web, social, and on-ground –
+                                        so customers feel one unified brand story.
+                                    </p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- METHODOLOGY / HOW WE WORK -->
+            <section class="about-methodology">
+                <div class="about-container">
+                    <div class="about-section-header">
+                        <p class="eyebrow">How we work</p>
+                        <h2>From first call to launch-ready brand.</h2>
+                        <p>
+                            We keep the process simple, structured, and collaborative—so you always
+                            know where we are and what’s coming next.
+                        </p>
+                    </div>
+
+                    <div class="methodology-grid">
+                        <article
+                            class="method-card"
+                            data-cursor-img="../assets/images/about/research.png"
+                        >
+                            <p class="step-label">Step 01</p>
+                            <h3>Research & Analysis</h3>
+                            <p>
+                                We study your market, audience, and competitors to uncover what
+                                truly sets your brand apart.
+                            </p>
+                            <ul>
+                                <li>Brand & website audit</li>
+                                <li>Competitive & visual research</li>
+                                <li>Positioning & tone-of-voice direction</li>
+                            </ul>
+                        </article>
+
+                        <article
+                            class="method-card"
+                            data-cursor-img="../assets/images/about/creative.png"
+                        >
+                            <p class="step-label">Step 02</p>
+                            <h3>Creative Design</h3>
+                            <p>
+                                We translate strategy into a full visual and digital system your
+                                team can actually use every day.
+                            </p>
+                            <ul>
+                                <li>Logo & visual identity system</li>
+                                <li>Design systems & brand guidelines</li>
+                                <li>Web design & front-end development</li>
+                            </ul>
+                        </article>
+
+                        <article
+                            class="method-card"
+                            data-cursor-img="../assets/images/about/review.png"
+                        >
+                            <p class="step-label">Step 03</p>
+                            <h3>Review & Evolution</h3>
+                            <p>
+                                We support launch, refine based on feedback, and keep your brand
+                                consistent as you grow.
+                            </p>
+                            <ul>
+                                <li>Launch assets & rollout support</li>
+                                <li>Website tweaks & performance passes</li>
+                                <li>Ongoing design & dev support</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WHAT WE DO / EXPERTISE -->
+            <section class="about-expertise" id="services">
+                <div class="about-container">
+                    <div class="about-section-header">
+                        <p class="eyebrow">What we do</p>
+                        <h2>Strategic branding, thoughtful design, and digital execution.</h2>
+                    </div>
+
+                    <div class="expertise-grid">
+                        <article class="expertise-column">
+                            <h3>Brand Strategy</h3>
+                            <ul>
+                                <li>Brand discovery & workshops</li>
+                                <li>Positioning & value proposition</li>
+                                <li>Naming & taglines</li>
+                                <li>Brand architecture</li>
+                            </ul>
+                        </article>
+
+                        <article class="expertise-column">
+                            <h3>Branding & Design</h3>
+                            <ul>
+                                <li>Logo design & identity systems</li>
+                                <li>Packaging & label design</li>
+                                <li>Brand guidelines & assets</li>
+                                <li>Marketing & social templates</li>
+                            </ul>
+                        </article>
+
+                        <article class="expertise-column">
+                            <h3>Digital & Web</h3>
+                            <ul>
+                                <li>Website & landing page design</li>
+                                <li>Front-end development</li>
+                                <li>WordPress / Shopify implementations</li>
+                                <li>Performance & UI/UX improvements</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>  
+
+            <!-- WHO WE WORK WITH / SECTORS -->
+            <section class="about-sectors">
+                <div class="about-container">
+                    <div class="about-section-header">
+                        <p class="eyebrow">Who we work with</p>
+                        <h2>From startups to growing brands.</h2>
+                    </div>
+
+                    <div class="sectors-grid">
+                        <article class="sector-card">
+                            <h3>Startups & founders</h3>
+                            <p>
+                                Launch-ready brands and websites that help you pitch, validate, and
+                                grow with confidence from day one.
+                            </p>
+                        </article>
+                        <article class="sector-card">
+                            <h3>SMEs & established brands</h3>
+                            <p>
+                                Rebrands, packaging, and web redesigns that refresh your presence
+                                without losing what already works.
+                            </p>
+                        </article>
+                        <article class="sector-card">
+                            <h3>Agencies & partners</h3>
+                            <p>
+                                White-label design and development support for agencies that need a
+                                reliable production partner.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CULTURE / PHILOSOPHY -->
+            <section class="about-culture">
+                <div class="about-container about-culture-grid">
+                    <div>
+                        <p class="eyebrow">Our philosophy</p>
+                        <h2>Clarity, craft, and consistency.</h2>
+                    </div>
+                    <div>
+                        <p>
+                            Every project is treated like a long-term relationship, not a one-off
+                            file delivery. We care about how your brand looks in the wild:
+                            packaging on shelves, websites on mobile, and posts on social.
+                        </p>
+                        <p>
+                            That means clear communication, organised files, and systems your team
+                            can keep using after the project is done.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 
+    <!-- FOOTER (same as other pages) -->
     <div id="footer">
         <div id="footer-foreground">
             <img
@@ -163,13 +598,11 @@
                                 href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
                                 target="_blank"
                                 data-i18n="footer.btnText"
-                                >Get Started</a
                             >
+                                Get Started
+                            </a>
                         </button>
                     </div>
-                    <!-- <div class="btnelem transparentbtn">
-                        <button>Explore Our Work</button>
-                    </div> -->
                 </div>
             </div>
             <div id="fbtm">
@@ -206,21 +639,22 @@
                             <a href="../index.html" data-i18n="footer.navHome">Home</a>
                         </li>
                         <li>
-                            <a href="./about.html" data-i18n="footer.navAbout"
-                                >About</a
-                            >
+                            <a href="./about.html" data-i18n="footer.navAbout">
+                                About
+                            </a>
                         </li>
                         <li>
                             <a
                                 href="#services"
                                 data-i18n="footer.navServices"
-                                >Services</a
                             >
+                                Services
+                            </a>
                         </li>
                         <li>
-                            <a href="./projects.html" data-i18n="footer.navWork"
-                                >Work</a
-                            >
+                            <a href="./projects.html" data-i18n="footer.navWork">
+                                Work
+                            </a>
                         </li>
                     </ul>
                     <div id="socials">
@@ -228,49 +662,59 @@
                             <a
                                 href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
                                 target="_blank"
-                                ><img
+                            >
+                                <img
                                     src="../assets/images/tiktok-logo.png"
                                     alt=""
-                            /></a>
+                                />
+                            </a>
                             <a
                                 href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
                                 target="_blank"
-                                ><img
+                            >
+                                <img
                                     style="transform: scale(1.2);"
                                     src="../assets/images/instagram-logo.png"
                                     alt=""
-                            /></a>
+                                />
+                            </a>
                             <a
                                 href="https://www.linkedin.com/company/zedesignss/"
                                 target="_blank"
-                                ><img
+                            >
+                                <img
                                     src="../assets/images/linkedin-logo.png"
                                     alt=""
-                            /></a>
-                            <a href="https://t.me/zedesigns" target="_blank"
-                                ><img
+                                />
+                            </a>
+                            <a href="https://t.me/zedesigns" target="_blank">
+                                <img
                                     src="../assets/images/telegram-logo.png"
                                     alt=""
-                            /></a>
+                                />
+                            </a>
                         </div>
                         <div id="socialtwo">
                             <a
                                 href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849"
                                 target="_blank"
-                                ><img
+                            >
+                                <img
                                     src="./../assets/images/saudi-business-logo.svg"
                                     alt=""
-                            /></a>
+                                />
+                            </a>
                             <p>
-                                <span data-i18n="footer.verifiedText"
-                                    >Verified By</span
-                                >
+                                <span data-i18n="footer.verifiedText">
+                                    Verified By
+                                </span>
                                 <a
                                     href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849"
                                     target="_blank"
                                     data-i18n="footer.verifiedLink"
-                                    >Saudi Business Center</a
                                 >
+                                    Saudi Business Center
+                                </a>
                             </p>
                         </div>
                     </div>
@@ -283,9 +727,12 @@
         </div>
     </div>
 
+    <!-- LIBS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+
+    <!-- APP SCRIPTS -->
     <script src="../assets/scripts/i18n.js"></script>
     <script src="../assets/scripts/utils.js"></script>
     <script src="../assets/scripts/about.js"></script>
