@@ -85,7 +85,8 @@ body {
 
 .about-hero-left h1,
 .about-hero-title {
-    font-size: clamp(2.4rem, 3vw, 3rem);
+    font-family: "didot-bold";
+    font-size: clamp(2rem, 3vw, 3rem);
     line-height: 1.1;
     letter-spacing: -0.04em;
     margin-bottom: 1.5rem;
@@ -212,6 +213,7 @@ body {
     font-size: 1.8rem;
     letter-spacing: -0.03em;
     margin-bottom: 0.75rem;
+    font-family: "didot-bold";
 }
 
 .structure-copy p {
@@ -239,6 +241,10 @@ body {
         radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.55), #021513);
     border: 1px solid rgba(255, 255, 255, 0.15);
     overflow: hidden;
+}
+
+.structure-wrapper svg{
+    transform: scale(1.1);
 }
 
 /* SVG */
@@ -368,6 +374,7 @@ body {
 }
 
 .about-section-header h2 {
+    font-family: "didot-bold";
     font-size: 1.8rem;
     letter-spacing: -0.03em;
     margin-bottom: 0.75rem;
@@ -670,6 +677,7 @@ body {
 }
 
 .about-culture-grid h2 {
+    font-family: "didot-bold";
     font-size: 1.8rem;
     letter-spacing: -0.03em;
     margin-bottom: 0.75rem;

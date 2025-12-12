@@ -256,6 +256,115 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ==========================
+       TRIANGLE SVG DRAWING ANIMATION
+       ========================== */
+
+    const triangleSVG = document.querySelector("#Layer_1");
+    
+    if (triangleSVG) {
+        // Get all stroke elements (paths and lines)
+        const strokeElements = triangleSVG.querySelectorAll(".st14");
+        
+        // Prepare each path/line for drawing animation
+        strokeElements.forEach((element) => {
+            const length = element.getTotalLength ? element.getTotalLength() : 0;
+            if (length > 0) {
+                gsap.set(element, {
+                    strokeDasharray: length,
+                    strokeDashoffset: length,
+                });
+            }
+        });
+
+        // Create timeline for triangle drawing
+        const triangleTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".structure-visual",
+                start: "top 70%",
+                toggleActions: "play none none none",
+            },
+        });
+
+        // Animate all stroke elements drawing in
+        triangleTl.to(strokeElements, {
+            strokeDashoffset: 0,
+            duration: 1.5,
+            ease: "power2.inOut",
+            stagger: 0.15,
+        });
+
+        // Fade in text elements after drawing
+        const textElements = triangleSVG.querySelectorAll("text");
+        gsap.set(textElements, { opacity: 0 });
+        
+        triangleTl.to(
+            textElements,
+            {
+                opacity: 1,
+                duration: 0.6,
+                ease: "power2.out",
+                stagger: 0.08,
+            },
+            "-=0.5"
+        );
+    }
+
+    /* ==========================
+       TRIANGLE HOVER INTERACTION
+       ========================== */
+
+    const structureCards = document.querySelectorAll(".structure-info-item");
+    const trianglePaths = document.querySelectorAll(".triangle-path");
+
+    if (structureCards.length && trianglePaths.length) {
+        structureCards.forEach((card) => {
+            const cardType = card.dataset.node; // strategy, design, or experience
+
+            card.addEventListener("mouseenter", () => {
+                // Find the corresponding triangle
+                const targetTriangle = document.querySelector(
+                    `.triangle-path[data-triangle="${cardType}"]`
+                );
+
+                if (targetTriangle) {
+                    // Highlight the triangle
+                    gsap.to(targetTriangle, {
+                        stroke: "#eccf9c",
+                        strokeWidth: 3,
+                        opacity: 1,
+                        duration: 0.3,
+                        ease: "power2.out",
+                    });
+
+                    // Dim other triangles
+                    trianglePaths.forEach((path) => {
+                        if (path !== targetTriangle) {
+                            gsap.to(path, {
+                                opacity: 0.3,
+                                duration: 0.3,
+                                ease: "power2.out",
+                            });
+                        }
+                    });
+                }
+            });
+
+            card.addEventListener("mouseleave", () => {
+                // Reset all triangles to default state
+                trianglePaths.forEach((path) => {
+                    gsap.to(path, {
+                        stroke: "#eccf9d",
+                        strokeWidth: 2,
+                        opacity: 1,
+                        duration: 0.3,
+                        ease: "power2.out",
+                    });
+                });
+            });
+        });
+    }
+
+    /* ==========================
        METHODOLOGY CARDS
        ========================== */
 
@@ -288,30 +397,30 @@ document.addEventListener("DOMContentLoaded", () => {
        EXPERTISE COLUMNS
        ========================== */
 
-    gsap.from(".about-expertise .about-section-header", {
-        scrollTrigger: {
-            trigger: ".about-expertise",
-            start: "top 80%",
-            toggleActions: "play none none none",
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.out",
-    });
+    // gsap.from(".about-expertise .about-section-header", {
+    //     scrollTrigger: {
+    //         trigger: ".about-expertise",
+    //         start: "top 80%",
+    //         toggleActions: "play none none none",
+    //     },
+    //     y: 30,
+    //     opacity: 0,
+    //     duration: 0.6,
+    //     ease: "power2.out",
+    // });
 
-    gsap.from(".about-expertise .expertise-column", {
-        scrollTrigger: {
-            trigger: ".about-expertise",
-            start: "top 75%",
-            toggleActions: "play none none none",
-        },
-        y: 35,
-        opacity: 0,
-        duration: 0.55,
-        ease: "power3.out",
-        stagger: 0.12,
-    });
+    // gsap.from(".about-expertise .expertise-column", {
+    //     scrollTrigger: {
+    //         trigger: ".about-expertise",
+    //         start: "top 75%",
+    //         toggleActions: "play none none none",
+    //     },
+    //     y: 35,
+    //     opacity: 0,
+    //     duration: 0.55,
+    //     ease: "power3.out",
+    //     stagger: 0.12,
+    // });
 
     /* ==========================
        SECTOR CARDS
