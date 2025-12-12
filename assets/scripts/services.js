@@ -119,61 +119,97 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================== */
 
     const expandBtns = document.querySelectorAll('.expand-btn');
+    const isMobile = () => window.innerWidth <= 768;
 
-    expandBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const subServiceItem = btn.closest('.sub-service-item');
-            const content = subServiceItem.querySelector('.sub-service-content');
-            const isExpanded = subServiceItem.classList.contains('expanded');
+    // Function to expand a sub-service
+    function expandSubService(subServiceItem, content, icon) {
+        if (subServiceItem.classList.contains('expanded')) return;
+        
+        subServiceItem.classList.add('expanded');
+        
+        // Get natural height
+        content.style.height = 'auto';
+        const height = content.offsetHeight;
+        content.style.height = '0px';
 
-            if (isExpanded) {
-                // Collapse
-                gsap.to(content, {
-                    height: 0,
-                    opacity: 0,
-                    duration: 0.3,
-                    ease: 'power2.inOut',
-                    onComplete: () => {
-                        subServiceItem.classList.remove('expanded');
-                    }
-                });
-            } else {
-                // Expand
-                subServiceItem.classList.add('expanded');
-                
-                // Get natural height
+        gsap.to(content, {
+            height: height,
+            opacity: 1,
+            duration: 0.5,
+            ease: 'power2.out',
+            onComplete: () => {
                 content.style.height = 'auto';
-                const height = content.offsetHeight;
-                content.style.height = '0';
-
-                gsap.to(content, {
-                    height: height,
-                    opacity: 1,
-                    duration: 0.4,
-                    ease: 'power2.out',
-                    onComplete: () => {
-                        content.style.height = 'auto';
-                    }
-                });
-
-                // Icon rotation
-                const icon = btn.querySelector('.plus-icon');
-                gsap.to(icon, {
-                    rotation: 45,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
             }
         });
 
-        // Also make the header clickable
+        // Rotate icon to X (45 degrees)
+        gsap.to(icon, {
+            rotation: 45,
+            duration: 0.4,
+            ease: 'power2.inOut'
+        });
+    }
+
+    // Function to collapse a sub-service
+    function collapseSubService(subServiceItem, content, icon) {
+        if (!subServiceItem.classList.contains('expanded')) return;
+        
+        subServiceItem.classList.remove('expanded');
+        
+        // Get current height and set it explicitly
+        const currentHeight = content.offsetHeight;
+        content.style.height = currentHeight + 'px';
+        
+        gsap.to(content, {
+            height: 0,
+            opacity: 0,
+            duration: 0.4,
+            ease: 'power2.inOut'
+        });
+        
+        // Rotate icon back to plus
+        gsap.to(icon, {
+            rotation: 0,
+            duration: 0.4,
+            ease: 'power2.inOut'
+        });
+    }
+
+    expandBtns.forEach(btn => {
+        const subServiceItem = btn.closest('.sub-service-item');
+        const content = subServiceItem.querySelector('.sub-service-content');
+        const icon = btn.querySelector('.plus-icon');
         const header = btn.closest('.sub-service-header');
+
+        // Click handler for mobile and desktop
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isExpanded = subServiceItem.classList.contains('expanded');
+
+            if (isExpanded) {
+                collapseSubService(subServiceItem, content, icon);
+            } else {
+                expandSubService(subServiceItem, content, icon);
+            }
+        });
+
+        // Make the header clickable
         header.addEventListener('click', (e) => {
             if (e.target !== btn && !btn.contains(e.target)) {
                 btn.click();
             }
         });
+
+        // Hover handlers for desktop only
+        if (!isMobile()) {
+            subServiceItem.addEventListener('mouseenter', () => {
+                expandSubService(subServiceItem, content, icon);
+            });
+
+            subServiceItem.addEventListener('mouseleave', () => {
+                collapseSubService(subServiceItem, content, icon);
+            });
+        }
     });
 
     /* ==========================
