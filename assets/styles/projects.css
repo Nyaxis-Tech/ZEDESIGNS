@@ -1,6 +1,5 @@
 @import url("../font.css");
 
-/* ========== RESET ========== */
 * {
     padding: 0;
     margin: 0;
@@ -14,17 +13,15 @@ body {
 }
 
 /* ========== PAGE BASE ========== */
-
 #main {
     width: 100%;
     min-height: 100vh;
-    background-color: var(--green-color); /* same background as other pages */
+    background-color: var(--green-color);
     color: #ffffff;
     position: relative;
     z-index: 2;
 }
 
-/* shared container for this page */
 .projects-container {
     width: min(1200px, 100% - 3rem);
     margin: 0 auto;
@@ -33,7 +30,6 @@ body {
 /* ======================
    HERO
    ====================== */
-
 .projects-hero {
     padding: 7rem 0 3rem;
     position: relative;
@@ -75,8 +71,6 @@ body {
     gap: 0.75rem;
 }
 
-/* Hero graphics */
-
 .projects-hero-right {
     position: relative;
     min-height: 220px;
@@ -89,123 +83,200 @@ body {
 }
 
 /* ======================
-   PROJECT GRID – LIKE REFERENCE
+   PROJECTS SECTION 
    ====================== */
-
 .projects-section {
-    padding: 2.5rem 0 5.5rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(3rem, 6vw, 5.5rem);
 }
 
+/* Break the 1200px limit ONLY here */
+.projects-section .projects-container {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0 clamp(12px, 2vw, 24px); /* small padding from edges */
+}
+
+/* GRID */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4rem 3rem;
+    gap: clamp(0.75rem, 1.2vw, 1.35rem);
 }
 
-
 /* ======================
-   PROJECT CARD
+   PROJECT CARD 
    ====================== */
-
 .project-card {
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
-    cursor: pointer;
+    gap: 0.85rem;
     text-decoration: none;
     color: inherit;
 }
 
-/* text block above image */
-
-.project-meta {
-    max-width: 34rem;
-}
-
-.project-title {
-    font-family: "didot-bold", serif;
-    font-weight: 500;
-    font-size: clamp(1.8rem, 2.1vw, 2.3rem);
-    line-height: 1.15;
-    margin-bottom: 0.6rem;
-}
-
-.project-lead {
-    font-size: 0.98rem;
-    line-height: 1.6;
-    opacity: 0.85;
-    max-width: 32rem;
-}
-
-/* tag pills */
-
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.7rem;
-    margin-top: 1.2rem;
-}
-
-.project-tag {
-    padding: 0.55rem 1.5rem;
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    font-size: 0.82rem;
-    letter-spacing: 0.06em;
-    text-transform: none;
-    opacity: 0.95;
-}
-
-/* image block – big rounded tile */
-
 .project-media {
-    display: block;
+    order: 0;
+}
+.project-meta {
+    order: 1;
+}
+
+/* BIG image tile */
+.project-media {
     position: relative;
-    border-radius: 30px;
+    border-radius: 28px;
     overflow: hidden;
-    background: #0b0b0b;
-    aspect-ratio: 16 / 10;
-    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.7);
-    transform-origin: center;
-    transition:
-        transform 0.55s ease,
-        box-shadow 0.55s ease;
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+
+    /* Desktop big visual like your reference */
+    aspect-ratio: auto;
+    height: clamp(420px, 74vh, 860px);
+
+    transition: transform 0.45s ease;
 }
 
 .project-media img {
-    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transform: scale(1.02);
     transition: transform 0.6s ease;
 }
 
-/* hover motion similar to reference */
+/* Text block */
+.project-meta {
+    max-width: unset;
+}
 
+/* Title style like screenshot (bigger + elegant) */
+.project-title {
+    font-family: "didot-bold", serif;
+    font-weight: 500;
+    font-size: clamp(1.35rem, 1.6vw, 2.05rem);
+    line-height: 1.15;
+    margin-bottom: 0.25rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* Hide long description to match the reference layout */
+.project-lead {
+    display: none;
+}
+
+/* Tags become one clean line (comma separated) */
+.project-tags {
+    display: block;
+    margin-top: 0.1rem;
+}
+
+.project-tag {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    font-size: 1.05rem;
+    opacity: 0.86;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1.5;
+}
+
+.project-tag:not(:last-child)::after {
+    content: ", ";
+    opacity: 0.8;
+}
+
+/* hover (subtle like reference) */
 @media (hover: hover) {
     .project-card:hover .project-media {
-        transform: translateY(-8px);
-        box-shadow: 0 34px 90px rgba(0, 0, 0, 0.85);
+        transform: translateY(-4px);
     }
-
     .project-card:hover .project-media img {
         transform: scale(1.05);
     }
 }
 
-/* ================
+/* ======================
+   RESPONSIVE 
+   ====================== */
+
+
+@media (max-width: 1024px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-media {
+        height: clamp(340px, 56vh, 620px);
+        border-radius: 24px;
+    }
+}
+
+/* iPad Pro / tablets: reduce big vh height */
+@media (min-width: 900px) and (max-width: 1100px) {
+  .project-media{
+    height: clamp(320px, 48vh, 560px);
+  }
+
+  /* optional: adjust focal point */
+  .project-media img{
+    object-position: center;
+  }
+}
+
+
+@media (max-width: 880px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+    }
+
+    .project-media {
+        height: auto;           
+        aspect-ratio: 16 / 10; 
+        border-radius: 22px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 600px) {
+    .projects-container {
+        width: calc(100% - 2rem);
+    }
+
+    .projects-hero {
+        padding-top: 6rem;
+    }
+
+    .project-media {
+        aspect-ratio: 4 / 3;
+        border-radius: 18px;
+    }
+
+    .project-title {
+        font-size: 1.25rem;
+        line-height: 1.2;
+    }
+
+    .project-tag {
+        font-size: 0.95rem;
+    }
+}
+
+/* ======================
    CUSTOM CURSOR 
-   ================ */
-
-
+   ====================== */
 #main.custom-cursor-active,
 #main.custom-cursor-active * {
     cursor: none !important;
 }
 
-/* circle cursor */
 .work-cursor {
     position: fixed;
     top: 0;
@@ -214,9 +285,8 @@ body {
     height: 100px;
     border-radius: 999px;
 
-    /* subtle glass background */
-    background: rgba(12, 24, 19, 0.78); /* dark greenish glass */
-    border: 1px solid rgba(236, 207, 156, 0.75); /* soft yellow border */
+    background: rgba(12, 24, 19, 0.78);
+    border: 1px solid rgba(236, 207, 156, 0.75);
 
     display: flex;
     align-items: center;
@@ -232,15 +302,10 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
-    /* 2D glow: yellow + green, but subtle */
     box-shadow:
         0 0 16px rgba(236, 207, 156, 0.28),
         0 0 26px rgba(145, 239, 24, 0.18);
 
-    /* no 3D / blend tricks */
-    mix-blend-mode: normal;
-
-    /* will be positioned via JS */
     transform: translate3d(-50%, -50%, 0) scale(0);
     opacity: 0;
     transition:
@@ -272,71 +337,4 @@ body {
 
 .work-cursor.is-visible {
     opacity: 1;
-}
-
-.projects-section:hover ~ .work-cursor,
-.project-card:hover ~ .work-cursor {
-    box-shadow:
-        0 0 18px rgba(236, 207, 156, 0.38),
-        0 0 32px rgba(145, 239, 24, 0.26);
-    border-color: rgba(236, 207, 156, 0.9);
-}
-
-
-/* ======================
-   RESPONSIVE
-   ====================== */
-
-@media (max-width: 1024px) {
-    .hero-inner {
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
-        gap: 2rem;
-    }
-
-    .projects-grid {
-        gap: 3.5rem 2.3rem;
-    }
-}
-
-@media (max-width: 880px) {
-    .hero-inner {
-        grid-template-columns: 1fr;
-    }
-
-    .projects-hero-right {
-        order: -1;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .project-media {
-        aspect-ratio: 16 / 11;
-    }
-}
-
-@media (max-width: 600px) {
-    .projects-container {
-        width: calc(100% - 2rem);
-    }
-
-    .projects-hero {
-        padding-top: 6rem;
-    }
-
-    .project-title {
-        font-size: 1.6rem;
-    }
-
-    .project-lead {
-        font-size: 0.9rem;
-    }
-
-    .project-media {
-        aspect-ratio: 4 / 3;
-        border-radius: 24px;
-        box-shadow: 0 20px 55px rgba(0, 0, 0, 0.7);
-    }
 }
