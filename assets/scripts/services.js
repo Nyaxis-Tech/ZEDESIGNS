@@ -87,16 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }, '-=0.8');
 
         // Parallax effect on service name
-        gsap.to(serviceName, {
-            scrollTrigger: {
-                trigger: row,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 1
-            },
-            y: -30,
-            ease: 'none'
-        });
+        // if(window.innerWidth > 768){
+
+            gsap.to(serviceName, {
+                scrollTrigger: {
+                    trigger: row,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 1,
+                },
+                y: "-30px",
+                ease: 'none'
+            });
+        // }
     });
 
     // Bottom border for last service
@@ -260,23 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ease: 'power3.out'
                 });
 
-                // Hover animation for image
-                const img = item.querySelector('img');
-                item.addEventListener('mouseenter', () => {
-                    gsap.to(img, {
-                        scale: 1.05,
-                        duration: 0.6,
-                        ease: 'power2.out'
-                    });
-                });
-
-                item.addEventListener('mouseleave', () => {
-                    gsap.to(img, {
-                        scale: 1,
-                        duration: 0.6,
-                        ease: 'power2.out'
-                    });
-                });
+                
             });
         }, 100);
     } else {
