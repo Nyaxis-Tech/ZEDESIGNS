@@ -133,7 +133,7 @@ body {
 
     /* Desktop big visual like your reference */
     aspect-ratio: auto;
-    height: clamp(420px, 74vh, 860px);
+    /* height: clamp(420px, 74vh, 860px); */
 
     transition: transform 0.45s ease;
 }

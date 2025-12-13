@@ -31,13 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <a href="projectDetails.html?id=${index+1}" class="project-card" data-index="${index}" data-category="branding">
                     <div class="project-meta">
                         <h2 class="project-title">
-                            ${project.name} — ${project.tagLine}
+                            ${project.name}
                         </h2>
-                        <p class="project-lead">
-                            ${project.shortDescription}
-                        </p>
                         <div class="project-tags">
-                            ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                            ${project.tags.slice(0,2).map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                         </div>
                     </div>
                     <div class="project-media">
