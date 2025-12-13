@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 595.28 448.02">
+  <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-size: 11.13px;
+      }
+
+      .st0, .st1, .st2 {
+        fill: #b68a4e;
+        font-family: Poppins-SemiBold, Poppins;
+        font-weight: 600;
+      }
+
+      .st1 {
+        font-size: 11.13px;
+      }
+
+      .st2 {
+        font-size: 11.13px;
+      }
+
+      .st3 {
+        isolation: isolate;
+      }
+
+      .st4 {
+        stroke: #3c4d45;
+      }
+
+      .st4, .st5 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 1.11px;
+      }
+
+      .st6 {
+        font-size: 16.43px;
+      }
+
+      .st6, .st7, .st8 {
+        fill: #3c4d45;
+        font-family: Poppins-Regular, Poppins;
+      }
+
+      .st7 {
+        font-size: 16.43px;
+      }
+
+      .st8 {
+        font-size: 16.43px;
+      }
+
+      .st5 {
+        mix-blend-mode: multiply;
+        stroke: #b68a4e;
+      }
+    </style>
+  </defs>
+  <g class="st3">
+    <g id="Layer_1">
+      <text class="st8" transform="translate(97.28 128.22) rotate(-11.1)"><tspan x="0" y="0">Impact</tspan></text>
+      <text class="st7" transform="translate(441.33 138.4) rotate(6.68)"><tspan x="0" y="0">Time</tspan></text>
+      <text class="st6" transform="translate(253.68 341.56) rotate(3.21)"><tspan x="0" y="0">Value</tspan></text>
+      <line class="st5" x1="400.95" y1="132.99" x2="184.49" y2="102.84"/>
+      <line class="st5" x1="131.57" y1="163.75" x2="227.4" y2="299.18"/>
+      <line class="st5" x1="448.79" y1="180.06" x2="339.78" y2="296.73"/>
+      <path class="st4" d="M118.65,74.18h67.87v37.13c0,29.04-23.58,52.61-52.61,52.61h-67.87v-37.13c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(-20.56 26.54) rotate(-11.1)"/>
+      <path class="st4" d="M453.58,91.46h67.87v37.13c0,29.04-23.58,52.61-52.61,52.61h-67.87v-37.13c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(19 -52.74) rotate(6.68)"/>
+      <path class="st4" d="M269.5,293.29h67.87v37.13c0,29.04-23.58,52.61-52.61,52.61h-67.87v-37.13c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(19.36 -14.98) rotate(3.21)"/>
+      <text class="st0" transform="translate(147.94 226.02) rotate(52.27)"><tspan x="0" y="0">Efficiency</tspan></text>
+      <text class="st2" transform="translate(390.09 278.82) rotate(-49.06)"><tspan x="0" y="0">Discipline</tspan></text>
+      <text class="st1" transform="translate(271.02 134.13) rotate(6.68)"><tspan x="0" y="0">Clarity</tspan></text>
+    </g>
+  </g>
+</svg>

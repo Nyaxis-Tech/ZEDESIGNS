@@ -46,10 +46,10 @@ body {
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    font-size: 0.8rem;
+    gap: 1rem;
+    font-size: 0.8rem !important;
     text-transform: uppercase;
-    letter-spacing: 0.16em;
+    /* letter-spacing: 0.16em; */
     opacity: 0.7;
     margin-bottom: 0.75rem;
 }
@@ -236,17 +236,17 @@ body {
     position: relative;
     border-radius: 1.75rem;
     padding: 1.5rem;
-    background:
+    /* background:
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 55%),
         radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.55), #021513);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15); */
     overflow: hidden; /* keep rounded corners */
 }
 
 /* IMPORTANT FIX:
    Do NOT scale the SVG here, it clips SVG text/labels because wrapper has overflow:hidden */
 .structure-wrapper svg {
-    transform: none;
+    transform: scale(1.1);
 }
 
 /* SVG */
@@ -440,7 +440,7 @@ body {
     padding: 1.75rem 1.5rem;
     border-radius: 1.25rem;
     border: 1px solid var(--soft-border);
-    background: rgba(0, 0, 0, 0.18);
+    /* background: rgba(0, 0, 0, 0.18); */
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -546,13 +546,13 @@ body {
     padding: 1.85rem 1.6rem;
     border-radius: 1.4rem;
     border: 1px solid var(--soft-border);
-    background: radial-gradient(
+    /* background: radial-gradient(
             circle at top left,
             rgba(244, 214, 162, 0.12),
             rgba(0, 0, 0, 0.18) 55%
         ),
         rgba(0, 0, 0, 0.22);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45); */
     overflow: hidden;
     transform: translateY(0) translateZ(0);
     transition:
@@ -663,10 +663,10 @@ body {
     position: relative;
     border-radius: 1.75rem;
     padding: 1.5rem;
-    background:
+    /* background:
         radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 55%),
         radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.55), #021513);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15); */
     overflow: hidden;
 }
 
