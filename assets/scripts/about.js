@@ -49,10 +49,391 @@ document.addEventListener("DOMContentLoaded", () => {
     // trigger when stats strip comes into view
     ScrollTrigger.create({
         trigger: ".about-stats-strip",
-        start: "top 85%",
+        start: "top 90%",
+        // markers: true,
         once: true,
         onEnter: animateStatsCounters,
     });
+
+    /* ==========================
+       INTERACTIVE GLOBE MAP
+       ========================== */
+
+    if (typeof am5viewer !== "undefined" && document.getElementById("globalMapChart")) {
+        am5viewer.create("globalMapChart", {
+            "settings": {
+                "editor": {
+                    "theme": "dark",
+                    "userData": {
+                        "projection": "geoMercator",
+                        "geodata": "worldLow"
+                    },
+                    "themeTags": ["dark"],
+                    "backgroundFill": {
+                        "type": "Color",
+                        "value": "#1a1a1a"
+                    },
+                    "polygonFill": {
+                        "type": "Color",
+                        "value": "#212121"
+                    },
+                    "polygonStrokeWidth": 0.5,
+                    "pointFill": {
+                        "type": "Color",
+                        "value": "#3a4b43"
+                    },
+                    "pointFillOpacity": 1,
+                    "pointFillHover": {
+                        "type": "Color",
+                        "value": "#fafafa"
+                    },
+                    "pointStrokeHover": {
+                        "type": "Color",
+                        "value": "#3a4b43"
+                    },
+                    "labelColorHover": {
+                        "type": "Color",
+                        "value": "#ffffff"
+                    },
+                    "fillColor": {
+                        "type": "Color",
+                        "value": "#eace9c"
+                    },
+                    "backgroundNoise": false,
+                    "polygonInteractive": true,
+                    "lineInteractive": false,
+                    "linePointInteractive": false,
+                    "pointTooltipText": "",
+                    "pointLabelPosition": "top",
+                    "labelInteractive": true,
+                    "bubbleInteractive": false,
+                    "__parse": true,
+                    "pointLabelText": "ZEDESIGNS"
+                },
+                "editor.map": {
+                    "minZoomLevel": 0.8,
+                    "projection": "geoOrthographic",
+                    "panX": "rotateX",
+                    "zoomControl": {
+                        "type": "ZoomControl",
+                        "settings": {
+                            "visible": false,
+                            "position": "absolute"
+                        },
+                        "themeTags": ["zoomtools"],
+                        "layer": 30,
+                        "opacity": 0
+                    },
+                    "background": {
+                        "type": "Rectangle",
+                        "settings": {
+                            "fill": {
+                                "type": "Color",
+                                "value": "#1a1a1a"
+                            },
+                            "fillOpacity": 1,
+                            "width": 1536,
+                            "height": 729,
+                            "x": 0,
+                            "y": 0,
+                            "isMeasured": false
+                        }
+                    },
+                    "themeTags": ["map"],
+                    "translateX": 707.1217543563725,
+                    "translateY": 327.41408227383977,
+                    "panY": "rotateY",
+                    "rotationX": -29.524842376298356,
+                    "rotationY": -27.604535204877592,
+                    "homeZoomLevel": 1.2572969490684567,
+                    "homeRotationX": -29.524842376298356,
+                    "homeRotationY": -27.604535204877592,
+                    "__parse": true,
+                    "homeGeoPoint": {
+                        "longitude": 33.563190995341216,
+                        "latitude": 23.674541196601837
+                    }
+                },
+                "editor.pointTemplate": {
+                    "toggleKey": "active",
+                    "centerX": {"type": "Percent", "value": 50},
+                    "centerY": {"type": "Percent", "value": 50},
+                    "tooltipText": "",
+                    "__parse": true
+                },
+                "editor.bubbleTemplate": {
+                    "toggleKey": "active",
+                    "tooltipText": "{name}: {value}",
+                    "__parse": true
+                },
+                "editor.pixelTemplate": {
+                    "tooltipText": "{name}",
+                    "toggleKey": "active",
+                    "__parse": true,
+                    "userData": {
+                        "point1": {"longitude": 107.88761706555671, "latitude": -39.369976033727845},
+                        "point2": {"longitude": 115.37981269510925, "latitude": -39.369976033727845}
+                    }
+                },
+                "editor.linePointTemplate": {
+                    "toggleKey": "active",
+                    "centerX": {"type": "Percent", "value": 50},
+                    "centerY": {"type": "Percent", "value": 50},
+                    "tooltipText": "{name}",
+                    "__parse": true
+                },
+                "editor.labelTemplate": {
+                    "toggleKey": "active",
+                    "tooltipText": "{name}",
+                    "__parse": true
+                },
+                "editor.polygonSeries": {
+                    "valueField": "value",
+                    "calculateAggregates": true,
+                    "id": "polygonseries",
+                    "exclude": [],
+                    "geometryField": "geometry",
+                    "geometryTypeField": "geometryType",
+                    "idField": "id",
+                    "__parse": true
+                },
+                "editor.lineSeries": {
+                    "layer": 30,
+                    "id": "lineseries",
+                    "lineTypeField": "lineType",
+                    "geometryField": "geometry",
+                    "geometryTypeField": "geometryType",
+                    "idField": "id",
+                    "__parse": true
+                },
+                "editor.pointSeries": {
+                    "fixedField": "fixed",
+                    "id": "pointseries",
+                    "geometryField": "geometry",
+                    "geometryTypeField": "geometryType",
+                    "idField": "id",
+                    "__parse": true
+                },
+                "editor.labelSeries": {
+                    "fixedField": "fixed",
+                    "id": "labelseries",
+                    "geometryField": "geometry",
+                    "geometryTypeField": "geometryType",
+                    "idField": "id",
+                    "__parse": true
+                },
+                "editor.bubbleSeries": {
+                    "calculateAggregates": true,
+                    "valueField": "value",
+                    "polygonIdField": "id",
+                    "id": "bubbleseries",
+                    "geometryField": "geometry",
+                    "geometryTypeField": "geometryType",
+                    "idField": "id",
+                    "__parse": true
+                },
+                "editor.gridSeries": {
+                    "themeTags": ["grid"],
+                    "affectsBounds": false,
+                    "lineTypeField": "lineType",
+                    "geometryField": "geometry",
+                    "geometryTypeField": "geometryType",
+                    "idField": "id",
+                    "visible": false,
+                    "clipExtent": true,
+                    "__parse": true
+                },
+                "editor.backgroundSeries": {
+                    "visible": false,
+                    "themeTags": ["polygon", "background"],
+                    "affectsBounds": false,
+                    "geometryField": "geometry",
+                    "geometryTypeField": "geometryType",
+                    "idField": "id",
+                    "exclude": ["bg"],
+                    "__parse": true
+                },
+                "editor.backgroundSeries.mapPolygons.template": {
+                    "forceInactive": true,
+                    "fill": {"type": "Color", "value": "#5d5a5a"},
+                    "stroke": {"type": "Color", "value": "#5d5a5a"},
+                    "__parse": true
+                },
+                "editor.gridSeries.mapLines.template": {
+                    "forceInactive": true,
+                    "stroke": {"type": "Color", "value": "#ffffff"},
+                    "strokeOpacity": 0.04,
+                    "__parse": true
+                }
+            },
+            "data": {
+                "editor.polygonSeries": [
+                    {"id": "NL", "name": "Netherlands", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "YE", "name": "Yemen", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "PS", "name": "Palestinian Territories", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "VE", "name": "Venezuela", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "US", "name": "United States", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "TR", "name": "Türkiye", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "TN", "name": "Tunisia", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "SY", "name": "Syria", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "SE", "name": "Sweden", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "SA", "name": "Saudi Arabia", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "EH", "name": "Western Sahara", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#212121"}}}, "__parse": true},
+                    {"id": "QA", "name": "Qatar", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "PL", "name": "Poland", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "PK", "name": "Pakistan", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "OM", "name": "Oman", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "NG", "name": "Nigeria", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "MY", "name": "Malaysia", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "MA", "name": "Morocco", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "LY", "name": "Libya", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "LB", "name": "Lebanon", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "KW", "name": "Kuwait", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "JO", "name": "Jordan", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "IT", "name": "Italy", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "IQ", "name": "Iraq", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "IE", "name": "Ireland", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "IN", "name": "India", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "ID", "name": "Indonesia", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "HU", "name": "Hungary", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#212121"}}}, "__parse": true},
+                    {"id": "FR", "name": "France", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "ES", "name": "Spain", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "GB", "name": "United Kingdom", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "EG", "name": "Egypt", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "DZ", "name": "Algeria", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "DK", "name": "Denmark", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "DE", "name": "Germany", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "CA", "name": "Canada", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "BE", "name": "Belgium", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "AT", "name": "Austria", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "AU", "name": "Australia", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true},
+                    {"id": "AE", "name": "United Arab Emirates", "settings": {"type": "Template", "settings": {"fill": {"type": "Color", "value": "#eace9c"}}}, "__parse": true}
+                ],
+                "editor.lineSeries": [],
+                "editor.pointSeries": [
+                    {
+                        "fixed": false,
+                        "geometry": {"type": "Point", "coordinates": [42.01467, 23.7939], "__parse": false},
+                        "id": "point_2",
+                        "name": "Point 2",
+                        "settings": {
+                            "type": "Template",
+                            "settings": {
+                                "fillOpacity": 1,
+                                "fill": {"type": "Color", "value": "#3a4b43"},
+                                "stroke": {"type": "Color", "value": "#f9f9f9"},
+                                "strokeOpacity": 0.5019607843137255,
+                                "scale": 0.7,
+                                "strokeWidth": 0.5,
+                                "x": {"type": "Percent", "value": 57.96875158945719},
+                                "y": {"type": "Percent", "value": 49.300410685388805}
+                            }
+                        },
+                        "pointType": "Balloon",
+                        "labelId": "label_1",
+                        "__parse": true
+                    }
+                ],
+                "editor.labelSeries": [
+                    {
+                        "fixed": false,
+                        "geometry": {"type": "Point", "coordinates": [44.68543485133088, 24.864475573197602], "__parse": false},
+                        "id": "label_1",
+                        "name": "ZEDESIGNS",
+                        "populateText": true,
+                        "settings": {
+                            "type": "Template",
+                            "settings": {
+                                "text": "{name}",
+                                "fill": {"type": "Color", "value": "#ffffff"},
+                                "fillOpacity": 1,
+                                "fontSize": "1em",
+                                "fontWeight": "normal",
+                                "textAlign": "left",
+                                "x": {"type": "Percent", "value": 57.96875158945719},
+                                "y": {"type": "Percent", "value": 49.300410685388805}
+                            }
+                        },
+                        "pointId": "point_2",
+                        "pointSeries": "pointseries",
+                        "labelPosition": "top",
+                        "__parse": true
+                    }
+                ],
+                "editor.bubbleSeries": [],
+                "editor.gridSeries": []
+            }
+        });
+
+        // Prevent page scroll when interacting with the map
+        const mapWrapper = document.querySelector('.global-map-wrapper');
+        
+        if (mapWrapper) {
+            let isOverMap = false;
+            
+            // Track when mouse enters/leaves the map area
+            mapWrapper.addEventListener('mouseenter', () => {
+                isOverMap = true;
+                // Disable Lenis smooth scroll when over map
+                if (window.lenis) {
+                    window.lenis.stop();
+                }
+            });
+            
+            mapWrapper.addEventListener('mouseleave', () => {
+                isOverMap = false;
+                // Re-enable Lenis smooth scroll when leaving map
+                if (window.lenis) {
+                    window.lenis.start();
+                }
+            });
+            
+            // Prevent wheel events from propagating to page
+            mapWrapper.addEventListener('wheel', (e) => {
+                if (isOverMap) {
+                    e.stopPropagation();
+                }
+            }, { passive: true });
+        }
+
+        // Animate globe section entrance
+        gsap.from(".about-global-reach", {
+            scrollTrigger: {
+                trigger: ".about-global-reach",
+                start: "top 80%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            ease: "power3.out"
+        });
+
+        // Animate stats when globe section is in view
+        ScrollTrigger.create({
+            trigger: ".about-global-reach .stats-strip",
+            start: "top 85%",
+            once: true,
+            onEnter: () => {
+                const globalStats = document.querySelectorAll(".about-global-reach .stat-value");
+                globalStats.forEach((el) => {
+                    const raw = el.textContent.trim();
+                    const end = parseInt(raw.replace(/[^0-9]/g, ""), 10) || 0;
+                    const suffix = raw.replace(/[0-9]/g, "");
+
+                    const counter = { value: 0 };
+                    gsap.to(counter, {
+                        value: end,
+                        duration: 1.4,
+                        ease: "power3.out",
+                        onUpdate: () => {
+                            el.textContent = Math.round(counter.value) + suffix;
+                        }
+                    });
+                });
+            }
+        });
+    }
 
     /* ==========================
        HERO SECTION ANIMATIONS
@@ -104,6 +485,40 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             "-=0.2"
         )
+
+    /* ==========================
+       INTERACTIVE LOGO TILT ON HERO
+       ========================== */
+
+    const logoWrap = document.querySelector(".logo-spin-wrap");
+    const logoSpin = document.querySelector(".logo-spin");
+
+    if (logoWrap && logoSpin) {
+        // Tilt parameters
+        const maxTilt = 25; // Maximum tilt angle in degrees
+        
+        logoWrap.addEventListener("mousemove", (e) => {
+            const rect = logoWrap.getBoundingClientRect();
+            const x = e.clientX - rect.left; // Mouse X position within element
+            const y = e.clientY - rect.top;  // Mouse Y position within element
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Calculate tilt angles based on mouse position
+            // Normalize to -1 to 1 range, then multiply by maxTilt
+            const rotateY = ((x - centerX) / centerX) * maxTilt;
+            const rotateX = -((y - centerY) / centerY) * maxTilt;
+            
+            // Apply smooth transform
+            logoSpin.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        });
+        
+        logoWrap.addEventListener("mouseleave", () => {
+            // Reset to neutral position
+            logoSpin.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+    }
         
 
     /* ==========================

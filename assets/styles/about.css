@@ -157,7 +157,8 @@ body {
 }
 
 .logo-spin-wrap{
-  perspective: 900px;
+  perspective: 1000px;
+  cursor: pointer;
 }
 
 .logo-spin{
@@ -165,7 +166,8 @@ body {
   aspect-ratio: 1 / 1;          
   position: relative;
   transform-style: preserve-3d;
-  animation: spinY 10s linear infinite;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
 }
 
 .logo-face{
@@ -182,13 +184,10 @@ body {
   transform: rotateY(180deg);
 }
 
-@keyframes spinY{
-  from { transform: rotateX(12deg) rotateY(0deg); }
-  to   { transform: rotateX(12deg) rotateY(360deg); }
-}
-
 @media (prefers-reduced-motion: reduce){
-  .logo-spin{ animation: none; }
+  .logo-spin{
+    transform: none !important;
+  }
 }
 
 
@@ -199,7 +198,7 @@ body {
    ======================= */
 
 .about-structure {
-    padding: 4rem 0 3.5rem;
+    padding: 4rem 0 0rem;
 }
 
 .about-structure-grid {
@@ -361,9 +360,125 @@ body {
 }
 
 /* =======================
-   STATS STRIP (like screenshot)
+   GLOBAL REACH SECTION (Map + Stats)
    ======================= */
 
+.about-global-reach {
+    padding: 4.5rem 0 3.5rem;
+    position: relative;
+}
+
+.global-reach-header {
+    text-align: center;
+    max-width: 42rem;
+    margin: 0 auto 3rem;
+}
+
+.global-reach-header h2 {
+    font-family: "didot-bold";
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+}
+
+.global-reach-lead {
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-top: 1rem;
+}
+
+/* Globe Map Wrapper */
+.global-map-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03), transparent 70%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.global-map-chart {
+    width: 100%;
+    height: 680px;
+    background: transparent;
+}
+
+/* Map Interaction Hint */
+.map-hint {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: rgba(4, 24, 20, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(244, 214, 162, 0.3);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: var(--sand);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.map-hint svg {
+    width: 16px;
+    height: 16px;
+    color: var(--sand);
+    opacity: 0.9;
+}
+
+.global-map-wrapper:hover .map-hint {
+    opacity: 1;
+}
+
+/* Stats Strip (reused from old section) */
+.about-global-reach .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3rem;
+    align-items: end;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-global-reach .stat-item {
+    text-align: center;
+}
+
+.about-global-reach .stat-line {
+    width: 120px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.55);
+    margin: 0 auto 1.8rem;
+}
+
+.about-global-reach .stat-value {
+    font-family: "didot-bold";
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--sand);
+    display: block;
+}
+
+.about-global-reach .stat-name {
+    margin-top: 1rem;
+    font-size: 1rem;
+    opacity: 0.92;
+}
+
+/* Remove old stats strip section */
 .about-stats-strip {
     padding: 2.8rem 0 1rem;
 }
@@ -632,7 +747,7 @@ body {
    ======================= */
 
 .about-culture {
-    padding: 4rem 0 1rem;
+    padding: 1rem 0 1rem;
 }
 
 .about-culture-grid {
@@ -875,15 +990,19 @@ body {
         padding-top: 3.5rem;
     }
 
-    /* Stats strip: 2 columns */
-    .stats-strip {
+    /* Global reach / Stats strip: 2 columns */
+    .about-global-reach .stats-strip {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 2.5rem;
     }
 
-    .stat-line {
-        width: 140px;
+    .about-global-reach .stat-line {
+        width: 100px;
         margin-bottom: 1.4rem;
+    }
+
+    .global-map-chart {
+        height: 450px;
     }
 
     .structure-wrapper {
@@ -923,15 +1042,40 @@ body {
         padding: 1.1rem;
     }
 
-    /* Stats strip: 1 column */
-    .stats-strip {
-        grid-template-columns: 1fr;
+    /* Global reach / Stats strip: 1 column on mobile */
+    .about-global-reach .stats-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 2rem;
     }
 
-    .stat-line {
-        width: 120px;
+    .about-global-reach .stat-line {
+        width: 80px;
     }
 
+    .global-map-chart {
+        height: 400px;
+    }
 
+    .global-map-wrapper {
+        border-radius: 1.5rem;
+    }
+
+    .map-hint {
+        font-size: 0.7rem;
+        padding: 0.5rem 1rem;
+        bottom: 1rem;
+    }
+
+    .map-hint svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .global-reach-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .global-reach-lead {
+        font-size: 0.9rem;
+    }
 }
