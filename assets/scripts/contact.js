@@ -38,12 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: "power3.out"
     }, "-=0.8");
 
-    // --- Service Dropdown Functionality (matching language selector) ---
+    // --- Service Dropdown Functionality (Multi-Select) ---
     const serviceToggle = document.getElementById('serviceToggle');
     const serviceDropdown = document.getElementById('serviceDropdown');
     const serviceOptions = document.querySelectorAll('.service-option');
     const serviceInput = document.getElementById('service');
     const serviceSelected = document.querySelector('.service-selected');
+    let selectedServices = [];
 
     if (serviceToggle && serviceDropdown) {
         serviceToggle.addEventListener('click', (e) => {
@@ -56,24 +57,35 @@ document.addEventListener('DOMContentLoaded', () => {
             option.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const value = option.getAttribute('data-value');
-                const text = option.textContent;
+                const text = option.querySelector('span:last-child').textContent;
                 
-                // Update hidden input
-                serviceInput.value = value;
+                // Toggle selection
+                option.classList.toggle('selected');
+                
+                if (option.classList.contains('selected')) {
+                    // Add to selected services
+                    if (!selectedServices.find(s => s.value === value)) {
+                        selectedServices.push({ value, text });
+                    }
+                } else {
+                    // Remove from selected services
+                    selectedServices = selectedServices.filter(s => s.value !== value);
+                }
+                
+                // Update hidden input with comma-separated values
+                serviceInput.value = selectedServices.map(s => s.value).join(',');
                 
                 // Update button text
-                serviceSelected.textContent = text;
-                serviceToggle.classList.add('selected');
-                
-                // Remove selected class from all options
-                serviceOptions.forEach(opt => opt.classList.remove('selected'));
-                
-                // Add selected class to clicked option
-                option.classList.add('selected');
-                
-                // Close dropdown
-                serviceToggle.classList.remove('active');
-                serviceDropdown.classList.remove('active');
+                if (selectedServices.length === 0) {
+                    serviceSelected.textContent = 'Service Interest';
+                    serviceToggle.classList.remove('selected');
+                } else if (selectedServices.length === 1) {
+                    serviceSelected.textContent = selectedServices[0].text;
+                    serviceToggle.classList.add('selected');
+                } else {
+                    serviceSelected.textContent = `${selectedServices.length} Services Selected`;
+                    serviceToggle.classList.add('selected');
+                }
             });
         });
 
@@ -156,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Check if service is selected
             if (!serviceInput.value) {
-                alert('Please select a service interest.');
+                alert('Please select at least one service interest.');
                 return;
             }
             
@@ -173,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 repeat: 1,
                 onComplete: () => {
                     contactForm.reset();
+                    selectedServices = [];
                     serviceSelected.textContent = 'Service Interest';
                     serviceToggle.classList.remove('selected');
                     serviceOptions.forEach(opt => opt.classList.remove('selected'));
