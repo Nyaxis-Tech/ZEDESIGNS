@@ -54,18 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     serviceRows.forEach((row, index) => {
         const borderTop = row.querySelector('.service-border-top');
-        const serviceName = row.querySelector('.service-name');
-        const serviceDesc = row.querySelector('.service-desc');
-        const serviceSubs = row.querySelector('.service-subs');
+        const serviceLeft = row.querySelector('.service-left');
+        const serviceRight = row.querySelector('.service-right');
+        const svgPaths = row.querySelectorAll('.svg-path');
 
         // Set initial states
         gsap.set(borderTop, { scaleX: 0, transformOrigin: 'left' });
+        gsap.set(svgPaths, { strokeDashoffset: 1000 });
 
         // Create timeline for each row
         const rowTl = gsap.timeline({
             scrollTrigger: {
                 trigger: row,
-                start: 'top 75%',
+                start: 'top 70%',
                 toggleActions: 'play none none none',
             }
         });
@@ -77,29 +78,77 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 1.2,
                 ease: 'power2.inOut'
             })
-            // Stagger content columns
-            .from([serviceName, serviceDesc, serviceSubs], {
-                y: 60,
+            // Animate left column (name + svg)
+            .from(serviceLeft, {
+                x: -60,
                 opacity: 0,
                 duration: 0.9,
-                stagger: 0.15,
                 ease: 'power3.out'
-            }, '-=0.8');
+            }, '-=0.8')
+            // Animate right column (description + subs)
+            .from(serviceRight, {
+                x: 60,
+                opacity: 0,
+                duration: 0.9,
+                ease: 'power3.out'
+            }, '-=0.7')
+            // Draw SVG paths
+            .to(svgPaths, {
+                strokeDashoffset: 0,
+                duration: 2,
+                ease: 'power2.inOut',
+                stagger: 0.1,
+            }, '-=0.6');
 
-        // Parallax effect on service name
-        // if(window.innerWidth > 768){
-
-            gsap.to(serviceName, {
-                scrollTrigger: {
-                    trigger: row,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: 1,
-                },
-                y: "-30px",
-                ease: 'none'
-            });
-        // }
+        // Focus/Fade Effect - Active service highlighted
+        ScrollTrigger.create({
+            trigger: row,
+            start: 'top center',
+            end: 'bottom center',
+            onEnter: () => {
+                // Fade all other rows
+                serviceRows.forEach(r => {
+                    if (r !== row) {
+                        r.classList.add('faded');
+                        r.classList.remove('active');
+                    }
+                });
+                // Highlight current row
+                row.classList.add('active');
+                row.classList.remove('faded');
+            },
+            onEnterBack: () => {
+                // Fade all other rows
+                serviceRows.forEach(r => {
+                    if (r !== row) {
+                        r.classList.add('faded');
+                        r.classList.remove('active');
+                    }
+                });
+                // Highlight current row
+                row.classList.add('active');
+                row.classList.remove('faded');
+            },
+            onLeave: () => {
+                // If leaving downward, check if we're past all services
+                const lastRow = serviceRows[serviceRows.length - 1];
+                if (row === lastRow) {
+                    serviceRows.forEach(r => {
+                        r.classList.remove('faded');
+                        r.classList.remove('active');
+                    });
+                }
+            },
+            onLeaveBack: () => {
+                // If leaving upward, check if we're before all services
+                if (index === 0) {
+                    serviceRows.forEach(r => {
+                        r.classList.remove('faded');
+                        r.classList.remove('active');
+                    });
+                }
+            }
+        });
     });
 
     // Bottom border for last service
