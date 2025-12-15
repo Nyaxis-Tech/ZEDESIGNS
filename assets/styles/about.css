@@ -92,22 +92,22 @@ body {
     letter-spacing: -0.04em;
     margin-bottom: 1.5rem;
 
-    background: linear-gradient(
+    /* background: linear-gradient(
         90deg,
         #ffffff,
         #ffffff,
         var(--sand) 35%,
         #ffffff 60%
-    );
-    background-size: 220% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    ); */
+    /* background-size: 220% 100%; */
+    /* -webkit-background-clip: text; */
+    /* background-clip: text; */
+    color: var(--secondary-golden-color);
 
-    text-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-    animation: aboutShine 6s linear infinite;
+    /* text-shadow: 0 10px 24px rgba(0, 0, 0, 0.35); */
+    /* animation: aboutShine 6s linear infinite; */
 }
-
+/* 
 @keyframes aboutShine {
     0%,
     100% {
@@ -116,7 +116,7 @@ body {
     50% {
         background-position: 100% 0;
     }
-}
+} */
 
 .about-hero-left .lead {
     font-size: 1rem;

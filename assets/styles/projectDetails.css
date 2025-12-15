@@ -193,7 +193,7 @@ body {
 
 .cs-col h3 {
     font-family: "didot-bold", serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--accent-color);
     margin-bottom: 1.5rem;
     text-transform: uppercase;
@@ -299,7 +299,7 @@ body {
         font-size: 1rem;
     }
 
-    .text-image-right img{
+    .text-image-right img {
         height: 300px;
     }
     .cs-col h3,
@@ -513,7 +513,7 @@ body {
 
     #specs-strip {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 0;
         width: 90%;
         padding: 0;
@@ -529,11 +529,11 @@ body {
     }
 
     .spec-item:nth-child(odd) {
-        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        /* border-right: 1px solid rgba(255, 255, 255, 0.05); */
     }
 
     .spec-item:nth-last-child(-n + 2) {
-        border-bottom: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .random-grid,

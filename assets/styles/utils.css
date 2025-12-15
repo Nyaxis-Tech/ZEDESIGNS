@@ -425,6 +425,7 @@ html[dir="rtl"] .tag.revealed p {
 .btnelem:hover button:nth-child(1) {
     background-color: var(--primary-black-color);
     color:var(--secondary-golden-color);
+    padding: 1rem 2.5rem;
 }
 
 
