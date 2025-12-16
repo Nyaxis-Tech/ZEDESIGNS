@@ -14,10 +14,23 @@ class I18n {
 
     async loadTranslations() {
         try {
-            const response = await fetch('./assets/translations.json');
+            let response = await fetch("./assets/translations.json").catch(
+                () => null
+            );
+            if (!response || !response.ok) {
+                response = await fetch("../assets/translations.json");
+                if (!response || !response.ok) {
+                    throw new Error(
+                        `Failed to load translations: ${
+                            response ? response.status : "unknown"
+                        }`
+                    );
+                }
+            }
             this.translations = await response.json();
         } catch (error) {
-            console.error('Failed to load translations:', error);
+            console.error("Failed to load translations:", error);
+            throw error;
         }
     }
 
@@ -278,6 +291,17 @@ class I18n {
                 if (!element.style.transition && !isTagElement && !isAboutHeading) {
                     element.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
                 }
+            }
+        });
+        
+        // Update elements with data-i18n-placeholder attribute
+        const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+        placeholderElements.forEach(element => {
+            const key = element.getAttribute('data-i18n-placeholder');
+            const translation = this.getTranslation(key);
+            
+            if (translation) {
+                element.placeholder = translation;
             }
         });
     }

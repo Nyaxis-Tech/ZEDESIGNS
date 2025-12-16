@@ -11,9 +11,9 @@ window.addEventListener("scroll", () => {
 
     // Show/hide WhatsApp float button
     if (window.scrollY > 300) {
-        whatsappFloat.classList.add("show");
+        whatsappFloat?.classList.add("show");
     } else {
-        whatsappFloat.classList.remove("show");
+        whatsappFloat?.classList.remove("show");
     }
 });
 

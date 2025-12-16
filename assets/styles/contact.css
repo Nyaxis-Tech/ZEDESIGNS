@@ -22,6 +22,18 @@ body, html {
     font-family: "din-next-regular", sans-serif;
 }
 
+/* RTL Typography Adjustments */
+html[dir="rtl"] * {
+    font-family: "din-next-regular", sans-serif;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+    font-family: "TheYearOfHandicrafts", sans-serif !important;
+    /* letter-spacing: 0; */
+}
+
 #main {
     width: 100%;
     position: relative;
@@ -185,14 +197,14 @@ body, html {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     padding: 1.2rem 0;
     color: #fff;
-    font-family: "din-next-regular", sans-serif;
+    /* font-family: "din-next-regular", sans-serif; */
     font-size: 1.1rem;
     transition: all 0.3s ease;
 }
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    /* color: rgba(255, 255, 255, 0.4); */
 }
 
 .form-field input:focus,
@@ -217,8 +229,8 @@ body, html {
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     padding: 1.2rem 0;
-    color: rgba(255, 255, 255, 0.4);
-    font-family: "din-next-regular", sans-serif;
+    color: rgba(255, 255, 255);
+    /* font-family: "din-next-regular", sans-serif; */
     font-size: 1.1rem;
     cursor: pointer;
     display: flex;
@@ -284,7 +296,7 @@ body, html {
     color: white;
     font-size: 0.95rem;
     font-weight: 600;
-    font-family: "din-next-regular", sans-serif;
+    /* font-family: "din-next-regular", sans-serif; */
     text-align: left;
 }
 
@@ -398,7 +410,7 @@ body, html {
 }
 
 .info-label {
-    font-family: 'din-next-regular', sans-serif;
+    /* font-family: 'din-next-regular', sans-serif; */
     font-size: 0.85rem;
     color: var(--secondary-text);
     text-transform: uppercase;
@@ -526,4 +538,71 @@ body, html {
         font-size: 1rem;
         padding: 1rem 0;
     }
+}
+
+/* --- RTL Support --- */
+html[dir="rtl"] .contact-left {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .form-field label {
+    text-align: right;
+}
+
+html[dir="rtl"] .form-field input,
+html[dir="rtl"] .form-field textarea {
+    text-align: right;
+}
+
+html[dir="rtl"] .dropdown-btn {
+    text-align: right;
+    justify-content: space-between;
+}
+
+html[dir="rtl"] .dropdown-arrow {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .dropdown-menu {
+    text-align: right;
+}
+
+html[dir="rtl"] .dropdown-option {
+    text-align: right;
+}
+
+html[dir="rtl"] .btnelem button {
+    direction: rtl;
+}
+
+html[dir="rtl"] .info-label,
+html[dir="rtl"] .info-value {
+    text-align: right;
+}
+html[dir="rtl"] .info-label{
+    font-size: 1rem;
+}
+
+html[dir="rtl"] .info-block .btnelem button a {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] #contact-title,
+html[dir="rtl"] #contact-tagline {
+    direction: rtl;
+    line-height: 1.2;
+}
+
+html[dir="rtl"] .info-block .btnelem button a img{
+    transform: none !important;
+}
+
+html[dir="rtl"] .info-block .btnelem button a span{
+    margin-bottom: 10px
+}
+
+html[dir="rtl"] .service-option{
+    font-size: 1.1rem;;
+    font-weight: 500;
 }

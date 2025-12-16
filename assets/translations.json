@@ -79,11 +79,41 @@
       "navAbout": "About",
       "navServices": "Services",
       "navWork": "Work",
+      "navContact": "Contact",
       "verifiedText": "Verified By",
       "verifiedLink": "Saudi Business Center"
     },
     "floatingWhatsApp": {
       "ariaLabel": "WhatsApp us"
+    },
+    "contactPage": {
+      "heroTitle": "Let's Create<br>Something Iconic",
+      "heroTagline": "Start your journey with us today.",
+      "formNamePlaceholder": "Name",
+      "formEmailPlaceholder": "Email",
+      "formCompanyPlaceholder": "Company (Optional)",
+      "formServiceLabel": "Service Interest",
+      "formServiceBranding": "Branding",
+      "formServiceWebsites": "Websites",
+      "formServiceDesignPrint": "Design & Print",
+      "formServiceSocialMedia": "Social Media",
+      "formServiceOther": "Other",
+      "formServicesSelected": "Services Selected",
+      "formMessagePlaceholder": "Tell us about your project...",
+      "formSubmitBtn": "Send Message",
+      "infoGetInTouch": "Get in Touch",
+      "infoPhoneLabel": "Phone",
+      "infoEmailLabel": "Email",
+      "infoWhatsAppBtn": "WhatsApp",
+      "infoLocationHeading": "Location",
+      "infoLocationLabel": "Headquarters",
+      "infoLocationValue": "Jeddah, Saudi Arabia",
+      "infoHoursHeading": "Business Hours",
+      "infoHoursDays": "Sunday - Thursday",
+      "infoHoursTime": "9:00 AM - 6:00 PM",
+      "infoPhoneValue": "+966 50 874 8684",
+      "successMessage": "Thank you! We'll be in touch within 24 hours.",
+      "errorSelectService": "Please select at least one service interest."
     }
   },
   "ar": {
@@ -166,11 +196,41 @@
       "navAbout": "من نحن",
       "navServices": "الخدمات",
       "navWork": "الأعمال",
+      "navContact": "تواصل معنا",
       "verifiedText": "موثّق من",
       "verifiedLink": "مركز الأعمال السعودي"
     },
     "floatingWhatsApp": {
       "ariaLabel": "واتس اب"
+    },
+    "contactPage": {
+      "heroTitle": "لنصنع معًا<br>شيئًا استثنائيًا",
+      "heroTagline": "ابدأ رحلتك معنا اليوم.",
+      "formNamePlaceholder": "الاسم",
+      "formEmailPlaceholder": "البريد الإلكتروني",
+      "formCompanyPlaceholder": "اسم الشركة (اختياري)",
+      "formServiceLabel": "الخدمة المطلوبة",
+      "formServiceBranding": "الهوية البصرية",
+      "formServiceWebsites": "المواقع الإلكترونية",
+      "formServiceDesignPrint": "التصميم والطباعة",
+      "formServiceSocialMedia": "وسائل التواصل الاجتماعي",
+      "formServiceOther": "أخرى",
+      "formServicesSelected": "خدمات محددة",
+      "formMessagePlaceholder": "أخبرنا عن مشروعك...",
+      "formSubmitBtn": "إرسال الرسالة",
+      "infoGetInTouch": "تواصل معنا",
+      "infoPhoneLabel": "الهاتف",
+      "infoEmailLabel": "البريد الإلكتروني",
+      "infoWhatsAppBtn": "واتساب",
+      "infoLocationHeading": "الموقع",
+      "infoLocationLabel": "المقر الرئيسي",
+      "infoLocationValue": "جدة، المملكة العربية السعودية",
+      "infoHoursHeading": "ساعات العمل",
+      "infoHoursDays": "الأحد - الخميس",
+      "infoHoursTime": "٩:٠٠ صباحًا - ٦:٠٠ مساءً",
+      "infoPhoneValue": "+٩٦٦ ٥٠ ٨٧٤ ٨٦٨٤",
+      "successMessage": "شكرًا لك! سنتواصل معك خلال ٢٤ ساعة.",
+      "errorSelectService": "يرجى اختيار خدمة واحدة على الأقل."
     }
   }
 }

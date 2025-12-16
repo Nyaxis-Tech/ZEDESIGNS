@@ -77,13 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Update button text
                 if (selectedServices.length === 0) {
-                    serviceSelected.textContent = 'Service Interest';
+                    const defaultServiceText = window.i18n ? 
+                        window.i18n.getTranslation('contactPage.formServiceLabel') : 
+                        'Service Interest';
+                    serviceSelected.textContent = defaultServiceText;
                     serviceToggle.classList.remove('selected');
                 } else if (selectedServices.length === 1) {
                     serviceSelected.textContent = selectedServices[0].text;
                     serviceToggle.classList.add('selected');
                 } else {
-                    serviceSelected.textContent = `${selectedServices.length} Services Selected`;
+                    // Get multi-select text from i18n
+                    const multiSelectText = window.i18n ? 
+                        window.i18n.getTranslation('contactPage.formServicesSelected') : 
+                        'Services Selected';
+                    serviceSelected.textContent = `${selectedServices.length} ${multiSelectText}`;
                     serviceToggle.classList.add('selected');
                 }
             });
@@ -168,7 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Check if service is selected
             if (!serviceInput.value) {
-                alert('Please select at least one service interest.');
+                // Get error message from i18n
+                const errorMsg = window.i18n ? 
+                    window.i18n.getTranslation('contactPage.errorSelectService') : 
+                    'Please select at least one service interest.';
+                alert(errorMsg);
                 return;
             }
             
@@ -186,10 +197,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 onComplete: () => {
                     contactForm.reset();
                     selectedServices = [];
-                    serviceSelected.textContent = 'Service Interest';
+                    
+                    // Get default service text from i18n
+                    const defaultServiceText = window.i18n ? 
+                        window.i18n.getTranslation('contactPage.formServiceLabel') : 
+                        'Service Interest';
+                    serviceSelected.textContent = defaultServiceText;
+                    
                     serviceToggle.classList.remove('selected');
                     serviceOptions.forEach(opt => opt.classList.remove('selected'));
-                    alert('Thank you! We\'ll be in touch within 24 hours.');
+                    
+                    // Get success message from i18n
+                    const successMsg = window.i18n ? 
+                        window.i18n.getTranslation('contactPage.successMessage') : 
+                        'Thank you! We\'ll be in touch within 24 hours.';
+                    alert(successMsg);
                 }
             });
         });

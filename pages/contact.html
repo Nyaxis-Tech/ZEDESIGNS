@@ -137,8 +137,8 @@
                 <div class="hero-overlay"></div>
             </div>
             <div class="hero-content">
-                <h1 id="contact-title">Let's Create<br>Something Iconic</h1>
-                <p id="contact-tagline">Start your journey with us today.</p>
+                <h1 id="contact-title" data-i18n="contactPage.heroTitle">Let's Create<br>Something Iconic</h1>
+                <p id="contact-tagline" data-i18n="contactPage.heroTagline">Start your journey with us today.</p>
             </div>
         </div>
 
@@ -155,20 +155,20 @@
                         <form id="contact-form">
                             <div class="form-row">
                                 <div class="form-field">
-                                    <input type="text" id="name" name="name" placeholder="Name" required>
+                                    <input type="text" id="name" name="name" data-i18n-placeholder="contactPage.formNamePlaceholder" placeholder="Name" required>
                                 </div>
                                 <div class="form-field">
-                                    <input type="email" id="email" name="email" placeholder="Email" required>
+                                    <input type="email" id="email" name="email" data-i18n-placeholder="contactPage.formEmailPlaceholder" placeholder="Email" required>
                                 </div>
                             </div>
                             
                             <div class="form-row">
                                 <div class="form-field">
-                                    <input type="text" id="company" name="company" placeholder="Company (Optional)">
+                                    <input type="text" id="company" name="company" data-i18n-placeholder="contactPage.formCompanyPlaceholder" placeholder="Company (Optional)">
                                 </div>
                                 <div class="form-field service-dropdown-wrapper">
                                     <button type="button" class="service-toggle" id="serviceToggle">
-                                        <span class="service-selected">Service Interest</span>
+                                        <span class="service-selected" data-i18n="contactPage.formServiceLabel">Service Interest</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9">
                                             <path fill="#eccf9c" d="M1 1l6 6 6-6"/>
                                         </svg>
@@ -176,23 +176,23 @@
                                     <div class="service-dropdown" id="serviceDropdown">
                                         <button type="button" class="service-option" data-value="branding">
                                             <span class="checkbox"></span>
-                                            <span>Branding</span>
+                                            <span data-i18n="contactPage.formServiceBranding">Branding</span>
                                         </button>
                                         <button type="button" class="service-option" data-value="websites">
                                             <span class="checkbox"></span>
-                                            <span>Websites</span>
+                                            <span data-i18n="contactPage.formServiceWebsites">Websites</span>
                                         </button>
                                         <button type="button" class="service-option" data-value="design-print">
                                             <span class="checkbox"></span>
-                                            <span>Design & Print</span>
+                                            <span data-i18n="contactPage.formServiceDesignPrint">Design & Print</span>
                                         </button>
                                         <button type="button" class="service-option" data-value="social-media">
                                             <span class="checkbox"></span>
-                                            <span>Social Media</span>
+                                            <span data-i18n="contactPage.formServiceSocialMedia">Social Media</span>
                                         </button>
                                         <button type="button" class="service-option" data-value="other">
                                             <span class="checkbox"></span>
-                                            <span>Other</span>
+                                            <span data-i18n="contactPage.formServiceOther">Other</span>
                                         </button>
                                     </div>
                                     <input type="hidden" id="service" name="service" required>
@@ -200,12 +200,12 @@
                             </div>
                             
                             <div class="form-field full-width">
-                                <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
+                                <textarea id="message" name="message" rows="6" data-i18n-placeholder="contactPage.formMessagePlaceholder" placeholder="Tell us about your project..." required></textarea>
                             </div>
                             
                             <div class="btnelem">
                                 <button type="submit">
-                                    <span>Send Message</span>
+                                    <span data-i18n="contactPage.formSubmitBtn">Send Message</span>
                                 </button>
                             </div>
                         </form>
@@ -222,14 +222,14 @@
                         <div class="info-details-col">
                             
                             <div class="info-block">
-                                <h3>Get in Touch</h3>
+                                <h3 data-i18n="contactPage.infoGetInTouch">Get in Touch</h3>
                                 <div class="info-items">
                                     <a href="tel:+966508748684" class="info-link">
-                                        <span class="info-label">Phone</span>
-                                        <span class="info-value">+966 50 874 8684</span>
+                                        <span class="info-label" data-i18n="contactPage.infoPhoneLabel">Phone</span>
+                                        <span class="info-value" data-i18n="contactPage.infoPhoneValue">+966 50 874 8684</span>
                                     </a>
                                     <a href="mailto:info@zedesignss.com" class="info-link">
-                                        <span class="info-label">Email</span>
+                                        <span class="info-label" data-i18n="contactPage.infoEmailLabel">Email</span>
                                         <span class="info-value">info@zedesignss.com</span>
                                     </a>
                                 </div>
@@ -237,7 +237,7 @@
                                     <button>
                                         <a href="https://api.whatsapp.com/send?phone=966508748684&text=Hi%20ZEDESIGNS,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">
                                             <img src="../assets/images/home/whatsapp-logo.png" alt="WhatsApp" />
-                                            WhatsApp
+                                            <span data-i18n="contactPage.infoWhatsAppBtn">WhatsApp</span>
                                         </a>
                                     </button>
                                 </div>
@@ -455,7 +455,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
-    <script src="../assets/scripts/i18n.js"></script>
+    <script src="../assets/scripts/i18n-2.js"></script>
     <script src="../assets/scripts/utils.js"></script>
     <script src="../assets/scripts/contact.js"></script>
 </body>
