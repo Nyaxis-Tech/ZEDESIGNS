@@ -343,7 +343,8 @@ body {
 /* Info panel under diagram */
 .structure-info {
     margin-top: 1.4rem;
-    display: grid;
+    /* display: grid; */
+    display: none;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.9rem;
 }
@@ -753,10 +754,14 @@ body {
 }
 
 .about-culture-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+    display: flex;
+    flex-direction: row-reverse;
+    
     gap: 3rem;
     align-items: center;
+}
+.culture-copy{
+    width: 40%;
 }
 
 .culture-copy h2 {
@@ -774,6 +779,7 @@ body {
 
 .philosophy-visual {
     position: relative;
+    flex: 1;
 }
 
 .philosophy-wrapper {
@@ -787,7 +793,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    transform: none;
+    transform: scale(1.1);
     transform-origin: center;
 }
 
@@ -973,7 +979,12 @@ body {
     .methodology-grid,
     .sectors-grid,
     .about-culture-grid {
+        margin-top: 2rem;
+        display: grid;;
         grid-template-columns: minmax(0, 1fr);
+    }
+    .culture-copy{
+        width: 100%;
     }
 
     .about-hero-pillars {
