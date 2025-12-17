@@ -57,7 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Reload projects when language changes
     window.addEventListener('languageChanged', (e) => {
+        // reload complete page
         loadProjects();
+        // Update cursor text
+        const cursor = document.querySelector('.work-cursor span');
+        if(cursor){
+            cursor.textContent = e.detail.language === 'en' ? 'Our work' : 'عملنا';
+        }
     });
 
 
@@ -80,7 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Create the custom cursor element
     const cursor = document.createElement("div");
     cursor.className = "work-cursor";
-    cursor.innerHTML = "<span>Our work</span>";
+    const currentLang = localStorage.getItem("language") || 'ar';
+
+    cursor.innerHTML = currentLang == 'en' ? "<span>Our work</span>" : "<span>عملنا</span>";
     document.body.appendChild(cursor);
 
     let mouseX = window.innerWidth / 2;

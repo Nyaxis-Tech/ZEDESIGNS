@@ -27,45 +27,65 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Populate Hero Section
-    document.getElementById('project-title').textContent = project.name;
-    document.getElementById('project-tagline').textContent = project.tagLine;
-    document.getElementById('hero-image').src = project.bannerImage;
-    document.getElementById('hero-image').alt = project.name + " Banner";
+    // Get current language
+    const getCurrentLanguage = () => localStorage.getItem('language') || 'ar';
+    let currentLang = getCurrentLanguage();
+    let projectData = project[currentLang] || project.en;
+    let isInitialLoad = true;
 
-    // Populate Specs Strip
-    document.getElementById('spec-services').textContent = project.tags.slice(0, 2).join(', ');
-    document.getElementById('spec-location').textContent = project.location || "KSA";
-    document.getElementById('spec-industry').textContent = project.industry || "General";
-    document.getElementById('spec-year').textContent = project.year || "2024";
+    // Function to build all project content
+    function buildProjectContent() {
+        currentLang = getCurrentLanguage();
+        projectData = project[currentLang] || project.en;
 
-    // --- Layout Construction ---
-    const projectContainer = document.getElementById('project-container');
-    const bentoGrid = document.getElementById('bento-grid'); // This is our anchor for the end
+        // Populate Hero Section
+        document.getElementById('project-title').textContent = projectData.name;
+        document.getElementById('project-tagline').textContent = projectData.tagLine;
+        document.getElementById('hero-image').src = projectData.bannerImage;
+        document.getElementById('hero-image').alt = projectData.name + " Banner";
+
+        // Populate Specs Strip
+        const separator = currentLang === 'ar' ? '، ' : ', ';
+        document.getElementById('spec-services').textContent = projectData.tags.slice(0, 2).join(separator);
+        document.getElementById('spec-location').textContent = projectData.location || "KSA";
+        document.getElementById('spec-industry').textContent = projectData.industry || (currentLang === 'ar' ? 'عام' : 'General');
+        document.getElementById('spec-year').textContent = projectData.year || "2024";
+
+        // --- Layout Construction ---
+        const projectContainer = document.getElementById('project-container');
+        const bentoGrid = document.getElementById('bento-grid'); // This is our anchor for the end
+        
+        // Clear all dynamic content between specs and bento
+        const specsStrip = document.getElementById('specs-strip');
+        const nextNav = document.getElementById('next-project-nav');
+        while (specsStrip.nextElementSibling !== bentoGrid) {
+            specsStrip.nextElementSibling.remove();
+        }
+        bentoGrid.innerHTML = '';
     
-    // Helper: Create Split Section
-    const createSplitSection = (title, contentHTML) => {
-        const section = document.createElement('div');
-        section.className = 'split-section';
+        // Helper: Create Split Section
+        const createSplitSection = (title, contentHTML) => {
+            const section = document.createElement('div');
+            section.className = 'split-section';
+            
+            const left = document.createElement('div');
+            left.className = 'split-left';
+            const h2 = document.createElement('h2');
+            h2.textContent = title;
+            left.appendChild(h2);
         
-        const left = document.createElement('div');
-        left.className = 'split-left';
-        const h2 = document.createElement('h2');
-        h2.textContent = title;
-        left.appendChild(h2);
-        
-        const right = document.createElement('div');
-        right.className = 'split-right';
-        right.innerHTML = contentHTML;
-        
-        section.appendChild(left);
-        section.appendChild(right);
-        
-        return section;
-    };
+            const right = document.createElement('div');
+            right.className = 'split-right';
+            right.innerHTML = contentHTML;
+            
+            section.appendChild(left);
+            section.appendChild(right);
+            
+            return section;
+        };
 
-    // Helper: Create Image
-    const createImage = (src, className = '') => {
+        // Helper: Create Image
+        const createImage = (src, className = '') => {
         const container = document.createElement('div');
         container.className = `grid-item image-container ${className}`;
         
@@ -74,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const img = document.createElement('img');
         img.src = src;
-        img.alt = project.name + " Visual";
+        img.alt = projectData.name + " Visual";
         img.loading = "lazy";
         
         inner.appendChild(img);
@@ -127,17 +147,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         col.appendChild(wrapper);
         
-        // Read More Button
+        // Read More Button with i18n
         if (content.length > 150) {
             const btn = document.createElement('button');
             btn.className = 'read-more-trigger';
-            btn.innerHTML = '<span>Read More</span>';
+            const readMoreText = currentLang === 'ar' ? 'اقرأ المزيد' : 'Read More';
+            const readLessText = currentLang === 'ar' ? 'اقرأ أقل' : 'Read Less';
+            btn.textContent = readMoreText;
             
             btn.addEventListener('click', () => {
                 col.classList.toggle('is-expanded');
-                btn.innerHTML = col.classList.contains('is-expanded') 
-                    ? '<span>Read Less</span>' 
-                    : '<span>Read More</span>';
+                btn.textContent = col.classList.contains('is-expanded') ? readLessText : readMoreText;
             });
             col.appendChild(btn);
         } else {
@@ -148,65 +168,59 @@ document.addEventListener('DOMContentLoaded', () => {
         return col;
     };
 
-    // 1. Cinematic Opener (Image 0) - NOW FIRST
-    if (project.images[0]) {
-        // We wrap it in a div to ensure it behaves as a block in the main container
+    // 1. Cinematic Opener (Image 0)
+    if (projectData.images[0]) {
         const openerWrapper = document.createElement('div');
         openerWrapper.style.width = '95%';
         openerWrapper.style.margin = '0 auto 60px auto';
-        openerWrapper.appendChild(createImage(project.images[0], 'span-full'));
+        openerWrapper.appendChild(createImage(projectData.images[0], 'span-full'));
         projectContainer.insertBefore(openerWrapper, bentoGrid);
     }
 
-    // 2. Split Overview Section - NOW SECOND
-    const overviewHTML = `<p>${project.overview}</p>`;
-    const overviewSection = createSplitSection('Overview', overviewHTML);
+    // 2. Split Overview Section
+    const overviewTitle = currentLang === 'ar' ? 'نظرة عامة' : 'Overview';
+    const overviewHTML = `<p>${projectData.overview}</p>`;
+    const overviewSection = createSplitSection(overviewTitle, overviewHTML);
     projectContainer.insertBefore(overviewSection, bentoGrid);
 
     // 3. Random Grid (Images 1-4)
     const randomGrid = document.createElement('div');
     randomGrid.className = 'random-grid';
     
-    // Use next 4 images
-    const midBatch = project.images.slice(1, 5);
+    const midBatch = projectData.images.slice(1, 5);
     
     midBatch.forEach((src, index) => {
         let span = 'span-full';
-        // Layout Logic:
-        // 0: Full
-        // 1: Half
-        // 2: Half
-        // 3: Full
         if (index === 1 || index === 2) span = 'span-half';
         
-        // Check if it's the 4th item (index 3) AND video exists
-        if (index === 3 && project.video && project.video.length > 0) {
-             randomGrid.appendChild(createVideo(project.video[0], span));
+        // Check if it's the 4th item and video exists
+        if (index === 3 && projectData.video && projectData.video.length > 0) {
+             randomGrid.appendChild(createVideo(projectData.video[0], span));
         } else {
              randomGrid.appendChild(createImage(src, span));
         }
     });
     projectContainer.insertBefore(randomGrid, bentoGrid);
 
-    // 4. Challenge & Solution (Two Columns)
+    // 4. Challenge & Solution
     const csSection = document.createElement('div');
     csSection.className = 'challenge-solution-section';
     
-    // Left: Solution
-    const solutionCol = createCSColumn('The Solution', project.solution);
-    // Right: Challenge
-    const challengeCol = createCSColumn('The Challenge', project.challenge);
+    const solutionTitle = currentLang === 'ar' ? 'الحل' : 'The Solution';
+    const solutionCol = createCSColumn(solutionTitle, projectData.solution);
+    const challengeTitle = currentLang === 'ar' ? 'التحدي' : 'The Challenge';
+    const challengeCol = createCSColumn(challengeTitle, projectData.challenge);
     
-    csSection.appendChild(solutionCol);
-    csSection.appendChild(challengeCol);
-    
-    projectContainer.insertBefore(csSection, bentoGrid);
+        csSection.appendChild(solutionCol);
+        csSection.appendChild(challengeCol);
+        
+        projectContainer.insertBefore(csSection, bentoGrid);
 
-    // 5. Bento Grid (Remaining Images)
-    const remainingImages = project.images.slice(5);
-    
-    // Helper: Create Text Image Section
-    const createTextImageSection = (text, imgSrc) => {
+        // 5. Bento Grid (Remaining Images)
+        const remainingImages = projectData.images.slice(5);
+        
+        // Helper: Create Text Image Section
+        const createTextImageSection = (text, imgSrc) => {
         const container = document.createElement('div');
         container.className = 'grid-item span-full text-image-section';
         
@@ -220,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
         right.className = 'text-image-right';
         const img = document.createElement('img');
         img.src = imgSrc;
-        img.alt = "Project Detail";
+        img.alt = projectData.name + " Detail";
         img.loading = "lazy";
         right.appendChild(img);
         
@@ -231,16 +245,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     remainingImages.forEach((src, index) => {
-        // Insert Text Image Section after 3rd image in this loop (which is 8th image overall: 0+1+4+3 = 8)
-        // remainingImages starts at index 5.
-        // index 0 -> image 5
-        // index 1 -> image 6
-        // index 2 -> image 7
-        // index 3 -> image 8
-        // So we insert AFTER index 3.
-        
-        if (index === 4 && project.textImage) {
-             bentoGrid.appendChild(createTextImageSection(project.textImage.text, project.textImage.imagesrc));
+        // Insert Text Image Section after 4th image in this loop
+        if (index === 4 && projectData.textImage) {
+             bentoGrid.appendChild(createTextImageSection(projectData.textImage.text, projectData.textImage.imagesrc));
         }
 
         // Mosaic Pattern
@@ -263,18 +270,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Setup Next Project Link
     const nextId = project.id === projectsData.length ? 1 : project.id + 1;
     const nextProject = projectsData.find(p => p.id === nextId);
+    const nextProjectData = nextProject[currentLang] || nextProject.en;
     if (nextProject) {
-        const nextNav = document.getElementById('next-project-nav');
-        document.getElementById('next-project-name').textContent = nextProject.name;
+        document.getElementById('next-project-name').textContent = nextProjectData.name;
         document.getElementById('next-project-link').href = `./projectDetails.html?id=${nextId}`;
         
-        if (nextProject.bannerImage) {
-            nextNav.style.backgroundImage = `url('${nextProject.bannerImage}')`;
+        const nextNav = document.getElementById('next-project-nav');
+        if (nextProjectData.bannerImage) {
+            nextNav.style.backgroundImage = `url('${nextProjectData.bannerImage}')`;
         }
     }
 
+        // Re-run animations after content is built (only on initial load)
+        if (isInitialLoad) {
+            runAnimations();
+            isInitialLoad = false;
+        } else {
+            // On language change, just refresh ScrollTrigger for new content
+            ScrollTrigger.refresh();
+        }
+    }
+
+    // Initial build
+    buildProjectContent();
+
+    // Listen for language changes
+    window.addEventListener('languageChanged', () => {
+        buildProjectContent();
+    });
+
     // --- Animations ---
-    gsap.registerPlugin(ScrollTrigger);
+    function runAnimations() {
+        // Kill existing ScrollTriggers to avoid duplicates
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        
+        gsap.registerPlugin(ScrollTrigger);
 
     // Hero
     const tl = gsap.timeline();
@@ -297,27 +327,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Images
+    // Images - parallax effect
     gsap.utils.toArray('.image-container').forEach(container => {
-        // gsap.from(container, {
-        //     scrollTrigger: { trigger: container, start: "top 85%" },
-        //     y: 0, opacity: 0, duration: 1, ease: "power2.out"
-        // });
-
-        // const inner = container.querySelector('.parallax-inner img');
-        // if (inner) {
-        //     gsap.set(inner, { scale: 1 });
-        //     gsap.to(inner, {
-        //         scrollTrigger: {
-        //             trigger: container,
-        //             start: "top bottom",
-        //             end: "bottom top",
-        //             scrub: true
-        //         },
-        //         yPercent: 10,
-        //         ease: "none"
-        //     });
-        // }
-    });
+            const inner = container.querySelector('.parallax-inner img, .parallax-inner video');
+            if (inner) {
+                gsap.set(inner, { scale: 1 });
+                gsap.to(inner, {
+                    scrollTrigger: {
+                        trigger: container,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    },
+                    yPercent: 10,
+                    ease: "none"
+                });
+            }
+        });
+    }
 
 });

@@ -119,6 +119,14 @@
       "heroEyebrow": "Portfolio",
       "heroTitle": "Our Work",
       "heroSubtitle": "Explore our diverse range of branding and digital projects that have transformed businesses across multiple industries."
+    },
+    "projectDetailsPage": {
+      "services": "Services",
+      "location": "Location",
+      "industry": "Industry",
+      "year": "Year",
+      "nextProject": "Next Project",
+      "viewCaseStudy": "View Case Study"
     }
     
   },
@@ -241,7 +249,13 @@
     "projectsPage": {
       "heroEyebrow": "معرض الأعمال",
       "heroTitle": "أعمالنا",
-      "heroSubtitle": "استكشف مجموعتنا المتنوعة من مشاريع البراندينق والتصميم الرقمي التي ساهمت في تحويل الأعمال عبر مختلف القطاعات."
-    }
+      "heroSubtitle": "استكشف مجموعتنا المتنوعة من مشاريع البراندينق والتصميم الرقمي التي ساهمت في تحويل الأعمال عبر مختلف القطاعات."    },
+    "projectDetailsPage": {
+      "services": "الخدمات",
+      "location": "الموقع",
+      "industry": "الصناعة",
+      "year": "السنة",
+      "nextProject": "المشروع التالي",
+      "viewCaseStudy": "عرض دراسة الحالة"    }
   }
 }

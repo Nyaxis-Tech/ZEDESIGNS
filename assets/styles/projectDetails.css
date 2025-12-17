@@ -18,6 +18,17 @@ body {
     overflow-x: hidden;
 }
 
+/* RTL Typography Adjustments */
+html[dir="rtl"] * {
+    font-family: "din-next-regular", sans-serif;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+    font-family: "TheYearOfHandicrafts", sans-serif !important;
+}
+
 #main {
     width: 100%;
     background-color: var(--green-color);
@@ -100,6 +111,18 @@ body {
     font-weight: 300;
 }
 
+html[dir="rtl"] .hero-content {
+    direction: rtl;
+}
+
+html[dir="rtl"] #project-title {
+    direction: rtl;
+}
+
+html[dir="rtl"] #project-tagline {
+    direction: rtl;
+}
+
 /* --- Specs Strip (Table) --- */
 #specs-strip {
     display: flex;
@@ -138,6 +161,22 @@ body {
     color: #fff;
 }
 
+html[dir="rtl"] .spec-item {
+    text-align: right;
+    border-right: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+html[dir="rtl"] .spec-label,
+html[dir="rtl"] .spec-value {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .spec-label{
+    font-size: 1rem;
+}
 /* --- Split Section (Bold Layout) --- */
 .split-section {
     display: flex;
@@ -174,6 +213,16 @@ body {
     font-weight: 300;
 }
 
+html[dir="rtl"] .split-left h2 {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .split-right p {
+    direction: rtl;
+    text-align: right;
+}
+
 /* --- Challenge & Solution Section --- */
 .challenge-solution-section {
     display: flex;
@@ -199,6 +248,11 @@ body {
     text-transform: uppercase;
 }
 
+html[dir="rtl"] .cs-col h3 {
+    direction: rtl;
+    text-align: right;
+}
+
 /* Read More Styles (Reused/Adapted) */
 .read-more-wrapper {
     position: relative;
@@ -216,6 +270,11 @@ body {
     line-height: 1.7;
     color: #d0d0d0;
     margin: 0;
+}
+
+html[dir="rtl"] .read-more-wrapper p {
+    direction: rtl;
+    text-align: right;
 }
 
 .fade-overlay {
@@ -244,6 +303,7 @@ body {
 .read-more-trigger:hover {
     background: var(--accent-color);
     color: #000;
+    padding: 10px 25px;
 }
 
 /* --- Text Image Section (New) --- */
@@ -266,6 +326,16 @@ body {
     font-size: 1.25rem;
     line-height: 1.7;
     color: #fff;
+}
+
+html[dir="rtl"] .text-image-left p {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .read-more-trigger {
+    direction: rtl;
+    font-size: 1.1rem;
 }
 
 .text-image-right {
@@ -426,6 +496,14 @@ body {
     opacity: 0.9;
 }
 
+html[dir="rtl"] #next-project-nav p {
+    font-size: 1rem;;
+}
+
+html[dir="rtl"] #next-project-link > span.arrow{
+    transform: rotate(180deg) translateY(-5px);
+}
+
 #next-project-name {
     font-family: "didot-bold", serif;
     font-size: clamp(4rem, 8vw, 7rem);
@@ -526,6 +604,10 @@ body {
         border-right: none;
         text-align: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    html[dir="rtl"] .spec-item {
+        border-left: none;
     }
 
     .spec-item:nth-child(odd) {

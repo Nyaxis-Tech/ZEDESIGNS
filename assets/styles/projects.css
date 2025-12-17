@@ -355,6 +355,7 @@ html[dir="rtl"] h3 {
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
 }
 
+
 .work-cursor::before {
     content: "";
     position: absolute;
@@ -405,3 +406,6 @@ html[dir="rtl"] .project-tag:not(:last-child)::after {
     content: "، ";
 }
 
+html[dir="rtl"] .work-cursor span{
+    font-size: 1.1rem;
+}
