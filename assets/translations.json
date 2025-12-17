@@ -114,7 +114,13 @@
       "infoPhoneValue": "+966 50 874 8684",
       "successMessage": "Thank you! We'll be in touch within 24 hours.",
       "errorSelectService": "Please select at least one service interest."
+    },
+    "projectsPage": {
+      "heroEyebrow": "Portfolio",
+      "heroTitle": "Our Work",
+      "heroSubtitle": "Explore our diverse range of branding and digital projects that have transformed businesses across multiple industries."
     }
+    
   },
   "ar": {
     "nav": {
@@ -231,6 +237,11 @@
       "infoPhoneValue": "+٩٦٦ ٥٠ ٨٧٤ ٨٦٨٤",
       "successMessage": "شكرًا لك! سنتواصل معك خلال ٢٤ ساعة.",
       "errorSelectService": "يرجى اختيار خدمة واحدة على الأقل."
+    },
+    "projectsPage": {
+      "heroEyebrow": "معرض الأعمال",
+      "heroTitle": "أعمالنا",
+      "heroSubtitle": "استكشف مجموعتنا المتنوعة من مشاريع البراندينق والتصميم الرقمي التي ساهمت في تحويل الأعمال عبر مختلف القطاعات."
     }
   }
 }

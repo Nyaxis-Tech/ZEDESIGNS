@@ -23,24 +23,30 @@ document.addEventListener("DOMContentLoaded", () => {
     function loadProjects(){
         // Load project cards dynamically
         const projectsGrid = document.querySelector(".projects-grid");
+        
+        // Get current language from i18n
+        const currentLang = localStorage.getItem("language") || 'ar';
 
         if (projectsGrid) {
             projectsGrid.innerHTML = projectsData.map((project, index) => {
-                const queryParam = encodeURIComponent(project.name);
+                // Get the project data for current language
+                const projectData = project[currentLang] || project.en;
+                
+                const queryParam = encodeURIComponent(projectData.name);
                 return `
                 <a href="projectDetails.html?id=${index+1}" class="project-card" data-index="${index}" data-category="branding">
                     <div class="project-meta">
                         <h2 class="project-title">
-                            ${project.name}
+                            ${projectData.name}
                         </h2>
                         <div class="project-tags">
-                            ${project.tags.slice(0,2).map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                            ${projectData.tags.slice(0,2).map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                         </div>
                     </div>
                     <div class="project-media">
                         <img
-                            src="${project.bannerImage}"
-                            alt="${project.name} branding"
+                            src="${projectData.bannerImage}"
+                            alt="${projectData.name} branding"
                         />
                     </div>
                 </a>
@@ -48,6 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     loadProjects();
+
+    // Reload projects when language changes
+    window.addEventListener('languageChanged', (e) => {
+        loadProjects();
+    });
 
 
     // ==========================

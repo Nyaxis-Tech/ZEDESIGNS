@@ -12,6 +12,19 @@ body {
     height: 100%;
 }
 
+/* RTL Typography Adjustments */
+html[dir="rtl"] * {
+    font-family: "din-next-regular", sans-serif;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+    font-family: "TheYearOfHandicrafts", sans-serif !important;
+    /* letter-spacing: 0; */
+}
+
+
 /* ========== PAGE BASE ========== */
 #main {
     width: 100%;
@@ -59,7 +72,7 @@ body {
 
 .hero-subtitle {
     max-width: 32rem;
-    font-size: 0.98rem;
+    font-size: 1rem;
     line-height: 1.6;
     opacity: 0.85;
 }
@@ -267,6 +280,28 @@ body {
     .project-tag {
         font-size: 0.95rem;
     }
+    html[dir="rtl"] .hero-cta-row {
+        justify-content: flex-start !important;
+    }
+
+    html[dir="rtl"] .hero-subtitle {
+        direction: rtl;
+        text-align: right;
+        font-size: 1.1rem !important;
+    }
+
+    html[dir="rtl"] .project-title {
+        direction: rtl;
+        text-align: right;
+        font-size: 1.3rem !important;
+    }
+
+    html[dir="rtl"] .project-tags {
+        direction: rtl;
+        text-align: right;
+        font-size: 1.1rem !important;
+    }
+
 }
 
 /* ======================
@@ -338,3 +373,35 @@ body {
 .work-cursor.is-visible {
     opacity: 1;
 }
+
+/* ======================
+   RTL SUPPORT
+   ====================== */
+html[dir="rtl"] .projects-hero-left {
+    text-align: right;
+}
+
+html[dir="rtl"] .eyebrow {
+    direction: rtl;
+    font-size: 1rem;
+}
+
+html[dir="rtl"] .hero-subtitle {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .project-title {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .project-tags {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .project-tag:not(:last-child)::after {
+    content: "، ";
+}
+

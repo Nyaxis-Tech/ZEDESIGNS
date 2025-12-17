@@ -51,6 +51,11 @@ class I18n {
         // Update body class for font changes if needed
         document.body.classList.toggle('lang-ar', lang === 'ar');
         document.body.classList.toggle('lang-en', lang === 'en');
+        
+        // Dispatch custom event for other components to react to language change
+        window.dispatchEvent(new CustomEvent('languageChanged', { 
+            detail: { language: lang } 
+        }));
     }
 
     updateContent(animate = true) {
