@@ -232,14 +232,19 @@ body {
 .about-structure {
     /* UPDATED: reduced spacing before second section */
     padding: 2.6rem 0 0rem;
+    margin-bottom: 3rem;
     margin-top: -20px;
 }
 
 .about-structure-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
+    display: flex;
+    /* grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr); */
     gap: 3rem;
     align-items: center;
+}
+
+.structure-copy {
+    width: 40%;
 }
 
 .structure-copy h2 {
@@ -262,6 +267,7 @@ body {
 
 /* Diagram wrapper */
 .structure-visual {
+    flex: 1;
     position: relative;
 }
 
@@ -275,7 +281,7 @@ body {
 /* IMPORTANT FIX:
    Do NOT scale the SVG here, it clips SVG text/labels because wrapper has overflow:hidden */
 .structure-wrapper svg {
-    transform: scale(1.1);
+    transform: scale(1.2) translateX(20px);
 }
 
 /* SVG */
@@ -977,7 +983,8 @@ body {
         display: grid;;
         grid-template-columns: minmax(0, 1fr);
     }
-    .culture-copy{
+
+    .culture-copy,.structure-copy{
         width: 100%;
     }
 
