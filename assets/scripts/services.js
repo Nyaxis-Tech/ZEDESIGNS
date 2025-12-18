@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inject projects from projectsData
     const projectsGrid = document.querySelector('.projects-grid');
-    
+    const lang = localStorage.getItem("language") || "en";
     // Check if projectsData is available
     if (typeof projectsData !== 'undefined' && projectsData.length > 0) {
         // Get first 4 projects from projectsData
@@ -232,10 +232,10 @@ document.addEventListener('DOMContentLoaded', () => {
             projectItem.className = 'project-item';
             projectItem.innerHTML = `
                 <div class="project-image-wrapper">
-                    <img src="${project.bannerImage}" alt="${project.name}">
+                    <img src="${project[lang].bannerImage}" alt="${project[lang].name}">
                 </div>
                 <div class="project-info">
-                    <h3>${project.name}</h3>
+                    <h3>${project[lang].name}</h3>
                 </div>
             `;
 

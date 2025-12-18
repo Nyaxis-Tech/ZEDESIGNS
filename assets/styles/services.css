@@ -1,4 +1,4 @@
-@import url(../font.css);
+@import url("../font.css");
 
 /* --- Variables --- */
 :root {
@@ -21,7 +21,6 @@ body,html{
     min-height: 100%;
     background-color: var(--green-color);
     color: var(--text-color);
-    font-family: "TheYearOfHandicrafts", serif;
     overflow-x: hidden;
 }
 
@@ -72,7 +71,7 @@ body,html{
 }
 
 .services-hero-content > p {
-    font-family: "TheYearOfHandicrafts", serif;
+    /* font-family: "TheYearOfHandicrafts", serif; */
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
@@ -150,7 +149,7 @@ body,html{
 
 /* Service Description Column */
 .service-desc p {
-    font-family: "TheYearOfHandicrafts", serif;
+    /* font-family: "TheYearOfHandicrafts", serif; */
     font-size: 1.1rem;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.85);
@@ -185,7 +184,7 @@ body,html{
 }
 
 .sub-service-header span {
-    font-family: "TheYearOfHandicrafts", serif;
+    /* font-family: "TheYearOfHandicrafts", serif; */
     font-size: 1.05rem;
     color: var(--text-color);
     transition: color 0.3s ease;
@@ -248,7 +247,7 @@ body,html{
 }
 
 .sub-service-content p {
-    font-family: "TheYearOfHandicrafts", serif;
+    /* font-family: "TheYearOfHandicrafts", serif; */
     font-size: 0.95rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.7);
@@ -278,7 +277,7 @@ body,html{
 }
 
 .featured-header p {
-    font-family: "TheYearOfHandicrafts", serif;
+    /* font-family: "TheYearOfHandicrafts", serif; */
     font-size: 1.15rem;
     color: rgba(255, 255, 255, 0.7);
 }
