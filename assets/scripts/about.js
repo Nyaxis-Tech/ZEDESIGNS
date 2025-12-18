@@ -790,9 +790,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         y: 40,
         opacity: 0,
-        duration: 0.6,
+        duration: 1.5,
         ease: "power3.out",
-        stagger: 0.15,
+        stagger: 0.5,
     });
 
     /* ==========================
@@ -828,6 +828,11 @@ document.addEventListener("DOMContentLoaded", () => {
        SECTOR CARDS
        ========================== */
 
+    /* ==========================
+       SECTORS - WHO WE WORK WITH
+       ========================== */
+
+    // Animate section header
     gsap.from(".about-sectors .about-section-header", {
         scrollTrigger: {
             trigger: ".about-sectors",
@@ -840,6 +845,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.out",
     });
 
+    // Animate sector cards with stagger
     gsap.from(".about-sectors .sector-card", {
         scrollTrigger: {
             trigger: ".about-sectors",
@@ -848,9 +854,21 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         y: 40,
         opacity: 0,
-        duration: 0.55,
+        duration: 0.6,
         ease: "power3.out",
-        stagger: 0.12,
+        stagger: 0.15,
+    });
+
+    // Spotlight effect for sector cards (same as tag)
+    const sectorCards = document.querySelectorAll(".about-sectors .sector-card");
+    sectorCards.forEach(card => {
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty("--mouse-x", `${x}px`);
+            card.style.setProperty("--mouse-y", `${y}px`);
+        });
     });
 
     /* ==========================

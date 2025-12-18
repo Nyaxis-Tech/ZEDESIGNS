@@ -103,7 +103,8 @@ body {
 
 /* Pillars (Define / Design / Deploy) */
 .about-hero-pillars {
-    display: grid;
+    /* display: grid; */
+    display: none;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
     margin-top: 2.25rem;
@@ -203,21 +204,21 @@ body {
     transform: rotateY(180deg);
 }
 
-/* hover: glass shimmer + glow */
-.logo-spin-wrap:hover::before {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-}
+    /* hover: glass shimmer + glow
+    .logo-spin-wrap:hover::before {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 
-.logo-spin-wrap:hover::after {
-    opacity: 1;
-    transform: translateZ(0) scale(1);
-}
+    .logo-spin-wrap:hover::after {
+        opacity: 1;
+        transform: translateZ(0) scale(1);
+    } */
 
-.logo-spin-wrap:hover .logo-spin {
+/* .logo-spin-wrap:hover .logo-spin {
     filter: drop-shadow(0 28px 60px rgba(244, 214, 162, 0.22))
         drop-shadow(0 0 22px rgba(244, 214, 162, 0.25));
-}
+} */
 
 @media (prefers-reduced-motion: reduce) {
     .logo-spin {
@@ -248,6 +249,7 @@ body {
 }
 
 .structure-copy h2 {
+    color: var(--secondary-golden-color);
     font-size: 1.8rem;
     letter-spacing: -0.03em;
     margin-bottom: 0.75rem;
@@ -413,6 +415,7 @@ body {
 }
 
 .global-reach-header h2 {
+    color: var(--secondary-golden-color);
     font-family: "didot-bold";
     font-size: 2rem;
     letter-spacing: -0.03em;
@@ -563,6 +566,7 @@ body {
 }
 
 .about-section-header h2 {
+    color: var(--secondary-golden-color);
     font-family: "didot-bold";
     font-size: 1.8rem;
     letter-spacing: -0.03em;
@@ -592,19 +596,14 @@ body {
 .method-card {
     padding: 1.75rem 1.5rem;
     border-radius: 1.25rem;
-    border: 1px solid var(--soft-border);
+    /* border: 1px solid var(--soft-border); */
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease, border 0.2s ease;
 }
 
-.method-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
-}
 
 .method-card .step-label {
     font-size: 0.75rem;
@@ -614,7 +613,9 @@ body {
 }
 
 .method-card h3 {
-    font-size: 1.05rem;
+    color: var(--secondary-golden-color);
+    font-family: "didot-bold", sans-serif;
+    font-size: 1.5rem;
 }
 
 .method-card p {
@@ -632,7 +633,7 @@ body {
 
 .method-card ul li {
     font-size: 0.85rem;
-    opacity: 0.9;
+    opacity: 0.7;
     padding-left: 1rem;
     position: relative;
     margin-bottom: 0.25rem;
@@ -663,87 +664,142 @@ body {
    ======================= */
 
 .about-sectors {
-    padding: 4rem 0 3.5rem;
+    padding: 4.5rem 0 3.5rem;
 }
 
 .sectors-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.75rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 0.5rem;
 }
 
+/* Sector Cards with Spotlight Effect */
 .sector-card {
     position: relative;
-    padding: 1.85rem 1.6rem;
-    border-radius: 1.4rem;
-    border: 1px solid var(--soft-border);
+    padding: 2rem 1.75rem;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
     overflow: hidden;
-    transform: translateY(0) translateZ(0);
-    transition:
-        transform 0.22s ease-out,
-        box-shadow 0.22s ease-out,
-        border-color 0.22s ease-out,
-        background 0.22s ease-out;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
 }
 
-/* .sector-card::before {
-    content: "";
+/* Spotlight effect - same as tag */
+.sector-card::before {
+    content: '';
     position: absolute;
-    inset: -40%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
     background: radial-gradient(
-        circle at 10% 0%,
-        rgba(244, 214, 162, 0.35),
-        transparent 55%
+        circle,
+        rgba(236, 207, 156, 0.25) 0%,
+        rgba(236, 207, 156, 0.15) 25%,
+        rgba(58, 75, 67, 0.1) 50%,
+        transparent 70%
     );
-    opacity: 0;
-    transform: translate3d(0, 10px, 0) scale(0.9);
-    transition:
-        opacity 0.3s ease-out,
-        transform 0.3s ease-out;
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+    transform: translate(-50%, -50%);
     pointer-events: none;
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
-.sector-card::after {
-    content: "";
-    position: absolute;
-    left: 10%;
-    right: 10%;
-    top: 0;
-    height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(244, 214, 162, 0.75),
-        transparent
-    );
-    opacity: 0.7;
-} */
-
-.sector-card h3 {
-    position: relative;
-    font-size: 1.05rem;
-    margin-bottom: 0.55rem;
-    letter-spacing: -0.02em;
-}
-
-.sector-card p {
-    position: relative;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    opacity: 0.9;
-    max-width: 30rem;
+.sector-card:hover::before {
+    opacity: 1;
 }
 
 .sector-card:hover {
+    border-color: rgba(244, 214, 162, 0.25);
     transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* .sector-card:hover::before {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-} */
+/* Number */
+.sector-card .sector-number {
+    position: relative;
+    z-index: 1;
+    display: block;
+    font-family: "didot-bold", serif;
+    font-size: 2.5rem;
+    color: var(--sand);
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: 1.25rem;
+    transition: opacity 0.3s ease;
+}
+
+.sector-card:hover .sector-number {
+    opacity: 0.3;
+}
+
+/* Title */
+.sector-card h3 {
+    position: relative;
+    z-index: 1;
+    font-family: "didot-bold", serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+}
+
+.sector-card:hover h3 {
+    color: var(--sand);
+}
+
+/* Description */
+.sector-card p {
+    position: relative;
+    z-index: 1;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+}
+
+.sector-card:hover p {
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .sectors-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-sectors {
+        padding: 3.5rem 0 2.5rem;
+    }
+
+    .sector-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .sector-card .sector-number {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .sector-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .sector-card p {
+        font-size: 0.85rem;
+    }
+}
 
 /* =======================
    OUR PHILOSOPHY (CULTURE)
@@ -765,6 +821,7 @@ body {
 }
 
 .culture-copy h2 {
+    color: var(--secondary-golden-color);
     font-family: "didot-bold";
     font-size: 1.8rem;
     letter-spacing: -0.03em;
@@ -827,6 +884,7 @@ body {
 }
 
 #main #clients #clientstop > h1 {
+    /* color: var(--secondary-golden-color); */
     font-size: 3rem;
     font-family: "didot-bold", sans-serif;
     line-height: 1;
