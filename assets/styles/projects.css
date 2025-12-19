@@ -173,6 +173,7 @@ html[dir="rtl"] h3 {
     line-height: 1.15;
     margin-bottom: 0.25rem;
     overflow-wrap: anywhere;
+    color: var(--secondary-golden-color);
     word-break: break-word;
 }
 
@@ -193,7 +194,7 @@ html[dir="rtl"] h3 {
     padding: 0;
     border-radius: 0;
     font-size: 1.05rem;
-    opacity: 0.86;
+    opacity: 0.7;
     letter-spacing: 0;
     text-transform: none;
     line-height: 1.5;

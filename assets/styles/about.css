@@ -75,6 +75,9 @@ body {
 .about-hero {
     /* UPDATED: reduced spacing after first section */
     padding-bottom: 2.25rem;
+    height: 70vh;
+    display: flex;
+    align-items: center;
 }
 
 .about-hero-grid {

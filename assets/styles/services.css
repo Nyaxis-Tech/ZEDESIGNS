@@ -63,7 +63,7 @@ body,html{
 
 .services-hero-content h1 {
     font-family: "didot-bold", serif;
-    font-size: clamp(1.75rem, 4vw, 4rem);
+    font-size: clamp(2rem, 4vw, 4rem);
     color: var(--accent-color);
     width: 80%;
     line-height: 1.1;
@@ -426,4 +426,98 @@ body,html{
     .project-info h3 {
         font-size: 1.3rem;
     }
+}
+
+/* ==========================
+   RTL (Arabic) Support
+   ========================== */
+
+html[dir="rtl"] {
+    font-family: "Cairo", "Noto Sans Arabic", sans-serif;
+}
+
+/* Hero Section RTL */
+html[dir="rtl"] .services-hero-content {
+    text-align: center;
+}
+
+
+html[dir="rtl"] .tag.revealed p{
+    padding-bottom: 0;
+}
+
+html[dir="rtl"] .services-hero-content .tag img {
+    /* margin-left: 0.5rem; */
+    margin-right: 0;
+}
+
+/* Services Section RTL */
+html[dir="rtl"] .service-content {
+    direction: rtl;
+}
+
+html[dir="rtl"] .service-name {
+    text-align: right;
+}
+
+html[dir="rtl"] .service-number {
+    font-size: 1.1rem;
+}
+
+html[dir="rtl"] .service-desc p {
+    text-align: right;
+}
+
+html[dir="rtl"] .sub-service-header:hover {
+    padding-left: 0;
+    padding-right: 0.5rem;
+}
+
+html[dir="rtl"] .sub-service-header span {
+    text-align: right;
+}
+
+html[dir="rtl"] .sub-service-content p {
+    text-align: right;
+    line-height: 1.8;
+}
+
+/* Featured Projects RTL */
+html[dir="rtl"] .featured-header {
+    text-align: center;
+}
+
+html[dir="rtl"] .project-info {
+    text-align: right;
+}
+
+html[dir="rtl"] .project-info h3 {
+    text-align: right;
+}
+
+/* Mobile RTL adjustments */
+@media (max-width: 1024px) {
+    
+}
+
+/* Footer RTL */
+html[dir="rtl"] #footer #fbtm {
+    direction: rtl;
+}
+
+html[dir="rtl"] #footer #btmleft,
+html[dir="rtl"] #footer #btmright {
+    text-align: right;
+}
+
+html[dir="rtl"] #footer #btmright ul {
+    text-align: right;
+}
+
+html[dir="rtl"] #footer #socials {
+    direction: rtl;
+}
+
+html[dir="rtl"] #footer #socialtwo p {
+    text-align: right;
 }

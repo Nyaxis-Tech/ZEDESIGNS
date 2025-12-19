@@ -87,9 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     serviceToggle.classList.add('selected');
                 } else {
                     // Get multi-select text from i18n
-                    const multiSelectText = window.i18n ? 
-                        window.i18n.getTranslation('contactPage.formServicesSelected') : 
-                        'Services Selected';
+                    const multiSelectText = localStorage.getItem("language") == "ar" ?  "تم اختيار الخدمات" : "Services Selected";
+                        
                     serviceSelected.textContent = `${selectedServices.length} ${multiSelectText}`;
                     serviceToggle.classList.add('selected');
                 }

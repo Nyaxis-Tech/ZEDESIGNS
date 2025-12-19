@@ -67,15 +67,48 @@ class I18n {
             const translation = this.getTranslation(key);
             
             if (translation) {
+                // Special handling for tag elements to preserve animation
+                const isTagElement = element.closest('.tag') && element.tagName === 'P';
+                
                 if (animate) {
-                    // Simple fade animation
-                    element.style.opacity = '0';
-                    element.style.transition = 'opacity 0.2s ease';
-                    
-                    setTimeout(() => {
-                        element.innerHTML = translation;
-                        element.style.opacity = '1';
-                    }, 200);
+                    if (isTagElement) {
+                        // For tag elements, collapse width, update text, then expand
+                        const tag = element.closest('.tag');
+                        const wasRevealed = tag.classList.contains('revealed');
+                        
+                        if (wasRevealed) {
+                            // Remove revealed class to collapse the tag
+                            tag.classList.remove('revealed');
+                            
+                            // Wait for CSS transition to collapse, then update text
+                            setTimeout(() => {
+                                element.textContent = translation;
+                                
+                                // Re-add revealed class to trigger expand animation
+                                setTimeout(() => {
+                                    tag.classList.add('revealed');
+                                }, 300);
+                            }, 600); // Wait for max-width transition to mostly complete
+                        } else {
+                            // If not revealed, just update text
+                            element.textContent = translation;
+                        }
+                    } else {
+                        // Normal elements - smooth fade transition
+                        element.style.opacity = '0';
+                        element.style.transform = 'translateY(5px)';
+                        element.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+                        
+                        setTimeout(() => {
+                            element.innerHTML = translation;
+                            
+                            // Fade back in
+                            setTimeout(() => {
+                                element.style.opacity = '1';
+                                element.style.transform = 'translateY(0)';
+                            }, 50);
+                        }, 250);
+                    }
                 } else {
                     // Initial load - no animation
                     element.innerHTML = translation;

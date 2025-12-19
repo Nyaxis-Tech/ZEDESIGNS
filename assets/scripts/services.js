@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const serviceSubs = row.querySelector('.service-subs');
 
         // Set initial states
-        gsap.set(borderTop, { scaleX: 0, transformOrigin: 'left' });
+        gsap.set(borderTop, { scaleX: 0, transformOrigin: localStorage.getItem("language") === 'ar' ? 'right' : 'left' });
 
         // Create timeline for each row
         const rowTl = gsap.timeline({
@@ -219,56 +219,78 @@ document.addEventListener('DOMContentLoaded', () => {
        FEATURED PROJECTS
        ========================== */
 
-    // Inject projects from projectsData
-    const projectsGrid = document.querySelector('.projects-grid');
-    const lang = localStorage.getItem("language") || "en";
-    // Check if projectsData is available
-    if (typeof projectsData !== 'undefined' && projectsData.length > 0) {
-        // Get first 4 projects from projectsData
-        const featuredProjects = projectsData.slice(0, 4);
+    // Function to get current language
+    function getCurrentLanguage() {
+        return localStorage.getItem("language") || "en";
+    }
 
-        featuredProjects.forEach((project, index) => {
-            const projectItem = document.createElement('div');
-            projectItem.className = 'project-item';
-            projectItem.innerHTML = `
-                <div class="project-image-wrapper">
-                    <img src="${project[lang].bannerImage}" alt="${project[lang].name}">
-                </div>
-                <div class="project-info">
-                    <h3>${project[lang].name}</h3>
-                </div>
-            `;
+    // Function to build featured projects
+    function buildFeaturedProjects(isInitialLoad = true) {
+        const projectsGrid = document.querySelector('.projects-grid');
+        const lang = getCurrentLanguage();
+        
+        // Clear existing projects
+        projectsGrid.innerHTML = '';
+        
+        // Check if projectsData is available
+        if (typeof projectsData !== 'undefined' && projectsData.length > 0) {
+            // Get first 4 projects from projectsData
+            const featuredProjects = projectsData.slice(0, 4);
 
-            // Click to navigate to project details
-            projectItem.addEventListener('click', () => {
-                window.location.href = `./projectDetails.html?id=${project.id}`;
-            });
+            featuredProjects.forEach((project, index) => {
+                const projectItem = document.createElement('div');
+                projectItem.className = 'project-item';
+                projectItem.innerHTML = `
+                    <div class="project-image-wrapper">
+                        <img src="${project[lang].bannerImage}" alt="${project[lang].name}">
+                    </div>
+                    <div class="project-info">
+                        <h3>${project[lang].name}</h3>
+                    </div>
+                `;
 
-            projectsGrid.appendChild(projectItem);
-        });
-
-        // Animate project items after they're added to DOM
-        setTimeout(() => {
-            const projectItems = document.querySelectorAll('.project-item');
-            projectItems.forEach((item, index) => {
-                gsap.from(item, {
-                    scrollTrigger: {
-                        trigger: item,
-                        start: 'top 85%',
-                    },
-                    scale: 0.95,
-                    opacity: 0,
-                    duration: 0.8,
-                    delay: index * 0.1,
-                    ease: 'power3.out'
+                // Click to navigate to project details
+                projectItem.addEventListener('click', () => {
+                    window.location.href = `./projectDetails.html?id=${project.id}`;
                 });
 
-                
+                projectsGrid.appendChild(projectItem);
             });
-        }, 100);
-    } else {
-        console.error('projectsData is not available');
+
+            // Only animate on initial load, not on language change
+            if (isInitialLoad) {
+                setTimeout(() => {
+                    const projectItems = document.querySelectorAll('.project-item');
+                    projectItems.forEach((item, index) => {
+                        gsap.from(item, {
+                            scrollTrigger: {
+                                trigger: item,
+                                start: 'top 85%',
+                            },
+                            scale: 0.95,
+                            opacity: 0,
+                            duration: 0.8,
+                            delay: index * 0.1,
+                            ease: 'power3.out'
+                        });
+                    });
+                }, 100);
+            } else {
+                // On language change, just refresh ScrollTrigger
+                ScrollTrigger.refresh();
+            }
+        } else {
+            console.error('projectsData is not available');
+        }
     }
+
+    // Build featured projects on page load
+    buildFeaturedProjects(true);
+
+    // Listen for language change events
+    window.addEventListener('languageChanged', () => {
+        buildFeaturedProjects(false);
+    });
 
     /* ==========================
        FEATURED SECTION TITLE ANIMATION
