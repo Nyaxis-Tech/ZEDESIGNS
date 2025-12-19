@@ -176,7 +176,7 @@ body,html{
     align-items: center;
     cursor: pointer;
     padding: 0.8rem 0;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
 }
 
 .sub-service-header:hover {
@@ -216,6 +216,7 @@ body,html{
     transform: translate(-50%, -50%);
     width: 16px;
     height: 16px;
+    transition: transform 0.4s ease;
 }
 
 .plus-icon::before,
@@ -241,9 +242,10 @@ body,html{
 }
 
 .sub-service-content {
-    height: 0;
+    max-height: 0;
     overflow: hidden;
     opacity: 0;
+    transition: max-height 1s ease, opacity 0.4s ease;
 }
 
 .sub-service-content p {
@@ -253,6 +255,28 @@ body,html{
     color: rgba(255, 255, 255, 0.7);
     padding: 1rem 0 0.5rem;
     margin: 0;
+}
+
+/* Hover expansion for desktop */
+@media (min-width: 769px) {
+    .sub-service-item:hover .sub-service-content {
+        max-height: 500px;
+        opacity: 1;
+    }
+    
+    .sub-service-item:hover .plus-icon {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+}
+
+/* Click expansion for mobile and desktop */
+.sub-service-item.expanded .sub-service-content {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.sub-service-item.expanded .plus-icon {
+    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 /* --- Featured Projects Section --- */
