@@ -554,6 +554,189 @@ document.addEventListener("DOMContentLoaded", () => {
        STRUCTURE DIAGRAM
        ========================== */
 
+       window.addEventListener('languageChanged', () => {
+        if(localStorage.getItem("language") === "ar"){
+            document.querySelector("#Layer_1").innerHTML = `
+                <defs>
+                    <style>
+                    .st0 {
+                        font-family: TheYearofHandicrafts-Bold, 'The Year of Handicrafts';
+                        font-size: 29.51px;
+                        font-weight: 700;
+                    }
+
+                    .st0, .st1 {
+                        fill: #edd09e;
+                    }
+
+                    .st2 {
+                        fill: none;
+                        stroke: #edd09e;
+                        stroke-miterlimit: 10;
+                        stroke-width: 2px;
+                    }
+
+                    .st1 {
+                        font-family: DINNextLTArabic-Medium, 'DIN Next LT Arabic';
+                        font-size: 20.92px;
+                        font-weight: 500;
+                    }
+                    </style>
+                </defs>
+                <path class="st2" d="M669.98,69.09h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(22.35 -83.42) rotate(6.68)"/>
+                <path class="st2" d="M338.72,431.65h163.82c29.04,0,52.61,23.58,52.61,52.61v108.61h-163.82c-29.04,0-52.61-23.58-52.61-52.61v-108.61h0Z" transform="translate(29.37 -24.21) rotate(3.21)"/>
+                <path class="st2" d="M68.33,38.19h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61H15.72v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(-20.55 26.09) rotate(-11.1)"/>
+                <line class="st2" x1="617.71" y1="140.49" x2="227.4" y2="84.06"/>
+                <line class="st2" x1="137.65" y1="198.25" x2="343.4" y2="425.72"/>
+                <line class="st2" x1="679.98" y1="226" x2="537.96" y2="447.22"/>
+                <text class="st0" transform="translate(50.25 138.82) rotate(-12.12)"><tspan x="0" y="0">الاستـراتيجيــة</tspan><tspan x="154.57" y="0"></tspan></text>
+                <text class="st0" transform="translate(671.92 152.66) rotate(4.82)"><tspan x="0" y="0">التـجـربــــــة</tspan></text>
+                <text class="st0" transform="translate(390.99 512.37) rotate(3.21)"><tspan x="0" y="0">التـصميــم</tspan></text>
+                <text class="st1" transform="translate(279.58 130.15) rotate(7.78)"><tspan x="0" y="0">مــن التغذيـــة الراجعـــة إلى بُعــد الرؤيـــة</tspan></text>
+                <text class="st1" transform="translate(589.23 451.29) rotate(-59.05)"><tspan x="0" y="0">مـــن التنفيـــذ إلــى الإحســـاس</tspan></text>
+                <text class="st1" transform="translate(135.25 261.98) rotate(48.13)"><tspan x="0" y="0">مــــــن الرؤيــــــة إلــــى الهويـــــــة</tspan></text>
+            `;
+            document.querySelector("#Layer_2").innerHTML = `
+                <defs>
+                    <style>
+                    .st0-2 {
+                        font-family: TheYearofHandicrafts-Bold, 'The Year of Handicrafts';
+                        font-size: 29.51px;
+                        font-weight: 700;
+                    }
+
+                    .st0-2, .st1-2 {
+                        fill: #edd09e;
+                    }
+
+                    .st2-2 {
+                        mix-blend-mode: multiply;
+                    }
+
+                    .st2-2, .st3-2 {
+                        fill: none;
+                        stroke: #edd09e;
+                        stroke-miterlimit: 10;
+                        stroke-width: 2px;
+                    }
+
+                    .st4-2 {
+                        isolation: isolate;
+                    }
+
+                    .st1-2 {
+                        font-family: DINNextLTArabic-Medium, 'DIN Next LT Arabic';
+                        font-size: 20.92px;
+                        font-weight: 500;
+                    }
+                    </style>
+                </defs>
+                <g class="st4">
+                    <g id="Layer_1">
+                    <line class="st2-2" x1="617.35" y1="145.19" x2="228.49" y2="91.04"/>
+                    <line class="st2-2" x1="133.44" y1="200.44" x2="305.59" y2="443.74"/>
+                    <line class="st2-2" x1="703.28" y1="229.74" x2="507.47" y2="439.33"/>
+                    <path class="st3-2" d="M68.32,39.55h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61H15.71v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(-20.82 26.11) rotate(-11.1)"/>
+                    <path class="st3-2" d="M669.99,70.59h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(22.52 -83.41) rotate(6.68)"/>
+                    <path class="st3-2" d="M339.3,433.14h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(29.37 -21.3) rotate(3.21)"/>
+                    <text class="st0-2" transform="translate(685.17 151.94) rotate(6.68)"><tspan x="0" y="0">الوقــــت</tspan></text>
+                    <text class="st0-2" transform="translate(355.91 519.97) rotate(3.21)"><tspan x="0" y="0">القيمــة</tspan></text>
+                    <text class="st0-2" transform="translate(95.98 131.57) rotate(-11.1)"><tspan x="0" y="0">الأثــــر</tspan></text>
+                    <text class="st1-2" transform="translate(367.78 145.32) rotate(6.6)"><tspan x="0" y="0">الوضـــــــوح</tspan></text>
+                    <text class="st1-2" transform="translate(160.97 302.13) rotate(55.56)"><tspan x="0" y="0">الكفـــــاءة</tspan></text>
+                    <text class="st1-2" transform="translate(618.73 381.58) rotate(-49.35)"><tspan x="0" y="0">الانضباط</tspan></text>
+                    </g>
+                </g>
+            `;
+        }else{
+            document.querySelector("#Layer_1").innerHTML = `
+                <defs>
+                <style>
+                .st0 {
+                    font-size: 29.51px;
+                }
+
+                .st0, .st1 {
+                    font-family: Poppins-Regular, Poppins;
+                }
+
+                .st0, .st1, .st2 {
+                    fill: #edd09e;
+                }
+
+                .st1 {
+                    font-size: 29.51px;
+                }
+
+                .st3 {
+                    fill: none;
+                    stroke: #edd09e;
+                    stroke-miterlimit: 10;
+                    stroke-width: 2px;
+                }
+
+                .st2 {
+                    font-family: Poppins-SemiBold, Poppins;
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+                </style>
+                </defs>
+                <text class="st0" transform="translate(60.7 136.91) rotate(-11.1)"><tspan x="0" y="0">Strategy</tspan></text>
+                <line class="st3" x1="615.62" y1="140.49" x2="225.32" y2="84.06"/>
+                <text class="st1" transform="translate(644.45 148.34) rotate(6.68)"><tspan x="0" y="0">Experience</tspan></text>
+                <text class="st0" transform="translate(394.59 517.9) rotate(3.21)"><tspan x="0" y="0">Design</tspan></text>
+                <line class="st3" x1="135.57" y1="198.25" x2="341.32" y2="425.72"/>
+                <line class="st3" x1="677.9" y1="226" x2="535.88" y2="447.22"/>
+                <text class="st2" transform="translate(152.86 271.94) rotate(48.09)"><tspan x="0" y="0">Insight to Identity</tspan></text>
+                <text class="st2" transform="translate(584.84 438) rotate(-57.65)"><tspan x="0" y="0">Execution to Emotion</tspan></text>
+                <text class="st2" transform="translate(304.38 133.73) rotate(7.92)"><tspan x="0" y="0">Feedback to Foresight</tspan></text>
+                <path class="st3" d="M66.25,38.19h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61H13.64v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(-20.59 25.68) rotate(-11.1)"/>
+                <path class="st3" d="M667.9,69.09h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(22.34 -83.18) rotate(6.68)"/>
+                <path class="st3" d="M336.63,431.65h163.82c29.04,0,52.61,23.58,52.61,52.61v108.61h-163.82c-29.04,0-52.61-23.58-52.61-52.61v-108.61h0Z" transform="translate(29.37 -24.1) rotate(3.21)"/>
+            `;
+            document.querySelector("#Layer_2").innerHTML = `
+                <defs>
+                    <style>
+                    .st0-2 {
+                        font-family: Poppins-Regular, Poppins;
+                        font-size: 29.51px;
+                    }
+
+                    .st0-2, .st1-2 {
+                        fill: #edd09e;
+                    }
+
+                    .st2-2 {
+                        fill: none;
+                        stroke: #edd09e;
+                        stroke-miterlimit: 10;
+                        stroke-width: 2px;
+                    }
+
+                    .st1-2 {
+                        font-family: Poppins-SemiBold, Poppins;
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                    </style>
+                </defs>
+                <text class="st0-2" transform="translate(69.75 136.63) rotate(-11.1)"><tspan x="0" y="0">Impact</tspan></text>
+                <text class="st0-2" transform="translate(687.8 154.91) rotate(6.68)"><tspan x="0" y="0">Time</tspan></text>
+                <text class="st0-2" transform="translate(350.71 519.85) rotate(3.21)"><tspan x="0" y="0">Value</tspan></text>
+                <line class="st2-2" x1="615.26" y1="145.19" x2="226.41" y2="91.04"/>
+                <line class="st2-2" x1="131.35" y1="200.44" x2="303.5" y2="443.74"/>
+                <line class="st2-2" x1="701.19" y1="229.74" x2="505.39" y2="439.33"/>
+                <path class="st2-2" d="M66.24,39.55h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61H13.62v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(-20.86 25.71) rotate(-11.1)"/>
+                <path class="st2-2" d="M667.91,70.59h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(22.51 -83.17) rotate(6.68)"/>
+                <path class="st2-2" d="M337.22,433.14h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(29.37 -21.18) rotate(3.21)"/>
+                <text class="st1-2" transform="translate(160.76 312.31) rotate(52.27)"><tspan x="0" y="0">Efficiency</tspan></text>
+                <text class="st1-2" transform="translate(595.75 407.16) rotate(-49.06)"><tspan x="0" y="0">Discipline</tspan></text>
+                <text class="st1-2" transform="translate(381.85 147.24) rotate(6.68)"><tspan x="0" y="0">Clarity</tspan></text>
+            `;
+        }
+    });
+
     const diagram = document.querySelector(".structure-diagram");
 
     if (diagram) {
@@ -691,10 +874,10 @@ document.addEventListener("DOMContentLoaded", () => {
        ========================== */
 
     const triangleSVG = document.querySelector("#Layer_1");
-    
+    console.log(triangleSVG);
     if (triangleSVG) {
         // Get all stroke elements (paths and lines)
-        const strokeElements = triangleSVG.querySelectorAll(".st14");
+        const strokeElements = triangleSVG.querySelectorAll(".st3");
         
         // Prepare each path/line for drawing animation
         strokeElements.forEach((element) => {
@@ -1225,4 +1408,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+    
 });

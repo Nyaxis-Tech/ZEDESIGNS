@@ -462,8 +462,16 @@ body,html{
    RTL (Arabic) Support
    ========================== */
 
-html[dir="rtl"] {
-    font-family: "Cairo", "Noto Sans Arabic", sans-serif;
+/* RTL Typography Adjustments */
+html[dir="rtl"] * {
+    font-family: "din-next-regular", sans-serif;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+    font-family: "TheYearOfHandicrafts", sans-serif !important;
+    /* letter-spacing: 0; */
 }
 
 /* Hero Section RTL */

@@ -13,6 +13,18 @@ body {
     height: 100%;
 }
 
+/* RTL Typography Adjustments */
+html[dir="rtl"] * {
+    font-family: "din-next-regular", sans-serif;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+    font-family: "TheYearOfHandicrafts", sans-serif !important;
+    /* letter-spacing: 0; */
+}
+
 #main {
     width: 100%;
     position: relative;
@@ -349,7 +361,7 @@ body {
 /* IMPORTANT FIX:
    Do NOT scale the SVG here, it clips SVG text/labels because wrapper has overflow:hidden */
 .structure-wrapper svg {
-    transform: scale(1.3);
+    /* transform: scale(1.3); */
 }
 
 /* SVG */
@@ -918,7 +930,6 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    transform: scale(1.4);
     transform-origin: center;
 }
 
@@ -1222,4 +1233,62 @@ body {
     .global-reach-lead {
         font-size: 0.9rem;
     }
+}
+
+/* =======================
+   RTL SUPPORT
+   ======================= */
+
+html[dir="rtl"] .about-hero-right {
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .structure-info-item {
+    text-align: right;
+}
+
+html[dir="rtl"] .structure-info-item .chip {
+    align-self: flex-end;
+}
+
+html[dir="rtl"] .about-global-reach .stat-item {
+    text-align: center;
+}
+
+html[dir="rtl"] .stat-line {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+html[dir="rtl"] .method-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .method-card ul li {
+    padding-left: 0;
+    padding-right: 1rem;
+}
+
+html[dir="rtl"] .method-card ul li::before {
+    left: auto;
+    right: 0;
+}
+
+
+html[dir="rtl"] .about-section-header {
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+html[dir="rtl"] .sector-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .sector-card .sector-number {
+    text-align: right;
+}
+
+html[dir="rtl"] svg{
+    direction: ltr !important;;
 }
