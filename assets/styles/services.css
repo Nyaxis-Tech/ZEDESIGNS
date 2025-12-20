@@ -38,11 +38,16 @@ body,html{
     position: relative;
     width: 100%;
     max-width: 100vw;
-    height: 65vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background: url(../images/home/hero-bg-green.webp) no-repeat center center/cover;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 0%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 0%, black 90%, transparent 100%);
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
 }
 
 .services-hero-content {
@@ -96,7 +101,8 @@ body,html{
 /* Service Row */
 .service-row {
     position: relative;
-    padding: 0.5rem 0;
+    padding: 2rem 0 0rem;
+    height: 40rem;
 }
 
 .service-border-top,
@@ -176,7 +182,7 @@ body,html{
     align-items: center;
     cursor: pointer;
     padding: 0.8rem 0;
-    transition: all 1s ease;
+    transition: all 0.3s ease;
 }
 
 .sub-service-header:hover {
@@ -245,7 +251,7 @@ body,html{
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 1s ease, opacity 0.4s ease;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
 }
 
 .sub-service-content p {

@@ -25,7 +25,7 @@ body {
     min-height: 100vh;
     background-color: var(--green-color);
     color: #ffffff;
-    padding: 7rem 0 5rem;
+    padding: 0rem 0 5rem;
 }
 
 /* Shared vars */
@@ -71,6 +71,70 @@ body {
 /* =======================
    HERO
    ======================= */
+
+/* --- Hero Section --- */
+#services-hero {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: url(../images/home/hero-bg-green.webp) no-repeat center
+        center/cover;
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 0%,
+        black 90%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 0%,
+        black 90%,
+        transparent 100%
+    );
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
+}
+
+.services-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services-hero-content .tag {
+    margin-bottom: 2.5rem;
+}
+
+.services-hero-content h1 {
+    font-family: "didot-bold", serif;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    color: var(--secondary-golden-color);
+    width: 80%;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.services-hero-content > p {
+    /* font-family: "TheYearOfHandicrafts", serif; */
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto;
+}
 
 .about-hero {
     /* UPDATED: reduced spacing after first section */
@@ -207,7 +271,7 @@ body {
     transform: rotateY(180deg);
 }
 
-    /* hover: glass shimmer + glow
+/* hover: glass shimmer + glow
     .logo-spin-wrap:hover::before {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
@@ -248,7 +312,7 @@ body {
 }
 
 .structure-copy {
-    width: 40%;
+    width: 50%;
 }
 
 .structure-copy h2 {
@@ -279,14 +343,13 @@ body {
 .structure-wrapper {
     position: relative;
     border-radius: 1.75rem;
-    padding: 1.5rem;
-    overflow: hidden;
+    /* padding: 1.5rem; */
 }
 
 /* IMPORTANT FIX:
    Do NOT scale the SVG here, it clips SVG text/labels because wrapper has overflow:hidden */
 .structure-wrapper svg {
-    transform: scale(1.2) translateX(20px);
+    transform: scale(1.3);
 }
 
 /* SVG */
@@ -294,7 +357,6 @@ body {
     width: 100%;
     height: auto;
     display: block;
-
 }
 
 /* Lines */
@@ -440,10 +502,13 @@ body {
     margin: 0 auto 3rem;
     border-radius: 2rem;
     overflow: hidden;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03), transparent 70%);
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.03),
+        transparent 70%
+    );
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.4),
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -607,7 +672,6 @@ body {
         border-color 0.2s ease, border 0.2s ease;
 }
 
-
 .method-card .step-label {
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -686,14 +750,15 @@ body {
     background: rgba(255, 255, 255, 0.02);
     overflow: hidden;
     cursor: pointer;
-    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease,
+        box-shadow 0.3s ease;
     --mouse-x: 50%;
     --mouse-y: 50%;
 }
 
 /* Spotlight effect - same as tag */
 .sector-card::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 300px;
     height: 300px;
@@ -739,7 +804,7 @@ body {
 }
 
 .sector-card:hover .sector-number {
-    opacity: 0.3;
+    opacity: 1;
 }
 
 /* Title */
@@ -815,12 +880,12 @@ body {
 .about-culture-grid {
     display: flex;
     flex-direction: row-reverse;
-    
+
     gap: 3rem;
     align-items: center;
 }
-.culture-copy{
-    width: 40%;
+.culture-copy {
+    width: 50%;
 }
 
 .culture-copy h2 {
@@ -845,7 +910,7 @@ body {
 .philosophy-wrapper {
     position: relative;
     border-radius: 1.75rem;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
     overflow: hidden;
 }
 
@@ -853,7 +918,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    transform: scale(1.1);
+    transform: scale(1.4);
     transform-origin: center;
 }
 
@@ -1041,11 +1106,12 @@ body {
     .sectors-grid,
     .about-culture-grid {
         margin-top: 2rem;
-        display: grid;;
+        display: grid;
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .culture-copy,.structure-copy{
+    .culture-copy,
+    .structure-copy {
         width: 100%;
     }
 
@@ -1077,9 +1143,6 @@ body {
         height: 450px;
     }
 
-    .structure-wrapper {
-        padding: 1.2rem;
-    }
 
     .philosophy-wrapper {
         padding: 1.2rem;
@@ -1090,11 +1153,18 @@ body {
     .about-hero-right {
         display: none !important;
     }
+    #services-hero {
+        height: 55vh;
+    }
+
+    .services-hero-content {
+        padding: 0 1.5rem;
+    }
 }
 
 @media (max-width: 640px) {
-    #main #hero {
-        padding-top: 6rem;
+    .structure-wrapper svg {
+        transform: scale(1);
     }
 
     .about-container {
@@ -1111,9 +1181,6 @@ body {
         padding-top: 2rem;
     }
 
-    .structure-wrapper {
-        padding: 1.1rem;
-    }
 
     .philosophy-wrapper {
         padding: 1.1rem;

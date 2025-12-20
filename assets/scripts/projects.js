@@ -66,6 +66,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    /* ==========================
+       HERO ANIMATIONS
+       ========================== */
+
+    const heroTl = gsap.timeline({ delay: 0.3 });
+    
+    heroTl
+        .from('.services-hero-content .tag', {
+            y: 30,
+            duration: 0.8,
+            ease: 'power2.out',
+            onComplete: () => {
+                document.querySelector('.services-hero-content .tag')?.classList.add('revealed');
+            }
+        })
+        .from('.services-hero-content h1', {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        }, '-=0.5')
+        .from('.services-hero-content > p', {
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        }, '-=0.6');
+
 
     // ==========================
     // Custom cursor – from hero down, except header & footer

@@ -18,6 +18,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
+    // hero
+    /* ==========================
+       HERO ANIMATIONS
+       ========================== */
+
+    const heroTll = gsap.timeline({ delay: 0.3 });
+    
+    heroTll
+        .from('.services-hero-content .tag', {
+            y: 30,
+            duration: 0.8,
+            ease: 'power2.out',
+            onComplete: () => {
+                document.querySelector('.services-hero-content .tag')?.classList.add('revealed');
+            }
+        })
+        .from('.services-hero-content h1', {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        }, '-=0.5')
+        .from('.services-hero-content > p', {
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power2.out'
+        }, '-=0.6');
+
     /* ==========================
        HERO STATS COUNTERS
        ========================== */
@@ -774,7 +803,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
             trigger: ".about-methodology",
             start: "top 80%",
-            toggleActions: "play none none none",
+            // toggleActions: "play none none none",
         },
         y: 30,
         opacity: 0,
@@ -782,18 +811,36 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.out",
     });
 
-    gsap.from(".about-methodology .method-card", {
-        scrollTrigger: {
-            trigger: ".about-methodology",
-            start: "top 75%",
-            toggleActions: "play none none none",
-        },
-        y: 40,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        stagger: 0.5,
-    });
+    if(window.innerWidth >= 768) {
+
+        gsap.from(".about-methodology .method-card", {
+            scrollTrigger: {
+                trigger: ".about-methodology",
+                start: "bottom 90%",
+                end: "bottom 60%",
+                // toggleActions: "play none none none",
+                scrub: 1,
+            },
+            // y: 50,
+            opacity: 0,
+            duration: 1.5,
+            ease: "power3.out",
+            stagger: 0.5,
+        });
+    } else {
+        gsap.from(".about-methodology .method-card", {
+            scrollTrigger: {
+                trigger: ".about-methodology",
+                start: "top 80%",
+                // toggleActions: "play none none none",
+            },
+            y: 30,
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            stagger: 0.2,
+        });
+    }
 
     /* ==========================
        EXPERTISE COLUMNS
