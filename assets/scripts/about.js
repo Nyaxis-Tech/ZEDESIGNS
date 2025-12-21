@@ -47,42 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: 'power2.out'
         }, '-=0.6');
 
-    /* ==========================
-       HERO STATS COUNTERS
-       ========================== */
 
-    const statNumbers = document.querySelectorAll(".about-stats-strip .stat-value");
-    let statsCountersDone = false;
-
-    function animateStatsCounters() {
-        if (statsCountersDone) return;
-        statsCountersDone = true;
-
-        statNumbers.forEach((el) => {
-            const raw = el.textContent.trim();
-            const end = parseInt(raw.replace(/[^0-9]/g, ""), 10) || 0;
-            const suffix = raw.replace(/[0-9]/g, ""); // keeps + etc.
-
-            const counter = { value: 0 };
-            gsap.to(counter, {
-                value: end,
-                duration: 1.4,
-                ease: "power3.out",
-                onUpdate: () => {
-                    el.textContent = Math.round(counter.value) + suffix;
-                },
-            });
-        });
-    }
-
-    // trigger when stats strip comes into view
-    ScrollTrigger.create({
-        trigger: ".about-stats-strip",
-        start: "top 90%",
-        // markers: true,
-        once: true,
-        onEnter: animateStatsCounters,
-    });
 
     /* ==========================
        INTERACTIVE GLOBE MAP
@@ -445,75 +410,32 @@ document.addEventListener("DOMContentLoaded", () => {
             once: true,
             onEnter: () => {
                 const globalStats = document.querySelectorAll(".about-global-reach .stat-value");
-                globalStats.forEach((el) => {
-                    const raw = el.textContent.trim();
-                    const end = parseInt(raw.replace(/[^0-9]/g, ""), 10) || 0;
-                    const suffix = raw.replace(/[0-9]/g, "");
+                 globalStats.forEach((el) => {
+                // Get target from data attribute
+                const target =
+                    parseInt(el.getAttribute("data-count-target"), 10) || 0;
 
-                    const counter = { value: 0 };
-                    gsap.to(counter, {
-                        value: end,
-                        duration: 1.4,
-                        ease: "power3.out",
-                        onUpdate: () => {
-                            el.textContent = Math.round(counter.value) + suffix;
-                        }
-                    });
+                // Get current translation text to extract suffix
+                const txt = el.textContent.trim();
+                // Extract suffix (like + or any other characters after the number)
+                const match = txt.match(/[\d٠-٩]+(.*)$/);
+                const suffix = match ? match[1] : "+";
+
+                const obj = { val: 0 };
+                gsap.to(obj, {
+                    val: target,
+                    duration: 3.5,
+                    ease: "power1.out",
+                    onUpdate() {
+                        const v = Math.floor(obj.val);
+                        const displayNum = window.i18n ? window.i18n.formatNumber(v) : v.toString();
+                        el.textContent = displayNum + suffix;
+                    },
                 });
+            });
             }
         });
     }
-
-    /* ==========================
-       HERO SECTION ANIMATIONS
-       ========================== */
-
-    const heroTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".about-hero",
-            start: "top 80%",
-            toggleActions: "play none none none", // play once
-        },
-    });
-
-    heroTl
-        .from(".about-hero-left .eyebrow", {
-            y: 20,
-            opacity: 0,
-            duration: 0.4,
-            ease: "power2.out",
-        })
-        .from(
-            ".about-hero-left h1",
-            {
-                y: 30,
-                opacity: 0,
-                duration: 0.6,
-                ease: "power3.out",
-            },
-            "-=0.1"
-        )
-        .from(
-            ".about-hero-left .lead",
-            {
-                y: 20,
-                opacity: 0,
-                duration: 0.5,
-                ease: "power2.out",
-            },
-            "-=0.25"
-        )
-        .from(
-            ".about-hero-pillars .pillar",
-            {
-                y: 30,
-                opacity: 0,
-                duration: 0.5,
-                ease: "power2.out",
-                stagger: 0.12,
-            },
-            "-=0.2"
-        )
 
     /* ==========================
        INTERACTIVE LOGO TILT ON HERO
@@ -1000,20 +922,22 @@ document.addEventListener("DOMContentLoaded", () => {
        METHODOLOGY CARDS
        ========================== */
 
-    gsap.from(".about-methodology .about-section-header", {
-        scrollTrigger: {
-            trigger: ".about-methodology",
-            start: "top 80%",
-            // toggleActions: "play none none none",
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.out",
-    });
+    // gsap.from(".about-methodology .about-section-header", {
+    //     scrollTrigger: {
+    //         trigger: ".about-methodology",
+    //         start: "top 80%",
+    //         // toggleActions: "play none none none",
+    //     },
+    //     y: 30,
+    //     opacity: 0,
+    //     duration: 0.6,
+    //     ease: "power2.out",
+    // });
 
     if(window.innerWidth >= 768) {
 
+        // clear all previous animations and ScrollTriggers on methodology cards, at times the animations do not properly work, the method cards are being stuck at y 200
+        
         gsap.from(".about-methodology .method-card", {
             scrollTrigger: {
                 trigger: ".about-methodology",
@@ -1139,64 +1063,6 @@ document.addEventListener("DOMContentLoaded", () => {
         stagger: 0.15,
     });
 
-    /* ==========================
-    CUSTOM IMAGE CURSOR ON HOW WE WORK CARDS
-    ========================== */
-
-    const methodCards = document.querySelectorAll(".method-card");
-
-    if (methodCards.length) {
-        // Create cursor element once
-        const cursor = document.createElement("div");
-        cursor.className = "cursor-preview";
-        document.body.appendChild(cursor);
-
-        // Smooth follow using gsap.quickTo (short duration = snappy, smooth)
-        const setX = gsap.quickTo(cursor, "left", {
-            duration: 0.06,
-            ease: "none",
-        });
-        const setY = gsap.quickTo(cursor, "top", {
-            duration: 0.06,
-            ease: "none",
-        });
-
-        // --- PRELOAD ALL CURSOR IMAGES so there is no lag when swapping ---
-        const cursorSources = Array.from(methodCards)
-            .map((card) => card.dataset.cursorImg)
-            .filter(Boolean); // remove undefined / empty
-
-        cursorSources.forEach((src) => {
-            const img = new Image();
-            img.src = src; // browser caches it
-        });
-
-        methodCards.forEach((card) => {
-            const img = card.dataset.cursorImg;
-
-            card.addEventListener("mouseenter", (e) => {
-                if (img) {
-                    // directly swap image, no fade
-                    cursor.style.backgroundImage = `url('${img}')`;
-                } else {
-                    cursor.style.backgroundImage = "none";
-                }
-
-                cursor.classList.add("is-visible");
-                setX(e.clientX);
-                setY(e.clientY);
-            });
-
-            card.addEventListener("mousemove", (e) => {
-                setX(e.clientX);
-                setY(e.clientY);
-            });
-
-            card.addEventListener("mouseleave", () => {
-                cursor.classList.remove("is-visible");
-            });
-        });
-    }
     /* ==========================
        PHILOSOPHY SVG DRAW ANIMATION
        ========================== */
