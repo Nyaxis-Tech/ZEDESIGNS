@@ -377,18 +377,21 @@ class I18n {
     isRTL() {
         return this.currentLang === 'ar';
     }
+
+    // Format number based on current language
+    formatNumber(num) {
+        if (this.currentLang === 'ar') {
+            return num.toString().replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
+        }
+        return num.toString();
+    }
 }
 
 // Initialize i18n when DOM is ready
-let i18nInstance;
-
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-        i18nInstance = new I18n();
+        window.i18n = new I18n();
     });
 } else {
-    i18nInstance = new I18n();
+    window.i18n = new I18n();
 }
-
-// Export for use in other scripts
-window.i18n = i18nInstance;

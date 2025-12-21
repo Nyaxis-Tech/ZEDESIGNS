@@ -735,6 +735,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 <text class="st1-2" transform="translate(381.85 147.24) rotate(6.68)"><tspan x="0" y="0">Clarity</tspan></text>
             `;
         }
+        // Re-initialize animations for the new SVG elements
+        if (typeof initStructureAnimation === 'function') initStructureAnimation();
+        if (typeof initPhilosophyAnimation === 'function') initPhilosophyAnimation();
     });
 
     const diagram = document.querySelector(".structure-diagram");
@@ -870,17 +873,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ==========================
-       TRIANGLE SVG DRAWING ANIMATION
+       STRUCTURE SVG DRAWING ANIMATION
        ========================== */
 
-    const triangleSVG = document.querySelector("#Layer_1");
-    console.log(triangleSVG);
-    if (triangleSVG) {
-        // Get all stroke elements (paths and lines)
-        const strokeElements = triangleSVG.querySelectorAll(".st3");
+    let structureTl;
+
+    function initStructureAnimation() {
+        const triangleSVG = document.querySelector("#Layer_1");
+        if (!triangleSVG) return;
+
+        // Kill existing timeline and ScrollTrigger if they exist
+        if (structureTl) {
+            if (structureTl.scrollTrigger) structureTl.scrollTrigger.kill();
+            structureTl.kill();
+        }
+
+        // Get all stroke elements (paths and lines) - support multiple class versions
+        const strokeElements = triangleSVG.querySelectorAll(".st2, .st3, .st4, .st5");
         
         // Prepare each path/line for drawing animation
         strokeElements.forEach((element) => {
+            if (element.tagName.toLowerCase() === 'text') return;
+            
             const length = element.getTotalLength ? element.getTotalLength() : 0;
             if (length > 0) {
                 gsap.set(element, {
@@ -891,16 +905,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Create timeline for triangle drawing
-        const triangleTl = gsap.timeline({
+        structureTl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".structure-visual",
                 start: "top 70%",
                 toggleActions: "play none none none",
+                id: "structureAnimation"
             },
         });
 
         // Animate all stroke elements drawing in
-        triangleTl.to(strokeElements, {
+        structureTl.to(strokeElements, {
             strokeDashoffset: 0,
             duration: 1.5,
             ease: "power2.inOut",
@@ -911,7 +926,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const textElements = triangleSVG.querySelectorAll("text");
         gsap.set(textElements, { opacity: 0 });
         
-        triangleTl.to(
+        structureTl.to(
             textElements,
             {
                 opacity: 1,
@@ -922,6 +937,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "-=0.5"
         );
     }
+
+    // Initial call
+    initStructureAnimation();
 
     /* ==========================
        TRIANGLE HOVER INTERACTION
@@ -999,13 +1017,15 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.from(".about-methodology .method-card", {
             scrollTrigger: {
                 trigger: ".about-methodology",
-                start: "bottom 90%",
-                end: "bottom 60%",
+                start: "top top",
+                end: "bottom+=30% top",
                 // toggleActions: "play none none none",
-                scrub: 1,
+                scrub: 2,
+                pin: true,
+                pinTrigger: ".about-methodology",
             },
-            // y: 50,
-            opacity: 0,
+             y: 100,
+            opacity: 1,
             duration: 1.5,
             ease: "power3.out",
             stagger: 0.5,
@@ -1014,8 +1034,9 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.from(".about-methodology .method-card", {
             scrollTrigger: {
                 trigger: ".about-methodology",
-                start: "top 80%",
+                start: "top center",
                 // toggleActions: "play none none none",
+                scrub: 1,
             },
             y: 30,
             opacity: 0,
@@ -1177,35 +1198,48 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     /* ==========================
-   PHILOSOPHY SVG DRAW ANIMATION
-   ========================== */
+       PHILOSOPHY SVG DRAW ANIMATION
+       ========================== */
 
-    const philosophySVG = document.querySelector(".philosophy-wrapper svg");
+    let philosophyTl;
 
-    if (philosophySVG) {
-        const strokeElements = philosophySVG.querySelectorAll(".st5, .st4"); // lines + boxes
+    function initPhilosophyAnimation() {
+        const philosophySVG = document.querySelector(".philosophy-wrapper svg");
+        if (!philosophySVG) return;
+
+        // Kill existing timeline and ScrollTrigger if they exist
+        if (philosophyTl) {
+            if (philosophyTl.scrollTrigger) philosophyTl.scrollTrigger.kill();
+            philosophyTl.kill();
+        }
+
+        // Get all stroke elements (paths and lines) - support multiple class versions
+        const strokeElements = philosophySVG.querySelectorAll(".st2-2, .st3-2, .st4, .st5");
         const textElements = philosophySVG.querySelectorAll("text");
 
         // Prep draw
         strokeElements.forEach((el) => {
-            if (typeof el.getTotalLength !== "function") return;
-            const length = el.getTotalLength();
-            gsap.set(el, { strokeDasharray: length, strokeDashoffset: length });
+            if (el.tagName.toLowerCase() === 'text') return;
+            const length = el.getTotalLength ? el.getTotalLength() : 0;
+            if (length > 0) {
+                gsap.set(el, { strokeDasharray: length, strokeDashoffset: length });
+            }
         });
 
         // Prep text
         gsap.set(textElements, { opacity: 0 });
 
-        const tl = gsap.timeline({
+        philosophyTl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".about-culture",
                 start: "top 75%",
                 toggleActions: "play none none none",
+                id: "philosophyAnimation"
             },
         });
 
         // Draw strokes
-        tl.to(strokeElements, {
+        philosophyTl.to(strokeElements, {
             strokeDashoffset: 0,
             duration: 1.4,
             ease: "power2.inOut",
@@ -1213,7 +1247,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Fade text in
-        tl.to(
+        philosophyTl.to(
             textElements,
             {
                 opacity: 1,
@@ -1224,6 +1258,10 @@ document.addEventListener("DOMContentLoaded", () => {
             "-=0.5"
         );
     }
+
+    // Initial call
+    initPhilosophyAnimation();
+
     // Draggable Clients Section with Auto-scroll (ABOUT)
     (() => {
         const clientsSection = document.querySelector("#clients #clientsbtm");

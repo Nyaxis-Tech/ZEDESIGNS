@@ -379,19 +379,7 @@ if (window.innerWidth > 768) {
                     ease: "power1.out",
                     onUpdate() {
                         const v = Math.floor(obj.val);
-                        // Convert to Arabic numerals if current language is Arabic
-                        const currentLang =
-                            document.documentElement.getAttribute("lang") ||
-                            "en";
-                        let displayNum = v.toString();
-
-                        if (currentLang === "ar") {
-                            // Convert Western numerals to Arabic-Indic numerals
-                            displayNum = v
-                                .toString()
-                                .replace(/\d/g, (d) => "٠١٢٣٤٥٦٧٨٩"[d]);
-                        }
-
+                        const displayNum = window.i18n ? window.i18n.formatNumber(v) : v.toString();
                         el.textContent = displayNum + suffix;
                     },
                 });
