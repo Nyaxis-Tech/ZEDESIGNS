@@ -682,6 +682,8 @@ html[dir="rtl"] h3 {
     gap: 0.75rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease,
         border-color 0.2s ease, border 0.2s ease;
+    opacity: 0;
+    transform: translateY(200px);
 }
 
 .method-card .step-label {

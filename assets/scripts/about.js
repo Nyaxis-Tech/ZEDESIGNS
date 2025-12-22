@@ -938,7 +938,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // clear all previous animations and ScrollTriggers on methodology cards, at times the animations do not properly work, the method cards are being stuck at y 200
         
-        gsap.from(".about-methodology .method-card", {
+        gsap.to(".about-methodology .method-card", {
             scrollTrigger: {
                 trigger: ".about-methodology",
                 start: "top top",
@@ -948,22 +948,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 pin: true,
                 pinTrigger: ".about-methodology",
             },
-             y: 200,
-            opacity: 0,
+            y: 0,
+            opacity: 1,
             duration: 1.5,
             ease: "power3.out",
             stagger: 0.5,
         });
     } else {
-        gsap.from(".about-methodology .method-card", {
+        gsap.to(".about-methodology .method-card", {
             scrollTrigger: {
                 trigger: ".about-methodology",
                 start: "top center",
                 // toggleActions: "play none none none",
                 scrub: 1,
             },
-            y: 30,
-            opacity: 0,
+            y: 0,
+            opacity: 1,
             duration: 0.6,
             ease: "power2.out",
             stagger: 0.2,
