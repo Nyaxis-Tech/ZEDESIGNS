@@ -359,7 +359,7 @@ const projectsData = [
         id: 5,
         en: {
             name: "Hatta The One Resort",
-            tagLine: "A Bold Burger and Sandwich Brand",
+            tagLine: "A Modern Sanctuary of Heritage and Nature",
             shortDescription:
                 "Crafted a serene brand identity for Hatta The One Resort, harmonizing Emirati heritage with modern hospitality through an immersive, nature-inspired visual system.",
             tags: [
@@ -407,7 +407,7 @@ const projectsData = [
         },
         ar: {
             name: "Hatta The One Resort",
-            tagLine: "منتجع إماراتي يمزج التراث بالضيافة العصرية",
+            tagLine: "ملاذٌ عصريٌّ للتراث والطبيعة",
             shortDescription:
                 "صغنا هوية علامة تجارية هادئة لمنتجع حتّا ذا ون، تمزج بين التراث الإماراتي والضيافة العصرية من خلال نظام بصري غامر مستوحى من الطبيعة.",
             tags: [
