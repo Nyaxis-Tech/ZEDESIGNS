@@ -169,7 +169,8 @@ html[dir="rtl"] h3 {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(0.75rem, 1.2vw, 1.35rem);
+    gap: clamp(0.75rem, 1.25vw, 1.3rem);
+    row-gap: clamp(0.75rem, 3vw, 3rem);
 }
 
 /* ======================
