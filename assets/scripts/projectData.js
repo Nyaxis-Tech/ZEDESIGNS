@@ -454,6 +454,107 @@ const projectsData = [
             ],
         },
     },
+    {
+        id: 6,
+        en: {
+            name: "Beauty World Industry Co.",
+            tagLine: "Harmonizing Natural Beauty with Industrial Precision",
+            shortDescription:
+                "Developed a scalable brand system for Beauty World Industry Co. that blends organic softness with structural strength, establishing a trusted voice in the cosmetics manufacturing sector.",
+            tags: [
+                "Brand Strategy",
+                "Visual Identity System",
+                "Packaging Design",
+                "Outdoor Branding",
+                "Brand Guidelines & Applications"
+            ],
+            location: "Jeddah, Saudi Arabia",
+            industry: "Beauty & Care Products",
+            year: "2022-2023",
+            overview:
+                "Based in Jeddah, Saudi Arabia, Beauty World Industry Co. stands at the intersection of cosmetic manufacturing and daily skincare. ZEDESIGNS partnered with them to establish a brand identity that communicates both the gentle efficacy of natural ingredients and the reliability of a major manufacturer. Our objective was to move beyond the cold aesthetics often associated with industry and instead craft a narrative of modern simplicity. We sought to visualize their vision of bringing natural solutions into everyday routines, ensuring the brand reflects purity, trust, and calm across every touchpoint.",
+            challenge:
+                'The core challenge was striking a delicate balance between two opposing forces: the softness required for a consumer-facing beauty brand and the structural strength of an industrial manufacturer. A typical manufacturing identity often feels technical and rigid, which risks alienating skincare consumers seeking care and organic connection. Additionally, the brand needed to be bilingual and highly scalable, requiring a design system that could maintain its elegance whether printed on a small serum bottle or displayed on massive outdoor signage.',
+            solution:
+                'We engineered a visual identity that merges abstract curves with bold structural elements, symbolizing the perfect harmony between nature and scientific formulation. The design language utilizes a warm, muted color palette and elegant typography to evoke a sense of premium approachability. We built a robust bilingual system that ensures clarity and consistency in the Saudi market. This cohesive visual rhythm allows Beauty World Industry Co. to scale confidently, bridging the gap between industrial capability and personal care.',
+            textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/Beauty-case-study/imagetext.jpg",
+                text: 'The Beauty World Industry Co. logo combines the elegance of the letter "B" with the dynamic curve of the world, symbolizing the company\'s global reach and commitment to beauty. This simple yet powerful design encapsulates the essence of the brand, emphasizing its dedication to worldwide beauty excellence. The graceful form of the "B" represents beauty and sophistication, while the world curve signifies the company\'s international presence and influence. Together, these elements create a timeless and memorable  logo that reflects the brand\'s core values and vision.',
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/Beauty-case-study/bannerImage.jpg",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/Beauty-case-study/logoImage.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-1.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-2.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-3.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-4.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-5.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-6.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-7.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-8.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-9.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-10.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-11.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-12.jpg",
+            ],
+            video: [
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.mp4",
+            ],
+        },
+        ar: {
+            name: "شركة عالم التجميل للصناعة",
+            tagLine: "تناغم الجمال الطبيعي مع الدقة الصناعية",
+            shortDescription:
+                "طورنا نظام علامة تجارية قابل للتوسع لشركة بيوتي وورلد للصناعة يمزج بين النعومة العضوية والقوة الهيكلية، مما يؤسس صوتاً موثوقاً في قطاع تصنيع مستحضرات التجميل.",
+            tags: [
+                "استراتيجية العلامة التجارية",
+                "نظام الهوية البصرية",
+                "تصميم التعبئة والتغليف",
+                "العلامات الخارجية",
+                "إرشادات العلامة التجارية والتطبيقات"
+            ],
+            location: "جدة، المملكة العربية السعودية",
+            industry: "منتجات التجميل والعناية",
+            year: "٢٠٢٢-٢٠٢٣",
+            overview:
+                "تتمركز شركة بيوتي وورلد للصناعة في جدة، المملكة العربية السعودية، وتقف عند تقاطع تصنيع مستحضرات التجميل والعناية بالبشرة اليومية. تعاونت ZEDESIGNS معهم لتأسيس هوية علامة تجارية تنقل فعالية المكونات الطبيعية اللطيفة وموثوقية مصنع رئيسي. كان هدفنا تجاوز الجماليات الباردة المرتبطة غالباً بالصناعة وبدلاً من ذلك صياغة سردية البساطة العصرية. سعينا لتصور رؤيتهم في جلب الحلول الطبيعية إلى الروتينات اليومية، مع ضمان أن تعكس العلامة التجارية النقاء والثقة والهدوء عبر كل نقطة اتصال.",
+            challenge:
+                "كان التحدي الأساسي هو تحقيق توازن دقيق بين قوتين متعارضتين: النعومة المطلوبة لعلامة تجارية تجميلية موجهة للمستهلك والقوة الهيكلية لمصنع صناعي. غالباً ما تبدو هوية التصنيع النموذجية تقنية وصلبة، مما يعرض خطر إبعاد مستهلكي العناية بالبشرة الذين يبحثون عن العناية والاتصال العضوي. بالإضافة إلى ذلك، كان يجب أن تكون العلامة التجارية ثنائية اللغة وقابلة للتوسع بشكل كبير، مما يتطلب نظام تصميم يمكنه الحفاظ على أناقته سواء تم طباعته على زجاجة مصل صغيرة أو عرضه على لافتات خارجية ضخمة.",
+            solution:
+                "صممنا هوية بصرية تدمج المنحنيات المجردة مع العناصر الهيكلية الجريئة، مما يرمز إلى التناغم المثالي بين الطبيعة والتكوين العلمي. تستخدم لغة التصميم لوحة ألوان دافئة وهادئة وطباعة أنيقة لاستحضار إحساس بالود المتميز. بنينا نظاماً ثنائياً قوياً يضمن الوضوح والاتساق في السوق السعودي. يسمح هذا الإيقاع البصري المتماسك لشركة بيوتي وورلد للصناعة بالتوسع بثقة، جسر الفجوة بين القدرة الصناعية والعناية الشخصية.",
+            textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/Beauty-case-study/imagetext.jpg",
+                text: 'يجمع شعار شركة بيوتي وورلد للصناعة بين أناقة حرف "B" والمنحنى الديناميكي للعالم، مما يرمز إلى الوصول العالمي للشركة والتزامها بالجمال. يجسد هذا التصميم البسيط والقوي جوهر العلامة التجارية، مع التأكيد على تفانيها في التميز الجمالي العالمي. يمثل الشكل الرشيق لـ "B" الجمال والرقي، بينما يشير منحنى العالم إلى الحضور والتأثير الدولي للشركة. معاً، تخلق هذه العناصر شعاراً خالداً ولا يُنسى يعكس القيم والرؤية الأساسية للعلامة التجارية.',
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/Beauty-case-study/bannerImage.jpg",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/Beauty-case-study/logoImage.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-1.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-2.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-3.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-4.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-5.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-6.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-7.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-8.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-9.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-10.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-11.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-12.jpg",
+            ],
+            video: [
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.mp4",
+            ],
+        },
+    },
 ];
 
 export { projectsData };
