@@ -502,7 +502,7 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-12.jpg",
             ],
             video: [
-                "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.mp4",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.webm",
             ],
         },
         ar: {
@@ -551,7 +551,7 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-12.jpg",
             ],
             video: [
-                "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.mp4",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.webm",
             ],
         },
     },
