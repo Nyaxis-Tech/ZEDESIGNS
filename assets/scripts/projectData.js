@@ -555,6 +555,204 @@ const projectsData = [
             ],
         },
     },
+    {
+        id: 7,
+        en: {
+            name: "Nine Stars",
+            tagLine: "A Dynamic Symbol of Excellence and Unity",
+            shortDescription:
+                "Revitalized the Nine Stars brand identity with a custom '9' logomark and a vibrant visual system, capturing the energy of Saudi Arabia’s evolving event landscape.",
+            tags: [
+                "Brand Uplifting",
+                "Visual Identity System",
+                "Brand Pattern Design",
+                "Brand Guidelines & Applications"
+            ],
+            location: "Riyadh, Saudi Arabia",
+            industry: "Events & Experiences",
+            year: "2024",
+            overview:
+                "Nine Stars is a Saudi-born events company in Riyadh that thrives on the intersection of creativity, precision, and cultural authenticity. ZEDESIGNS was commissioned to execute a comprehensive brand uplifting to align their visual presence with their ambition. Our objective was to distill the brand’s bold character and national pride into a modern identity that could command attention. We aimed to move beyond generic event aesthetics, crafting a visual voice that signals both professional structure and the dynamic energy required to orchestrate memorable experiences.",
+            challenge:
+                'In the highly competitive Saudi entertainment sector, Nine Stars needed to transition from a visual identity that felt "fragmented" to one of unified strength. The previous branding lacked the structural clarity to communicate their precision and scale. The challenge was to create a symbol that was meaningful—representing their nine specific brand pillars—without becoming cluttered. We needed to balance the vibrancy of an events company with the reliability of a corporate partner, ensuring the new look could stand out in a crowded market while remaining functional across diverse applications.',
+            solution:
+                'We developed a concept centered on "Unity through Excellence." The core of the identity is a custom logomark where a nine-pointed starburst seamlessly merges with the numeral "9," symbolizing progress and the convergence of ideas. We utilized a bright, confident color palette anchored by clean geometry to establish a look we call "structured vibrancy." This system extends into dynamic patterns and iconography, creating a scalable toolkit that ensures consistency. From business cards to large-scale venue branding, the new identity reflects a bold shift toward clarity and purpose.',
+            textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/ninestars/imagetext.jpg",
+                text: 'The Nine Stars identity was built around the idea of unity through excellence. Inspired by nine distinct brand pillars, the icon brings together a colorful starburst within the shape of a bold "9", symbolizing progress, energy, and ambition. With its clean form and vibrant palette, the mark captures the spirit of innovation that drives Nine Stars forward.',
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/ninestars/bannerImage.jpg",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/ninestars/logoImage.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-1.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-2.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-3.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-4.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-5.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-6.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-7.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-8.webp",
+                "../assets/images/Website Client Pngs/ninestars/image-9.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-10.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-11.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-12.jpg",
+            ],
+            video: [
+                "../assets/images/Website Client Pngs/ninestars/image-4-vid.mp4",
+            ],
+        },
+        ar: {
+            name: "Nine Stars",
+            tagLine: "رمز ديناميكي للتميز والوحدة",
+            shortDescription:
+                "قمنا بتجديد هوية علامة Nine Stars التجارية بعلامة شعار مخصصة على شكل '9' ونظام بصري نابض بالحياة، مما يعكس طاقة مشهد الفعاليات المتطور في المملكة العربية السعودية.",
+            tags: [
+                "رفع العلامة التجارية",
+                "نظام الهوية البصرية",
+                "تصميم نمط العلامة التجارية",
+                "إرشادات العلامة التجارية والتطبيقات"
+            ],
+            location: "الرياض، المملكة العربية السعودية",
+            industry: "الفعاليات والتجارب",
+            year: "٢٠٢٤",
+            overview:
+                "Nine Stars هي شركة فعاليات سعودية في الرياض تزدهر عند تقاطع الإبداع والدقة والأصالة الثقافية. كُلفت ZEDESIGNS بتنفيذ رفع شامل للعلامة التجارية لمواءمة حضورها البصري مع طموحها. كان هدفنا تلخيص شخصية العلامة التجارية الجريئة والفخر الوطني في هوية حديثة يمكنها جذب الانتباه. سعينا لتجاوز الجماليات العامة للفعاليات، وصياغة صوت بصري يشير إلى الهيكل المهني والطاقة الديناميكية المطلوبة لتنظيم تجارب لا تُنسى.",
+            challenge:
+                'في قطاع الترفيه السعودي التنافسي للغاية، احتاجت Nine Stars إلى الانتقال من هوية بصرية شعرت بأنها "مجزأة" إلى هوية ذات قوة موحدة. كانت العلامة التجارية السابقة تفتقر إلى الوضوح الهيكلي اللازم لنقل دقتها وحجمها. كان التحدي يكمن في إنشاء رمز ذو معنى - يمثل أعمدة علامتها التجارية التسعة المحددة - دون أن يصبح مزدحماً. كان علينا موازنة حيوية شركة فعاليات مع موثوقية شريك مؤسسي، مع ضمان أن المظهر الجديد يمكن أن يبرز في سوق مزدحم مع البقاء وظيفياً عبر تطبيقات متنوعة.',
+            solution:
+                'طورنا مفهومًا يتمحور حول "الوحدة من خلال التميز". جوهر الهوية هو علامة شعار مخصصة حيث يندمج انفجار نجمي ذو تسع نقاط بسلاسة مع الرقم "9"، مما يرمز إلى التقدم وتلاقي الأفكار. استخدمنا لوحة ألوان مشرقة وواثقة ترتكز على هندسة نظيفة لإنشاء مظهر نسميه "الحيوية المنظمة". يمتد هذا النظام إلى أنماط وأيقونات ديناميكية، مما يخلق مجموعة أدوات قابلة للتوسع تضمن الاتساق. من بطاقات العمل إلى العلامات التجارية للمواقع على نطاق واسع، تعكس الهوية الجديدة تحولًا جريئًا نحو الوضوح والهدف.',
+             textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/ninestars/imagetext.jpg",
+                text: 'تم بناء هوية Nine Stars حول فكرة الوحدة من خلال التميز. مستوحى من تسعة أعمدة علامة تجارية مميزة، يجمع الرمز بين انفجار نجمي ملون داخل شكل "9" جريء، مما يرمز إلى التقدم والطاقة والطموح. مع شكله النظيف ولوحة ألوانه النابضة بالحياة، يلتقط الشعار روح الابتكار التي تدفع Nine Stars إلى الأمام.',
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/ninestars/bannerImage.jpg",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/ninestars/logoImage.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-1.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-2.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-3.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-4.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-5.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-6.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-7.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-8.webp",
+                "../assets/images/Website Client Pngs/ninestars/image-9.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-10.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-11.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-12.jpg",
+            ],
+            video: [
+                "../assets/images/Website Client Pngs/ninestars/image-4-vid.mp4",
+            ],
+        },
+    },
+    {
+        id: 8,
+        en: {
+            name: "Resto Burger",
+            tagLine: "A Bold Fusion of Savory Classics and Exotic Zest",
+            shortDescription:
+                "Developed a flavorful brand identity for Resto Burger, visually articulating their unique fusion of premium meats and exotic fruit-based sauces through a bold, appetizing design system.",
+            tags: [
+                "Brand Strategy",
+                "Logo Design",
+                "Visual Identity",
+                "Packaging Design"
+            ],
+            location: "Saudi Arabia",
+            industry: "Food & Beverage",
+            year: "2024",
+            overview:
+                "Resto Burger is a culinary concept that challenges the status quo of the fast-food landscape. By fusing daily-prepared, juicy meats with unexpected fruit-based sauces—such as mango, cherry, and pineapple—they offer a fresh twist on the classic American staple. ZEDESIGNS was tasked to capture this adventurous spirit visually. Our goal was to build a brand presence that signals freshness and creativity, positioning Resto Burger not just as a quick meal, but as a bold flavor experience that redefines how customers perceive and enjoy the standard burger.",
+            challenge:
+                'The burger market is notoriously saturated, dominated by established giants and traditional aesthetics. Resto Burger’s unique selling proposition—fruit-infused savory sauces—presented a specific challenge: how to communicate this exotic twist without alienating lovers of the classic burger. We needed to bridge the gap between "familiar comfort food" and "bold culinary experiment." The visual identity had to cut through the noise of standard fast-food branding, ensuring the unique flavor profile was perceived as premium, appetizing, and undeniably fresh.',
+            solution:
+                'We developed a visual identity that is as appetizing as the menu itself, merging brand recognition directly with the product. The centerpiece is a custom logo where the name "Resto" is cleverly nestled inside the burger bun, symbolizing that the brand itself is the core of the experience. We utilized a vibrant, high-contrast palette to reflect the zest of the fruit sauces and the quality of the ingredients. This bold structural choice creates an instant visual hook, ensuring Resto Burger is memorable, legible, and distinct across both digital ordering platforms and physical dining spaces.',
+            textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/resto/imagetext.jpg",
+                text: 'The logo for Resto Burger creatively merges identity and flavor. The word "Resto" is placed inside the burger bun, making the brand name part of the burger itself bold, appetizing, and unforgettable. It reflects exactly what we offer: a name you\'ll remember, and a taste you won\'t forget.',
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/resto/bannerImage.webp",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/resto/logoImage.jpg",
+                "../assets/images/Website Client Pngs/resto/image-1.webp",
+                "../assets/images/Website Client Pngs/resto/image-2.webp",
+                "../assets/images/Website Client Pngs/resto/image-3.webp",
+                "../assets/images/Website Client Pngs/resto/image-4.webp",
+                "../assets/images/Website Client Pngs/resto/image-5.webp",
+                "../assets/images/Website Client Pngs/resto/image-6.webp",
+                "../assets/images/Website Client Pngs/resto/image-7.webp",
+                "../assets/images/Website Client Pngs/resto/image-8.webp",
+                "../assets/images/Website Client Pngs/resto/image-9.webp",
+                "../assets/images/Website Client Pngs/resto/image-10.webp",
+                "../assets/images/Website Client Pngs/resto/image-11.webp",
+                "../assets/images/Website Client Pngs/resto/image-12.webp",
+            ],
+            video: [
+                "../assets/images/Website Client Pngs/resto/image-4-vid.mp4",
+            ],
+        },
+        ar: {
+            name: "Resto Burger",
+            tagLine: "مزيج جريء من الكلاسيكيات الشهية والنكهات الغريبة",
+            shortDescription:
+                "طورنا هوية علامة تجارية مليئة بالنكهات لـ Resto Burger، تعبر بصريًا عن مزيجهم الفريد من اللحوم الممتازة والصلصات الغريبة القائمة على الفواكه من خلال نظام تصميم جريء وشهي.",
+            tags: [
+                "استراتيجية العلامة التجارية",
+                "تصميم الشعار",
+                "الهوية البصرية",
+                "تصميم التعبئة والتغليف"
+            ],
+            location: "المملكة العربية السعودية",
+            industry: "الأغذية والمشروبات",
+            year: "٢٠٢٤",
+            overview:
+                "Resto Burger هو مفهوم طهوي يتحدى الوضع الراهن في مشهد الوجبات السريعة. من خلال دمج اللحوم الطازجة المحضرة يوميًا مع الصلصات الغريبة القائمة على الفواكه - مثل المانجو والكرز والأناناس - يقدمون لمسة جديدة على الوجبة الأمريكية الكلاسيكية. كُلفت ZEDESIGNS بالتقاط هذا الروح المغامر بصريًا. كان هدفنا بناء حضور علامة تجارية يشير إلى الطزاجة والإبداع، مما يضع Resto Burger ليس فقط كوجبة سريعة، بل كتجربة نكهة جريئة تعيد تعريف كيفية تصور العملاء للبرغر القياسي والاستمتاع به.",
+            challenge:
+                'يشتهر سوق البرغر بالتشبع، حيث تهيمن عليه العمالقة الراسخة والجماليات التقليدية. قدم العرض الفريد لـ Resto Burger - الصلصات المالحة المنقوعة بالفواكه - تحديًا محددًا: كيفية نقل هذه اللمسة الغريبة دون إبعاد محبي البرغر الكلاسيكي. كان علينا سد الفجوة بين "الطعام المريح المألوف" و "التجربة الطهوية الجريئة". كان يجب أن تقطع الهوية البصرية الضوضاء الناتجة عن العلامات التجارية التقليدية للوجبات السريعة، مع ضمان أن يتم تصور ملف النكهة الفريد على أنه متميز وشهي ولا يمكن إنكاره طازج.',
+            solution:
+                'طورنا هوية بصرية شهية مثل القائمة نفسها، تدمج التعرف على العلامة التجارية مباشرة مع المنتج. المحور الرئيسي هو شعار مخصص حيث يتم وضع اسم "Resto" بذكاء داخل خبز البرغر، مما يرمز إلى أن العلامة التجارية نفسها هي جوهر التجربة. استخدمنا لوحة ألوان نابضة بالحياة وعالية التباين لتعكس نكهة الصلصات الفاكهية وجودة المكونات. يخلق هذا الاختيار الهيكلي الجريء خطافًا بصريًا فوريًا، مما يضمن أن Resto Burger لا يُنسى وسهل القراءة ومميز عبر منصات الطلب الرقمية ومساحات تناول الطعام الفعلية.',
+             textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/resto/imagetext.jpg",
+                text: 'يجمع شعار Resto Burger بشكل إبداعي بين الهوية والنكهة. يتم وضع كلمة "Resto" داخل خبز البرغر، مما يجعل اسم العلامة التجارية جزءًا من البرغر نفسه - جريء وشهي ولا يُنسى. إنه يعكس بالضبط ما نقدمه: اسم ستتذكره، وطعم لن تنساه.',
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/resto/bannerImage.webp",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/resto/logoImage.jpg",
+                "../assets/images/Website Client Pngs/resto/image-1.webp",
+                "../assets/images/Website Client Pngs/resto/image-2.webp",
+                "../assets/images/Website Client Pngs/resto/image-3.webp",
+                "../assets/images/Website Client Pngs/resto/image-4.webp",
+                "../assets/images/Website Client Pngs/resto/image-5.webp",
+                "../assets/images/Website Client Pngs/resto/image-6.webp",
+                "../assets/images/Website Client Pngs/resto/image-7.webp",
+                "../assets/images/Website Client Pngs/resto/image-8.webp",
+                "../assets/images/Website Client Pngs/resto/image-9.webp",
+                "../assets/images/Website Client Pngs/resto/image-10.webp",
+                "../assets/images/Website Client Pngs/resto/image-11.webp",
+                "../assets/images/Website Client Pngs/resto/image-12.webp",
+            ],
+            video: [
+                "../assets/images/Website Client Pngs/resto/image-4-vid.mp4",
+            ],
+        },
+    },
 ];
 
 export { projectsData };
