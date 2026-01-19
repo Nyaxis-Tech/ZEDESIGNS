@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Populate Specs Strip
         const separator = currentLang === 'ar' ? '، ' : ', ';
-        document.getElementById('spec-services').textContent = projectData.tags.slice(0, 2).join(separator);
+        document.getElementById('spec-services').textContent = projectData.tags.slice(0, 4).join(separator);
         document.getElementById('spec-location').textContent = projectData.location || "KSA";
         document.getElementById('spec-industry').textContent = projectData.industry || (currentLang === 'ar' ? 'عام' : 'General');
         document.getElementById('spec-year').textContent = projectData.year || "2024";

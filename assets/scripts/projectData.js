@@ -583,23 +583,23 @@ const projectsData = [
                 text: 'The Nine Stars identity was built around the idea of unity through excellence. Inspired by nine distinct brand pillars, the icon brings together a colorful starburst within the shape of a bold "9", symbolizing progress, energy, and ambition. With its clean form and vibrant palette, the mark captures the spirit of innovation that drives Nine Stars forward.',
             },
             bannerImage:
-                "../assets/images/Website Client Pngs/ninestars/bannerImage.webp",
+                "../assets/images/Website Client Pngs/ninestars/bannerImage.jpg",
             logoImage:
                 "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
             images: [
                 "../assets/images/Website Client Pngs/ninestars/logoImage.jpg",
-                "../assets/images/Website Client Pngs/ninestars/image-1.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-2.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-3.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-4.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-5.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-6.webp",
+                "../assets/images/Website Client Pngs/ninestars/image-1.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-2.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-3.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-4.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-5.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-6.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-7.jpg",
-                "../assets/images/Website Client Pngs/ninestars/image-8.webp",
+                "../assets/images/Website Client Pngs/ninestars/image-8.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-9.webp",
                 "../assets/images/Website Client Pngs/ninestars/image-10.jpg",
-                "../assets/images/Website Client Pngs/ninestars/image-11.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-12.webp",
+                "../assets/images/Website Client Pngs/ninestars/image-11.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-12.jpg",
             ],
             video: [
                 "../assets/images/Website Client Pngs/ninestars/image-4-vid.mp4",
@@ -631,23 +631,23 @@ const projectsData = [
                 text: 'تم بناء هوية Nine Stars حول فكرة الوحدة من خلال التميز. مستوحى من تسعة أعمدة علامة تجارية مميزة، يجمع الرمز بين انفجار نجمي ملون داخل شكل "9" جريء، مما يرمز إلى التقدم والطاقة والطموح. مع شكله النظيف ولوحة ألوانه النابضة بالحياة، يلتقط الشعار روح الابتكار التي تدفع Nine Stars إلى الأمام.',
             },
             bannerImage:
-                "../assets/images/Website Client Pngs/ninestars/bannerImage.webp",
+                "../assets/images/Website Client Pngs/ninestars/bannerImage.jpg",
             logoImage:
                 "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
             images: [
                 "../assets/images/Website Client Pngs/ninestars/logoImage.jpg",
-                "../assets/images/Website Client Pngs/ninestars/image-1.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-2.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-3.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-4.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-5.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-6.webp",
+                "../assets/images/Website Client Pngs/ninestars/image-1.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-2.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-3.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-4.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-5.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-6.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-7.jpg",
-                "../assets/images/Website Client Pngs/ninestars/image-8.webp",
+                "../assets/images/Website Client Pngs/ninestars/image-8.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-9.webp",
                 "../assets/images/Website Client Pngs/ninestars/image-10.jpg",
-                "../assets/images/Website Client Pngs/ninestars/image-11.webp",
-                "../assets/images/Website Client Pngs/ninestars/image-12.webp",
+                "../assets/images/Website Client Pngs/ninestars/image-11.jpg",
+                "../assets/images/Website Client Pngs/ninestars/image-12.jpg",
             ],
             video: [
                 "../assets/images/Website Client Pngs/ninestars/image-4-vid.mp4",
@@ -667,9 +667,9 @@ const projectsData = [
                 "Visual Identity",
                 "Packaging Design"
             ],
-            location: "Saudi Arabia",
+            location: "Najran, Saudi Arabia",
             industry: "Food & Beverage",
-            year: "2024",
+            year: "2025",
             overview:
                 "Resto Burger is a culinary concept that challenges the status quo of the fast-food landscape. By fusing daily-prepared, juicy meats with unexpected fruit-based sauces—such as mango, cherry, and pineapple—they offer a fresh twist on the classic American staple. ZEDESIGNS was tasked to capture this adventurous spirit visually. Our goal was to build a brand presence that signals freshness and creativity, positioning Resto Burger not just as a quick meal, but as a bold flavor experience that redefines how customers perceive and enjoy the standard burger.",
             challenge:
@@ -715,9 +715,9 @@ const projectsData = [
                 "الهوية البصرية",
                 "تصميم التعبئة والتغليف"
             ],
-            location: "المملكة العربية السعودية",
+            location: "نجران، المملكة العربية السعودية",
             industry: "الأغذية والمشروبات",
-            year: "٢٠٢٤",
+            year: "٢٠٢٥",
             overview:
                 "Resto Burger هو مفهوم طهوي يتحدى الوضع الراهن في مشهد الوجبات السريعة. من خلال دمج اللحوم الطازجة المحضرة يوميًا مع الصلصات الغريبة القائمة على الفواكه - مثل المانجو والكرز والأناناس - يقدمون لمسة جديدة على الوجبة الأمريكية الكلاسيكية. كُلفت ZEDESIGNS بالتقاط هذا الروح المغامر بصريًا. كان هدفنا بناء حضور علامة تجارية يشير إلى الطزاجة والإبداع، مما يضع Resto Burger ليس فقط كوجبة سريعة، بل كتجربة نكهة جريئة تعيد تعريف كيفية تصور العملاء للبرغر القياسي والاستمتاع به.",
             challenge:
@@ -750,6 +750,204 @@ const projectsData = [
             ],
             video: [
                 "../assets/images/Website Client Pngs/resto/image-4-vid.mp4",
+            ],
+        },
+    },
+    {
+        id: 9,
+        en: {
+            name: "Cold Summer",
+            tagLine: "Reshaping the Summer Experience, One Square at a Time",
+            shortDescription:
+                "Developed a vibrant and playful brand identity for Cold Summer, transforming their unique square-shaped desserts into a cohesive visual narrative of friendship and joy.",
+            tags: [
+                "Brand Strategy",
+                "Character Design",
+                "Visual Identity",
+                "Packaging Design",
+                "Signage"
+            ],
+            location: "Dammam, Saudi Arabia",
+            industry: "Food & Beverage",
+            year: "2025",
+            overview:
+                "Located in Dammam, Cold Summer is a cozy destination dedicated to creating unforgettable vibes for families and teenagers. ZEDESIGNS was tasked to build a brand that transcends the typical ice cream shop experience, positioning it as a hub for friendship and joyful moments. Our objective was to capture the essence of a 'perpetual summer'—bright, welcoming, and energetic—and translate that into a visual identity that resonates with a youthful, social-savvy audience while highlighting their signature square-shaped treats.",
+            challenge:
+                'The primary challenge was to visually articulate the brand’s unique product proposition—square-shaped frozen desserts—while ensuring the vibe remained soft and approachable. Geometric shapes can sometimes feel rigid or cold, which contradicts the warm, cozy atmosphere the client desired. We needed to create a visual language that balanced this structural uniqueness with the fluidity of fun and friendship. Furthermore, the identity had to be highly versatile, capable of maintaining its playful character across everything from small packaging to large outdoor signage.',
+            solution:
+                'We crafted a charismatic visual identity centered around a custom square ice cream mascot, directly visualizing the product’s unique form. To counterbalance the geometry, we paired the icon with a customized wordmark using the "Backso" typeface, chosen for its smooth, rounded style that radiates friendliness. We built a modular logo system—featuring mascot-only and monochrome variations—that ensures the brand adapts seamlessly to any format. The result is a system that feels "structured yet soft," perfectly capturing the joy of summer in every square.',
+            textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/coldsummer/imagetext.jpg",
+                text: 'The Cold Summer logo creatively combines the brand\'s identity with its unique product offering. The word "Cold" is placed above a square-shaped ice cream mascot, making the mascot an integral part of the logo itself - playful, inviting, and unforgettable. It perfectly reflects what Cold Summer offers: a name you\'ll remember and a treat you won\'t forget.',
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/coldsummer/bannerImage.jpg",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/coldsummer/logoImage.png",
+                "../assets/images/Website Client Pngs/coldsummer/image-1.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-2.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-3.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-4.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-5.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-6.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-7.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-8.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-9.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-10.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-11.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-12.jpg",
+            ],
+            video: [
+                "../assets/images/Website Client Pngs/coldsummer/image-4-vid.mp4",
+            ],
+        },
+        ar: {
+            name: "Cold Summer",
+            tagLine: "إعادة تشكيل تجربة الصيف، مربعًا واحدًا في كل مرة",
+            shortDescription:
+                "طورنا هوية علامة تجارية نابضة بالحياة ومرحة لـ Cold Summer، محولين حلوياتهم المربعة الشكل الفريدة إلى سرد بصري متماسك عن الصداقة والفرح.",
+            tags: [
+                "استراتيجية العلامة التجارية",
+                "تصميم الشخصيات",
+                "الهوية البصرية",
+                "تصميم التعبئة والتغليف",
+                "اللافتات"
+            ],
+            location: "الدمام، المملكة العربية السعودية",
+            industry: "الأغذية والمشروبات",
+            year: "٢٠٢٥",
+            overview:
+                "تقع Cold Summer في الدمام، وهي وجهة مريحة مكرسة لخلق أجواء لا تُنسى للعائلات والمراهقين. كُلفت ZEDESIGNS ببناء علامة تجارية تتجاوز تجربة متجر الآيس كريم النموذجية، مما يضعها كمركز للصداقة واللحظات المبهجة. كان هدفنا التقاط جوهر 'الصيف الدائم' - المشرق والترحيبي والنشيط - وترجمته إلى هوية بصرية تتناغم مع جمهور شاب واجتماعي الميول مع تسليط الضوء على حلوياتهم المربعة الشكل المميزة.",
+            challenge:
+                'كان التحدي الأساسي هو التعبير بصريًا عن عرض المنتج الفريد للعلامة التجارية - الحلويات المجمدة المربعة الشكل - مع ضمان بقاء الأجواء ناعمة وقابلة للتواصل. يمكن أن تبدو الأشكال الهندسية أحيانًا صلبة أو باردة، مما يتعارض مع الجو الدافئ والمريح الذي يرغب العميل في تحقيقه. كان علينا إنشاء لغة بصرية توازن بين هذا التفرد الهيكلي ومرونة المرح والصداقة. علاوة على ذلك، كان يجب أن تكون الهوية متعددة الاستخدامات للغاية، قادرة على الحفاظ على طابعها المرح عبر كل شيء من التعبئة والتغليف الصغيرة إلى اللافتات الخارجية الكبيرة.',
+            solution:
+                'صممنا هوية بصرية ذات شخصية تتمحور حول تميمة آيس كريم مربعة الشكل مخصصة، تصور بشكل مباشر شكل المنتج الفريد. لموازنة الهندسة، قمنا بإقران الأيقونة بعلامة كلمة مخصصة باستخدام خط "Backso"، الذي تم اختياره لأسلوبه الناعم والمدور الذي يشع بالود. بنينا نظام شعار معياري - يتميز بتميمة فقط وتنوعات أحادية اللون - يضمن تكيّف العلامة التجارية بسلاسة مع أي تنسيق. النتيجة هي نظام يشعر بأنه "منظم ولكنه ناعم"، يلتقط تمامًا فرحة الصيف في كل مربع.',
+             textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/coldsummer/imagetext.jpg",
+                text: 'يجمع شعار Cold Summer بشكل إبداعي بين هوية العلامة التجارية وعرض منتجها الفريد. يتم وضع كلمة "Cold" فوق تميمة آيس كريم مربعة الشكل، مما يجعل التميمة جزءًا لا يتجزأ من الشعار نفسه - مرحة وجذابة ولا تُنسى. إنه يعكس تمامًا ما تقدمه Cold Summer: اسم ستتذكره ومعاملة لن تنساها.',
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/coldsummer/bannerImage.jpg",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/coldsummer/logoImage.png",
+                "../assets/images/Website Client Pngs/coldsummer/image-1.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-2.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-3.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-4.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-5.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-6.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-7.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-8.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-9.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-10.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-11.jpg",
+                "../assets/images/Website Client Pngs/coldsummer/image-12.jpg",
+            ],
+            video: [
+                "../assets/images/Website Client Pngs/coldsummer/image-4-vid.mp4",
+            ],
+        },
+    },
+    {
+        id: 10,
+        en: {
+            name: "Juman Al Emar",
+            tagLine: "Constructing a Visual Legacy of Precision and Trust",
+            shortDescription:
+                "Engineered a robust brand identity for Juman Al Emaar, utilizing grid-based geometry and modern typography to embody architectural precision and corporate reliability.",
+            tags: [
+                "Logo Design",
+                "Visual Identity System",
+                "Stationery & Site Branding"
+            ],
+            location: "Riyadh, Saudi Arabia",
+            industry: "Contracting & Construction",
+            year: "2023-2024",
+            overview:
+                "Juman Al Emaar is a Riyadh-based contracting firm built on the pillars of precision, trust, and structure. ZEDESIGNS was commissioned to translate these operational values into a visual identity that reflects architectural strength. Our objective was to move beyond the rugged aesthetics often found in the construction sector and instead craft a brand that exudes corporate sophistication and visual harmony. We aimed to build a narrative where every line and angle communicates the stability and calculated planning that the company brings to its projects.",
+            challenge:
+                'In the dense construction market of KSA, standing out requires more than just heavy machinery; it requires a brand voice that implies certainty. The challenge was to design an identity that felt "heavy" enough to represent a builder, yet refined enough to appeal to modern investors and stakeholders. We needed to visualize the abstract concepts of "structural integrity" and "trust" without relying on generic hard-hat clichés. The identity had to be scalable, maintaining its impact whether printed on a CEO’s business card or wrapped around a construction site barrier.',
+            solution:
+                'We developed a structural visual identity system rooted in geometry and logic. The core of the brand is a grid-based logomark that seamlessly merges architectural forms with the stylized initials "JEC" (Juman Al Emaar Construction). This fusion creates a symbol that is solid, scalable, and personalized. We established a confident color palette to evoke trust and authority, extending this language across site branding and stationery. The result is a cohesive brand experience that visually guarantees the quality of the build before the ground is even broken.',
+            textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/jumanalemar/imagetext.jpg",
+                text: 'The logo merges architectural forms with the stylized initials JEC (Juman Al Emaar Construction). The result is a balanced mark that reflects both the brand’s industry focus and personalized identity, solid, scalable, and symbolically strong.',
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/jumanalemar/bannerImage.jpg",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/jumanalemar/logoImage.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-1.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-2.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-3.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-4.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-5.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-6.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-7.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-8.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-9.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-10.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-11.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-12.jpg",
+            ],
+            video: [
+                "../assets/images/Website Client Pngs/jumanalemar/image-4-vid.mp4",
+            ],
+        },
+        ar: {
+            name: "جمان الإعمار",
+            tagLine: "بناء إرث بصري من الدقة والثقة",
+            shortDescription:
+                "تصميم هوية علامة تجارية قوية لـ جمان الإعمار، باستخدام الهندسة القائمة على الشبكة والطباعة الحديثة لتجسيد الدقة المعمارية والموثوقية المؤسسية.",
+            tags: [
+                "تصميم الشعار",
+                "نظام الهوية البصرية",
+                "القرطاسية وعلامات الموقع"
+            ],
+            location: "الرياض، المملكة العربية السعودية",
+            industry: "المقاولات والبناء",
+            year: "٢٠٢٣-٢٠٢٤",
+            overview:
+                "جمان الإعمار هي شركة مقاولات مقرها الرياض مبنية على ركائز الدقة والثقة والبنية. كُلفت ZEDESIGNS بترجمة هذه القيم التشغيلية إلى هوية بصرية تعكس القوة المعمارية. كان هدفنا هو تجاوز الجماليات الخشنة التي غالبًا ما توجد في قطاع البناء وبدلاً من ذلك صياغة علامة تجارية تفوح منها الرقي المؤسسي والتناغم البصري. سعينا لبناء سرد حيث تعبر كل خط وزاوية عن الاستقرار والتخطيط المحسوب الذي تجلبه الشركة إلى مشاريعها.",
+            challenge:
+                'في سوق البناء الكثيف في المملكة العربية السعودية، يتطلب التميز أكثر من مجرد آلات ثقيلة؛ بل يتطلب صوت علامة تجارية يوحي باليقين. كان التحدي هو تصميم هوية تشعر بأنها "ثقيلة" بما يكفي لتمثيل باني، ولكن مصقولة بما يكفي لجذب المستثمرين وأصحاب المصلحة الحديثين. كان علينا تصور المفاهيم المجردة لـ "السلامة الهيكلية" و "الثقة" دون الاعتماد على الكليشيهات العامة للخوذ الصلبة. كان يجب أن تكون الهوية قابلة للتوسع، مع الحفاظ على تأثيرها سواء تم طباعتها على بطاقة عمل المدير التنفيذي أو ملفوفة حول حاجز موقع البناء.',
+            solution:
+                'طورنا نظام هوية بصرية هيكلية متجذرة في الهندسة والمنطق. جوهر العلامة التجارية هو علامة شعار قائمة على الشبكة تدمج بسلاسة الأشكال المعمارية مع الأحرف الأولى المصممة "JEC" (جمان الإعمار للمقاولات). يخلق هذا الاندماج رمزًا صلبًا وقابلًا للتوسع وشخصيًا. أنشأنا لوحة ألوان واثقة لاستحضار الثقة والسلطة، ممتدين هذه اللغة عبر علامات الموقع والقرطاسية. النتيجة هي تجربة علامة تجارية متماسكة تضمن بصريًا جودة البناء قبل حتى كسر الأرض.',
+             textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/jumanalemar/imagetext.jpg",
+                text: 'يجمع الشعار بين الأشكال المعمارية والأحرف الأولى المصممة JEC (جمان الإعمار للمقاولات). النتيجة هي علامة متوازنة تعكس تركيز الصناعة وهوية شخصية للعلامة التجارية، صلبة وقابلة للتوسع وقوية رمزيًا.',
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/jumanalemar/bannerImage.jpg",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/jumanalemar/logoImage.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-1.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-2.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-3.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-4.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-5.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-6.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-7.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-8.jpg",
+                "../assets/images/Website Client Pngs/jumanalemar/image-9.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-10.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-11.png",
+                "../assets/images/Website Client Pngs/jumanalemar/image-12.jpg",
+            ],
+            video: [
+                "../assets/images/Website Client Pngs/jumanalemar/image-4-vid.mp4",
             ],
         },
     },
