@@ -1571,35 +1571,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ==========================
-       EXPERTISE COLUMNS
-       ========================== */
-
-    // gsap.from(".about-expertise .about-section-header", {
-    //     scrollTrigger: {
-    //         trigger: ".about-expertise",
-    //         start: "top 80%",
-    //         toggleActions: "play none none none",
-    //     },
-    //     y: 30,
-    //     opacity: 0,
-    //     duration: 0.6,
-    //     ease: "power2.out",
-    // });
-
-    // gsap.from(".about-expertise .expertise-column", {
-    //     scrollTrigger: {
-    //         trigger: ".about-expertise",
-    //         start: "top 75%",
-    //         toggleActions: "play none none none",
-    //     },
-    //     y: 35,
-    //     opacity: 0,
-    //     duration: 0.55,
-    //     ease: "power3.out",
-    //     stagger: 0.12,
-    // });
-
-    /* ==========================
        SECTOR CARDS
        ========================== */
 
@@ -1647,6 +1618,80 @@ document.addEventListener("DOMContentLoaded", () => {
             card.style.setProperty("--mouse-y", `${y}px`);
         });
     });
+
+    /* ==========================
+       MOBILE SCROLL-BASED HOVER EFFECT FOR SECTOR CARDS
+       ========================== */
+    
+    // Apply scroll-triggered hover effect on mobile only
+    if (window.innerWidth <= 768) {
+        const mobileSectorCards = document.querySelectorAll(".about-sectors .sector-card");
+        
+        mobileSectorCards.forEach((card) => {
+            // // Animate the card container
+            // gsap.to(card, {
+            //     scrollTrigger: {
+            //         trigger: card,
+            //         start: "top 65%",
+            //         end: "bottom 35%",
+            //         toggleActions: "play reverse play reverse",
+            //     },
+            //     borderColor: "rgba(244, 214, 162, 0.25)",
+            //     y: -2,
+            //     boxShadow: "0 20px 40px rgba(0, 0, 0, 0.25)",
+            //     duration: 0.5,
+            //     ease: "power2.out",
+            // });
+
+            // Animate the number to full opacity
+            const number = card.querySelector(".sector-number");
+            if (number) {
+                gsap.to(number, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 65%",
+                        end: "bottom 35%",
+                        toggleActions: "play reverse play reverse",
+                    },
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+            }
+
+            // Animate the title to golden color
+            const title = card.querySelector("h3");
+            if (title) {
+                gsap.to(title, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 65%",
+                        end: "bottom 35%",
+                        toggleActions: "play reverse play reverse",
+                    },
+                    color: "var(--sand)",
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+            }
+
+            // Animate the paragraph opacity
+            const paragraph = card.querySelector("p");
+            if (paragraph) {
+                gsap.to(paragraph, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 65%",
+                        end: "bottom 35%",
+                        toggleActions: "play reverse play reverse",
+                    },
+                    opacity: 0.9,
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+            }
+        });
+    }
 
     /* ==========================
        CULTURE / PHILOSOPHY
