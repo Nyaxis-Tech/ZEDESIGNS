@@ -587,7 +587,7 @@ const projectsData = [
             logoImage:
                 "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
             images: [
-                "../assets/images/Website Client Pngs/ninestars/logoImage.jpg",
+                "../assets/images/Website Client Pngs/ninestars/logoimage.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-1.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-2.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-3.jpg",
@@ -635,7 +635,7 @@ const projectsData = [
             logoImage:
                 "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
             images: [
-                "../assets/images/Website Client Pngs/ninestars/logoImage.jpg",
+                "../assets/images/Website Client Pngs/ninestars/logoimage.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-1.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-2.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-3.jpg",
