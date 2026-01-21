@@ -17,6 +17,15 @@ window.addEventListener("scroll", () => {
     }
 });
 
+if(localStorage.getItem("language") == "en") {
+    document.querySelector("#copyrightpara").textContent = `© ${new Date().getFullYear()} ZEDESIGNS`;
+    document.querySelector("#copyright").textContent = `${new Date().getFullYear()} © ZEDESIGNS. All rights reserved.`;
+} 
+else {
+    document.querySelector("#copyrightpara").textContent = `© ${new Date().getFullYear()} ZEDESIGNS`;
+    document.querySelector("#copyright").textContent = `${new Date().getFullYear()} © ZEDESIGNS. جميع الحقوق محفوظة.`;
+}
+
 
 // Mobile Menu Toggle
 const menuToggle = document.getElementById('menuToggle');

@@ -1,81 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>About</title>
+        <title>About</title>
 
-    <link
-        id="favicon"
-        rel="shortcut icon"
-        href="../assets/images/favicon.png"
-        type="image/x-icon"
-    />
+        <link
+            id="favicon"
+            rel="shortcut icon"
+            href="../assets/images/favicon.png"
+            type="image/x-icon"
+        />
 
-    <link rel="stylesheet" href="../assets/styles/utils.css" />
-    <link rel="stylesheet" href="../assets/styles/about.css" />
-</head>
-<body>
-    <div id="main">
-        <div id="nav">
-            <img src="../assets/images/logo.png" alt="ZEDESIGNS Logo" />
-            <ul>
-                <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
-                <li><a href="./about.html" data-i18n="nav.about">About</a></li>
-                <li>
-                    <a href="./services.html" data-i18n="nav.services"
-                        >Services</a
-                    >
-                </li>
-                <!-- <li><a href="./pages/projects.html">Work</a></li> -->
-                <li><a href="./projects.html" data-i18n="nav.work">Work</a></li>
-                <li><a href="./contact.html" data-i18n="nav.contact">Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <!-- Language Switcher -->
-                <div class="language-switcher">
-                    <button
-                        class="lang-toggle"
-                        id="langToggle"
-                        aria-label="Change Language"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
+        <link rel="stylesheet" href="../assets/styles/utils.css" />
+        <link rel="stylesheet" href="../assets/styles/about.css" />
+    </head>
+    <body>
+        <div id="main">
+            <div id="nav">
+                <img src="../assets/images/logo.png" alt="ZEDESIGNS Logo" />
+                <ul>
+                    <li>
+                        <a href="../index.html" data-i18n="nav.home">Home</a>
+                    </li>
+                    <li>
+                        <a href="./about.html" data-i18n="nav.about">About</a>
+                    </li>
+                    <li>
+                        <a href="./services.html" data-i18n="nav.services"
+                            >Services</a
                         >
-                            <path
-                                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9.71002 19.6674C8.74743 17.6259 8.15732 15.3742 8.02731 13H4.06189C4.458 16.1765 6.71639 18.7747 9.71002 19.6674ZM10.0307 13C10.1811 15.4388 10.8778 17.7297 12 19.752C13.1222 17.7297 13.8189 15.4388 13.9693 13H10.0307ZM19.9381 13H15.9727C15.8427 15.3742 15.2526 17.6259 14.29 19.6674C17.2836 18.7747 19.542 16.1765 19.9381 13ZM4.06189 11H8.02731C8.15732 8.62577 8.74743 6.37407 9.71002 4.33256C6.71639 5.22533 4.458 7.8235 4.06189 11ZM10.0307 11H13.9693C13.8189 8.56122 13.1222 6.27025 12 4.24799C10.8778 6.27025 10.1811 8.56122 10.0307 11ZM14.29 4.33256C15.2526 6.37407 15.8427 8.62577 15.9727 11H19.9381C19.542 7.8235 17.2836 5.22533 14.29 4.33256Z"
-                            ></path>
-                        </svg>
-                    </button>
-                    <div class="lang-dropdown" id="langDropdown">
-                        <button class="lang-option" data-lang="ar">
-                            <span>العربية</span>
+                    </li>
+                    <!-- <li><a href="./pages/projects.html">Work</a></li> -->
+                    <li>
+                        <a href="./projects.html" data-i18n="nav.work">Work</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html" data-i18n="nav.contact"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button
+                            class="lang-toggle"
+                            id="langToggle"
+                            aria-label="Change Language"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9.71002 19.6674C8.74743 17.6259 8.15732 15.3742 8.02731 13H4.06189C4.458 16.1765 6.71639 18.7747 9.71002 19.6674ZM10.0307 13C10.1811 15.4388 10.8778 17.7297 12 19.752C13.1222 17.7297 13.8189 15.4388 13.9693 13H10.0307ZM19.9381 13H15.9727C15.8427 15.3742 15.2526 17.6259 14.29 19.6674C17.2836 18.7747 19.542 16.1765 19.9381 13ZM4.06189 11H8.02731C8.15732 8.62577 8.74743 6.37407 9.71002 4.33256C6.71639 5.22533 4.458 7.8235 4.06189 11ZM10.0307 11H13.9693C13.8189 8.56122 13.1222 6.27025 12 4.24799C10.8778 6.27025 10.1811 8.56122 10.0307 11ZM14.29 4.33256C15.2526 6.37407 15.8427 8.62577 15.9727 11H19.9381C19.542 7.8235 17.2836 5.22533 14.29 4.33256Z"
+                                ></path>
+                            </svg>
                         </button>
-                        <button class="lang-option" data-lang="en">
-                            <span>English</span>
-                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <button class="lang-option" data-lang="ar">
+                                <span>العربية</span>
+                            </button>
+                            <button class="lang-option" data-lang="en">
+                                <span>English</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
-                <div class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
-        </div>
 
-        <!-- Mobile Menu Overlay -->
-        <div id="mobileMenu" class="mobile-menu">
+            <!-- Mobile Menu Overlay -->
+            <div id="mobileMenu" class="mobile-menu">
                 <button class="close-menu" id="closeMenu">
                     <span></span>
                     <span></span>
                 </button>
                 <div class="mobile-menu-content">
                     <nav class="mobile-nav">
-                        <a href="../index.html" class="mobile-nav-link" data-i18n="nav.home"
+                        <a
+                            href="../index.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.home"
                             >Home</a
                         >
                         <a
@@ -104,7 +117,7 @@
                         >
                     </nav>
                     <div class="mobile-menu-footer">
-                        <p>© 2025 ZEDESIGNS</p>
+                        <p id="copyrightpara">© 2025 ZEDESIGNS</p>
                         <div class="mobile-socials">
                             <a
                                 href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
@@ -117,7 +130,7 @@
                                 href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
                                 target="_blank"
                                 ><img
-                                    style="transform: scale(1.2);"
+                                    style="transform: scale(1.2)"
                                     src="../assets/images/instagram-logo.png"
                                     alt=""
                             /></a>
@@ -136,22 +149,35 @@
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
 
-        <!-- ABOUT PAGE CONTENT --> 
-        <div id="hero">
-            <!-- ABOUT HERO -->
-            <section id="services-hero">
-                <div class="services-hero-content">
-                    <div class="tag">
-                        <img src="../assets/images/home/tag.svg" alt="tag icon" />
-                        <p data-i18n="aboutPage.heroTag">About ZEDESIGNS</p>
+            <!-- ABOUT PAGE CONTENT -->
+            <div id="hero">
+                <!-- ABOUT HERO -->
+                <section id="services-hero">
+                    <div class="services-hero-content">
+                        <div class="tag">
+                            <img
+                                src="../assets/images/home/tag.svg"
+                                alt="tag icon"
+                            />
+                            <p data-i18n="aboutPage.heroTag">About ZEDESIGNS</p>
+                        </div>
+                        <h1 data-i18n="aboutPage.heroTitle">
+                            We shape brands, build websites, and design
+                            experiences that feel real
+                        </h1>
+                        <p data-i18n="aboutPage.heroDescription">
+                            ZEDESIGNS is a Saudi-based strategic branding and
+                            web design company helping businesses turn ideas
+                            into clear, confident brands. We bridge strategy,
+                            visual identity, and digital experience so every
+                            touchpoint feels intentional—from logo and packaging
+                            to website and social.
+                        </p>
                     </div>
-                    <h1 data-i18n="aboutPage.heroTitle">We shape brands, build websites, and design experiences that feel real</h1>
-                    <p data-i18n="aboutPage.heroDescription">ZEDESIGNS is a Saudi-based strategic branding and web design company helping businesses turn ideas into clear, confident brands. We bridge strategy, visual identity, and digital experience so every touchpoint feels intentional—from logo and packaging to website and social.</p>
-                </div>
-            </section>
-            <!-- <section class="about-hero">
+                </section>
+                <!-- <section class="about-hero">
                 <div class="about-container about-hero-grid">
                     <div class="about-hero-left">
                         <p class="eyebrow">About ZEDESIGNS</p>
@@ -200,601 +226,1207 @@
                 </div>
             </section> -->
 
-            <!-- STRUCTURE SECTION WITH DIAGRAM -->
-            <section class="about-structure">
-                <div class="about-container about-structure-grid">
-                    <div class="structure-copy">
-                        <h2 data-i18n="aboutPage.structureHeading">Structure</h2>
+                <!-- STRUCTURE SECTION WITH DIAGRAM -->
+                <section class="about-structure">
+                    <div class="about-container about-structure-grid">
+                        <div class="structure-copy">
+                            <h2 data-i18n="aboutPage.structureHeading">
+                                Structure
+                            </h2>
 
-                        <p data-i18n="aboutPage.structureDescription">
-                            At ZEDESIGNS, our structure is built on a clear creative system:
-                            strategy fuels vision, design gives it form, and experience brings
-                            it to life. Together, they create seamless, impactful brand
-                            journeys.
-                        </p>
-                        <p class="structure-sub" data-i18n="aboutPage.structureSubDescription">
-                            Every project flows through this triangle—from insight to
-                            identity, execution to emotion, and feedback to foresight—so your
-                            brand keeps evolving, not just launching.
-                        </p>
-                    </div>
+                            <p data-i18n="aboutPage.structureDescription">
+                                At ZEDESIGNS, our structure is built on a clear
+                                creative system: strategy fuels vision, design
+                                gives it form, and experience brings it to life.
+                                Together, they create seamless, impactful brand
+                                journeys.
+                            </p>
+                            <p
+                                class="structure-sub"
+                                data-i18n="aboutPage.structureSubDescription"
+                            >
+                                Every project flows through this triangle—from
+                                insight to identity, execution to emotion, and
+                                feedback to foresight—so your brand keeps
+                                evolving, not just launching.
+                            </p>
+                        </div>
 
-                    <div class="structure-visual">
-                        <div class="structure-wrapper">
-                            <!-- <div class="structure-diagram"> -->
+                        <div class="structure-visual">
+                            <div class="structure-wrapper">
+                                <!-- <div class="structure-diagram"> -->
                                 <!-- Animated triangle SVG -->
-                                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 849.64 617.66">
+                                <svg
+                                    id="Layer_1"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    version="1.1"
+                                    viewBox="0 0 849.64 617.66"
+                                >
                                     <defs>
                                         <style>
-                                        .st0 {
-                                            font-size: 29.51px;
-                                        }
+                                            .st0 {
+                                                font-size: 29.51px;
+                                            }
 
-                                        .st0, .st1 {
-                                            font-family: Poppins-Regular, Poppins;
-                                        }
+                                            .st0,
+                                            .st1 {
+                                                font-family:
+                                                    Poppins-Regular, Poppins;
+                                            }
 
-                                        .st0, .st1, .st2 {
-                                            fill: #edd09e;
-                                        }
+                                            .st0,
+                                            .st1,
+                                            .st2 {
+                                                fill: #edd09e;
+                                            }
 
-                                        .st1 {
-                                            font-size: 29.51px;
-                                        }
+                                            .st1 {
+                                                font-size: 29.51px;
+                                            }
 
-                                        .st3 {
-                                            fill: none;
-                                            stroke: #edd09e;
-                                            stroke-miterlimit: 10;
-                                            stroke-width: 2px;
-                                        }
+                                            .st3 {
+                                                fill: none;
+                                                stroke: #edd09e;
+                                                stroke-miterlimit: 10;
+                                                stroke-width: 2px;
+                                            }
 
-                                        .st2 {
-                                            font-family: Poppins-SemiBold, Poppins;
-                                            font-size: 20px;
-                                            font-weight: 600;
-                                        }
+                                            .st2 {
+                                                font-family:
+                                                    Poppins-SemiBold, Poppins;
+                                                font-size: 20px;
+                                                font-weight: 600;
+                                            }
                                         </style>
                                     </defs>
-                                    <text class="st0" transform="translate(60.7 136.91) rotate(-11.1)"><tspan x="0" y="0">Strategy</tspan></text>
-                                    <line class="st3" x1="615.62" y1="140.49" x2="225.32" y2="84.06"/>
-                                    <text class="st1" transform="translate(644.45 148.34) rotate(6.68)"><tspan x="0" y="0">Experience</tspan></text>
-                                    <text class="st0" transform="translate(394.59 517.9) rotate(3.21)"><tspan x="0" y="0">Design</tspan></text>
-                                    <line class="st3" x1="135.57" y1="198.25" x2="341.32" y2="425.72"/>
-                                    <line class="st3" x1="677.9" y1="226" x2="535.88" y2="447.22"/>
-                                    <text class="st2" transform="translate(152.86 271.94) rotate(48.09)"><tspan x="0" y="0">Insight to Identity</tspan></text>
-                                    <text class="st2" transform="translate(584.84 438) rotate(-57.65)"><tspan x="0" y="0">Execution to Emotion</tspan></text>
-                                    <text class="st2" transform="translate(304.38 133.73) rotate(7.92)"><tspan x="0" y="0">Feedback to Foresight</tspan></text>
-                                    <path class="st3" d="M66.25,38.19h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61H13.64v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(-20.59 25.68) rotate(-11.1)"/>
-                                    <path class="st3" d="M667.9,69.09h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(22.34 -83.18) rotate(6.68)"/>
-                                    <path class="st3" d="M336.63,431.65h163.82c29.04,0,52.61,23.58,52.61,52.61v108.61h-163.82c-29.04,0-52.61-23.58-52.61-52.61v-108.61h0Z" transform="translate(29.37 -24.1) rotate(3.21)"/>
+                                    <text
+                                        class="st0"
+                                        transform="translate(60.7 136.91) rotate(-11.1)"
+                                    >
+                                        <tspan x="0" y="0">Strategy</tspan>
+                                    </text>
+                                    <line
+                                        class="st3"
+                                        x1="615.62"
+                                        y1="140.49"
+                                        x2="225.32"
+                                        y2="84.06"
+                                    />
+                                    <text
+                                        class="st1"
+                                        transform="translate(644.45 148.34) rotate(6.68)"
+                                    >
+                                        <tspan x="0" y="0">Experience</tspan>
+                                    </text>
+                                    <text
+                                        class="st0"
+                                        transform="translate(394.59 517.9) rotate(3.21)"
+                                    >
+                                        <tspan x="0" y="0">Design</tspan>
+                                    </text>
+                                    <line
+                                        class="st3"
+                                        x1="135.57"
+                                        y1="198.25"
+                                        x2="341.32"
+                                        y2="425.72"
+                                    />
+                                    <line
+                                        class="st3"
+                                        x1="677.9"
+                                        y1="226"
+                                        x2="535.88"
+                                        y2="447.22"
+                                    />
+                                    <text
+                                        class="st2"
+                                        transform="translate(152.86 271.94) rotate(48.09)"
+                                    >
+                                        <tspan x="0" y="0">
+                                            Insight to Identity
+                                        </tspan>
+                                    </text>
+                                    <text
+                                        class="st2"
+                                        transform="translate(584.84 438) rotate(-57.65)"
+                                    >
+                                        <tspan x="0" y="0">
+                                            Execution to Emotion
+                                        </tspan>
+                                    </text>
+                                    <text
+                                        class="st2"
+                                        transform="translate(304.38 133.73) rotate(7.92)"
+                                    >
+                                        <tspan x="0" y="0">
+                                            Feedback to Foresight
+                                        </tspan>
+                                    </text>
+                                    <path
+                                        class="st3"
+                                        d="M66.25,38.19h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61H13.64v-108.61c0-29.04,23.58-52.61,52.61-52.61Z"
+                                        transform="translate(-20.59 25.68) rotate(-11.1)"
+                                    />
+                                    <path
+                                        class="st3"
+                                        d="M667.9,69.09h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z"
+                                        transform="translate(22.34 -83.18) rotate(6.68)"
+                                    />
+                                    <path
+                                        class="st3"
+                                        d="M336.63,431.65h163.82c29.04,0,52.61,23.58,52.61,52.61v108.61h-163.82c-29.04,0-52.61-23.58-52.61-52.61v-108.61h0Z"
+                                        transform="translate(29.37 -24.1) rotate(3.21)"
+                                    />
                                 </svg>
-                            <!-- </div> -->
+                                <!-- </div> -->
 
-                            <!-- Interactive info under the diagram -->
-                            <div class="structure-info">
-                                <button
-                                    class="structure-info-item"
-                                    type="button"
-                                    data-node="strategy"
-                                >
-                                    <span class="chip" data-i18n="aboutPage.structureStrategy">Strategy</span>
-                                    <p data-i18n="aboutPage.structureStrategyDesc">
-                                        Turns insights into a clear direction for your brand –
-                                        from positioning and audience to messaging and roadmap.
-                                    </p>
-                                </button>
-                                <button
-                                    class="structure-info-item"
-                                    type="button"
-                                    data-node="design"
-                                >
-                                    <span class="chip" data-i18n="aboutPage.structureDesign">Design</span>
-                                    <p data-i18n="aboutPage.structureDesignDesc">
-                                        Translates strategy into visual identity, packaging and
-                                        interfaces that feel precise, premium, and consistent.
-                                    </p>
-                                </button>
-                                <button
-                                    class="structure-info-item"
-                                    type="button"
-                                    data-node="experience"
-                                >
-                                    <span class="chip" data-i18n="aboutPage.structureExperience">Experience</span>
-                                    <p data-i18n="aboutPage.structureExperienceDesc">
-                                        Connects every touchpoint – web, social, and on-ground –
-                                        so customers feel one unified brand story.
-                                    </p>
-                                </button>
+                                <!-- Interactive info under the diagram -->
+                                <div class="structure-info">
+                                    <button
+                                        class="structure-info-item"
+                                        type="button"
+                                        data-node="strategy"
+                                    >
+                                        <span
+                                            class="chip"
+                                            data-i18n="aboutPage.structureStrategy"
+                                            >Strategy</span
+                                        >
+                                        <p
+                                            data-i18n="aboutPage.structureStrategyDesc"
+                                        >
+                                            Turns insights into a clear
+                                            direction for your brand – from
+                                            positioning and audience to
+                                            messaging and roadmap.
+                                        </p>
+                                    </button>
+                                    <button
+                                        class="structure-info-item"
+                                        type="button"
+                                        data-node="design"
+                                    >
+                                        <span
+                                            class="chip"
+                                            data-i18n="aboutPage.structureDesign"
+                                            >Design</span
+                                        >
+                                        <p
+                                            data-i18n="aboutPage.structureDesignDesc"
+                                        >
+                                            Translates strategy into visual
+                                            identity, packaging and interfaces
+                                            that feel precise, premium, and
+                                            consistent.
+                                        </p>
+                                    </button>
+                                    <button
+                                        class="structure-info-item"
+                                        type="button"
+                                        data-node="experience"
+                                    >
+                                        <span
+                                            class="chip"
+                                            data-i18n="aboutPage.structureExperience"
+                                            >Experience</span
+                                        >
+                                        <p
+                                            data-i18n="aboutPage.structureExperienceDesc"
+                                        >
+                                            Connects every touchpoint – web,
+                                            social, and on-ground – so customers
+                                            feel one unified brand story.
+                                        </p>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>                    
-                </div>
-            </section>
-
-            <!-- CULTURE / PHILOSOPHY -->
-            <section class="about-culture">
-                <div class="about-container about-culture-grid">
-
-                    <!-- LEFT (text) -->
-                    <div class="culture-copy">
-                        <!-- <p class="eyebrow">Our Standard</p>     -->
-                        <h2 data-i18n="aboutPage.standardHeading">Standard</h2>
-                        <p data-i18n="aboutPage.standardDescription">
-                            Standards at ZEDESIGNS aren’t just metrics, they are mindsets. 
-                            We craft value by mastering time, delivering with clarity, and 
-                            measuring true impact. It's not about doing more, but doing it 
-                            with intention, where discipline drives progress, and efficiency 
-                            fuels lasting results.
-                        </p>
                     </div>
+                </section>
 
-                    <!-- RIGHT (SVG card) -->
-                    <div class="philosophy-visual">
-                        <div class="philosophy-wrapper">
-                            <!-- IMPORTANT: change the ID inside SVG to avoid duplicate "Layer_1" on page -->
-                            <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 849.64 617.66">
-                                <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
-                                <defs>
-                                    <style>
-                                    .st0-2 {
-                                        font-family: Poppins-Regular, Poppins;
-                                        font-size: 29.51px;
-                                    }
-
-                                    .st0-2, .st1-2 {
-                                        fill: #edd09e;
-                                    }
-
-                                    .st2-2 {
-                                        fill: none;
-                                        stroke: #edd09e;
-                                        stroke-miterlimit: 10;
-                                        stroke-width: 2px;
-                                    }
-
-                                    .st1-2 {
-                                        font-family: Poppins-SemiBold, Poppins;
-                                        font-size: 20px;
-                                        font-weight: 600;
-                                    }
-                                    </style>
-                                </defs>
-                                <text class="st0-2" transform="translate(69.75 136.63) rotate(-11.1)"><tspan x="0" y="0">Impact</tspan></text>
-                                <text class="st0-2" transform="translate(687.8 154.91) rotate(6.68)"><tspan x="0" y="0">Time</tspan></text>
-                                <text class="st0-2" transform="translate(350.71 519.85) rotate(3.21)"><tspan x="0" y="0">Value</tspan></text>
-                                <line class="st2-2" x1="615.26" y1="145.19" x2="226.41" y2="91.04"/>
-                                <line class="st2-2" x1="131.35" y1="200.44" x2="303.5" y2="443.74"/>
-                                <line class="st2-2" x1="701.19" y1="229.74" x2="505.39" y2="439.33"/>
-                                <path class="st2-2" d="M66.24,39.55h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61H13.62v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(-20.86 25.71) rotate(-11.1)"/>
-                                <path class="st2-2" d="M667.91,70.59h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(22.51 -83.17) rotate(6.68)"/>
-                                <path class="st2-2" d="M337.22,433.14h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z" transform="translate(29.37 -21.18) rotate(3.21)"/>
-                                <text class="st1-2" transform="translate(160.76 312.31) rotate(52.27)"><tspan x="0" y="0">Efficiency</tspan></text>
-                                <text class="st1-2" transform="translate(595.75 407.16) rotate(-49.06)"><tspan x="0" y="0">Discipline</tspan></text>
-                                <text class="st1-2" transform="translate(381.85 147.24) rotate(6.68)"><tspan x="0" y="0">Clarity</tspan></text>
-                            </svg>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-            
-            <!-- GLOBAL REACH SECTION (Map + Stats) -->
-            <section class="about-global-reach">
-                <div class="about-container">
-                    
-                    <!-- Section Header -->
-                    <div class="global-reach-header">
-                        <!-- <p class="eyebrow">Our Global Reach</p> -->
-                        <h2 data-i18n="aboutPage.globalReachHeading">Working with brands across continents</h2>
-                        <p class="global-reach-lead" data-i18n="aboutPage.globalReachDescription">
-                            From the Middle East to Europe, North America to Asia—we've partnered 
-                            with forward-thinking businesses worldwide to build brands that resonate 
-                            locally and scale globally.
-                        </p>
-                    </div>
-
-                    <!-- Interactive Globe Map -->
-                    <div class="global-map-wrapper">
-                        <div id="globalMapChart" class="global-map-chart"></div>
-                        <div class="map-hint">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                            </svg>
-                            <span data-i18n="aboutPage.globalReachMapHint">Drag to explore</span>
-                        </div>
-                    </div>
-
-                    <!-- Stats Grid (Below Map) -->
-                    <div class="stats-strip">
-                        <div class="stat-item">
-                            <div class="stat-line"></div>
-                            <div class="stat-value" data-i18n="about.stat1" data-count-target="200">200+</div>
-                            <div class="stat-name" data-i18n="aboutPage.globalReachStatBrands">Brands</div>
-                        </div>
-
-                        <div class="stat-item">
-                            <div class="stat-line"></div>
-                            <div class="stat-value" data-i18n="about.stat2" data-count-target="10">10+</div>
-                            <div class="stat-name" data-i18n="aboutPage.globalReachStatCountries">Countries</div>
-                        </div>
-
-                        <div class="stat-item">
-                            <div class="stat-line"></div>
-                            <div class="stat-value" data-i18n="about.stat3" data-count-target="65">65+</div>
-                            <div class="stat-name" data-i18n="aboutPage.globalReachStatStrategies">Strategies</div>
-                        </div>
-
-                        <div class="stat-item">
-                            <div class="stat-line"></div>
-                            <div class="stat-value" data-i18n="about.stat4" data-count-target="12">12+</div>
-                            <div class="stat-name" data-i18n="aboutPage.globalReachStatIndustries">Industries</div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- METHODOLOGY / HOW WE WORK -->
-            <section class="about-methodology">
-                <div class="about-container">
-                    <div class="about-section-header">
-                        <p class="eyebrow" data-i18n="aboutPage.methodologyEyebrow">How we work</p>
-                        <h2 data-i18n="aboutPage.methodologyHeading">From first call to launch-ready brand</h2>
-                        <p data-i18n="aboutPage.methodologyDescription">
-                            We keep the process simple, structured, and collaborative—so you always
-                            know where we are and what’s coming next.
-                        </p>
-                    </div>
-
-                    <div class="methodology-grid">
-                        <article
-                            class="method-card"
-                            data-cursor-img="../assets/images/about/research.png"
-                        >
-                            <p class="step-label" data-i18n="aboutPage.methodStep1Label">Step 01</p>
-                            <h3 data-i18n="aboutPage.methodStep1Title">Research & Analysis</h3>
-                            <p data-i18n="aboutPage.methodStep1Description">
-                                We study your market, audience, and competitors to uncover what
-                                truly sets your brand apart.
+                <!-- CULTURE / PHILOSOPHY -->
+                <section class="about-culture">
+                    <div class="about-container about-culture-grid">
+                        <!-- LEFT (text) -->
+                        <div class="culture-copy">
+                            <!-- <p class="eyebrow">Our Standard</p>     -->
+                            <h2 data-i18n="aboutPage.standardHeading">
+                                Standard
+                            </h2>
+                            <p data-i18n="aboutPage.standardDescription">
+                                Standards at ZEDESIGNS aren’t just metrics, they
+                                are mindsets. We craft value by mastering time,
+                                delivering with clarity, and measuring true
+                                impact. It's not about doing more, but doing it
+                                with intention, where discipline drives
+                                progress, and efficiency fuels lasting results.
                             </p>
-                            <ul>
-                                <li data-i18n="aboutPage.methodStep1Item1">Brand & website audit</li>
-                                <li data-i18n="aboutPage.methodStep1Item2">Competitive & visual research</li>
-                                <li data-i18n="aboutPage.methodStep1Item3">Positioning & tone-of-voice direction</li>
-                            </ul>
-                        </article>
-
-                        <article
-                            class="method-card"
-                            data-cursor-img="../assets/images/about/creative.png"
-                        >
-                            <p class="step-label" data-i18n="aboutPage.methodStep2Label">Step 02</p>
-                            <h3 data-i18n="aboutPage.methodStep2Title">Creative Design</h3>
-                            <p data-i18n="aboutPage.methodStep2Description">
-                                We translate strategy into a full visual and digital system your
-                                team can actually use every day.
-                            </p>
-                            <ul>
-                                <li data-i18n="aboutPage.methodStep2Item1">Logo & visual identity system</li>
-                                <li data-i18n="aboutPage.methodStep2Item2">Design systems & brand guidelines</li>
-                                <li data-i18n="aboutPage.methodStep2Item3">Web design & front-end development</li>
-                            </ul>
-                        </article>
-
-                        <article
-                            class="method-card"
-                            data-cursor-img="../assets/images/about/review.png"
-                        >
-                            <p class="step-label" data-i18n="aboutPage.methodStep3Label">Step 03</p>
-                            <h3 data-i18n="aboutPage.methodStep3Title">Review & Evolution</h3>
-                            <p data-i18n="aboutPage.methodStep3Description">
-                                We support launch, refine based on feedback, and keep your brand
-                                consistent as you grow.
-                            </p>
-                            <ul>
-                                <li data-i18n="aboutPage.methodStep3Item1">Launch assets & rollout support</li>
-                                <li data-i18n="aboutPage.methodStep3Item2">Website tweaks & performance passes</li>
-                                <li data-i18n="aboutPage.methodStep3Item3">Ongoing design & dev support</li>
-                            </ul>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <!-- WHO WE WORK WITH / SECTORS -->
-            <section class="about-sectors">
-                <div class="about-container">
-                    <div class="about-section-header">
-                        <p class="eyebrow" data-i18n="aboutPage.sectorsEyebrow">Who we work with</p>
-                        <h2 data-i18n="aboutPage.sectorsHeading">Partnering with visionaries who dare to stand out</h2>
-                        <p data-i18n="aboutPage.sectorsDescription">From ambitious startups to established enterprises, we craft identities that resonate and endure.</p>
-                    </div>
-
-                    <div class="sectors-grid">
-                        <article class="sector-card">
-                            <span class="sector-number" data-i18n="aboutPage.sector1Number">01</span>
-                            <h3 data-i18n="aboutPage.sector1Title">Startups & Founders</h3>
-                            <p data-i18n="aboutPage.sector1Description">Launch-ready brands and websites that help you pitch, validate, and grow with confidence from day one.</p>
-                        </article>
-
-                        <article class="sector-card">
-                            <span class="sector-number" data-i18n="aboutPage.sector2Number">02</span>
-                            <h3 data-i18n="aboutPage.sector2Title">SMEs & Enterprises</h3>
-                            <p data-i18n="aboutPage.sector2Description">Rebrands, packaging, and web redesigns that refresh your presence without losing what already works.</p>
-                        </article>
-
-                        <article class="sector-card">
-                            <span class="sector-number" data-i18n="aboutPage.sector3Number">03</span>
-                            <h3 data-i18n="aboutPage.sector3Title">Agencies & Partners</h3>
-                            <p data-i18n="aboutPage.sector3Description">White-label design and development support for agencies that need a reliable production partner.</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CLIENT LOGOS SECTION -->
-            <div id="clients" class="reveal">
-                <div id="clientstop">
-                    <h1 data-i18n="clients.heading">Successful Clients</h1>
-                    <p data-i18n="clients.description">
-                        Partnering with progressive businesses to uncover their true purpose,
-                        helping them drive meaningful change and move the world forward.
-                    </p>
-                </div>
-
-                <div id="clientsbtm">
-                    <div id="clientwrapper">
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-01.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-02.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-04.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-05.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-06.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-07.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-08.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-09.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-10.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-11.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-12.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-13.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-14.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-15.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-17.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-18.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-19.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-20.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-22.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-23.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-24.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-25.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-26.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-27.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-28.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-30.png" alt="Client Logo" /></div>
-
-                        <!-- Duplicate set for seamless loop (same as home) -->
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-01.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-02.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-04.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-05.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-06.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-07.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-08.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-09.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-10.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-11.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-12.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-13.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-14.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-15.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-17.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-18.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-19.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-20.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-22.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-23.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-24.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-25.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-26.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-27.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-28.png" alt="Client Logo" /></div>
-                        <div class="logo"><img src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-30.png" alt="Client Logo" /></div>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
-
-         <!-- Floating WhatsApp Button -->
-        <a
-            href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
-            target="_blank"
-            id="whatsappFloat"
-            class="whatsapp-float"
-            aria-label="WhatsApp us"
-        >
-            <img
-                src="../assets/images/home/whatsapp-logo.png"
-                alt="WhatsApp"
-            />
-            <span data-i18n="floatingWhatsApp.ariaLabel">WhatsApp Us</span>
-        </a>
-    </div>
-
-    <!-- FOOTER (same as other pages) -->
-    <div id="footer">
-        <div id="footer-foreground">
-            <img
-                src="../assets/images/home/herofooter-bg-green-1.webp"
-                alt=""
-            />
-            <div id="ftop">
-                <div class="tag">
-                    <img src="../assets/images/home/tag.svg" alt="tag" />
-                    <p data-i18n="footer.tagText">
-                        Saudi Based Strategic Branding And Web Design
-                        Company
-                    </p>
-                </div>
-                <h1 data-i18n="footer.heading">
-                    Every success starts with the first step
-                </h1>
-                <p data-i18n="footer.description">
-                    Let's create something exceptional together. Get in
-                    touch to start your branding journey.
-                </p>
-                <div id="btndiv">
-                    <div class="btnelem">
-                        <button>
-                            <a
-                                href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
-                                target="_blank"
-                                data-i18n="footer.btnText"
-                            >
-                                Get Started
-                            </a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div id="fbtm">
-                <div id="btmleft">
-                    <img
-                        src="../assets/images/home/logofooter-01-old.png"
-                        alt="logo footer"
-                    />
-                    <div class="info">
-                        <p data-i18n="footer.hqLabel">HQ</p>
-                        <p data-i18n="footer.hqLocation">
-                            Jeddah, Saudi Arabia
-                        </p>
-                    </div>
-                    <div class="info">
-                        <p data-i18n="footer.contactLabel">Contact Us</p>
-                        <p data-i18n="footer.contactEmail">
-                            info@zedesignss.com
-                        </p>
-                    </div>
-                    <p id="copyright" data-i18n="footer.copyright">
-                        2025 &copy; ZEDESIGNS. All rights reserved.
-                    </p>
-                </div>
-                <div id="btmright">
-                    <ul>
-                        <li
-                            class="liheading"
-                            data-i18n="footer.mainPagesHeading"
-                        >
-                            Main Pages
-                        </li>
-                        <li>
-                            <a href="../index.html" data-i18n="footer.navHome">Home</a>
-                        </li>
-                        <li>
-                            <a href="./about.html" data-i18n="footer.navAbout">
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#services"
-                                data-i18n="footer.navServices"
-                            >
-                                Services
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./projects.html" data-i18n="footer.navWork">
-                                Work
-                            </a>
-                        </li>
-                    </ul>
-                    <div id="socials">
-                        <div id="socialone">
-                            <a
-                                href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
-                                target="_blank"
-                            >
-                                <img
-                                    src="../assets/images/tiktok-logo.png"
-                                    alt=""
-                                />
-                            </a>
-                            <a
-                                href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
-                                target="_blank"
-                            >
-                                <img
-                                    style="transform: scale(1.2);"
-                                    src="../assets/images/instagram-logo.png"
-                                    alt=""
-                                />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/company/zedesignss/"
-                                target="_blank"
-                            >
-                                <img
-                                    src="../assets/images/linkedin-logo.png"
-                                    alt=""
-                                />
-                            </a>
-                            <a href="https://t.me/zedesigns" target="_blank">
-                                <img
-                                    src="../assets/images/telegram-logo.png"
-                                    alt=""
-                                />
-                            </a>
                         </div>
-                        <div id="socialtwo">
-                            <a
-                                href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849"
-                                target="_blank"
-                            >
-                                <img
-                                    src="../assets/images/saudi-business-logo.svg"
-                                    alt=""
-                                />
-                            </a>
-                            <p>
-                                <span data-i18n="footer.verifiedText">
-                                    Verified By
-                                </span>
-                                <a
-                                    href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000188849"
-                                    target="_blank"
-                                    data-i18n="footer.verifiedLink"
+
+                        <!-- RIGHT (SVG card) -->
+                        <div class="philosophy-visual">
+                            <div class="philosophy-wrapper">
+                                <!-- IMPORTANT: change the ID inside SVG to avoid duplicate "Layer_1" on page -->
+                                <svg
+                                    id="Layer_2"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    version="1.1"
+                                    viewBox="0 0 849.64 617.66"
                                 >
-                                    Saudi Business Center
-                                </a>
+                                    <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
+                                    <defs>
+                                        <style>
+                                            .st0-2 {
+                                                font-family:
+                                                    Poppins-Regular, Poppins;
+                                                font-size: 29.51px;
+                                            }
+
+                                            .st0-2,
+                                            .st1-2 {
+                                                fill: #edd09e;
+                                            }
+
+                                            .st2-2 {
+                                                fill: none;
+                                                stroke: #edd09e;
+                                                stroke-miterlimit: 10;
+                                                stroke-width: 2px;
+                                            }
+
+                                            .st1-2 {
+                                                font-family:
+                                                    Poppins-SemiBold, Poppins;
+                                                font-size: 20px;
+                                                font-weight: 600;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <text
+                                        class="st0-2"
+                                        transform="translate(69.75 136.63) rotate(-11.1)"
+                                    >
+                                        <tspan x="0" y="0">Impact</tspan>
+                                    </text>
+                                    <text
+                                        class="st0-2"
+                                        transform="translate(687.8 154.91) rotate(6.68)"
+                                    >
+                                        <tspan x="0" y="0">Time</tspan>
+                                    </text>
+                                    <text
+                                        class="st0-2"
+                                        transform="translate(350.71 519.85) rotate(3.21)"
+                                    >
+                                        <tspan x="0" y="0">Value</tspan>
+                                    </text>
+                                    <line
+                                        class="st2-2"
+                                        x1="615.26"
+                                        y1="145.19"
+                                        x2="226.41"
+                                        y2="91.04"
+                                    />
+                                    <line
+                                        class="st2-2"
+                                        x1="131.35"
+                                        y1="200.44"
+                                        x2="303.5"
+                                        y2="443.74"
+                                    />
+                                    <line
+                                        class="st2-2"
+                                        x1="701.19"
+                                        y1="229.74"
+                                        x2="505.39"
+                                        y2="439.33"
+                                    />
+                                    <path
+                                        class="st2-2"
+                                        d="M66.24,39.55h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61H13.62v-108.61c0-29.04,23.58-52.61,52.61-52.61Z"
+                                        transform="translate(-20.86 25.71) rotate(-11.1)"
+                                    />
+                                    <path
+                                        class="st2-2"
+                                        d="M667.91,70.59h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z"
+                                        transform="translate(22.51 -83.17) rotate(6.68)"
+                                    />
+                                    <path
+                                        class="st2-2"
+                                        d="M337.22,433.14h163.82v108.61c0,29.04-23.58,52.61-52.61,52.61h-163.82v-108.61c0-29.04,23.58-52.61,52.61-52.61Z"
+                                        transform="translate(29.37 -21.18) rotate(3.21)"
+                                    />
+                                    <text
+                                        class="st1-2"
+                                        transform="translate(160.76 312.31) rotate(52.27)"
+                                    >
+                                        <tspan x="0" y="0">Efficiency</tspan>
+                                    </text>
+                                    <text
+                                        class="st1-2"
+                                        transform="translate(595.75 407.16) rotate(-49.06)"
+                                    >
+                                        <tspan x="0" y="0">Discipline</tspan>
+                                    </text>
+                                    <text
+                                        class="st1-2"
+                                        transform="translate(381.85 147.24) rotate(6.68)"
+                                    >
+                                        <tspan x="0" y="0">Clarity</tspan>
+                                    </text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- GLOBAL REACH SECTION (Map + Stats) -->
+                <section class="about-global-reach">
+                    <div class="about-container">
+                        <!-- Section Header -->
+                        <div class="global-reach-header">
+                            <!-- <p class="eyebrow">Our Global Reach</p> -->
+                            <h2 data-i18n="aboutPage.globalReachHeading">
+                                Working with brands across continents
+                            </h2>
+                            <p
+                                class="global-reach-lead"
+                                data-i18n="aboutPage.globalReachDescription"
+                            >
+                                From the Middle East to Europe, North America to
+                                Asia—we've partnered with forward-thinking
+                                businesses worldwide to build brands that
+                                resonate locally and scale globally.
                             </p>
+                        </div>
+
+                        <!-- Interactive Globe Map -->
+                        <div class="global-map-wrapper">
+                            <div
+                                id="globalMapChart"
+                                class="global-map-chart"
+                            ></div>
+                            <div class="map-hint">
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path
+                                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                                    />
+                                </svg>
+                                <span data-i18n="aboutPage.globalReachMapHint"
+                                    >Drag to explore</span
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Stats Grid (Below Map) -->
+                        <div class="stats-strip">
+                            <div class="stat-item">
+                                <div class="stat-line"></div>
+                                <div
+                                    class="stat-value"
+                                    data-i18n="about.stat1"
+                                    data-count-target="200"
+                                >
+                                    200+
+                                </div>
+                                <div
+                                    class="stat-name"
+                                    data-i18n="aboutPage.globalReachStatBrands"
+                                >
+                                    Brands
+                                </div>
+                            </div>
+
+                            <div class="stat-item">
+                                <div class="stat-line"></div>
+                                <div
+                                    class="stat-value"
+                                    data-i18n="about.stat2"
+                                    data-count-target="10"
+                                >
+                                    10+
+                                </div>
+                                <div
+                                    class="stat-name"
+                                    data-i18n="aboutPage.globalReachStatCountries"
+                                >
+                                    Countries
+                                </div>
+                            </div>
+
+                            <div class="stat-item">
+                                <div class="stat-line"></div>
+                                <div
+                                    class="stat-value"
+                                    data-i18n="about.stat3"
+                                    data-count-target="65"
+                                >
+                                    65+
+                                </div>
+                                <div
+                                    class="stat-name"
+                                    data-i18n="aboutPage.globalReachStatStrategies"
+                                >
+                                    Strategies
+                                </div>
+                            </div>
+
+                            <div class="stat-item">
+                                <div class="stat-line"></div>
+                                <div
+                                    class="stat-value"
+                                    data-i18n="about.stat4"
+                                    data-count-target="12"
+                                >
+                                    12+
+                                </div>
+                                <div
+                                    class="stat-name"
+                                    data-i18n="aboutPage.globalReachStatIndustries"
+                                >
+                                    Industries
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- METHODOLOGY / HOW WE WORK -->
+                <section class="about-methodology">
+                    <div class="about-container">
+                        <div class="about-section-header">
+                            <p
+                                class="eyebrow"
+                                data-i18n="aboutPage.methodologyEyebrow"
+                            >
+                                How we work
+                            </p>
+                            <h2 data-i18n="aboutPage.methodologyHeading">
+                                From first call to launch-ready brand
+                            </h2>
+                            <p data-i18n="aboutPage.methodologyDescription">
+                                We keep the process simple, structured, and
+                                collaborative—so you always know where we are
+                                and what’s coming next.
+                            </p>
+                        </div>
+
+                        <div class="methodology-grid">
+                            <article
+                                class="method-card"
+                                data-cursor-img="../assets/images/about/research.png"
+                            >
+                                <p
+                                    class="step-label"
+                                    data-i18n="aboutPage.methodStep1Label"
+                                >
+                                    Step 01
+                                </p>
+                                <h3 data-i18n="aboutPage.methodStep1Title">
+                                    Research & Analysis
+                                </h3>
+                                <p data-i18n="aboutPage.methodStep1Description">
+                                    We study your market, audience, and
+                                    competitors to uncover what truly sets your
+                                    brand apart.
+                                </p>
+                                <ul>
+                                    <li data-i18n="aboutPage.methodStep1Item1">
+                                        Brand & website audit
+                                    </li>
+                                    <li data-i18n="aboutPage.methodStep1Item2">
+                                        Competitive & visual research
+                                    </li>
+                                    <li data-i18n="aboutPage.methodStep1Item3">
+                                        Positioning & tone-of-voice direction
+                                    </li>
+                                </ul>
+                            </article>
+
+                            <article
+                                class="method-card"
+                                data-cursor-img="../assets/images/about/creative.png"
+                            >
+                                <p
+                                    class="step-label"
+                                    data-i18n="aboutPage.methodStep2Label"
+                                >
+                                    Step 02
+                                </p>
+                                <h3 data-i18n="aboutPage.methodStep2Title">
+                                    Creative Design
+                                </h3>
+                                <p data-i18n="aboutPage.methodStep2Description">
+                                    We translate strategy into a full visual and
+                                    digital system your team can actually use
+                                    every day.
+                                </p>
+                                <ul>
+                                    <li data-i18n="aboutPage.methodStep2Item1">
+                                        Logo & visual identity system
+                                    </li>
+                                    <li data-i18n="aboutPage.methodStep2Item2">
+                                        Design systems & brand guidelines
+                                    </li>
+                                    <li data-i18n="aboutPage.methodStep2Item3">
+                                        Web design & front-end development
+                                    </li>
+                                </ul>
+                            </article>
+
+                            <article
+                                class="method-card"
+                                data-cursor-img="../assets/images/about/review.png"
+                            >
+                                <p
+                                    class="step-label"
+                                    data-i18n="aboutPage.methodStep3Label"
+                                >
+                                    Step 03
+                                </p>
+                                <h3 data-i18n="aboutPage.methodStep3Title">
+                                    Review & Evolution
+                                </h3>
+                                <p data-i18n="aboutPage.methodStep3Description">
+                                    We support launch, refine based on feedback,
+                                    and keep your brand consistent as you grow.
+                                </p>
+                                <ul>
+                                    <li data-i18n="aboutPage.methodStep3Item1">
+                                        Launch assets & rollout support
+                                    </li>
+                                    <li data-i18n="aboutPage.methodStep3Item2">
+                                        Website tweaks & performance passes
+                                    </li>
+                                    <li data-i18n="aboutPage.methodStep3Item3">
+                                        Ongoing design & dev support
+                                    </li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WHO WE WORK WITH / SECTORS -->
+                <section class="about-sectors">
+                    <div class="about-container">
+                        <div class="about-section-header">
+                            <p
+                                class="eyebrow"
+                                data-i18n="aboutPage.sectorsEyebrow"
+                            >
+                                Who we work with
+                            </p>
+                            <h2 data-i18n="aboutPage.sectorsHeading">
+                                Partnering with visionaries who dare to stand
+                                out
+                            </h2>
+                            <p data-i18n="aboutPage.sectorsDescription">
+                                From ambitious startups to established
+                                enterprises, we craft identities that resonate
+                                and endure.
+                            </p>
+                        </div>
+
+                        <div class="sectors-grid">
+                            <article class="sector-card">
+                                <span
+                                    class="sector-number"
+                                    data-i18n="aboutPage.sector1Number"
+                                    >01</span
+                                >
+                                <h3 data-i18n="aboutPage.sector1Title">
+                                    Startups & Founders
+                                </h3>
+                                <p data-i18n="aboutPage.sector1Description">
+                                    Launch-ready brands and websites that help
+                                    you pitch, validate, and grow with
+                                    confidence from day one.
+                                </p>
+                            </article>
+
+                            <article class="sector-card">
+                                <span
+                                    class="sector-number"
+                                    data-i18n="aboutPage.sector2Number"
+                                    >02</span
+                                >
+                                <h3 data-i18n="aboutPage.sector2Title">
+                                    SMEs & Enterprises
+                                </h3>
+                                <p data-i18n="aboutPage.sector2Description">
+                                    Rebrands, packaging, and web redesigns that
+                                    refresh your presence without losing what
+                                    already works.
+                                </p>
+                            </article>
+
+                            <article class="sector-card">
+                                <span
+                                    class="sector-number"
+                                    data-i18n="aboutPage.sector3Number"
+                                    >03</span
+                                >
+                                <h3 data-i18n="aboutPage.sector3Title">
+                                    Agencies & Partners
+                                </h3>
+                                <p data-i18n="aboutPage.sector3Description">
+                                    White-label design and development support
+                                    for agencies that need a reliable production
+                                    partner.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CLIENT LOGOS SECTION -->
+                <div id="clients" class="reveal">
+                    <div id="clientstop">
+                        <h1 data-i18n="clients.heading">Successful Clients</h1>
+                        <p data-i18n="clients.description">
+                            Partnering with progressive businesses to uncover
+                            their true purpose, helping them drive meaningful
+                            change and move the world forward.
+                        </p>
+                    </div>
+
+                    <div id="clientsbtm">
+                        <div id="clientwrapper">
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-01.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-02.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-04.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-05.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-06.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-07.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-08.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-09.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-10.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-11.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-12.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-13.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-14.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-15.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-17.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-18.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-19.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-20.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-22.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-23.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-24.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-25.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-26.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-27.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-28.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-30.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+
+                            <!-- Duplicate set for seamless loop (same as home) -->
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-01.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-02.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-04.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-05.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-06.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-07.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-08.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-09.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-10.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-11.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-12.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-13.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-14.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-15.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-17.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-18.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-19.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-20.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-22.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-23.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-24.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-25.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-26.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-27.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-28.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
+                            <div class="logo">
+                                <img
+                                    src="../assets/images/home/PNGS/ZEDESIGNS Client Logos-30.png"
+                                    alt="Client Logo"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Floating WhatsApp Button -->
+            <a
+                href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
+                target="_blank"
+                id="whatsappFloat"
+                class="whatsapp-float"
+                aria-label="WhatsApp us"
+            >
+                <img
+                    src="../assets/images/home/whatsapp-logo.png"
+                    alt="WhatsApp"
+                />
+                <span data-i18n="floatingWhatsApp.ariaLabel">WhatsApp Us</span>
+            </a>
         </div>
 
-        <div id="footer-background">
-            <h1>ZEDESIGNS</h1>
+        <!-- FOOTER (same as other pages) -->
+        <div id="footer">
+            <div id="footer-foreground">
+                <img
+                    src="../assets/images/home/herofooter-bg-green-1.webp"
+                    alt=""
+                />
+                <div id="ftop">
+                    <div class="tag">
+                        <img src="../assets/images/home/tag.svg" alt="tag" />
+                        <p data-i18n="footer.tagText">
+                            Saudi Based Strategic Branding And Web Design
+                            Company
+                        </p>
+                    </div>
+                    <h1 data-i18n="footer.heading">
+                        Every success starts with the first step
+                    </h1>
+                    <p data-i18n="footer.description">
+                        Let's create something exceptional together. Get in
+                        touch to start your branding journey.
+                    </p>
+                    <div id="btndiv">
+                        <div class="btnelem">
+                            <button>
+                                <a
+                                    href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
+                                    target="_blank"
+                                    data-i18n="footer.btnText"
+                                >
+                                    Get Started
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="fbtm">
+                    <div id="btmleft">
+                        <img
+                            src="../assets/images/home/logofooter-01-old.png"
+                            alt="logo footer"
+                        />
+                        <div class="info">
+                            <p data-i18n="footer.hqLabel">HQ</p>
+                            <p data-i18n="footer.hqLocation">
+                                Jeddah, Saudi Arabia
+                            </p>
+                        </div>
+                        <div class="info">
+                            <p data-i18n="footer.contactLabel">Contact Us</p>
+                            <p data-i18n="footer.contactEmail">
+                                info@zedesignss.com
+                            </p>
+                        </div>
+                        <p id="copyright"  >
+                            2025 &copy; ZEDESIGNS. All rights reserved.
+                        </p>
+                    </div>
+                    <div id="btmright">
+                        <ul>
+                            <li
+                                class="liheading"
+                                data-i18n="footer.mainPagesHeading"
+                            >
+                                Main Pages
+                            </li>
+                            <li>
+                                <a
+                                    href="../index.html"
+                                    data-i18n="footer.navHome"
+                                    >Home</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./about.html"
+                                    data-i18n="footer.navAbout"
+                                >
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#services"
+                                    data-i18n="footer.navServices"
+                                >
+                                    Services
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="./projects.html"
+                                    data-i18n="footer.navWork"
+                                >
+                                    Work
+                                </a>
+                            </li>
+                        </ul>
+                        <div id="socials">
+                            <div id="socialone">
+                                <a
+                                    href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
+                                    target="_blank"
+                                >
+                                    <img
+                                        src="../assets/images/tiktok-logo.png"
+                                        alt=""
+                                    />
+                                </a>
+                                <a
+                                    href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
+                                    target="_blank"
+                                >
+                                    <img
+                                        style="transform: scale(1.2)"
+                                        src="../assets/images/instagram-logo.png"
+                                        alt=""
+                                    />
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/company/zedesignss/"
+                                    target="_blank"
+                                >
+                                    <img
+                                        src="../assets/images/linkedin-logo.png"
+                                        alt=""
+                                    />
+                                </a>
+                                <a
+                                    href="https://t.me/zedesigns"
+                                    target="_blank"
+                                >
+                                    <img
+                                        src="../assets/images/telegram-logo.png"
+                                        alt=""
+                                    />
+                                </a>
+                            </div>
+                            <div id="socialtwo">
+                                <a
+                                    href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000211539"
+                                    target="_blank"
+                                    ><img
+                                        src="../assets/images/saudi-business-logo.svg"
+                                        alt=""
+                                /></a>
+                                <p>
+                                    <span data-i18n="footer.verifiedText"
+                                        >Verified By</span
+                                    >
+                                    <a
+                                        href="https://eauthenticate.saudibusiness.gov.sa/certificate-details/0000211539"
+                                        target="_blank"
+                                        data-i18n="footer.verifiedLink"
+                                        >Saudi Business Center</a
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer-background">
+                <h1>ZEDESIGNS</h1>
+            </div>
         </div>
-    </div>
 
-    <!-- LIBS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
-    
-    <!-- amCharts for Globe Map -->
-    <script src="https://cdn.amcharts.com/lib/editor/map/5/viewer.js"></script>
+        <!-- LIBS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
 
-    <!-- APP SCRIPTS -->
-    <script src="../assets/scripts/i18n-2.js"></script>
-    <script src="../assets/scripts/utils.js"></script>
-    <script src="../assets/scripts/about.js"></script>
-</body>
+        <!-- amCharts for Globe Map -->
+        <script src="https://cdn.amcharts.com/lib/editor/map/5/viewer.js"></script>
+
+        <!-- APP SCRIPTS -->
+        <script src="../assets/scripts/i18n-2.js"></script>
+        <script src="../assets/scripts/utils.js"></script>
+        <script src="../assets/scripts/about.js"></script>
+    </body>
 </html>
