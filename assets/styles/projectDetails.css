@@ -140,6 +140,7 @@ html[dir="rtl"] #project-tagline {
     flex: 1;
     padding: 0 10px;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
+    height: -webkit-fill-available;
 }
 
 .spec-item:last-child {
