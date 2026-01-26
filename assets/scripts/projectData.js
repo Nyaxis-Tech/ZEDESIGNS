@@ -480,7 +480,7 @@ const projectsData = [
             textImage: {
                 imagesrc:
                     "../assets/images/Website Client Pngs/Beauty-case-study/imagetext.jpg",
-                text: 'The Beauty World Industry Co. logo combines the elegance of the letter "B" with the dynamic curve of the world, symbolizing the company\'s global reach and commitment to beauty. This simple yet powerful design encapsulates the essence of the brand, emphasizing its dedication to worldwide beauty excellence. The graceful form of the "B" represents beauty and sophistication, while the world curve signifies the company\'s international presence and influence. Together, these elements create a timeless and memorable  logo that reflects the brand\'s core values and vision.',
+                text: 'The logo for Beauty World Industry Co. combines the elegance of the alphabet "B" with the dynamic curve of the world, symbolizing the company\'s global reach and commitment to beauty. This simple yet powerful design encapsulates the essence of the brand, highlighting its focus on worldwide beauty excellence.',            
             },
             bannerImage:
                 "../assets/images/Website Client Pngs/Beauty-case-study/bannerImage.jpg",
@@ -490,13 +490,13 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Beauty-case-study/logoImage.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-1.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-2.jpg",
-                "../assets/images/Website Client Pngs/Beauty-case-study/image-3.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-3.png",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-4.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-5.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-6.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-7.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-8.jpg",
-                "../assets/images/Website Client Pngs/Beauty-case-study/image-9.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-9.png",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-10.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-11.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-12.jpg",
@@ -529,7 +529,7 @@ const projectsData = [
             textImage: {
                 imagesrc:
                     "../assets/images/Website Client Pngs/Beauty-case-study/imagetext.jpg",
-                text: 'يجمع شعار شركة بيوتي وورلد للصناعة بين أناقة حرف "B" والمنحنى الديناميكي للعالم، مما يرمز إلى الوصول العالمي للشركة والتزامها بالجمال. يجسد هذا التصميم البسيط والقوي جوهر العلامة التجارية، مع التأكيد على تفانيها في التميز الجمالي العالمي. يمثل الشكل الرشيق لـ "B" الجمال والرقي، بينما يشير منحنى العالم إلى الحضور والتأثير الدولي للشركة. معاً، تخلق هذه العناصر شعاراً خالداً ولا يُنسى يعكس القيم والرؤية الأساسية للعلامة التجارية.',
+                text: 'يجمع شعار شركة بيوتي وورلد للصناعة بين أناقة الحرف "B" والمنحنى الديناميكي للعالم، مما يرمز إلى الوصول العالمي للشركة والتزامها بالجمال. يجسد هذا التصميم البسيط ولكنه قوي جوهر العلامة التجارية، مسلطاً الضوء على تركيزها على التميز الجمالي العالمي.',
             },
             bannerImage:
                 "../assets/images/Website Client Pngs/Beauty-case-study/bannerImage.jpg",
@@ -539,13 +539,13 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Beauty-case-study/logoImage.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-1.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-2.jpg",
-                "../assets/images/Website Client Pngs/Beauty-case-study/image-3.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-3.png",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-4.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-5.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-6.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-7.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-8.jpg",
-                "../assets/images/Website Client Pngs/Beauty-case-study/image-9.jpg",
+                "../assets/images/Website Client Pngs/Beauty-case-study/image-9.png",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-10.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-11.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-12.jpg",
