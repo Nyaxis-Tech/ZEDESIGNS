@@ -45,8 +45,9 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-11.png",
                 "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-12.jpg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-4-vid.mp4" },
+                { position: 5, src: "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-5-vid.mp4" },
             ],
         },
         ar: {
@@ -93,8 +94,9 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-11.png",
                 "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-12.jpg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-4-vid.mp4" },
+                { position: 5, src: "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-5-vid.mp4" },
             ],
         },
     },
@@ -150,8 +152,8 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-11.jpg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-12.jpg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-4-vid.mp4" },
             ],
         },
         ar: {
@@ -204,8 +206,8 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-11.jpg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-12.jpg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-4-vid.mp4" },
             ],
         },
     },
@@ -425,8 +427,8 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/hatta-the-one/Hatta-case-study/image-11.png",
                 "../assets/images/Website Client Pngs/hatta-the-one/Hatta-case-study/image-12-2-custom.jpeg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/hatta-the-one/Hatta-case-study/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/hatta-the-one/Hatta-case-study/image-4-vid.mp4" },
             ],
         },
         ar: {
@@ -473,8 +475,8 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/hatta-the-one/Hatta-case-study/image-11.png",
                 "../assets/images/Website Client Pngs/hatta-the-one/Hatta-case-study/image-12-2-custom.jpeg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/hatta-the-one/Hatta-case-study/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/hatta-the-one/Hatta-case-study/image-4-vid.mp4" },
             ],
         },
     },
@@ -525,7 +527,7 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-11.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-12.jpg",
             ],
-            video: [
+            videos: [
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.webm",
             ],
         },
@@ -574,7 +576,7 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-11.jpg",
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-12.jpg",
             ],
-            video: [
+            videos: [
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.webm",
             ],
         },
@@ -625,8 +627,9 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/ninestars/image-11.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-12.jpg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/ninestars/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/ninestars/image-4-vid.mp4" },
+                { position: 12, src: "../assets/images/Website Client Pngs/ninestars/image-12-vid.mp4" },
             ],
         },
         ar: {
@@ -673,8 +676,9 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/ninestars/image-11.jpg",
                 "../assets/images/Website Client Pngs/ninestars/image-12.jpg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/ninestars/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/ninestars/image-4-vid.mp4" },
+                { position: 12, src: "../assets/images/Website Client Pngs/ninestars/image-12-vid.mp4" },
             ],
         },
     },
@@ -724,8 +728,8 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/resto/image-11.webp",
                 "../assets/images/Website Client Pngs/resto/image-12.webp",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/resto/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/resto/image-4-vid.mp4" },
             ],
         },
         ar: {
@@ -772,8 +776,8 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/resto/image-11.webp",
                 "../assets/images/Website Client Pngs/resto/image-12.webp",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/resto/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/resto/image-4-vid.mp4" },
             ],
         },
     },
@@ -824,8 +828,8 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/coldsummer/image-11.jpg",
                 "../assets/images/Website Client Pngs/coldsummer/image-12.jpg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/coldsummer/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/coldsummer/image-4-vid.mp4" },
             ],
         },
         ar: {
@@ -873,8 +877,8 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/coldsummer/image-11.jpg",
                 "../assets/images/Website Client Pngs/coldsummer/image-12.jpg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/coldsummer/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/coldsummer/image-4-vid.mp4" },
             ],
         },
     },
@@ -923,8 +927,8 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/jumanalemar/image-11.png",
                 "../assets/images/Website Client Pngs/jumanalemar/image-12.jpg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/jumanalemar/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/jumanalemar/image-4-vid.mp4" },
             ],
         },
         ar: {
@@ -970,8 +974,8 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/jumanalemar/image-11.png",
                 "../assets/images/Website Client Pngs/jumanalemar/image-12.jpg",
             ],
-            video: [
-                "../assets/images/Website Client Pngs/jumanalemar/image-4-vid.mp4",
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/jumanalemar/image-4-vid.mp4" },
             ],
         },
     },

@@ -125,6 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return container;
     };
 
+    // Helper: Get video at specific position
+    const getVideoAtPosition = (position) => {
+        if (!projectData.videos || !Array.isArray(projectData.videos)) return null;
+        const videoData = projectData.videos.find(v => v.position === position);
+        return videoData ? videoData.src : null;
+    };
+
     // Helper: Create Challenge/Solution Column
     const createCSColumn = (title, content) => {
         const col = document.createElement('div');
@@ -193,9 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let span = 'span-full';
         if (index === 1 || index === 2) span = 'span-half';
         
-        // Check if it's the 4th item and video exists
-        if (index === 3 && projectData.video && projectData.video.length > 0) {
-             randomGrid.appendChild(createVideo(projectData.video[0], span));
+        // Check if there's a video at this position (1-4)
+        const position = index + 1;
+        const videoSrc = getVideoAtPosition(position);
+        
+        if (videoSrc) {
+             randomGrid.appendChild(createVideo(videoSrc, span));
         } else {
              randomGrid.appendChild(createImage(src, span));
         }
@@ -264,7 +274,15 @@ document.addEventListener('DOMContentLoaded', () => {
             span = 'span-full';
         }
 
-        bentoGrid.appendChild(createImage(src, span));
+        // Check if there's a video at this position (5+)
+        const position = index + 5;
+        const videoSrc = getVideoAtPosition(position);
+        
+        if (videoSrc) {
+            bentoGrid.appendChild(createVideo(videoSrc, span));
+        } else {
+            bentoGrid.appendChild(createImage(src, span));
+        }
     });
 
     // Setup Next Project Link
