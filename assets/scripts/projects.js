@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             ${projectData.name}
                         </h2>
                         <div class="project-tags">
-                            ${projectData.tags.slice(0,2).map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                            ${projectData.tags.slice(0,4).map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                         </div>
                     </div>
                     <div class="project-media">
