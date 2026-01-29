@@ -138,7 +138,7 @@ const projectsData = [
             logoImage:
                 "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
             images: [
-                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/logoimage.png",
+                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/logoImage.png",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-1.jpg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-2.jpg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-3.jpeg",
@@ -192,7 +192,7 @@ const projectsData = [
             logoImage:
                 "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
             images: [
-                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/logoimage.png",
+                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/logoImage.png",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-1.jpg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-2.jpg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-3.jpeg",
