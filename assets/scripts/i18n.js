@@ -55,6 +55,11 @@ class I18n {
         // Update ScrollTrigger animations for language change
         this.updateScrollAnimations();
         this.updateCounterAnimations();
+
+        // Dispatch custom event for other components to react to language change
+        window.dispatchEvent(new CustomEvent('languageChanged', { 
+            detail: { language: lang } 
+        }));
     }
     
     updateScrollAnimations() {
