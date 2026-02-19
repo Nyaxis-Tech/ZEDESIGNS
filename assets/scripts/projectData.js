@@ -31,7 +31,7 @@ const projectsData = [
             logoImage:
                 "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
             images: [
-                "../assets/images/Website Client Pngs/Sunbun Files/Arabic/logo-image.webp",
+                "../assets/images/Website Client Pngs/Sunbun Files/Arabic/logo-image.jpeg",
                 "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-1.jpg",
                 "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-2.jpg",
                 "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-3.jpg",
@@ -80,7 +80,7 @@ const projectsData = [
             logoImage:
                 "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
             images: [
-                "../assets/images/Website Client Pngs/Sunbun Files/Arabic/logo-image.webp",
+                "../assets/images/Website Client Pngs/Sunbun Files/Arabic/logo-image.jpeg",
                 "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-1.jpg",
                 "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-2.jpg",
                 "../assets/images/Website Client Pngs/Sunbun Files/Eng Pngs/image-3.jpg",
@@ -139,7 +139,7 @@ const projectsData = [
                 "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
             images: [
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/logoImage.png",
-                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-1.jpg",
+                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-1.webp",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-2.jpg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-3.jpeg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-4.webp",
@@ -193,7 +193,7 @@ const projectsData = [
                 "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
             images: [
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/logoImage.png",
-                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-1.jpg",
+                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-1.webp",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-2.jpg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-3.jpeg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-4.webp",
@@ -265,7 +265,7 @@ const projectsData = [
             ],
             videos: [
                 { position: 4, src: "../assets/images/Website Client Pngs/Milkor FIles/image-4-vid.mp4" },
-                { position: 7, src: "../assets/images/Website Client Pngs/Milkor FIles/image-7-vid.mp4" },
+                { position: 8, src: "../assets/images/Website Client Pngs/Milkor FIles/image-8-vid.mp4" },
             ],
         },
         ar: {
@@ -542,11 +542,7 @@ const projectsData = [
             shortDescription:
                 "Developed a scalable brand system for Beauty World Industry Co. that blends organic softness with structural strength, establishing a trusted voice in the cosmetics manufacturing sector.",
             tags: [
-                "Brand Strategy",
-                "Visual Identity System",
-                "Packaging Design",
-                "Outdoor Branding",
-                "Brand Guidelines & Applications"
+                "Brand Strategy", "Visual Identity System", "Outdoor Branding", "Packaging Design"
             ],
             location: "Jeddah, Saudi Arabia",
             industry: "Beauty & Care Products",
@@ -582,7 +578,7 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-12.jpg",
             ],
             videos: [
-                "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.webm",
+                { position: 4, src: "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.webm" },
             ],
         },
         ar: {
@@ -591,11 +587,7 @@ const projectsData = [
             shortDescription:
                 "طورنا نظام علامة تجارية قابل للتوسع لشركة بيوتي وورلد للصناعة يمزج بين النعومة العضوية والقوة الهيكلية، مما يؤسس صوتاً موثوقاً في قطاع تصنيع مستحضرات التجميل.",
             tags: [
-                "استراتيجية العلامة التجارية",
-                "نظام الهوية البصرية",
-                "تصميم التعبئة والتغليف",
-                "العلامات الخارجية",
-                "إرشادات العلامة التجارية والتطبيقات"
+                "استراتيجية العلامة التجارية", "نظام الهوية البصرية", "العلامات الخارجية", "تصميم التعبئة والتغليف"
             ],
             location: "جدة، المملكة العربية السعودية",
             industry: "منتجات التجميل والعناية",
@@ -631,7 +623,7 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Beauty-case-study/image-12.jpg",
             ],
             videos: [
-                "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.webm",
+                { position: 4, src: "../assets/images/Website Client Pngs/Beauty-case-study/image-4-vid.webm" },
             ],
         },
     },
@@ -744,10 +736,7 @@ const projectsData = [
             shortDescription:
                 "Developed a flavorful brand identity for Resto Burger, visually articulating their unique fusion of premium meats and exotic fruit-based sauces through a bold, appetizing design system.",
             tags: [
-                "Brand Strategy",
-                "Logo Design",
-                "Visual Identity",
-                "Packaging Design"
+                "Brand Strategy", "Logo Design", "Visual Identity", "Packaging Design", "Visual Identity System"
             ],
             location: "Najran, Saudi Arabia",
             industry: "Food & Beverage",
@@ -792,10 +781,7 @@ const projectsData = [
             shortDescription:
                 "طورنا هوية علامة تجارية مليئة بالنكهات لـ Resto Burger، تعبر بصريًا عن مزيجهم الفريد من اللحوم الممتازة والصلصات الغريبة القائمة على الفواكه من خلال نظام تصميم جريء وشهي.",
             tags: [
-                "استراتيجية العلامة التجارية",
-                "تصميم الشعار",
-                "الهوية البصرية",
-                "تصميم التعبئة والتغليف"
+                "استراتيجية العلامة التجارية", "تصميم الشعار", "الهوية البصرية", "تصميم التعبئة والتغليف", "نظام الهوية البصرية"
             ],
             location: "نجران، المملكة العربية السعودية",
             industry: "الأغذية والمشروبات",
@@ -843,11 +829,7 @@ const projectsData = [
             shortDescription:
                 "Developed a vibrant and playful brand identity for Cold Summer, transforming their unique square-shaped desserts into a cohesive visual narrative of friendship and joy.",
             tags: [
-                "Brand Strategy",
-                "Character Design",
-                "Visual Identity",
-                "Social Media Management",
-                "Signage"
+                "Brand Strategy", "Character Design",  "Social Media Management", "Brand Guidelines"
             ],
             location: "Dammam, Saudi Arabia",
             industry: "Food & Beverage",
@@ -892,11 +874,7 @@ const projectsData = [
             shortDescription:
                 "طورنا هوية علامة تجارية نابضة بالحياة ومرحة لـ Cold Summer، محولين حلوياتهم المربعة الشكل الفريدة إلى سرد بصري متماسك عن الصداقة والفرح.",
             tags: [
-                "استراتيجية العلامة التجارية",
-                "تصميم الشخصيات",
-                "الهوية البصرية",
-                "تصميم التعبئة والتغليف",
-                "اللافتات"
+                "استراتيجية العلامة التجارية", "تصميم الشخصية",  "إدارة وسائل التواصل الاجتماعي", "إرشادات العلامة التجارية"
             ],
             location: "الدمام، المملكة العربية السعودية",
             industry: "الأغذية والمشروبات",
