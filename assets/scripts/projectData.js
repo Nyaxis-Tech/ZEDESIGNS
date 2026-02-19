@@ -204,7 +204,7 @@ const projectsData = [
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-9.jpg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-10.jpg",
                 "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-11.jpg",
-                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-12.jpg",
+                "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-12.jpeg",
             ],
             videos: [
                 { position: 4, src: "../assets/images/Website Client Pngs/Sukoon Files Arb & Eng/image-4-vid.mp4" },
@@ -213,117 +213,6 @@ const projectsData = [
     },
     {
         id: 3,
-        en: {
-            name: "Khubza House",
-            tagLine: "Modern Bakery and Comfort Brand",
-            shortDescription:
-                "Developed a welcoming brand identity for Khubza House, blending natural tones and playful motifs across packaging and environmental branding to reflect the soul of homemade traditions.",
-            tags: [
-                "Logo Design",
-                "Packaging & Environmental Branding",
-                "Visual Identity System",
-                "Brand Guidelines & Applications",
-            ],
-            location: "Jeddah, KSA",
-            industry: "Bakery / Food",
-            year: "2023",
-            overview:
-                "Khubza House is a bakery brand rooted in warmth, simplicity, and cultural familiarity. We partnered with them in Jeddah to create a brand identity that reflects the comfort of homemade bread with a modern twist. The goal was to curate a visual rhythm where the space, signage, and design all reflect the soul of the brand. It's about the smell of fresh bread and the feeling of home. From the moment customers walk through the door, they are greeted with an experience that is both nostalgic and refreshingly new. The design language extends from the bread oven to the takeaway bag, creating a cohesive story that celebrates tradition while embracing innovation.",
-            challenge:
-                "The brand needed to capture the sensory experience of freshness and aroma within a visual identity. The challenge was to modernize the concept of a traditional bakery without losing its sense of nostalgia—creating a look that feels rooted in heritage but fresh enough for a contemporary audience. We had to make 'traditional' look 'cool'. The visual identity needed to appeal to a younger, urban demographic while still resonating with older customers who value authenticity and quality. Additionally, the environmental branding had to work within the physical constraints of a bakery space while maintaining visual impact.",
-            solution:
-                'We designed a cohesive visual system that blends design and experience. We created a typographic mark with a swirling bread icon to symbolize freshness and aroma, instantly communicating the essence of the brand. A "playful spiral" motif and natural color palette were developed to create a welcoming vibe that feels both familiar and exciting. We executed environmental branding, applying consistent visuals to wall graphics and signage, transforming the bakery into a branded experience. The system unified the experience across digital interfaces and physical packaging wrappers, ensuring that whether customers order online or visit in person, they receive the same warm, inviting brand experience. The result is a brand that smells as good as it looks.',
-            solutionPoints: [
-                "Created a typographic mark with a swirling bread icon to symbolize freshness and aroma",
-                'Developed a "playful spiral" motif and natural color palette for a welcoming vibe',
-                "Executed environmental branding, applying consistent visuals to wall graphics and signage",
-                "Unified the experience across digital interfaces and physical packaging wrappers",
-            ],
-            textImage: {
-                imagesrc:
-                    "../assets/images/Website Client Pngs/Khubza House/imagetext.png",
-                text: "ZEDESIGNS brought Milkor’s bold identity to life through a cohesive Arabic visual identity system. From cards and badges to certificates and email signatures, every detail reflects the brand’s precision, strength, and professionalism, built for seamless use across internal and external channels.",
-            },
-            bannerImage:
-                "../assets/images/Website Client Pngs/Khubza House/bannerImage.jpg",
-            logoImage:
-                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
-            images: [
-                "../assets/images/Website Client Pngs/Khubza House/logoImage.png",
-                "../assets/images/Website Client Pngs/Khubza House/image-1.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-2.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-3.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-4-vid.mp4",
-                "../assets/images/Website Client Pngs/Khubza House/image-5.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-6.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-7.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-8.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-9.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-10.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-11.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-12.jpg",
-            ],
-            videos: [
-                { position: 4, src: "../assets/images/Website Client Pngs/Khubza House/image-4-vid.mp4" },
-            ],
-        },
-        ar: {
-            name: "خبزة هاوس",
-            tagLine: "علامة تجارية عصرية للمخبز والراحة",
-            shortDescription:
-                "طوّرنا هوية علامة تجارية ترحيبية لخبزة هاوس، تمزج بين الألوان الطبيعية والعناصر المرحة عبر التعبئة والتغليف والعلامات التجارية البيئية لتعكس روح التقاليد المنزلية.",
-            tags: [
-                "تصميم الشعار",
-                "التعبئة والتغليف والعلامات البيئية",
-                "نظام الهوية البصرية",
-                "إرشادات العلامة التجارية والتطبيقات",
-            ],
-            location: "جدة، المملكة العربية السعودية",
-            industry: "المخابز / الأطعمة",
-            year: "٢٠٢٣",
-            overview:
-                "خبزة هاوس علامة تجارية للمخابز متجذرة في الدفء والبساطة والألفة الثقافية. تشاركنا معهم في جدة لإنشاء هوية علامة تجارية تعكس راحة الخبز المنزلي بلمسة عصرية. كان الهدف تنسيق إيقاع بصري حيث تعكس المساحة واللافتات والتصميم جميعها روح العلامة التجارية. يتعلق الأمر برائحة الخبز الطازج والشعور بالمنزل. من اللحظة التي يدخل فيها العملاء من الباب، يُستقبلون بتجربة مليئة بالحنين ومنعشة في الوقت ذاته. تمتد لغة التصميم من فرن الخبز إلى حقيبة الوجبات الجاهزة، مما يخلق قصة متماسكة تحتفي بالتقاليد مع احتضان الابتكار.",
-            challenge:
-                "احتاجت العلامة التجارية إلى التقاط التجربة الحسية للنضارة والرائحة ضمن هوية بصرية. كان التحدي يكمن في تحديث مفهوم المخبز التقليدي دون فقدان إحساسه بالحنين - إنشاء مظهر يبدو متجذراً في التراث ومنعشاً بما يكفي للجمهور المعاصر. كان علينا جعل 'التقليدي' يبدو 'عصرياً'. كان يجب أن تجذب الهوية البصرية الفئة الديموغرافية الشابة والحضرية مع الاستمرار في التردد صداها لدى العملاء الأكبر سناً الذين يقدرون الأصالة والجودة. بالإضافة إلى ذلك، كان على العلامات البيئية أن تعمل ضمن القيود المادية لمساحة المخبز مع الحفاظ على التأثير البصري.",
-            solution:
-                'صممنا نظاماً بصرياً متماسكاً يمزج بين التصميم والتجربة. أنشأنا علامة طباعية مع رمز خبز دوامي لترمز إلى النضارة والرائحة، مما ينقل على الفور جوهر العلامة التجارية. طُور عنصر "اللولب المرح" ولوحة ألوان طبيعية لخلق أجواء ترحيبية تبدو مألوفة ومثيرة في آن واحد. نفذنا العلامات البيئية، مع تطبيق عناصر بصرية متسقة على الرسومات الجدارية واللافتات، مما حوّل المخبز إلى تجربة علامة تجارية. وحّد النظام التجربة عبر الواجهات الرقمية وأغلفة التعبئة والتغليف المادية، مما يضمن أنه سواء طلب العملاء عبر الإنترنت أو زاروا شخصياً، يحصلون على نفس تجربة العلامة التجارية الدافئة والجذابة. النتيجة علامة تجارية رائحتها جيدة مثل مظهرها.',
-            solutionPoints: [
-                "أنشأنا علامة طباعية مع رمز خبز دوامي لترمز إلى النضارة والرائحة",
-                'طورنا عنصر "اللولب المرح" ولوحة ألوان طبيعية لأجواء ترحيبية',
-                "نفذنا العلامات البيئية مع تطبيق عناصر بصرية متسقة على الرسومات الجدارية واللافتات",
-                "وحدنا التجربة عبر الواجهات الرقمية وأغلفة التعبئة والتغليف المادية",
-            ],
-            textImage: {
-                imagesrc:
-                    "../assets/images/Website Client Pngs/Khubza House/imagetext.png",
-                text: "قدمت ZEDESIGNS هوية عربية متماسكة لحيوية علامة ميلكور الجريئة. من البطاقات والشارات إلى الشهادات وتوقيعات البريد الإلكتروني، تعكس كل التفاصيل دقة وقوة واحترافية العلامة التجارية، مصممة للاستخدام السلس عبر القنوات الداخلية والخارجية.",
-            },
-            bannerImage:
-                "../assets/images/Website Client Pngs/Khubza House/bannerImage.jpg",
-            logoImage:
-                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
-            images: [
-                "../assets/images/Website Client Pngs/Khubza House/logoImage.png",
-                "../assets/images/Website Client Pngs/Khubza House/image-1.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-2.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-3.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-4-vid.mp4",
-                "../assets/images/Website Client Pngs/Khubza House/image-5.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-6.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-7.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-8.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-9.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-10.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-11.jpg",
-                "../assets/images/Website Client Pngs/Khubza House/image-12.jpg",
-            ],
-            videos: [
-                { position: 4, src: "../assets/images/Website Client Pngs/Khubza House/image-4-vid.mp4" },
-            ],
-        },
-    },
-    {
-        id: 4,
         en: {
             name: "Milkor",
             tagLine: "Global Defense and Military Systems",
@@ -432,6 +321,117 @@ const projectsData = [
             videos: [
                 { position: 4, src: "../assets/images/Website Client Pngs/Milkor FIles/image-4-vid.mp4" },
                 { position: 7, src: "../assets/images/Website Client Pngs/Milkor FIles/image-7-vid.mp4" },
+            ],
+        },
+    },
+    {
+        id: 4,
+        en: {
+            name: "Khubza House",
+            tagLine: "Modern Bakery and Comfort Brand",
+            shortDescription:
+                "Developed a welcoming brand identity for Khubza House, blending natural tones and playful motifs across packaging and environmental branding to reflect the soul of homemade traditions.",
+            tags: [
+                "Logo Design",
+                "Packaging & Environmental Branding",
+                "Visual Identity System",
+                "Brand Guidelines & Applications",
+            ],
+            location: "Jeddah, KSA",
+            industry: "Bakery / Food",
+            year: "2023",
+            overview:
+                "Khubza House is a bakery brand rooted in warmth, simplicity, and cultural familiarity. We partnered with them in Jeddah to create a brand identity that reflects the comfort of homemade bread with a modern twist. The goal was to curate a visual rhythm where the space, signage, and design all reflect the soul of the brand. It's about the smell of fresh bread and the feeling of home. From the moment customers walk through the door, they are greeted with an experience that is both nostalgic and refreshingly new. The design language extends from the bread oven to the takeaway bag, creating a cohesive story that celebrates tradition while embracing innovation.",
+            challenge:
+                "The brand needed to capture the sensory experience of freshness and aroma within a visual identity. The challenge was to modernize the concept of a traditional bakery without losing its sense of nostalgia—creating a look that feels rooted in heritage but fresh enough for a contemporary audience. We had to make 'traditional' look 'cool'. The visual identity needed to appeal to a younger, urban demographic while still resonating with older customers who value authenticity and quality. Additionally, the environmental branding had to work within the physical constraints of a bakery space while maintaining visual impact.",
+            solution:
+                'We designed a cohesive visual system that blends design and experience. We created a typographic mark with a swirling bread icon to symbolize freshness and aroma, instantly communicating the essence of the brand. A "playful spiral" motif and natural color palette were developed to create a welcoming vibe that feels both familiar and exciting. We executed environmental branding, applying consistent visuals to wall graphics and signage, transforming the bakery into a branded experience. The system unified the experience across digital interfaces and physical packaging wrappers, ensuring that whether customers order online or visit in person, they receive the same warm, inviting brand experience. The result is a brand that smells as good as it looks.',
+            solutionPoints: [
+                "Created a typographic mark with a swirling bread icon to symbolize freshness and aroma",
+                'Developed a "playful spiral" motif and natural color palette for a welcoming vibe',
+                "Executed environmental branding, applying consistent visuals to wall graphics and signage",
+                "Unified the experience across digital interfaces and physical packaging wrappers",
+            ],
+            textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/Khubza House/imagetext.png",
+                text: "ZEDESIGNS delivered a cohesive Arabic identity for Khubza House's vibrant brand. From packaging to signage, every detail reflects the warmth and authenticity of the bakery, creating a seamless brand experience that resonates with customers across all touchpoints.",
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/Khubza House/bannerImage.jpg",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/Khubza House/logoImage.png",
+                "../assets/images/Website Client Pngs/Khubza House/image-1.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-2.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-3.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-4-vid.mp4",
+                "../assets/images/Website Client Pngs/Khubza House/image-5.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-6.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-7.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-8.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-9.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-10.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-11.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-12.jpg",
+            ],
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/Khubza House/image-4-vid.mp4" },
+            ],
+        },
+        ar: {
+            name: "خبزة هاوس",
+            tagLine: "علامة تجارية عصرية للمخبز والراحة",
+            shortDescription:
+                "طوّرنا هوية علامة تجارية ترحيبية لخبزة هاوس، تمزج بين الألوان الطبيعية والعناصر المرحة عبر التعبئة والتغليف والعلامات التجارية البيئية لتعكس روح التقاليد المنزلية.",
+            tags: [
+                "تصميم الشعار",
+                "التعبئة والتغليف والعلامات البيئية",
+                "نظام الهوية البصرية",
+                "إرشادات العلامة التجارية والتطبيقات",
+            ],
+            location: "جدة، المملكة العربية السعودية",
+            industry: "المخابز / الأطعمة",
+            year: "٢٠٢٣",
+            overview:
+                "خبزة هاوس علامة تجارية للمخابز متجذرة في الدفء والبساطة والألفة الثقافية. تشاركنا معهم في جدة لإنشاء هوية علامة تجارية تعكس راحة الخبز المنزلي بلمسة عصرية. كان الهدف تنسيق إيقاع بصري حيث تعكس المساحة واللافتات والتصميم جميعها روح العلامة التجارية. يتعلق الأمر برائحة الخبز الطازج والشعور بالمنزل. من اللحظة التي يدخل فيها العملاء من الباب، يُستقبلون بتجربة مليئة بالحنين ومنعشة في الوقت ذاته. تمتد لغة التصميم من فرن الخبز إلى حقيبة الوجبات الجاهزة، مما يخلق قصة متماسكة تحتفي بالتقاليد مع احتضان الابتكار.",
+            challenge:
+                "احتاجت العلامة التجارية إلى التقاط التجربة الحسية للنضارة والرائحة ضمن هوية بصرية. كان التحدي يكمن في تحديث مفهوم المخبز التقليدي دون فقدان إحساسه بالحنين - إنشاء مظهر يبدو متجذراً في التراث ومنعشاً بما يكفي للجمهور المعاصر. كان علينا جعل 'التقليدي' يبدو 'عصرياً'. كان يجب أن تجذب الهوية البصرية الفئة الديموغرافية الشابة والحضرية مع الاستمرار في التردد صداها لدى العملاء الأكبر سناً الذين يقدرون الأصالة والجودة. بالإضافة إلى ذلك، كان على العلامات البيئية أن تعمل ضمن القيود المادية لمساحة المخبز مع الحفاظ على التأثير البصري.",
+            solution:
+                'صممنا نظاماً بصرياً متماسكاً يمزج بين التصميم والتجربة. أنشأنا علامة طباعية مع رمز خبز دوامي لترمز إلى النضارة والرائحة، مما ينقل على الفور جوهر العلامة التجارية. طُور عنصر "اللولب المرح" ولوحة ألوان طبيعية لخلق أجواء ترحيبية تبدو مألوفة ومثيرة في آن واحد. نفذنا العلامات البيئية، مع تطبيق عناصر بصرية متسقة على الرسومات الجدارية واللافتات، مما حوّل المخبز إلى تجربة علامة تجارية. وحّد النظام التجربة عبر الواجهات الرقمية وأغلفة التعبئة والتغليف المادية، مما يضمن أنه سواء طلب العملاء عبر الإنترنت أو زاروا شخصياً، يحصلون على نفس تجربة العلامة التجارية الدافئة والجذابة. النتيجة علامة تجارية رائحتها جيدة مثل مظهرها.',
+            solutionPoints: [
+                "أنشأنا علامة طباعية مع رمز خبز دوامي لترمز إلى النضارة والرائحة",
+                'طورنا عنصر "اللولب المرح" ولوحة ألوان طبيعية لأجواء ترحيبية',
+                "نفذنا العلامات البيئية مع تطبيق عناصر بصرية متسقة على الرسومات الجدارية واللافتات",
+                "وحدنا التجربة عبر الواجهات الرقمية وأغلفة التعبئة والتغليف المادية",
+            ],
+            textImage: {
+                imagesrc:
+                    "../assets/images/Website Client Pngs/Khubza House/imagetext.png",
+                text: "قدمت ZEDESIGNS هوية عربية متماسكة لعلامة خبزة هاوس النابضة بالحياة. من التعبئة والتغليف إلى اللافتات، تعكس كل التفاصيل دفء وأصالة المخبز، مما يخلق تجربة علامة تجارية سلسة تتردد صداها مع العملاء عبر جميع نقاط التواصل.",
+            },
+            bannerImage:
+                "../assets/images/Website Client Pngs/Khubza House/bannerImage.jpg",
+            logoImage:
+                "../assets/images/home/PNGS/ZEDESIGNS Client Logos-03.png",
+            images: [
+                "../assets/images/Website Client Pngs/Khubza House/logoImage.png",
+                "../assets/images/Website Client Pngs/Khubza House/image-1.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-2.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-3.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-4-vid.mp4",
+                "../assets/images/Website Client Pngs/Khubza House/image-5.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-6.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-7.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-8.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-9.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-10.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-11.jpg",
+                "../assets/images/Website Client Pngs/Khubza House/image-12.jpg",
+            ],
+            videos: [
+                { position: 4, src: "../assets/images/Website Client Pngs/Khubza House/image-4-vid.mp4" },
             ],
         },
     },

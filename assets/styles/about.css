@@ -64,6 +64,9 @@ html[dir="rtl"] h3 {
     opacity: 0.7;
     margin-bottom: 0.75rem;
 }
+html[dir="rtl"] .eyebrow {
+    font-size: 1rem !important;
+}
 
 /* icon before the text */
 .eyebrow::before {
@@ -80,6 +83,10 @@ html[dir="rtl"] h3 {
     margin-bottom: 4px;
 }
 
+html[dir="rtl"] .eyebrow::before {
+    transform: rotate(135deg);
+    margin-top: 4px;
+}
 /* =======================
    HERO
    ======================= */
@@ -137,6 +144,10 @@ html[dir="rtl"] h3 {
     width: 80%;
     line-height: 1.1;
     margin-bottom: 1.5rem;
+}
+
+html[dir="rtl"] .services-hero-content h1 {
+    line-height: 1.4;
 }
 
 .services-hero-content > p {
@@ -693,6 +704,10 @@ html[dir="rtl"] h3 {
     opacity: 0.7;
 }
 
+html[dir="rtl"] .method-card .step-label {
+    font-size: 0.9rem;
+}
+
 .method-card h3 {
     color: var(--secondary-golden-color);
     font-family: "didot-bold", sans-serif;
@@ -718,6 +733,10 @@ html[dir="rtl"] h3 {
     padding-left: 1rem;
     position: relative;
     margin-bottom: 0.25rem;
+}
+
+html[dir="rtl"] .method-card ul li {
+    font-size: 0.9rem;
 }
 
 .method-card ul li::before {

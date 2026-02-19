@@ -424,6 +424,9 @@ html[dir="rtl"] h3 {
     transition: all 0.3s ease;
 }
 
+html[dir="rtl"] #contact-content > div > div.contact-left > div.contact-info-section > div > div > div.info-items > a:nth-child(1) > span.info-value{
+    direction: ltr;
+}
 .info-block .btnelem {
     margin-top: 10px;
     margin: 0 auto;
@@ -588,7 +591,11 @@ html[dir="rtl"] .info-block .btnelem button a {
     flex-direction: row-reverse;
 }
 
-html[dir="rtl"] #contact-title,
+html[dir="rtl"] #contact-title {
+    direction: rtl;
+    line-height: 1.4;
+}
+
 html[dir="rtl"] #contact-tagline {
     direction: rtl;
     line-height: 1.2;

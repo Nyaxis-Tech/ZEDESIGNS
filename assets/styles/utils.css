@@ -526,6 +526,9 @@ html[dir="rtl"] .whatsapp-float {
     white-space: nowrap;
     margin-top: 2px;
 }
+html[dir="rtl"] .whatsapp-float span{
+    margin-bottom: 5px;
+}
 
 @media screen and (max-width: 768px) {
     .whatsapp-float {
@@ -544,6 +547,10 @@ html[dir="rtl"] .whatsapp-float {
 @media screen and (max-width: 480px) {
     .whatsapp-float span {
         display: none;
+    }
+    
+    html[dir="rtl"] .whatsapp-float span{
+        margin-bottom: 0px;
     }
 
     .whatsapp-float {
@@ -867,7 +874,7 @@ html[dir="rtl"] #footer #fbtm #btmleft .info{
 #footer #fbtm #btmright #socials {
     /* background-color: red/; */
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-direction: column;
     /* gap: 1.2rem; */
 }
@@ -907,6 +914,7 @@ html[dir="rtl"] #footer #fbtm #btmleft .info{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-top: 5.5rem;
     /* gap: 0.5/rem;; */
 }
 
@@ -1125,6 +1133,7 @@ html[dir="rtl"] #footer #fbtm #btmright #socials #socialtwo a{
     }
     #footer #fbtm #btmright #socials #socialtwo{
         align-items: center;
+        margin-top: 0rem;
     }
 
     #footer #footer-background {
