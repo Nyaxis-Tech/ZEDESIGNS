@@ -95,20 +95,21 @@ html[dir="rtl"] #main #nav ul a{
     padding: 0.5rem;
     transition: all 0.3s ease;
     position: relative;
+
 }
 
-.lang-toggle svg {
-    width: 24px;
-    height: 24px;
+.lang-toggle .lang-label {
+    font-size: 0.875rem;
+    font-weight: 700;
     color: white;
     opacity: 0.7;
+    letter-spacing: 0.05em;
     transition: all 0.3s ease;
 }
 
-.lang-toggle:hover svg {
+.lang-toggle:hover .lang-label {
     opacity: 1;
     color: var(--secondary-golden-color);
-    transform: rotate(15deg);
 }
 
 .lang-dropdown {

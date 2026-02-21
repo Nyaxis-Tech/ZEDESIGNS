@@ -56,6 +56,10 @@ class I18n {
         this.updateScrollAnimations();
         this.updateCounterAnimations();
 
+        // Update language toggle label
+        const langLabel = document.querySelector('.lang-label');
+        if (langLabel) langLabel.textContent = lang === 'ar' ? 'ع' : 'EN';
+
         // Dispatch custom event for other components to react to language change
         window.dispatchEvent(new CustomEvent('languageChanged', { 
             detail: { language: lang } 
