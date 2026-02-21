@@ -634,6 +634,7 @@ html[dir="rtl"] #main #featured > h1{
     flex-direction: column;
     justify-content: flex-end;
     gap: 0.5rem;
+    cursor: pointer;
 }
 
 #main #featured #projects .projectcard picture {

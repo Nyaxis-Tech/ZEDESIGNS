@@ -1313,3 +1313,11 @@ html[dir="rtl"] .sector-card .sector-number {
 html[dir="rtl"] svg{
     direction: ltr !important;;
 }
+
+canvas {
+    direction: ltr !important;;
+}
+
+canvas * {
+    direction: ltr !important;;
+}

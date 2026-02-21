@@ -657,3 +657,21 @@ if (window.innerWidth > 768) {
     // Set initial cursor
     clientsSection.style.cursor = "grab";
 })();
+
+document.querySelectorAll(".servcard").forEach((card) => {
+    card.addEventListener("click", () => {
+        const href = card.getAttribute("data-href");
+        if (href) {
+            window.location.href = href;
+        }
+    });
+});
+
+document.querySelectorAll(".projectcard").forEach((card) => {
+    card.addEventListener("click", () => {
+        const href = card.getAttribute("data-href");
+        if (href) {
+            window.location.href = href;
+        }
+    });
+});
