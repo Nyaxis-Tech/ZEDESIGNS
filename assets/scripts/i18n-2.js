@@ -52,9 +52,9 @@ class I18n {
         document.body.classList.toggle('lang-ar', lang === 'ar');
         document.body.classList.toggle('lang-en', lang === 'en');
         
-        // Update language toggle label
+        // Update language toggle label (shows target language to switch to)
         const langLabel = document.querySelector('.lang-label');
-        if (langLabel) langLabel.textContent = lang === 'ar' ? 'ع' : 'EN';
+        if (langLabel) langLabel.textContent = lang === 'ar' ? 'EN' : 'ع';
 
         // Dispatch custom event for other components to react to language change
         window.dispatchEvent(new CustomEvent('languageChanged', { 
@@ -149,45 +149,24 @@ class I18n {
 
     setupEventListeners() {
         const langToggle = document.getElementById('langToggle');
-        const langDropdown = document.getElementById('langDropdown');
-        const langOptions = document.querySelectorAll('.lang-option');
 
-        if (!langToggle || !langDropdown) return;
+        if (!langToggle) return;
 
-        // Toggle dropdown
-        langToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langDropdown.classList.toggle('active');
-        });
+        // Toggle language directly on click
+        langToggle.addEventListener('click', () => {
+            const newLang = this.currentLang === 'ar' ? 'en' : 'ar';
+            this.setLanguage(newLang);
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
-                langDropdown.classList.remove('active');
+            // Animate the globe icon
+            const svg = langToggle.querySelector('svg');
+            if (svg) {
+                svg.style.transition = 'transform 0.4s ease';
+                svg.style.transform = 'rotate(360deg)';
+                setTimeout(() => {
+                    svg.style.transform = '';
+                }, 400);
             }
         });
-
-        // Language option click
-        langOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                const lang = option.getAttribute('data-lang');
-                this.setLanguage(lang);
-                langDropdown.classList.remove('active');
-                
-                // Animate the globe icon
-                const svg = langToggle.querySelector('svg');
-                if (svg) {
-                    svg.style.transition = 'transform 0.3s ease';
-                    svg.style.transform = 'rotate(360deg)';
-                    setTimeout(() => {
-                        svg.style.transform = '';
-                    }, 300);
-                }
-            });
-        });
-
-        // Update initial state
-        this.updateDropdownState();
     }
 
     updateDropdownState() {
