@@ -22,16 +22,17 @@ html {
     min-height: 100%;
     background-color: var(--green-color);
     color: var(--text-color);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 #main {
     width: 100%;
     max-width: 100vw;
+    min-height: 100vh;
     position: relative;
     z-index: 2;
     background-color: var(--green-color);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 /* --- Hero Section --- */

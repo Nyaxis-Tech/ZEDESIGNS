@@ -506,9 +506,10 @@ html[dir="rtl"] .whatsapp-float {
 }
 
 .whatsapp-float:hover {
-    background-color: var(--green-color);
-    color: white;
+    background-color: var(--primary-black-color);
+    color: var(--secondary-golden-color);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    gap:1.1rem;
 }
 
 .whatsapp-float img {
