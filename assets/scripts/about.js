@@ -960,21 +960,21 @@ document.addEventListener("DOMContentLoaded", () => {
             let isOverMap = false;
 
             // Track when mouse enters/leaves the map area
-            mapWrapper.addEventListener("mouseenter", () => {
-                isOverMap = true;
-                // Disable Lenis smooth scroll when over map
-                if (window.lenis) {
-                    window.lenis.stop();
-                }
-            });
+            // mapWrapper.addEventListener("mouseenter", () => {
+            //     isOverMap = true;
+            //     // Disable Lenis smooth scroll when over map
+            //     if (window.lenis) {
+            //         window.lenis.stop();
+            //     }
+            // });
 
-            mapWrapper.addEventListener("mouseleave", () => {
-                isOverMap = false;
-                // Re-enable Lenis smooth scroll when leaving map
-                if (window.lenis) {
-                    window.lenis.start();
-                }
-            });
+            // mapWrapper.addEventListener("mouseleave", () => {
+            //     isOverMap = false;
+            //     // Re-enable Lenis smooth scroll when leaving map
+            //     if (window.lenis) {
+            //         window.lenis.start();
+            //     }
+            // });
 
             // Prevent wheel events from propagating to page
             mapWrapper.addEventListener(

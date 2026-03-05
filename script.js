@@ -659,10 +659,13 @@ if (window.innerWidth > 768) {
 })();
 
 document.querySelectorAll(".servcard").forEach((card) => {
+
     card.addEventListener("click", () => {
         const href = card.getAttribute("data-href");
         if (href) {
-            window.location.href = href;
+            // Convert hash fragment to scrollToService query param so services.js can offset-scroll past the fixed nav
+            const [base, hash] = href.split('#');
+            window.location.href = hash ? `${base}?scrollToService=${hash}` : href;
         }
     });
 });

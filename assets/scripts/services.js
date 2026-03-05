@@ -239,4 +239,16 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 0.8,
         ease: 'power2.out'
     });
+
+    // Scroll to a specific service section when arriving from index.html via ?scrollToService=
+    const scrollToService = new URLSearchParams(window.location.search).get('scrollToService');
+    if (scrollToService) {
+        const targetSection = document.getElementById(scrollToService);
+        if (targetSection) {
+            // Defer until after the page has fully painted; use Lenis so it isn't overridden by smooth scroll
+            setTimeout(() => {
+                lenis.scrollTo(targetSection, { offset: -100 });
+            }, 100);
+        }
+    }
 });
