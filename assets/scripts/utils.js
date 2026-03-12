@@ -245,11 +245,11 @@ window.addEventListener("languageChanged", () => {
         document.querySelector("#copyrightpara").textContent =
             `© ${new Date().getFullYear()} ZEDESIGNS`;
         document.querySelector("#copyright").textContent =
-            `${new Date().getFullYear()} © ZEDESIGNS. All rights reserved.`;
+            `${new Date().getFullYear()} © ZEDESIGNS All rights reserved`;
     } else {
         document.querySelector("#copyrightpara").textContent =
             `© ${new Date().getFullYear()} ZEDESIGNS`;
         document.querySelector("#copyright").textContent =
-            `${new Date().getFullYear()} © ZEDESIGNS. جميع الحقوق محفوظة.`;
+            `${new Date().getFullYear()} © ZEDESIGNS جميع الحقوق محفوظة`;
     }
 });

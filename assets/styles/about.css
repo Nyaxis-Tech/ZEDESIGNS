@@ -1282,7 +1282,7 @@ html[dir="rtl"] .about-global-reach .stat-item {
 
 html[dir="rtl"] .stat-line {
     margin-left: auto;
-    margin-right: 0;
+    /* margin-right: 0; */
 }
 
 html[dir="rtl"] .method-card {

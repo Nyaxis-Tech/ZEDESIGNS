@@ -377,6 +377,12 @@ html[dir="rtl"] .read-more-trigger {
     .split-left h2 {
         font-size: 2rem;
     }
+    
+    html[dir="rtl"] .spec-label,
+    html[dir="rtl"] .spec-value {
+        direction: rtl;
+        text-align: center;
+    }
 }
 
 /* --- Random Grid (Section 2) --- */
