@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rowTl
             .to(borderTop, {
                 scaleX: 1,
-                duration: 1.2,
+                duration: 1,
                 ease: 'power2.inOut'
             })
             // Stagger content columns

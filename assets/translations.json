@@ -149,8 +149,8 @@
       "navServices": "Services",
       "navWork": "Work",
       "navContact": "Contact",
-      "verifiedText": "Verified By",
-      "verifiedLink": "Saudi Business Center"
+      "verifiedText": "CR No: ",
+      "verifiedLink": "7053200189"
     },
     "floatingWhatsApp": {
       "ariaLabel": "WhatsApp us"
@@ -339,8 +339,8 @@
       "navServices": "الخدمات",
       "navWork": "الأعمال",
       "navContact": "تواصل معنا",
-      "verifiedText": "موثّق من",
-      "verifiedLink": "مركز الأعمال السعودي"
+      "verifiedText": "السجل التجاري: ",
+      "verifiedLink": "٧٠٥٣٢٠٠١٨٩"
     },
     "floatingWhatsApp": {
       "ariaLabel": "واتس اب"

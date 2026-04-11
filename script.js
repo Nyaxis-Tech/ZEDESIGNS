@@ -14,6 +14,17 @@ requestAnimationFrame(raf);
 // Loading Animation
 (() => {
     const loader = document.getElementById("loader");
+    const isIOSMobile = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    if (isIOSMobile) {
+        loader.style.display = "none";
+        document.querySelector(".hero-deco-svg-1").style.display = "block";
+        document.querySelector(".hero-deco-svg-1").style.opacity = 0.2;
+        document.querySelector(".hero-deco-svg-3").style.display = "block";
+        document.querySelector(".hero-deco-svg-3").style.opacity = 0.2;
+        return;
+    }
+
     const svg1 = document.querySelector(".loader-svg-1");
     const svg2 = document.querySelector(".loader-svg-2");
     const svg3 = document.querySelector(".loader-svg-3");
@@ -149,8 +160,11 @@ requestAnimationFrame(raf);
 
 // Hero section initial animation
 function heroSectionAnimation() {
+    const loader = document.getElementById("loader");
+    const isIOSMobile = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
     let herotl = gsap.timeline({
-        delay: 1.5,
+        delay: !isIOSMobile ? 1.5 : 0, // Start after loader animation on non-iOS, or immediately on iOS
     });
 
     herotl.fromTo(
