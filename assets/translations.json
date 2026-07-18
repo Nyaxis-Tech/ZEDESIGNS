@@ -161,6 +161,7 @@
       "formNamePlaceholder": "Name",
       "formEmailPlaceholder": "Email",
       "formCompanyPlaceholder": "Company (Optional)",
+      "formPhonePlaceholder": "Phone (Optional)",
       "formServiceLabel": "Service Interest",
       "formServiceBranding": "Branding",
       "formServiceWebsites": "Websites",
@@ -181,7 +182,9 @@
       "infoHoursDays": "Sunday - Thursday",
       "infoHoursTime": "9:00 AM - 6:00 PM",
       "infoPhoneValue": "+966 50 874 8684",
+      "successTitle": "Message Received!",
       "successMessage": "Thank you! We'll be in touch within 24 hours.",
+      "successCloseBtn": "Continue",
       "errorSelectService": "Please select at least one service interest."
     },
     "projectsPage": {
@@ -351,6 +354,7 @@
       "formNamePlaceholder": "الاسم",
       "formEmailPlaceholder": "البريد الإلكتروني",
       "formCompanyPlaceholder": "اسم الشركة (اختياري)",
+      "formPhonePlaceholder": "رقم الهاتف (اختياري)",
       "formServiceLabel": "الخدمة المطلوبة",
       "formServiceBranding": "الهوية البصرية",
       "formServiceWebsites": "المواقع الإلكترونية",
@@ -371,7 +375,9 @@
       "infoHoursDays": "الأحد - الخميس",
       "infoHoursTime": "٩:٠٠ صباحًا - ٦:٠٠ مساءً",
       "infoPhoneValue": "+966 50 874 8684",
+      "successTitle": "تم استلام رسالتك!",
       "successMessage": "شكرًا لك! سنتواصل معك خلال ٢٤ ساعة.",
+      "successCloseBtn": "متابعة",
       "errorSelectService": "يرجى اختيار خدمة واحدة على الأقل."
     },
     "projectsPage": {

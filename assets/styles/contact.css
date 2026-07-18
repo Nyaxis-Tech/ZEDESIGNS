@@ -609,7 +609,127 @@ html[dir="rtl"] .info-block .btnelem button a span{
     margin-bottom: 10px
 }
 
-html[dir="rtl"] .service-option{
-    font-size: 1.1rem;;
+html[dir="rtl"] .service-option {
+    font-size: 1.1rem;
     font-weight: 500;
 }
+
+/* --- Success Notification Modal --- */
+.success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.success-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.success-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(16, 15, 15, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.success-modal-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(58, 75, 67, 0.95);
+    border: 1px solid rgba(236, 207, 156, 0.35);
+    border-radius: 24px;
+    padding: 3.5rem 2.5rem;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(236, 207, 156, 0.15);
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.success-modal.active .success-modal-card {
+    transform: scale(1) translateY(0);
+}
+
+.success-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(236, 207, 156, 0.15);
+    border: 1.5px solid var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 20px rgba(236, 207, 156, 0.2);
+}
+
+.success-icon-wrapper svg {
+    width: 38px;
+    height: 38px;
+    fill: var(--accent-color);
+}
+
+.success-modal-card h2 {
+    font-family: 'didot-bold', serif;
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.success-modal-card p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.success-modal-btn {
+    margin-top: 1rem;
+    padding: 0.9rem 3rem;
+    background-color: var(--accent-color);
+    color: #100f0f;
+    border: none;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.success-modal-btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(236, 207, 156, 0.4);
+}
+
+/* RTL for Success Modal */
+html[dir="rtl"] .success-modal-card h2 {
+    font-family: "TheYearOfHandicrafts", sans-serif !important;
+}
+
+html[dir="rtl"] .success-modal-card p {
+    font-family: "din-next-regular", sans-serif;
+}

@@ -46,6 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const serviceSelected = document.querySelector('.service-selected');
     let selectedServices = [];
 
+    // Helper function for i18n text retrieval with safe fallbacks
+    function getI18nText(key, fallbackEn, fallbackAr) {
+        if (window.i18n && typeof window.i18n.getTranslation === 'function') {
+            const val = window.i18n.getTranslation(key);
+            if (val) return val;
+        }
+        const isAr = localStorage.getItem('language') === 'ar';
+        return isAr && fallbackAr ? fallbackAr : fallbackEn;
+    }
+
     if (serviceToggle && serviceDropdown) {
         serviceToggle.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -77,9 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Update button text
                 if (selectedServices.length === 0) {
-                    const defaultServiceText = window.i18n ? 
-                        window.i18n.getTranslation('contactPage.formServiceLabel') : 
-                        'Service Interest';
+                    const defaultServiceText = getI18nText('contactPage.formServiceLabel', 'Service Interest', 'الخدمة المطلوبة');
                     serviceSelected.textContent = defaultServiceText;
                     serviceToggle.classList.remove('selected');
                 } else if (selectedServices.length === 1) {
@@ -87,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     serviceToggle.classList.add('selected');
                 } else {
                     // Get multi-select text from i18n
-                    const multiSelectText = localStorage.getItem("language") == "ar" ?  "تم اختيار الخدمات" : "Services Selected";
+                    const multiSelectText = localStorage.getItem("language") === "ar" ? "تم اختيار الخدمات" : "Services Selected";
                         
                     serviceSelected.textContent = `${selectedServices.length} ${multiSelectText}`;
                     serviceToggle.classList.add('selected');
@@ -166,53 +174,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Form Submit Handler ---
+    // --- Success Modal Controls ---
+    const successModal = document.getElementById('form-success-modal');
+    const closeModalBtn = document.getElementById('closeSuccessModal');
+    const modalBackdrop = document.getElementById('successModalBackdrop');
+
+    function openSuccessModal() {
+        if (successModal) {
+            successModal.classList.add('active');
+        }
+    }
+
+    function closeSuccessModal() {
+        if (successModal) {
+            successModal.classList.remove('active');
+        }
+    }
+
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeSuccessModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeSuccessModal);
+
+    // --- Form Submit Handler (Zoho CRM Integration) ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
+        const refInput = document.getElementById('zf_referrer_name');
+        const redirInput = document.getElementById('zf_redirect_url');
+
+        // Set referrer and redirect URL on page load
+        if (refInput) {
+            refInput.value = document.referrer || window.location.href;
+        }
+        if (redirInput) {
+            redirInput.value = window.location.origin + window.location.pathname + '?submitted=true';
+        }
+
+        // Check if returning from a successful Zoho CRM form submission
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('submitted') === 'true') {
+            const cleanUrl = window.location.origin + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+
+            // Trigger sleek custom success modal
+            openSuccessModal();
+        }
+
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
             // Check if service is selected
-            if (!serviceInput.value) {
-                // Get error message from i18n
-                const errorMsg = window.i18n ? 
-                    window.i18n.getTranslation('contactPage.errorSelectService') : 
-                    'Please select at least one service interest.';
-                alert(errorMsg);
+            if (!serviceInput || !serviceInput.value) {
+                e.preventDefault();
+                if (serviceToggle) {
+                    serviceToggle.style.borderBottomColor = '#ff6b6b';
+                    serviceToggle.focus();
+                    setTimeout(() => {
+                        serviceToggle.style.borderBottomColor = '';
+                    }, 2500);
+                }
                 return;
             }
             
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            console.log('Form Data:', data);
-            
-            // Success animation
-            gsap.to('.contact-form-section', {
-                scale: 0.99,
-                duration: 0.1,
-                yoyo: true,
-                repeat: 1,
-                onComplete: () => {
-                    contactForm.reset();
-                    selectedServices = [];
-                    
-                    // Get default service text from i18n
-                    const defaultServiceText = window.i18n ? 
-                        window.i18n.getTranslation('contactPage.formServiceLabel') : 
-                        'Service Interest';
-                    serviceSelected.textContent = defaultServiceText;
-                    
-                    serviceToggle.classList.remove('selected');
-                    serviceOptions.forEach(opt => opt.classList.remove('selected'));
-                    
-                    // Get success message from i18n
-                    const successMsg = window.i18n ? 
-                        window.i18n.getTranslation('contactPage.successMessage') : 
-                        'Thank you! We\'ll be in touch within 24 hours.';
-                    alert(successMsg);
-                }
-            });
+            // Ensure tracking fields are updated before submitting
+            if (refInput) {
+                refInput.value = document.referrer || window.location.href;
+            }
+            if (redirInput) {
+                redirInput.value = window.location.origin + window.location.pathname + '?submitted=true';
+            }
         });
     }
 });
