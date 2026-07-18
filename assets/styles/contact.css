@@ -706,23 +706,34 @@ html[dir="rtl"] .service-option {
     margin: 0;
 }
 
-.success-modal-btn {
+.success-modal-card .btnelem {
     margin-top: 1rem;
-    padding: 0.9rem 3rem;
-    background-color: var(--accent-color);
-    color: #100f0f;
-    border: none;
-    border-radius: 100px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
+.success-modal-btn {
+    width: fit-content;
+    height: 3rem;
+    line-height: 1;
+    padding: 1rem 2.5rem;
+    border: none;
+    background-color: var(--accent-color);
+    color: #100f0f;
+    font-weight: 600;
+    font-size: 1rem;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.success-modal-card .btnelem:hover .success-modal-btn,
 .success-modal-btn:hover {
-    background-color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(236, 207, 156, 0.4);
+    background-color: var(--primary-black-color);
+    color: var(--accent-color);
+    padding: 1rem 3rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* RTL for Success Modal */
