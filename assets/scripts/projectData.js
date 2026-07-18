@@ -101,7 +101,7 @@ const projectsData = [
         },
     },
     {
-        id: 7,
+        id: 2,
         en: {
             name: "Nine Stars",
             tagLine: "A Dynamic Symbol of Excellence and Unity",
@@ -620,7 +620,7 @@ const projectsData = [
     },
     
     {
-        id: 2,
+        id: 7,
         en: {
             name: "Sokon",
             tagLine: "Serene Café and Hospitality Brand",
