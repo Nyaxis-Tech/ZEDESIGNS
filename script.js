@@ -11,161 +11,9 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// Loading Animation
-(() => {
-    const loader = document.getElementById("loader");
-    const isIOSMobile = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-
-    if (isIOSMobile) {
-        loader.style.display = "none";
-        document.querySelector(".hero-deco-svg-1").style.display = "block";
-        document.querySelector(".hero-deco-svg-1").style.opacity = 0.2;
-        document.querySelector(".hero-deco-svg-3").style.display = "block";
-        document.querySelector(".hero-deco-svg-3").style.opacity = 0.2;
-        return;
-    }
-
-    const svg1 = document.querySelector(".loader-svg-1");
-    const svg2 = document.querySelector(".loader-svg-2");
-    const svg3 = document.querySelector(".loader-svg-3");
-
-    const path1 = svg1.querySelector("path");
-    const path2 = svg2.querySelector("path");
-    const path3 = svg3.querySelector("path");
-
-    const heroDecoSvg1 = document.querySelector(".hero-deco-svg-1");
-    const heroDecoSvg3 = document.querySelector(".hero-deco-svg-3");
-
-    // Get actual path lengths
-    const length1 = path1.getTotalLength();
-    const length2 = path2.getTotalLength();
-    const length3 = path3.getTotalLength();
-
-    // Set initial stroke-dasharray and stroke-dashoffset
-    gsap.set(path1, {
-        strokeDasharray: length1,
-        strokeDashoffset: length1,
-        scale: 0.95,
-        transformOrigin: "center",
-    });
-    gsap.set(path2, {
-        strokeDasharray: length2,
-        strokeDashoffset: length2,
-        scale: 0.95,
-        transformOrigin: "center",
-    });
-    gsap.set(path3, {
-        strokeDasharray: length3,
-        strokeDashoffset: length3,
-        scale: 0.95,
-        transformOrigin: "center",
-    });
-
-    // Create timeline
-    const loaderTl = gsap.timeline({
-        onComplete: () => {
-            // Fade out loader
-            gsap.to([heroDecoSvg1, heroDecoSvg3], {
-                opacity: 0.2,
-                display: "block",
-                duration: 0.8,
-                ease: Power2.easeInOut,
-                delay: 0.3,
-            });
-
-            loader.classList.add("fade-out");
-            setTimeout(() => {
-                loader.style.display = "none";
-            }, 1000);
-        },
-    });
-
-    // Step 1: Draw paths with stagger and scale effect
-    loaderTl
-        .to(path1, {
-            strokeDashoffset: 0,
-            scale: 1,
-            duration: 1,
-            ease: "power2.easeInOut",
-        })
-        .to(
-            path2,
-            {
-                strokeDashoffset: 0,
-                scale: 1,
-                duration: 1,
-                ease: "power2.easeInOut",
-            },
-            "-=1.2"
-        )
-        .to(
-            path3,
-            {
-                strokeDashoffset: 0,
-                scale: 1,
-                duration: 1,
-                ease: "power2.easeInOut",
-            },
-            "-=1.2"
-        )
-        // Step 2: Fill the paths with glow effect
-        .to(
-            [path1, path2, path3],
-            {
-                fill: "#ECCF9C",
-                filter: "drop-shadow(0 0 12px rgba(236, 207, 156, 0.6))",
-                duration: 0.6,
-                ease: "power2.easeInOut",
-            },
-            "-=0.4"
-        )
-        .to([path1, path2, path3], {
-            filter: "drop-shadow(0 0 0px rgba(236, 207, 156, 0))",
-            duration: 0.4,
-            ease: "power1.easeOut",
-        })
-        // Step 3: Animate SVGs to their positions
-        .to(
-            svg1,
-            {
-                left: "10%",
-                top: "10%",
-                duration: 0.8,
-                ease: "Power1.easeOut",
-                opacity: 0.2,
-            },
-            "<"
-        )
-        .to(
-            svg2,
-            {
-                opacity: 0,
-                duration: 0.8,
-                ease: "Power1.easeOut",
-            },
-            "<"
-        )
-        .to(
-            svg3,
-            {
-                right: "10%",
-                bottom: "17%",
-                duration: 0.8,
-                ease: "Power1.easeOut",
-                opacity: 0.2,
-            },
-            "<"
-        );
-})();
-
 // Hero section initial animation
 function heroSectionAnimation() {
-    const loader = document.getElementById("loader");
-    const isIOSMobile = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-
-    let herotl = gsap.timeline({
-        delay: !isIOSMobile ? 1.5 : 0, // Start after loader animation on non-iOS, or immediately on iOS
-    });
+    let herotl = gsap.timeline();
 
     herotl.fromTo(
         "#nav",
@@ -179,7 +27,7 @@ function heroSectionAnimation() {
             duration: 1,
             ease: "power1.out",
             // delay: 4
-        }
+        },
     );
 
     // Animate hero tag reveal
@@ -200,7 +48,7 @@ function heroSectionAnimation() {
                     .classList.add("revealed");
             },
         },
-        "-=0.3"
+        "-=0.3",
     );
 
     herotl.fromTo(
@@ -216,7 +64,7 @@ function heroSectionAnimation() {
             ease: "power1.out",
             stagger: 0.2,
         },
-        "-=0.5"
+        "-=0.5",
     );
     herotl.fromTo(
         "#herotext > p",
@@ -230,7 +78,7 @@ function heroSectionAnimation() {
             duration: 0.5,
             ease: "power1.out",
         },
-        "-=0.5"
+        "-=0.5",
     );
     herotl.fromTo(
         "#herotext .btnelem",
@@ -244,7 +92,7 @@ function heroSectionAnimation() {
             duration: 0.5,
             ease: "power1.out",
         },
-        "-=0.3"
+        "-=0.3",
     );
 }
 
@@ -276,7 +124,7 @@ if (window.innerWidth > 768) {
                 x: 50,
                 ease: Power1.easeInOut,
             },
-            "<"
+            "<",
         );
         tl.to(
             ".h1two",
@@ -284,7 +132,7 @@ if (window.innerWidth > 768) {
                 x: -50,
                 ease: Power1.easeInOut,
             },
-            "<"
+            "<",
         );
     } else {
         // For English and other LTR languages
@@ -294,7 +142,7 @@ if (window.innerWidth > 768) {
                 x: -50,
                 ease: Power1.easeInOut,
             },
-            "<"
+            "<",
         );
         tl.to(
             ".h1two",
@@ -302,7 +150,7 @@ if (window.innerWidth > 768) {
                 x: 50,
                 ease: Power1.easeInOut,
             },
-            "<"
+            "<",
         );
     }
 }
@@ -313,7 +161,7 @@ tl.to(
         width: window.innerWidth > 768 ? "90%" : "95%",
         ease: Power1.easeInOut,
     },
-    "<"
+    "<",
 );
 
 if (window.innerWidth > 768) {
@@ -333,7 +181,7 @@ if (window.innerWidth > 768) {
                 // ease: "Power1.out",
             },
         });
-        
+
         if (localStorage.getItem("language") === "ar") {
             hortl.to(
                 "#servcardstrip",
@@ -341,7 +189,7 @@ if (window.innerWidth > 768) {
                     x: () => serviceStrip.scrollWidth - window.innerWidth,
                     // ease: "none",
                 },
-                "<"
+                "<",
             );
         } else {
             hortl.to(
@@ -350,7 +198,7 @@ if (window.innerWidth > 768) {
                     x: () => -(serviceStrip.scrollWidth - window.innerWidth),
                     // ease: "none",
                 },
-                "<"
+                "<",
             );
         }
         // hortl.to("#main", {
@@ -393,7 +241,9 @@ if (window.innerWidth > 768) {
                     ease: "power1.out",
                     onUpdate() {
                         const v = Math.floor(obj.val);
-                        const displayNum = window.i18n ? window.i18n.formatNumber(v) : v.toString();
+                        const displayNum = window.i18n
+                            ? window.i18n.formatNumber(v)
+                            : v.toString();
                         el.textContent = displayNum + suffix;
                     },
                 });
@@ -467,9 +317,8 @@ if (window.innerWidth > 768) {
     // Auto-scroll function (always LTR due to CSS direction override)
     const autoScroll = () => {
         if (!isDown) {
-            if(localStorage.getItem("language") === "ar"){
+            if (localStorage.getItem("language") === "ar") {
                 clientsSection.scrollLeft += 1;
-
             } else {
                 clientsSection.scrollLeft -= 1;
             }
@@ -582,7 +431,7 @@ if (window.innerWidth > 768) {
                 hasMoved = false;
             }
         },
-        true
+        true,
     );
 
     // Touch events for mobile
@@ -597,7 +446,7 @@ if (window.innerWidth > 768) {
             lastTime = Date.now();
             velocity = 0;
         },
-        { passive: true }
+        { passive: true },
     );
 
     clientsSection.addEventListener(
@@ -628,7 +477,7 @@ if (window.innerWidth > 768) {
                 applyInertia();
             }
         },
-        { passive: true }
+        { passive: true },
     );
 
     clientsSection.addEventListener(
@@ -665,7 +514,7 @@ if (window.innerWidth > 768) {
             lastX = e.touches[0].pageX;
             lastTime = currentTime;
         },
-        { passive: true }
+        { passive: true },
     );
 
     // Set initial cursor
@@ -673,13 +522,14 @@ if (window.innerWidth > 768) {
 })();
 
 document.querySelectorAll(".servcard").forEach((card) => {
-
     card.addEventListener("click", () => {
         const href = card.getAttribute("data-href");
         if (href) {
             // Convert hash fragment to scrollToService query param so services.js can offset-scroll past the fixed nav
-            const [base, hash] = href.split('#');
-            window.location.href = hash ? `${base}?scrollToService=${hash}` : href;
+            const [base, hash] = href.split("#");
+            window.location.href = hash
+                ? `${base}?scrollToService=${hash}`
+                : href;
         }
     });
 });

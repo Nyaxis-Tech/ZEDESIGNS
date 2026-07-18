@@ -36,53 +36,11 @@ html[dir="rtl"] h3 {
     /* letter-spacing: 0; */
 }
 
-/* Loading Screen */
-#loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--green-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-#loader.fade-out {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.8s ease;
-}
-
-.loader-svg {
-    position: absolute;
-    width: 512px;
-    max-width: 100%;
-    height: auto;
-    /* left: 50%; */
-    /* top: 50%; */
-    /* transform: translate(-50%, -50%); */
-}
-
-.loader-svg path {
-    stroke: #eccf9c;
-    stroke-width: 3;
-    fill: transparent;
-    filter: drop-shadow(0 0 8px rgba(236, 207, 156, 0.4));
-}
-
-/* Loader SVG layering */
-.loader-svg-1 { z-index: 3; }
-.loader-svg-2 { z-index: 2; }
-.loader-svg-3 { z-index: 3; }
-
 /* Hero Decorative SVGs */
 .hero-deco-svg {
     position: absolute;
     opacity: 0.2;
-    display: none;
+    display: block;
     pointer-events: none;
     z-index: 1;
 }
@@ -105,7 +63,6 @@ html[dir="rtl"] h3 {
     /* height: auto; */
 }
 
-
 #main {
     width: 100%;
     background-color: var(--green-color);
@@ -114,11 +71,9 @@ html[dir="rtl"] h3 {
     z-index: 2;
 }
 
-
 #main #nav img {
     opacity: 0;
 }
-
 
 #main #nav.scrolled img {
     opacity: 1;
@@ -189,7 +144,7 @@ html[dir="rtl"] h3 {
     /* font-weight: 500; */
     /* font-family: "didot-medium"; */
     /* line-height: 1.5; */
-    opacity: 0.7 !important;
+    /* opacity: 0.7 !important; */
 }
 
 #hero #herovid {
@@ -238,10 +193,36 @@ html[dir="rtl"] h3 {
 #main #about #abright canvas {
     width: 100%;
     height: 100%;
-    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
-                linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
-                        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        ),
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        );
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        ),
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        );
     mask-composite: intersect;
     -webkit-mask-composite: source-in;
 }
@@ -264,24 +245,49 @@ html[dir="rtl"] #main #about #abright video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
-                linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%),
-                        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        ),
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        );
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        ),
+        linear-gradient(
+            to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        );
     mask-composite: intersect;
     -webkit-mask-composite: source-in;
 }
 
 @keyframes videoView {
-    from{
+    from {
         /* transform: scale(0.7); */
         opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
         /* transform: scale(1); */
     }
-    
 }
 
 #main #about #ableft {
@@ -298,7 +304,6 @@ html[dir="rtl"] #main #about #abright video {
     align-items: center;
     /* background-color: blue; */
 }
-
 
 #main #about #ableft > h1 {
     font-size: 3rem;
@@ -353,16 +358,15 @@ html[dir="rtl"] #main #about #abright video {
 #about #ableft h1 .word {
     display: inline-block;
     white-space: nowrap;
-    font-family: 'didot-medium';
+    font-family: "didot-medium";
 }
 
-html[dir="rtl"] #about #ableft > h1{
+html[dir="rtl"] #about #ableft > h1 {
     line-height: unset !important;
 }
-html[dir="rtl"] #about #ableft h1 .word{
+html[dir="rtl"] #about #ableft h1 .word {
     font-family: "TheYearOfHandicrafts", sans-serif !important;
 }
-
 
 #main #services {
     width: 100%;
@@ -399,7 +403,7 @@ html[dir="rtl"] #about #ableft h1 .word{
     width: 40%;
     /* background-color: red; */
 }
-html[dir="rtl"] #main #services > h1{
+html[dir="rtl"] #main #services > h1 {
     line-height: unset;
     width: 100%;
 }
@@ -458,7 +462,7 @@ html[dir="rtl"] #main #services > h1{
     transform: rotate(45deg);
 }
 
-#main #services .servcardslist{
+#main #services .servcardslist {
     display: flex;
     /* padding-left: 40vw; */
     /* padding-right: 5vw; */
@@ -473,7 +477,7 @@ html[dir="rtl"] #main #services > h1{
     padding-right: 5vw;
 }
 
-html[dir="rtl"] #main #services .servcardslist #servcardstrip{
+html[dir="rtl"] #main #services .servcardslist #servcardstrip {
     padding-left: 5vw;
     padding-right: 40vw;
 }
@@ -502,12 +506,12 @@ html[dir="rtl"] #main #services .servcardslist #servcardstrip{
         center center/cover;
 }
 #main #services .servcardslist .servcard:nth-of-type(3) {
-    background: url("./assets/images/home/services-design-1.png") no-repeat center
-        center/cover;
+    background: url("./assets/images/home/services-design-1.png") no-repeat
+        center center/cover;
 }
 #main #services .servcardslist .servcard:nth-of-type(4) {
-    background: url("./assets/images/home/services-social-1.png") no-repeat center
-        center/cover;
+    background: url("./assets/images/home/services-social-1.png") no-repeat
+        center center/cover;
 }
 
 html[dir="rtl"] #main #services .servcardslist .servcard:nth-of-type(1) {
@@ -519,12 +523,12 @@ html[dir="rtl"] #main #services .servcardslist .servcard:nth-of-type(2) {
         center center/cover;
 }
 html[dir="rtl"] #main #services .servcardslist .servcard:nth-of-type(3) {
-    background: url("./assets/images/home/services-design-1-ar.png") no-repeat center
-        center/cover;
+    background: url("./assets/images/home/services-design-1-ar.png") no-repeat
+        center center/cover;
 }
 html[dir="rtl"] #main #services .servcardslist .servcard:nth-of-type(4) {
-    background: url("./assets/images/home/services-social-1-ar.png") no-repeat center
-        center/cover;
+    background: url("./assets/images/home/services-social-1-ar.png") no-repeat
+        center center/cover;
 }
 
 #main #services .servcardslist .servcard:hover {
@@ -556,7 +560,7 @@ html[dir="rtl"] #main #services .servcardslist .servcard:nth-of-type(4) {
     width: 80%;
 }
 
-html[dir="rtl"] .servcard p{
+html[dir="rtl"] .servcard p {
     font-size: 1.1rem;
 }
 
@@ -580,9 +584,8 @@ html[dir="rtl"] .servcard p{
     object-fit: cover;
     filter: invert(1);
 }
-html[dir="rtl"] .servcard:hover button img{
+html[dir="rtl"] .servcard:hover button img {
     transform: rotate(-135deg) !important;
-
 }
 html[dir="rtl"] .servcard button img {
     transform: rotate(-90deg);
@@ -608,7 +611,7 @@ html[dir="rtl"] .servcard button img {
     padding: 0 5vw;
 }
 
-html[dir="rtl"] #main #featured > h1{
+html[dir="rtl"] #main #featured > h1 {
     line-height: unset;
 }
 #main #featured > p {
@@ -683,7 +686,7 @@ html[dir="rtl"] #main #featured > h1{
 }
 
 html[dir="rtl"] #main #featured #projects .projectcard h1,
-html[dir="rtl"] #main #featured #projects .projectcard .prtags{
+html[dir="rtl"] #main #featured #projects .projectcard .prtags {
     margin-left: 0;
     margin-right: 4rem;
 }
@@ -699,10 +702,9 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags{
     text-transform: uppercase;
     /* color: black; */
 }
-html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
+html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag {
     font-size: 1rem;
     line-height: 1.9;
-    
 }
 
 #main #testimonials {
@@ -821,11 +823,9 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     clip-path: circle(100% at 50% 50%);
 }
 
-#main #testimonials #testcardstrip:hover{
+#main #testimonials #testcardstrip:hover {
     animation-play-state: paused;
 }
-
-
 
 #main #testimonials #testcardstrip .testcard .stars {
     display: flex;
@@ -868,7 +868,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     overflow-x: hidden;
     padding: 3.5rem 0;
     background-color: rgb(239, 239, 239);
-    color:var(--green-color);
+    color: var(--green-color);
 }
 
 #main #clients #clientstop {
@@ -962,9 +962,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     align-items: center;
     position: relative;
     overflow: hidden;
-
 }
-
 
 #main #clients #clientwrapper .logo::after {
     content: "";
@@ -977,7 +975,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     /* background-color: var(--primary-black-color); */
     position: absolute;
     clip-path: circle(10% at 100% 0%);
-    transition: all 0.5s ease;    
+    transition: all 0.5s ease;
 }
 
 #main #clients #clientwrapper .logo:hover::after {
@@ -1091,30 +1089,18 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     }
 
     /* Only apply margin for Safari browser */
-    @supports (-webkit-hyphens:none) {
+    @supports (-webkit-hyphens: none) {
         #main #clients #clientwrapper {
             margin-bottom: 2rem;
         }
     }
-
 }
 
 /* Mobile and Tablets (up to 768px) */
 @media screen and (max-width: 768px) {
-    /* Loader Responsive */
-    #loader {
-        overflow: hidden;
-    }
-
-    .loader-svg {
-        max-width: 90vw;
-        height: auto;
-    }
-
-
     /* Hero Section Responsive */
     #main #hero #heromain {
-        height: auto;        
+        height: auto;
         min-height: 70vh;
         align-items: flex-end;
         justify-content: flex-end;
@@ -1255,7 +1241,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
         gap: 2rem;
         padding: 0 5vw;
     }
-    html[dir="rtl"] #main #services .servcardslist #servcardstrip{
+    html[dir="rtl"] #main #services .servcardslist #servcardstrip {
         padding: 0 5vw;
     }
 
@@ -1346,53 +1332,6 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     }
 }
 
-/* Loader responsive */
-/* @media screen and (min-width: 1025px) {
-    .loader-svg {
-        width: 380px;
-        height: auto;
-    }
-} */
-
-@media screen and (max-width: 1024px) {
-    #loader {
-        padding: 2rem;
-    }
-    
-    .loader-svg {
-        max-width: 280px;
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #loader {
-        padding: 1.5rem;
-    }
-    
-    .loader-svg {
-        max-width: 200px;
-        height: auto;
-    }
-    .loader-svg path {
-        stroke-width: 2.5;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #loader {
-        padding: 1rem;
-    }
-    
-    .loader-svg {
-        max-width: 150px;
-        height: auto;
-    }
-    .loader-svg path {
-        stroke-width: 2;
-    }
-}
-
 /* Small Mobile (up to 480px) */
 @media screen and (max-width: 480px) {
     #hero #heromain #herotext h1 {
@@ -1402,7 +1341,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
     #hero #heromain #herotext > p {
         font-size: 0.9rem;
     }
-    html[dir="rtl"] #hero #heromain #herotext > p{
+    html[dir="rtl"] #hero #heromain #herotext > p {
         font-size: 1rem;
     }
 
@@ -1446,7 +1385,7 @@ html[dir="rtl"] #main #featured #projects .projectcard .prtags .prtag{
         margin-left: 1.5rem;
     }
 
-    html[dir="rtl"] #main #featured #projects .projectcard h1{
+    html[dir="rtl"] #main #featured #projects .projectcard h1 {
         font-size: 2rem;
     }
 
