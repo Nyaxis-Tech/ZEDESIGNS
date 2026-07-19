@@ -82,8 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     selectedServices = selectedServices.filter(s => s.value !== value);
                 }
                 
-                // Update hidden input with comma-separated values
-                serviceInput.value = selectedServices.map(s => s.value).join(',');
+                // Sync with hidden multi-select element
+                if (serviceInput && serviceInput.options) {
+                    Array.from(serviceInput.options).forEach(opt => {
+                        opt.selected = selectedServices.some(s => s.value === opt.value);
+                    });
+                }
                 
                 // Update button text
                 if (selectedServices.length === 0) {
@@ -220,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         contactForm.addEventListener('submit', (e) => {
             // Check if service is selected
-            if (!serviceInput || !serviceInput.value) {
+            if (!selectedServices || selectedServices.length === 0) {
                 e.preventDefault();
                 if (serviceToggle) {
                     serviceToggle.style.borderBottomColor = '#ff6b6b';

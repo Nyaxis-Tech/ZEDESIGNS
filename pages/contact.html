@@ -173,11 +173,11 @@
                                             <span class="checkbox"></span>
                                             <span data-i18n="contactPage.formServiceBranding">Branding</span>
                                         </button>
-                                        <button type="button" class="service-option" data-value="Wesbites">
+                                        <button type="button" class="service-option" data-value="Websites">
                                             <span class="checkbox"></span>
                                             <span data-i18n="contactPage.formServiceWebsites">Websites</span>
                                         </button>
-                                        <button type="button" class="service-option" data-value="Printing &amp; Designing">
+                                        <button type="button" class="service-option" data-value="Design &amp; Print">
                                             <span class="checkbox"></span>
                                             <span data-i18n="contactPage.formServiceDesignPrint">Design & Print</span>
                                         </button>
@@ -190,7 +190,13 @@
                                             <span data-i18n="contactPage.formServiceOther">Other</span>
                                         </button>
                                     </div>
-                                    <input type="hidden" id="service" name="Dropdown" required>
+                                    <select name="MultipleChoice" id="service" multiple style="display:none;" required>
+                                        <option value="Branding">Branding</option>
+                                        <option value="Websites">Websites</option>
+                                        <option value="Design &amp; Print">Design &amp; Print</option>
+                                        <option value="Social Media">Social Media</option>
+                                        <option value="Other">Other</option>
+                                    </select>
                                 </div>
                             </div>
 
