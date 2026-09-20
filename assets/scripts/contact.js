@@ -220,9 +220,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Trigger sleek custom success modal
             openSuccessModal();
+        } else if (urlParams.get('error') === 'captcha') {
+            // Display captcha error seamlessly
+            const cleanUrl = window.location.origin + window.location.pathname;
+            window.history.replaceState({}, document.title, cleanUrl);
+            
+            const turnstileError = document.getElementById('turnstile-error');
+            if (turnstileError) {
+                turnstileError.style.display = 'block';
+                // Automatically hide after 5 seconds
+                setTimeout(() => {
+                    turnstileError.style.display = 'none';
+                }, 5000);
+            }
         }
 
         contactForm.addEventListener('submit', (e) => {
+            // Check if Turnstile challenge was completed
+            const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
+            const turnstileError = document.getElementById('turnstile-error');
+            
+            if (turnstileResponse && !turnstileResponse.value) {
+                e.preventDefault();
+                if (turnstileError) {
+                    turnstileError.style.display = 'block';
+                    // Automatically hide after 3 seconds
+                    setTimeout(() => {
+                        turnstileError.style.display = 'none';
+                    }, 3000);
+                }
+                return;
+            } else if (turnstileError) {
+                turnstileError.style.display = 'none';
+            }
+
             // Check if service is selected
             if (!selectedServices || selectedServices.length === 0) {
                 e.preventDefault();

@@ -1,254 +1,483 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
             id="favicon"
             rel="shortcut icon"
             href="../assets/images/favicon.png"
             type="image/x-icon"
         />
-    <link rel="stylesheet" href="../assets/styles/utils.css">
-    <link rel="stylesheet" href="../assets/styles/contact.css">
-    <title>Contact</title>
-</head>
-<body>
-    
-    <div id="main">
-        <div id="nav">
-            <img src="../assets/images/logo.png" alt="ZEDESIGNS Logo" />
-            <ul>
-                <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
-                <li><a href="./about.html" data-i18n="nav.about">About</a></li>
-                <li>
-                    <a href="./services.html" data-i18n="nav.services"
-                        >Services</a
-                    >
-                </li>
-                <!-- <li><a href="./pages/projects.html">Work</a></li> -->
-                <li><a href="./projects.html" data-i18n="nav.work">Work</a></li>
-                <li><a href="./contact.html" data-i18n="nav.contact">Contact</a></li>
-            </ul>
-            <div class="nav-actions">
-                <!-- Language Switcher -->
-                <div class="language-switcher">
-                    <button
-                        class="lang-toggle"
-                        id="langToggle"
-                        aria-label="Change Language"
-                    >
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9.71002 19.6674C8.74743 17.6259 8.15732 15.3742 8.02731 13H4.06189C4.458 16.1765 6.71639 18.7747 9.71002 19.6674ZM10.0307 13C10.1811 15.4388 10.8778 17.7297 12 19.752C13.1222 17.7297 13.8189 15.4388 13.9693 13H10.0307ZM19.9381 13H15.9727C15.8427 15.3742 15.2526 17.6259 14.29 19.6674C17.2836 18.7747 19.542 16.1765 19.9381 13ZM4.06189 11H8.02731C8.15732 8.62577 8.74743 6.37407 9.71002 4.33256C6.71639 5.22533 4.458 7.8235 4.06189 11ZM10.0307 11H13.9693C13.8189 8.56122 13.1222 6.27025 12 4.24799C10.8778 6.27025 10.1811 8.56122 10.0307 11ZM14.29 4.33256C15.2526 6.37407 15.8427 8.62577 15.9727 11H19.9381C19.542 7.8235 17.2836 5.22533 14.29 4.33256Z"></path></svg>
-                        <span class="lang-label">EN</span>
-                    </button>
-                </div>
-                <div class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Overlay -->
-        <div id="mobileMenu" class="mobile-menu">
-            <button class="close-menu" id="closeMenu">
-                <span></span>
-                <span></span>
-            </button>
-            <div class="mobile-menu-content">
-                <nav class="mobile-nav">
-                    <a href="../index.html" class="mobile-nav-link" data-i18n="nav.home"
-                        >Home</a
-                    >
-                    <a
-                        href="./about.html"
-                        class="mobile-nav-link"
-                        data-i18n="nav.about"
-                        >About</a
-                    >
-                    <a
-                        href="./services.html"
-                        class="mobile-nav-link"
-                        data-i18n="nav.services"
-                        >Services</a
-                    >
-                    <a
-                        href="./projects.html"
-                        class="mobile-nav-link"
-                        data-i18n="nav.work"
-                        >Work</a
-                    >
-                    <a
-                        href="./contact.html"
-                        class="mobile-nav-link"
-                        data-i18n="nav.contact"
-                        >Contact</a
-                    >
-                </nav>
-                <div class="mobile-menu-footer">
-                    <p id="copyrightpara">© 2025 ZEDESIGNS</p>
-                    <div class="mobile-socials">
-                        <a
-                            href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
-                            target="_blank"
-                            ><img
-                                src="../assets/images/tiktok-logo.png"
-                                alt=""
-                        /></a>
-                        <a
-                            href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
-                            target="_blank"
-                            ><img
-                                style="transform: scale(1.2);"
-                                src="../assets/images/instagram-logo.png"
-                                alt=""
-                        /></a>
-                        <a
-                            href="https://www.linkedin.com/company/zedesignss/"
-                            target="_blank"
-                            ><img
-                                src="../assets/images/linkedin-logo.png"
-                                alt=""
-                        /></a>
-                        <a href="https://t.me/zedesigns" target="_blank"
-                            ><img
-                                src="../assets/images/telegram-logo.png"
-                                alt=""
-                        /></a>
+        <link rel="stylesheet" href="../assets/styles/utils.css" />
+        <link rel="stylesheet" href="../assets/styles/contact.css" />
+        <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+        ></script>
+        <title>Contact</title>
+    </head>
+    <body>
+        <div id="main">
+            <div id="nav">
+                <img src="../assets/images/logo.png" alt="ZEDESIGNS Logo" />
+                <ul>
+                    <li>
+                        <a href="../index.html" data-i18n="nav.home">Home</a>
+                    </li>
+                    <li>
+                        <a href="./about.html" data-i18n="nav.about">About</a>
+                    </li>
+                    <li>
+                        <a href="./services.html" data-i18n="nav.services"
+                            >Services</a
+                        >
+                    </li>
+                    <!-- <li><a href="./pages/projects.html">Work</a></li> -->
+                    <li>
+                        <a href="./projects.html" data-i18n="nav.work">Work</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html" data-i18n="nav.contact"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button
+                            class="lang-toggle"
+                            id="langToggle"
+                            aria-label="Change Language"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM9.71002 19.6674C8.74743 17.6259 8.15732 15.3742 8.02731 13H4.06189C4.458 16.1765 6.71639 18.7747 9.71002 19.6674ZM10.0307 13C10.1811 15.4388 10.8778 17.7297 12 19.752C13.1222 17.7297 13.8189 15.4388 13.9693 13H10.0307ZM19.9381 13H15.9727C15.8427 15.3742 15.2526 17.6259 14.29 19.6674C17.2836 18.7747 19.542 16.1765 19.9381 13ZM4.06189 11H8.02731C8.15732 8.62577 8.74743 6.37407 9.71002 4.33256C6.71639 5.22533 4.458 7.8235 4.06189 11ZM10.0307 11H13.9693C13.8189 8.56122 13.1222 6.27025 12 4.24799C10.8778 6.27025 10.1811 8.56122 10.0307 11ZM14.29 4.33256C15.2526 6.37407 15.8427 8.62577 15.9727 11H19.9381C19.542 7.8235 17.2836 5.22533 14.29 4.33256Z"
+                                ></path>
+                            </svg>
+                            <span class="lang-label">EN</span>
+                        </button>
+                    </div>
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
             </div>
-        </div>
 
-        
-        <div id="hero">
-            <div class="hero-bg-wrapper">
-                <img id="hero-image" src="../assets/images/contact/hero-bg-contact.png" alt="Contact Banner">
-                <div class="hero-overlay"></div>
+            <!-- Mobile Menu Overlay -->
+            <div id="mobileMenu" class="mobile-menu">
+                <button class="close-menu" id="closeMenu">
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-menu-content">
+                    <nav class="mobile-nav">
+                        <a
+                            href="../index.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.home"
+                            >Home</a
+                        >
+                        <a
+                            href="./about.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.about"
+                            >About</a
+                        >
+                        <a
+                            href="./services.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.services"
+                            >Services</a
+                        >
+                        <a
+                            href="./projects.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.work"
+                            >Work</a
+                        >
+                        <a
+                            href="./contact.html"
+                            class="mobile-nav-link"
+                            data-i18n="nav.contact"
+                            >Contact</a
+                        >
+                    </nav>
+                    <div class="mobile-menu-footer">
+                        <p id="copyrightpara">© 2025 ZEDESIGNS</p>
+                        <div class="mobile-socials">
+                            <a
+                                href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
+                                target="_blank"
+                                ><img
+                                    src="../assets/images/tiktok-logo.png"
+                                    alt=""
+                            /></a>
+                            <a
+                                href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
+                                target="_blank"
+                                ><img
+                                    style="transform: scale(1.2)"
+                                    src="../assets/images/instagram-logo.png"
+                                    alt=""
+                            /></a>
+                            <a
+                                href="https://www.linkedin.com/company/zedesignss/"
+                                target="_blank"
+                                ><img
+                                    src="../assets/images/linkedin-logo.png"
+                                    alt=""
+                            /></a>
+                            <a href="https://t.me/zedesigns" target="_blank"
+                                ><img
+                                    src="../assets/images/telegram-logo.png"
+                                    alt=""
+                            /></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="hero-content">
-                <h1 id="contact-title" data-i18n="contactPage.heroTitle">Let's Create<br>Something Iconic</h1>
-                <p id="contact-tagline" data-i18n="contactPage.heroTagline">Start your journey with us today.</p>
+
+            <div id="hero">
+                <div class="hero-bg-wrapper">
+                    <img
+                        id="hero-image"
+                        src="../assets/images/contact/hero-bg-contact.png"
+                        alt="Contact Banner"
+                    />
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 id="contact-title" data-i18n="contactPage.heroTitle">
+                        Let's Create<br />Something Iconic
+                    </h1>
+                    <p id="contact-tagline" data-i18n="contactPage.heroTagline">
+                        Start your journey with us today.
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <!-- Contact Content -->
-        <div id="contact-content">
-            
-            <div class="contact-grid">
-                
-                <!-- Left Column: Form + Info -->
-                <div class="contact-left">
-                    
-                    <!-- Form Section -->
-                    <div class="contact-form-section">
-                        <form id="contact-form" action="https://forms.zohopublic.sa/ZEDESIGNS/form/LeadForm/formperma/QhtzwiDql30ilttZavvUDlFWgv1KUqSHEqH-0a6G-sM/htmlRecords/submit" name="form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
-                            <input type="hidden" name="zf_referrer_name" id="zf_referrer_name" value="">
-                            <input type="hidden" name="zf_redirect_url" id="zf_redirect_url" value="">
-                            <input type="hidden" name="zc_gad" id="zc_gad" value="">
+            <!-- Contact Content -->
+            <div id="contact-content">
+                <div class="contact-grid">
+                    <!-- Left Column: Form + Info -->
+                    <div class="contact-left">
+                        <!-- Form Section -->
+                        <div class="contact-form-section">
+                            <form
+                                id="contact-form"
+                                action="./submit.php"
+                                name="form"
+                                method="POST"
+                                accept-charset="UTF-8"
+                                enctype="multipart/form-data"
+                            >
+                                <input
+                                    type="hidden"
+                                    name="zf_referrer_name"
+                                    id="zf_referrer_name"
+                                    value=""
+                                />
+                                <input
+                                    type="hidden"
+                                    name="zf_redirect_url"
+                                    id="zf_redirect_url"
+                                    value=""
+                                />
+                                <input
+                                    type="hidden"
+                                    name="zc_gad"
+                                    id="zc_gad"
+                                    value=""
+                                />
 
-                            <div class="form-row">
-                                <div class="form-field">
-                                    <input type="text" id="name" name="SingleLine" fieldType="1" maxlength="255" data-i18n-placeholder="contactPage.formNamePlaceholder" placeholder="Name" required>
-                                </div>
-                                <div class="form-field">
-                                    <input type="email" id="email" name="Email" fieldType="9" maxlength="255" data-i18n-placeholder="contactPage.formEmailPlaceholder" placeholder="Email" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-field">
-                                    <input type="text" id="company" name="SingleLine1" fieldType="1" maxlength="255" data-i18n-placeholder="contactPage.formCompanyPlaceholder" placeholder="Company (Optional)">
-                                </div>
-                                <div class="form-field service-dropdown-wrapper">
-                                    <button type="button" class="service-toggle" id="serviceToggle">
-                                        <span class="service-selected" data-i18n="contactPage.formServiceLabel">Service Interest</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9">
-                                            <path fill="#eccf9c" d="M1 1l6 6 6-6"/>
-                                        </svg>
-                                    </button>
-                                    <div class="service-dropdown" id="serviceDropdown">
-                                        <button type="button" class="service-option" data-value="Branding">
-                                            <span class="checkbox"></span>
-                                            <span data-i18n="contactPage.formServiceBranding">Branding</span>
-                                        </button>
-                                        <button type="button" class="service-option" data-value="Websites">
-                                            <span class="checkbox"></span>
-                                            <span data-i18n="contactPage.formServiceWebsites">Websites</span>
-                                        </button>
-                                        <button type="button" class="service-option" data-value="Design &amp; Print">
-                                            <span class="checkbox"></span>
-                                            <span data-i18n="contactPage.formServiceDesignPrint">Design & Print</span>
-                                        </button>
-                                        <button type="button" class="service-option" data-value="Social Media">
-                                            <span class="checkbox"></span>
-                                            <span data-i18n="contactPage.formServiceSocialMedia">Social Media</span>
-                                        </button>
-                                        <button type="button" class="service-option" data-value="Other">
-                                            <span class="checkbox"></span>
-                                            <span data-i18n="contactPage.formServiceOther">Other</span>
-                                        </button>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="SingleLine"
+                                            fieldType="1"
+                                            maxlength="255"
+                                            data-i18n-placeholder="contactPage.formNamePlaceholder"
+                                            placeholder="Name"
+                                            required
+                                        />
                                     </div>
-                                    <select name="MultipleChoice" id="service" multiple style="display:none;" required>
-                                        <option value="Branding">Branding</option>
-                                        <option value="Websites">Websites</option>
-                                        <option value="Design &amp; Print">Design &amp; Print</option>
-                                        <option value="Social Media">Social Media</option>
-                                        <option value="Other">Other</option>
-                                    </select>
+                                    <div class="form-field">
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="Email"
+                                            fieldType="9"
+                                            maxlength="255"
+                                            data-i18n-placeholder="contactPage.formEmailPlaceholder"
+                                            placeholder="Email"
+                                            required
+                                        />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-field full-width">
-                                <input type="tel" compname="PhoneNumber" name="PhoneNumber_countrycode" phoneFormat="1" isCountryCodeEnabled="false" maxlength="20" fieldType="11" id="international_PhoneNumber_countrycode" data-i18n-placeholder="contactPage.formPhonePlaceholder" placeholder="Phone (Optional)">
-                            </div>
-                            
-                            <div class="form-field full-width">
-                                <textarea id="message" name="MultiLine" rows="6" maxlength="65535" data-i18n-placeholder="contactPage.formMessagePlaceholder" placeholder="Tell us about your project..." required></textarea>
-                            </div>
-                            
-                            <div class="btnelem">
-                                <button type="submit">
-                                    <span data-i18n="contactPage.formSubmitBtn">Send Message</span>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <input
+                                            type="text"
+                                            id="company"
+                                            name="SingleLine1"
+                                            fieldType="1"
+                                            maxlength="255"
+                                            data-i18n-placeholder="contactPage.formCompanyPlaceholder"
+                                            placeholder="Company (Optional)"
+                                        />
+                                    </div>
+                                    <div
+                                        class="form-field service-dropdown-wrapper"
+                                    >
+                                        <button
+                                            type="button"
+                                            class="service-toggle"
+                                            id="serviceToggle"
+                                        >
+                                            <span
+                                                class="service-selected"
+                                                data-i18n="contactPage.formServiceLabel"
+                                                >Service Interest</span
+                                            >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="14"
+                                                height="9"
+                                                viewBox="0 0 14 9"
+                                            >
+                                                <path
+                                                    fill="#eccf9c"
+                                                    d="M1 1l6 6 6-6"
+                                                />
+                                            </svg>
+                                        </button>
+                                        <div
+                                            class="service-dropdown"
+                                            id="serviceDropdown"
+                                        >
+                                            <button
+                                                type="button"
+                                                class="service-option"
+                                                data-value="Branding"
+                                            >
+                                                <span class="checkbox"></span>
+                                                <span
+                                                    data-i18n="contactPage.formServiceBranding"
+                                                    >Branding</span
+                                                >
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="service-option"
+                                                data-value="Websites"
+                                            >
+                                                <span class="checkbox"></span>
+                                                <span
+                                                    data-i18n="contactPage.formServiceWebsites"
+                                                    >Websites</span
+                                                >
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="service-option"
+                                                data-value="Design &amp; Print"
+                                            >
+                                                <span class="checkbox"></span>
+                                                <span
+                                                    data-i18n="contactPage.formServiceDesignPrint"
+                                                    >Design & Print</span
+                                                >
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="service-option"
+                                                data-value="Social Media"
+                                            >
+                                                <span class="checkbox"></span>
+                                                <span
+                                                    data-i18n="contactPage.formServiceSocialMedia"
+                                                    >Social Media</span
+                                                >
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="service-option"
+                                                data-value="Other"
+                                            >
+                                                <span class="checkbox"></span>
+                                                <span
+                                                    data-i18n="contactPage.formServiceOther"
+                                                    >Other</span
+                                                >
+                                            </button>
+                                        </div>
+                                        <select
+                                            name="MultipleChoice"
+                                            id="service"
+                                            multiple
+                                            style="display: none"
+                                            required
+                                        >
+                                            <option value="Branding">
+                                                Branding
+                                            </option>
+                                            <option value="Websites">
+                                                Websites
+                                            </option>
+                                            <option value="Design &amp; Print">
+                                                Design &amp; Print
+                                            </option>
+                                            <option value="Social Media">
+                                                Social Media
+                                            </option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                    <!-- Info Section -->
-                    <div class="contact-info-section">
-                        
-                        <!-- <div class="tag">
+                                <div class="form-field full-width">
+                                    <input
+                                        type="tel"
+                                        compname="PhoneNumber"
+                                        name="PhoneNumber_countrycode"
+                                        phoneFormat="1"
+                                        isCountryCodeEnabled="false"
+                                        maxlength="20"
+                                        fieldType="11"
+                                        id="international_PhoneNumber_countrycode"
+                                        data-i18n-placeholder="contactPage.formPhonePlaceholder"
+                                        placeholder="Phone (Optional)"
+                                    />
+                                </div>
+
+                                <div class="form-field full-width">
+                                    <textarea
+                                        id="message"
+                                        name="MultiLine"
+                                        rows="6"
+                                        maxlength="65535"
+                                        data-i18n-placeholder="contactPage.formMessagePlaceholder"
+                                        placeholder="Tell us about your project..."
+                                        required
+                                    ></textarea>
+                                </div>
+
+                                <!-- Cloudflare Turnstile Widget -->
+                                <div
+                                    class="form-field full-width cf-turnstile-wrapper"
+                                    style="
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        margin-bottom: 20px;
+                                    "
+                                >
+                                    <div
+                                        class="cf-turnstile"
+                                        data-sitekey="0x4AAAAAAE9zide3CjkdjPAh"
+                                        data-theme="auto"
+                                    ></div>
+                                    <div
+                                        id="turnstile-error"
+                                        class="error-message"
+                                        style="
+                                            display: none;
+                                            color: #ff6b6b;
+                                            font-size: 0.9em;
+                                            margin-top: 5px;
+                                            text-align: center;
+                                        "
+                                        data-i18n="contactPage.turnstileError"
+                                    >
+                                        Please verify that you are human.
+                                    </div>
+                                </div>
+
+                                <div class="btnelem">
+                                    <button type="submit">
+                                        <span
+                                            data-i18n="contactPage.formSubmitBtn"
+                                            >Send Message</span
+                                        >
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Info Section -->
+                        <div class="contact-info-section">
+                            <!-- <div class="tag">
                             <img src="../assets/images/home/tag.svg" alt="" />
                             <p>Prefer a Direct Conversation?</p>
                         </div> -->
-                        
-                        <div class="info-details-col">
-                            
-                            <div class="info-block">
-                                <h3 data-i18n="contactPage.infoGetInTouch">Get in Touch</h3>
-                                <div class="info-items">
-                                    <a href="tel:+966508748684" class="info-link">
-                                        <span class="info-label" data-i18n="contactPage.infoPhoneLabel">Phone</span>
-                                        <span class="info-value" data-i18n="contactPage.infoPhoneValue">+966 50 874 8684</span>
-                                    </a>
-                                    <a href="mailto:info@zedesignss.com" class="info-link">
-                                        <span class="info-label" data-i18n="contactPage.infoEmailLabel">Email</span>
-                                        <span class="info-value">info@zedesignss.com</span>
-                                    </a>
-                                </div>
-                                <div class="btnelem">
-                                    <button>
-                                        <a href="https://api.whatsapp.com/send?phone=966508748684&text=Hi%20ZEDESIGNS,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank">
-                                            <img src="../assets/images/home/whatsapp-logo.png" alt="WhatsApp" />
-                                            <span data-i18n="contactPage.infoWhatsAppBtn">WhatsApp</span>
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
 
-                            <!-- <div class="info-block">
+                            <div class="info-details-col">
+                                <div class="info-block">
+                                    <h3 data-i18n="contactPage.infoGetInTouch">
+                                        Get in Touch
+                                    </h3>
+                                    <div class="info-items">
+                                        <a
+                                            href="tel:+966508748684"
+                                            class="info-link"
+                                        >
+                                            <span
+                                                class="info-label"
+                                                data-i18n="contactPage.infoPhoneLabel"
+                                                >Phone</span
+                                            >
+                                            <span
+                                                class="info-value"
+                                                data-i18n="contactPage.infoPhoneValue"
+                                                >+966 50 874 8684</span
+                                            >
+                                        </a>
+                                        <a
+                                            href="mailto:info@zedesignss.com"
+                                            class="info-link"
+                                        >
+                                            <span
+                                                class="info-label"
+                                                data-i18n="contactPage.infoEmailLabel"
+                                                >Email</span
+                                            >
+                                            <span class="info-value"
+                                                >info@zedesignss.com</span
+                                            >
+                                        </a>
+                                    </div>
+                                    <div class="btnelem">
+                                        <button>
+                                            <a
+                                                href="https://api.whatsapp.com/send?phone=966508748684&text=Hi%20ZEDESIGNS,%20I%20would%20like%20to%20discuss%20a%20project."
+                                                target="_blank"
+                                            >
+                                                <img
+                                                    src="../assets/images/home/whatsapp-logo.png"
+                                                    alt="WhatsApp"
+                                                />
+                                                <span
+                                                    data-i18n="contactPage.infoWhatsAppBtn"
+                                                    >WhatsApp</span
+                                                >
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="info-block">
                                 <h3>Location</h3>
                                 <div class="info-items">
                                     <div class="info-item">
@@ -267,48 +496,63 @@
                                     </div>
                                 </div>
                             </div> -->
-                            
+                            </div>
                         </div>
-                        
                     </div>
-                    
-                </div>
-                
-                <!-- Right Column: Fixed Video -->
-                <div class="contact-right">
-                    <div class="video-fixed-wrapper">
-                        <video autoplay loop muted playsinline>
-                            <source src="../assets/images/contact/vid-zawya.mp4" type="video/mp4">
-                        </video>
+
+                    <!-- Right Column: Fixed Video -->
+                    <div class="contact-right">
+                        <div class="video-fixed-wrapper">
+                            <video autoplay loop muted playsinline>
+                                <source
+                                    src="../assets/images/contact/vid-zawya.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                        </div>
                     </div>
                 </div>
-                
             </div>
 
-        </div>
-
-        <!-- Custom Success Notification Modal -->
-        <div id="form-success-modal" class="success-modal">
-            <div class="success-modal-backdrop" id="successModalBackdrop"></div>
-            <div class="success-modal-card">
-                <div class="success-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11.0026 16L17.0737 9.92893L15.6595 8.51472L11.0026 13.1716L8.34571 10.5147L6.9315 11.9289L11.0026 16Z"></path>
-                    </svg>
-                </div>
-                <h2 data-i18n="contactPage.successTitle">Message Received!</h2>
-                <p data-i18n="contactPage.successMessage">Thank you! We'll be in touch within 24 hours.</p>
-                <div class="btnelem">
-                    <button id="closeSuccessModal" class="success-modal-btn" type="button">
-                        <span data-i18n="contactPage.successCloseBtn">Continue</span>
-                    </button>
+            <!-- Custom Success Notification Modal -->
+            <div id="form-success-modal" class="success-modal">
+                <div
+                    class="success-modal-backdrop"
+                    id="successModalBackdrop"
+                ></div>
+                <div class="success-modal-card">
+                    <div class="success-icon-wrapper">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11.0026 16L17.0737 9.92893L15.6595 8.51472L11.0026 13.1716L8.34571 10.5147L6.9315 11.9289L11.0026 16Z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h2 data-i18n="contactPage.successTitle">
+                        Message Received!
+                    </h2>
+                    <p data-i18n="contactPage.successMessage">
+                        Thank you! We'll be in touch within 24 hours.
+                    </p>
+                    <div class="btnelem">
+                        <button
+                            id="closeSuccessModal"
+                            class="success-modal-btn"
+                            type="button"
+                        >
+                            <span data-i18n="contactPage.successCloseBtn"
+                                >Continue</span
+                            >
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        
-
-         <!-- Floating WhatsApp Button
+            <!-- Floating WhatsApp Button
             <a
                 href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
                 target="_blank"
@@ -322,171 +566,187 @@
                 />
                 <span data-i18n="floatingWhatsApp.ariaLabel">WhatsApp Us</span>
             </a> -->
-    </div>
+        </div>
 
-    <div id="footer">
-        <div id="footer-foreground">
-            <img
-                src="../assets/images/home/herofooter-bg-green-1.webp"
-                alt=""
-            />
-            <div id="ftop">
-                <div class="tag">
-                    <img src="../assets/images/home/tag.svg" alt="tag" />
-                    <p data-i18n="footer.tagText">
-                        Saudi Based Strategic Branding And Web Design
-                        Company
-                    </p>
-                </div>
-                <h1 data-i18n="footer.heading">
-                    Every success starts with the first step
-                </h1>
-                <p data-i18n="footer.description">
-                    Let's create something exceptional together. Get in
-                    touch to start your branding journey.
-                </p>
-                <div id="btndiv">
-                    <div class="btnelem">
-                        <button>
-                            <a
-                                href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
-                                target="_blank"
-                                data-i18n="footer.btnText"
-                                >Get Started</a
-                            >
-                        </button>
+        <div id="footer">
+            <div id="footer-foreground">
+                <img
+                    src="../assets/images/home/herofooter-bg-green-1.webp"
+                    alt=""
+                />
+                <div id="ftop">
+                    <div class="tag">
+                        <img src="../assets/images/home/tag.svg" alt="tag" />
+                        <p data-i18n="footer.tagText">
+                            Saudi Based Strategic Branding And Web Design
+                            Company
+                        </p>
                     </div>
-                    <!-- <div class="btnelem transparentbtn">
+                    <h1 data-i18n="footer.heading">
+                        Every success starts with the first step
+                    </h1>
+                    <p data-i18n="footer.description">
+                        Let's create something exceptional together. Get in
+                        touch to start your branding journey.
+                    </p>
+                    <div id="btndiv">
+                        <div class="btnelem">
+                            <button>
+                                <a
+                                    href="https://api.whatsapp.com/send?phone=966508748684&text=I%20would%20like%20to%20know%20more%20about%20your%20services"
+                                    target="_blank"
+                                    data-i18n="footer.btnText"
+                                    >Get Started</a
+                                >
+                            </button>
+                        </div>
+                        <!-- <div class="btnelem transparentbtn">
                         <button>Explore Our Work</button>
                     </div> -->
+                    </div>
                 </div>
-            </div>
-            <div id="fbtm">
-                <div id="btmleft">
-                    <img
-                        src="../assets/images/home/logofooter-01-old.png"
-                        alt="logo footer"
-                    />
-                    <div class="info">
-                        <p data-i18n="footer.hqLabel">HQ</p>
-                        <p data-i18n="footer.hqLocation">
-                            Jeddah, Saudi Arabia
+                <div id="fbtm">
+                    <div id="btmleft">
+                        <img
+                            src="../assets/images/home/logofooter-01-old.png"
+                            alt="logo footer"
+                        />
+                        <div class="info">
+                            <p data-i18n="footer.hqLabel">HQ</p>
+                            <p data-i18n="footer.hqLocation">
+                                Jeddah, Saudi Arabia
+                            </p>
+                        </div>
+                        <div class="info">
+                            <p data-i18n="footer.contactLabel">Contact Us</p>
+                            <p data-i18n="footer.contactEmail">
+                                info@zedesignss.com
+                            </p>
+                        </div>
+                        <p id="copyright">
+                            2025 &copy; ZEDESIGNS. All rights reserved.
                         </p>
                     </div>
-                    <div class="info">
-                        <p data-i18n="footer.contactLabel">Contact Us</p>
-                        <p data-i18n="footer.contactEmail">
-                            info@zedesignss.com
-                        </p>
-                    </div>
-                    <p id="copyright"  >
-                        2025 &copy; ZEDESIGNS. All rights reserved.
-                    </p>
-                </div>
-                <div id="btmright">
-                    <ul>
-                        <li
-                            class="liheading"
-                            data-i18n="footer.mainPagesHeading"
-                        >
-                            Main Pages
-                        </li>
-                        <li>
-                            <a href="../index.html" data-i18n="footer.navHome">Home</a>
-                        </li>
-                        <li>
-                            <a href="./about.html" data-i18n="footer.navAbout"
-                                >About</a
+                    <div id="btmright">
+                        <ul>
+                            <li
+                                class="liheading"
+                                data-i18n="footer.mainPagesHeading"
                             >
-                        </li>
-                        <li>
-                            <a
-                                href="#services"
-                                data-i18n="footer.navServices"
-                                >Services</a
-                            >
-                        </li>
-                        <li>
-                            <a href="./projects.html" data-i18n="footer.navWork"
-                                >Work</a
-                            >
-                        </li>
-                        <li>
-                            <a href="./contact.html" data-i18n="footer.navContact"
-                                >Contact</a
-                            >
-                        </li>
-                    </ul>
-                    <div id="socials">
-                        <div id="socialone">
-                            <a
-                                href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
-                                target="_blank"
-                                ><img
-                                    src="../assets/images/tiktok-logo.png"
-                                    alt=""
-                            /></a>
-                            <a
-                                href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
-                                target="_blank"
-                                ><img
-                                    style="transform: scale(1.2);"
-                                    src="../assets/images/instagram-logo.png"
-                                    alt=""
-                            /></a>
-                            <a
-                                href="https://www.linkedin.com/company/zedesignss/"
-                                target="_blank"
-                                ><img
-                                    src="../assets/images/linkedin-logo.png"
-                                    alt=""
-                            /></a>
-                            <a href="https://t.me/zedesigns" target="_blank"
-                                ><img
-                                    src="../assets/images/telegram-logo.png"
-                                    alt=""
-                            /></a>
-                            <a href="https://youtube.com/@zedesignss" target="_blank"
+                                Main Pages
+                            </li>
+                            <li>
+                                <a
+                                    href="../index.html"
+                                    data-i18n="footer.navHome"
+                                    >Home</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./about.html"
+                                    data-i18n="footer.navAbout"
+                                    >About</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="#services"
+                                    data-i18n="footer.navServices"
+                                    >Services</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./projects.html"
+                                    data-i18n="footer.navWork"
+                                    >Work</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="./contact.html"
+                                    data-i18n="footer.navContact"
+                                    >Contact</a
+                                >
+                            </li>
+                        </ul>
+                        <div id="socials">
+                            <div id="socialone">
+                                <a
+                                    href="https://www.tiktok.com/@zedesignss?_t=8q5sRvfQm7s&_r=1"
+                                    target="_blank"
+                                    ><img
+                                        src="../assets/images/tiktok-logo.png"
+                                        alt=""
+                                /></a>
+                                <a
+                                    href="https://www.instagram.com/zedesignss?igsh=dXU0c3VvdHRtZzZq&utm_source=qr"
+                                    target="_blank"
+                                    ><img
+                                        style="transform: scale(1.2)"
+                                        src="../assets/images/instagram-logo.png"
+                                        alt=""
+                                /></a>
+                                <a
+                                    href="https://www.linkedin.com/company/zedesignss/"
+                                    target="_blank"
+                                    ><img
+                                        src="../assets/images/linkedin-logo.png"
+                                        alt=""
+                                /></a>
+                                <a href="https://t.me/zedesigns" target="_blank"
+                                    ><img
+                                        src="../assets/images/telegram-logo.png"
+                                        alt=""
+                                /></a>
+                                <a
+                                    href="https://youtube.com/@zedesignss"
+                                    target="_blank"
                                     ><img
                                         src="../assets/images/youtube-logo.png"
                                         alt=""
                                 /></a>
-                        </div>
-                        <div id="socialtwo">
-                                <a
-                                    href="#"
+                            </div>
+                            <div id="socialtwo">
+                                <a href="#"
                                     ><img
                                         src="../assets/images/saudi-ecommerce-logo.svg"
                                         alt=""
                                 /></a>
                                 <p>
                                     <span data-i18n="footer.verifiedText"
-                                        >Commercial Register (CR No): </span
-                                    >
-                                    <a
-                                        href="#"
-                                        data-i18n="footer.verifiedLink"
+                                        >Commercial Register (CR No):
+                                    </span>
+                                    <a href="#" data-i18n="footer.verifiedLink"
                                         >7053200189</a
                                     >
                                 </p>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div id="footer-background">
+                <h1>ZEDESIGNS</h1>
+            </div>
         </div>
 
-        <div id="footer-background">
-            <h1>ZEDESIGNS</h1>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
-    <script src="../assets/scripts/i18n-2.js"></script>
-    <script src="../assets/scripts/utils.js"></script>
-    <script src="../assets/scripts/contact.js"></script>
-    <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.sa/widget?wc=21e249d5f6a60255addd05031b224c183d2d5553b7405f44e641c0798eb67bb7" defer></script>
-
-</body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+        <script src="../assets/scripts/i18n-2.js"></script>
+        <script src="../assets/scripts/utils.js"></script>
+        <script src="../assets/scripts/contact.js"></script>
+        <script>
+            window.$zoho = window.$zoho || {};
+            $zoho.salesiq = $zoho.salesiq || { ready: function () {} };
+        </script>
+        <script
+            id="zsiqscript"
+            src="https://salesiq.zohopublic.sa/widget?wc=21e249d5f6a60255addd05031b224c183d2d5553b7405f44e641c0798eb67bb7"
+            defer
+        ></script>
+    </body>
 </html>
